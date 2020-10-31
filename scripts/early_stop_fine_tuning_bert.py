@@ -32,7 +32,6 @@ logging.basicConfig(level=logging.INFO, format=log_format)
 
 parser = argparse.ArgumentParser(description="Arguments for fine-tuning.")
 parser.add_argument("--gpu", type=int, default=0)
-parser.add_argument("--period", type=int)
 parser.add_argument("--dataset", type=str)
 parser.add_argument("--save-stats", type=int, default=0)
 parser.add_argument("--save-name", type=str, default=None)
@@ -52,7 +51,6 @@ parser.add_argument("--seed", type=int, default=0)
 
 args = parser.parse_args()
 gpu = args.gpu
-period = args.period
 dataset = args.dataset
 save_stats = args.save_stats
 save_name = args.save_name

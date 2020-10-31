@@ -15,7 +15,6 @@
                 "WANDB_API_KEY": "0e642a1378e770181ff7ab31c46714c042181381"
               },
             "args": [
-                "--period", "212", 
                 "--save-stats", "1",
                 "--save-model", "1",
                 "--reset-layers", "3",
