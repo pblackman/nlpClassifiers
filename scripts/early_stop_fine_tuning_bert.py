@@ -3,7 +3,7 @@ import torch.nn as nn
 from os.path import join
 import torch
 from nlpClassifiers.data.dataset  import NLPDataset
-from torch.optim import AdamW, SGD
+#from torch.optim import AdamW, SGD
 from torch.utils.data import DataLoader, SequentialSampler, RandomSampler
 from transformers import BertForSequenceClassification, AdamW, BertConfig
 from transformers import get_linear_schedule_with_warmup
