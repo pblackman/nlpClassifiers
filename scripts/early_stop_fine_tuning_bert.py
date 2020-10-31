@@ -263,8 +263,6 @@ model = model.to(device)
 if log_wandb:
     wandb.watch(model)
 
-
-# optimizer = Adam(model.parameters(), lr = lr, eps = 1e-8)
 no_decay = ["bias", "LayerNorm.weight"]  # no weight decay for these params
 
 if layerwise_lr != 0:
@@ -291,15 +289,15 @@ else:
         },
     ]
 
-optimizer = SGD(model.parameters(), lr)
-'''
+#optimizer = SGD(model.parameters(), lr)
+
 optimizer = AdamW(
     optimizer_grouped_parameters, 
     lr=lr,
     betas=(0.9, 0.999),
     eps=0.000001, 
 )
-'''
+
 t_total = (len(train_dataloader) // gradient_accumulation_steps) * epochs
 print(f"====>TOTAL NUMBER OF STEPS: {t_total}")
 warmup_steps = int(t_total * 0.1) # 10% of total steps during fine-tuning
