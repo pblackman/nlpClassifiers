@@ -1,0 +1,33 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type":"python",
+            "request": "launch",
+            "name": "Launch Program",
+            "console": "integratedTerminal",
+            "program": "${workspaceRoot}/scripts/early_stop_fine_tuning_bert.py",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "WANDB_API_KEY": "0e642a1378e770181ff7ab31c46714c042181381"
+              },
+            "args": [
+                "--period", "212", 
+                "--save-stats", "1",
+                "--save-model", "1",
+                "--reset-layers", "3",
+                "--layerwise-lr", "0.9",
+                "--wandb", "1",
+                "--epochs", "1",
+                "--bert-path", "~/nlpClassifiers/data/agent-benchmark/bertimbau-base-tapt-pretraining-data",
+                "--bert-size", "base",
+                "--save-name", "llrd-20epochs-early-stop-reinit-3",
+                "--dataset", "agent-benchmark",
+                "--batch-size", "8"
+            ]
+        }
+    ]
+}
