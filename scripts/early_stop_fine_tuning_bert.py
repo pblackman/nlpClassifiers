@@ -152,22 +152,23 @@ def predict(
             test_labels.extend(_list_from_tensor(b_labels))
         logits_list.extend(_list_from_tensor(logits))
 
-    class_results = classification_report(test_labels, pred_labels, labels=list(labels_dict.values()), target_names=np.array(list(labels_dict.keys())), digits=3, output_dict=True)
-    logging.info(class_results)
+    class_results_dict = classification_report(test_labels, pred_labels, labels=list(labels_dict.values()), target_names=np.array(list(labels_dict.keys())), digits=3, output_dict=True)
+    class_results_text = classification_report(test_labels, pred_labels, labels=list(labels_dict.values()), target_names=np.array(list(labels_dict.keys())), digits=3, output_dict=False)
+    logging.info(class_results_text)
     logits_list = expit(logits_list)
 
     if log_wandb:
         wandb.log(
             {
-                "accuracy": class_results["accuracy"],
-                "macro avg precision": class_results["macro avg"]["precision"],
-                "macro avg recall": class_results["macro avg"]["recall"],
-                "macro avg f1-score": class_results["macro avg"]["f1-score"],
-                "macro avg support": class_results["macro avg"]["support"],
-                "weighted avg precision": class_results["weighted avg"]["precision"],
-                "weighted avg recall": class_results["weighted avg"]["recall"],
-                "weighted avg f1-score": class_results["weighted avg"]["f1-score"],
-                "weighted avg support": class_results["weighted avg"]["support"]                
+                "accuracy": class_results_dict["accuracy"],
+                "macro avg precision": class_results_dict["macro avg"]["precision"],
+                "macro avg recall": class_results_dict["macro avg"]["recall"],
+                "macro avg f1-score": class_results_dict["macro avg"]["f1-score"],
+                "macro avg support": class_results_dict["macro avg"]["support"],
+                "weighted avg precision": class_results_dict["weighted avg"]["precision"],
+                "weighted avg recall": class_results_dict["weighted avg"]["recall"],
+                "weighted avg f1-score": class_results_dict["weighted avg"]["f1-score"],
+                "weighted avg support": class_results_dict["weighted avg"]["support"]                
             }
         )
 
