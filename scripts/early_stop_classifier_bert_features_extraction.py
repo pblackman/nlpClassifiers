@@ -3,9 +3,9 @@ import torch.nn as nn
 from os.path import join
 import torch
 from nlpClassifiers.data.dataset  import NLPDataset
-#from torch.optim import AdamW, SGD
+from torch.optim import SGD
 from torch.utils.data import DataLoader, SequentialSampler, RandomSampler
-from transformers import BertForSequenceClassification, AdamW, BertConfig
+from transformers import BertForSequenceClassification, AdamW, BertConfig, BertModel
 from transformers import get_linear_schedule_with_warmup
 from torch.nn import LayerNorm as BertLayerNorm
 import numpy as np
@@ -72,35 +72,6 @@ save_data = []
 BASE_PATH_TO_MODELS = {"virtual-operator": settings.PATH_TO_VIRTUAL_OPERATOR_MODELS, "agent-benchmark": settings.PATH_TO_AGENT_BENCHMARK_MODELS, "mercado-livre-pt": settings.PATH_TO_ML_PT_MODELS}
 FULL_PATH_TO_MODELS = join(BASE_PATH_TO_MODELS[dataset], "bert-base-portuguese-tapt-classifier")
 
-def set_seed(seed):
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)  # if you are using multi-GPU.
-    np.random.seed(seed)  # Numpy module.
-    random.seed(seed)  # Python random module.
-    torch.manual_seed(seed)
-    torch.backends.cudnn.benchmark = False
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.enabled = False
-
-def get_lr_by_layer(name: str, base_lr: float = 2e-5, decay: int = 0.9, bert_size = "base"):
-    match = re.search("^.*\\.(\d+)\\..*$", name)
-    last_layer_idx = 23 if bert_size == "large" else 11
-    if match is None:
-        if "embeddings" in name:
-            # last_layer_idx + 2 is because there is one more 
-            # pooler and classifier layer on top of the 11
-            # stack of encoders.
-            return base_lr * (decay ** (last_layer_idx + 2))
-        elif "pooler" in name:
-            return base_lr * (decay ** 1)
-        elif "classifier" in name:
-            return base_lr
-    else:
-        layer = int(match.group(1))
-        return base_lr * (decay ** (last_layer_idx + 2 - layer))
-
-
 def predict(
     model_path: Path,
     dataset: str,
@@ -121,15 +92,9 @@ def predict(
     )
 
     print(f"====Loading model for testing")
-    model = BertForSequenceClassification.from_pretrained(
-        model_path,
-        num_labels = test_corpus.num_labels,
-        output_attentions = False,
-        output_hidden_states = True,
-    )
+    model = torch.load(join(model_path, "best-model.pth"))
     model.to(device)
     model.eval()
-  #  cm = ConfusionMatrix([0,1])
     pred_labels = []
     test_labels = []
     logits_list = []
@@ -144,8 +109,7 @@ def predict(
         batch = tuple(t.to(device) for t in batch)
         b_input_ids, b_segment_ids, b_input_mask, b_labels = batch
         with torch.no_grad():
-            loss, logits, *_ =  model(b_input_ids, b_input_mask, token_type_ids=None, labels=b_labels)
-
+            loss, logits = model(b_input_ids, b_segment_ids, b_labels)
             preds = np.argmax(logits.cpu(), axis=1) # Convert one-hot to index
             b_labels = b_labels.int()
             pred_labels.extend(_list_from_tensor(preds))
@@ -175,11 +139,60 @@ def predict(
     del model
     torch.cuda.empty_cache()
 
+def set_seed(seed):
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)  # if you are using multi-GPU.
+    np.random.seed(seed)  # Numpy module.
+    random.seed(seed)  # Python random module.
+    torch.manual_seed(seed)
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.enabled = False
+
+def format_time(elapsed):
+    '''
+    Takes a time in seconds and returns a string hh:mm:ss
+    '''
+    # Round to the nearest second.
+    elapsed_rounded = int(round((elapsed)))
+    
+    # Format as hh:mm:ss
+    return str(datetime.timedelta(seconds=elapsed_rounded))
+
+def _init_fn(worker_id):
+    np.random.seed(seed)
+
 def get_accuracy_from_logits(logits, labels):
     acc = (labels.cpu() == logits.cpu().argmax(-1)).float().detach().numpy()
     return float(100 * acc.sum() / len(acc))
 
-# device = torch.device(f"cuda:{gpu}")
+class Net(nn.Module):
+    def __init__(self, criterion, num_labels):
+        super(Net, self).__init__()
+        self.bert_model = BertModel.from_pretrained(bert_path, output_hidden_states=True)
+        self.pre_classifier = nn.Linear(3072, 512)
+        self.dropout = nn.Dropout(0.2)
+        self.classifier = nn.Linear(512, num_labels)
+
+    def forward(self, bert_ids, bert_mask, Y):
+        outputs = self.bert_model(input_ids=bert_ids, attention_mask=bert_mask, return_dict=True)
+        self.bert_model.eval()
+        hidden_states = outputs.hidden_states[1:]
+        outputs = torch.cat(tuple([hidden_states[i] for i in [-1, -2, -3, -4]]), dim=-1)
+        bert_mask = bert_mask.unsqueeze(2)
+        # Multiply output with mask to only retain non-paddding tokens
+        outputs = torch.mul(outputs, bert_mask)
+        # First item ['CLS'] is sentence representation
+        outputs = outputs[:, 0, :]
+        outputs = self.pre_classifier(outputs)
+        outputs = self.dropout(outputs)
+        outputs = self.classifier(outputs)
+        loss = criterion(outputs, Y)
+        return loss, outputs
+
+set_seed(seed)
+
 device = torch.device(f"cuda:{gpu}")
 
 best_epoch = -1
@@ -189,26 +202,17 @@ print(f"Parameters: {vars(args)}")
 
 best_val_acc = float("-inf")
 best_model_wts = None
-# for comb in :
-
 best_curr_val = 0
 
 if log_wandb:
     wandb_conf = vars(args)
     wandb.init(project="huggingface", config=wandb_conf, reinit=True)
 
-def _init_fn(worker_id):
-    np.random.seed(seed)
-
 train_corpus = NLPDataset(dataset, "train", sentence_max_len, bert_path)
 labels_dict = train_corpus.labels_dict
 val_corpus = NLPDataset(dataset, "val", sentence_max_len, bert_path, labels_dict)
 
-# HYPERPARAMS
-n_epochs_no_improvement = 0
-gradient_accumulation_steps = 1
 
-set_seed(seed)
 print(f"Loading dataset ...")
 train_dataloader = DataLoader(
             train_corpus,
@@ -228,74 +232,19 @@ validation_dataloader = DataLoader(
             num_workers=0
 )
 
-print(f"Loading bert_model...")
-
-print(f"Using BertForSequenceClassification")
-model = BertForSequenceClassification.from_pretrained(
-    bert_path,
-    num_labels = train_corpus.num_labels,
-    output_attentions = False,
-    output_hidden_states = False
-)
-
-set_seed(seed)
-nn.init.normal_(model.classifier.weight.data, 0, 0.02)
-nn.init.zeros_(model.classifier.bias.data)
-
-# We reset the last layer dense and LayerNorm parameters
-def reset_last_layers(n_layers: int):
-    last_layer_idx = 23 if bert_size == "large" else 11
-    first = last_layer_idx - n_layers + 1
-    last = last_layer_idx + 1
-    for i in range(first, last):
-        print(f"====>Reseting layer {i}!")
-        for name, module in model.bert.encoder.layer[i].named_modules():
-            if any(x in name for x in ["dense", "query", "key", "value"]):
-                module.weight.data.normal_(0, 0.02)
-                module.bias.data.zero_()
-
-        model.bert.encoder.layer[i].output.LayerNorm = BertLayerNorm(model.bert.encoder.layer[i].output.dense.out_features, eps=1e-12)
-
-reset_last_layers(n_layers=reset_layers)
-
+criterion = torch.nn.CrossEntropyLoss()
+model = Net(criterion, train_corpus.num_labels)
+#nn.init.normal_(model.classifier.weight.data, 0, 0.02)
+#nn.init.zeros_(model.classifier.bias.data)
 model = model.to(device)
+#optimizer = AdamW(model.parameters(),lr, betas=(0.9, 0.999), eps=0.000001)
+optimizer = SGD(model.parameters(), lr)
+
 if log_wandb:
     wandb.watch(model)
 
-no_decay = ["bias", "LayerNorm.weight"]  # no weight decay for these params
-
-if layerwise_lr != 0:
-    print(f"====>Using layerwise learning rate with decay={layerwise_lr}")
-    optimizer_grouped_parameters = []
-    for name, p in model.named_parameters():
-        if not any(nd in name for nd in no_decay) and p.requires_grad:
-            d = {"params": p, "weight_decay": 0.01, "lr": get_lr_by_layer(name, lr, layerwise_lr,  "base")}
-        elif any(nd in name for nd in no_decay) and p.requires_grad:
-            d = {"params": p, "weight_decay": 0.00, "lr": get_lr_by_layer(name, lr, layerwise_lr, "base")}
-        
-        optimizer_grouped_parameters.append(d)
-
-else:
-    print(f"====>Using fixed learning rate={lr}")
-    optimizer_grouped_parameters = [
-        {
-            "params": [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay) and p.requires_grad],  # keep only params that require a gradient
-            "weight_decay": 0.01,
-        },
-        {
-            "params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay) and p.requires_grad],  # keep only params that require a gradient
-            "weight_decay": 0.0
-        },
-    ]
-
-#optimizer = SGD(model.parameters(), lr)
-
-optimizer = AdamW(
-    optimizer_grouped_parameters, 
-    lr=lr,
-    betas=(0.9, 0.999),
-    eps=0.000001, 
-)
+n_epochs_no_improvement = 0
+gradient_accumulation_steps = 1
 
 t_total = (len(train_dataloader) // gradient_accumulation_steps) * epochs
 print(f"====>TOTAL NUMBER OF STEPS: {t_total}")
@@ -303,28 +252,21 @@ warmup_steps = int(t_total * 0.1) # 10% of total steps during fine-tuning
 print(f"====>WARMUP STEPS: {warmup_steps}")
 
 total_steps = len(train_dataloader) * epochs
+'''
 scheduler = get_linear_schedule_with_warmup(
     optimizer, 
     num_warmup_steps = warmup_steps,
     num_training_steps = t_total # We used total_steps before.... Why?
 )
-
-def format_time(elapsed):
-    '''
-    Takes a time in seconds and returns a string hh:mm:ss
-    '''
-    # Round to the nearest second.
-    elapsed_rounded = int(round((elapsed)))
-    
-    # Format as hh:mm:ss
-    return str(datetime.timedelta(seconds=elapsed_rounded))
-
+'''
 
 training_stats = []
-total_t0 = time.time()
-# mean_val_acc_over_epochs = 0
+
 global_step = 0
 torch.cuda.empty_cache()
+
+total_t0 = time.time()
+
 for epoch_i in range(0, epochs):
     print("")
     print('======== Epoch {:} / {:} ========'.format(epoch_i + 1, epochs))
@@ -334,13 +276,10 @@ for epoch_i in range(0, epochs):
     model.train()
 
     for step, batch in enumerate(train_dataloader):
-
         # Progress update every 40 batches.
         if step % 40 == 0 and not step == 0:
             elapsed = format_time(time.time() - t0)
             print('  Batch {:>5,}  of  {:>5,}.    Elapsed: {:}.'.format(step, len(train_dataloader), elapsed))
-
-        # Unpack this training batch from our dataloader. 
         #
         # As we unpack the batch, we'll also copy each tensor to the GPU using the 
         # `to` method.
@@ -350,8 +289,8 @@ for epoch_i in range(0, epochs):
         #   [1]: segment_ids
         #   [2]: attention masks    
         #   [3]: labels 
-        # print(batch[2])
         b_input_ids = batch[0].to(device)
+        b_segment_ids = batch[1].to(device)
         b_input_mask = batch[2].to(device)
         b_labels = batch[3].to(device)
 
@@ -369,77 +308,31 @@ for epoch_i in range(0, epochs):
         # the loss (because we provided labels) and the "logits"--the model
         # outputs prior to activation.
 
-        loss, logits, *_ = model(b_input_ids, b_input_mask, token_type_ids=None, labels=b_labels)
-
-        # Accumulate the training loss over all of the batches so that we can
-        # calculate the average loss at the end. `loss` is a Tensor containing a
-        # single value; the `.item()` function just returns the Python value 
-        # from the tensor.
-        # Perform a backward pass to calculate the gradients.
+        loss, logits = model(b_input_ids, b_segment_ids, b_labels)
         loss.backward()
-
-        total_train_loss += loss.item()
-
         # Clip the norm of the gradients to 1.0.
         # This is to help prevent the "exploding gradients" problem.
-        torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+        #torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+        step_loss = loss.item()
+        if step % 40 == 0 and not step == 0:
+            print("  step loss: {0:.2f}".format(step_loss))
 
-        if log_wandb and global_step % 100 == 0:
-            layer_grads = {}
-            for name, param in model.named_parameters():
-                if param.grad is None:
-                    continue
-                grads = param.grad.detach().cpu()
-                grads = grads.view(-1)
-                match = re.search("^.*\\.(\d+)\\..*$", name)
-                if match is not None:
-                    layer = f"Layer {match.group(1)}"
-                    if layer not in layer_grads: layer_grads[layer] = []
-                    layer_grads[layer].append(grads)
-                else:
-                    if "classifier" in name:
-                        layer = "classifier"
-                        if layer not in layer_grads: layer_grads[layer] = []
-                        layer_grads[layer].append(grads)
-                    elif "pooler" in name:
-                        layer = "pooler"
-                        if layer not in layer_grads: layer_grads[layer] = []
-                        layer_grads[layer].append(grads)
-            
-            layer_norms = {}
-            for k, grads in layer_grads.items():
-                layer_norms[k] = torch.cat(grads).norm(p=2)
-            wandb.log(layer_norms)
+        total_train_loss += step_loss
         # Update parameters and take a step using the computed gradient.
         # The optimizer dictates the "update rule"--how the parameters are
-        # modified based on their gradients, the learning rate, etc.
+        # modified based on their gradients, the learning rate, etc.        
         optimizer.step()
-
         # Update the learning rate.
-        scheduler.step()
-        # if global_step % 40 == 0:
-            # print(f"====>Current learning rate: {optimizer.param_groups[0]['lr']}")
-            # Another way to get the current learning rate
-            # print(f"====>Current learning rate: {scheduler.get_lr()[0]}")
-
+        #scheduler.step()
         global_step += 1
-
-    # Calculate the average loss over all of the batches.
+            # Calculate the average loss over all of the batches.
     # print(f"====>SIZE OF TRAIN DATALOADER={len(train_corpus)}")
-    avg_train_loss = total_train_loss / len(train_dataloader)            
-    
+    avg_train_loss = total_train_loss / len(train_dataloader)        
     # Measure how long this epoch took.
     training_time = format_time(time.time() - t0)
 
     print("")
     print("  Average training loss: {0:.2f}".format(avg_train_loss))
-    print("  Training epcoh took: {:}".format(training_time))
-        
-    # ========================================
-    #               Validation
-    # ========================================
-    # After the completion of each training epoch, measure our performance on
-    # our validation set.
 
     print("")
     print("Running Validation...")
@@ -456,7 +349,7 @@ for epoch_i in range(0, epochs):
     nb_eval_steps = 0
 
     # Evaluate data for one epoch
-    for batch in validation_dataloader:
+    for step, batch in enumerate(validation_dataloader):
         
         # Unpack this training batch from our dataloader. 
         #
@@ -465,10 +358,10 @@ for epoch_i in range(0, epochs):
         #
         # `batch` contains three pytorch tensors:
         #   [0]: input ids 
-        #   [1]: segment ids
-        #   [2]: attention masks
-        #   [3]: labels 
+        #   [1]: attention masks
+        #   [2]: labels 
         b_input_ids = batch[0].to(device)
+        b_segment_ids = batch[1].to(device)
         b_input_mask = batch[2].to(device)
         b_labels = batch[3].to(device)
         
@@ -483,10 +376,7 @@ for epoch_i in range(0, epochs):
             # https://huggingface.co/transformers/v2.2.0/model_doc/bert.html#transformers.BertForSequenceClassification
             # Get the "logits" output by the model. The "logits" are the output
             # values prior to applying an activation function like the softmax.
-            loss, logits, *_ = model(b_input_ids, 
-                                token_type_ids=None, 
-                                attention_mask=b_input_mask,
-                                labels=b_labels)
+            loss, logits = model(b_input_ids, b_segment_ids, b_labels)
             
         # Accumulate the validation loss.
         total_eval_loss += loss
@@ -509,13 +399,13 @@ for epoch_i in range(0, epochs):
     print("  Accuracy: {0:.2f}".format(avg_val_accuracy))
 
     # Calculate the average loss over all of the batches.
-    avg_val_loss = total_eval_loss / len(validation_dataloader)
+    avg_val_loss = total_eval_loss /len(validation_dataloader)
     if log_wandb:
         wandb.log({"epoch": epoch_i, "loss": avg_train_loss, "val_loss": avg_val_loss, "val_acc": avg_val_accuracy})
-    
+
     # Measure how long the validation run took.
     validation_time = format_time(time.time() - t0)
-    
+
     print("  Validation Loss: {0:.2f}".format(avg_val_loss))
     print("  Validation took: {:}".format(validation_time))
 
@@ -530,6 +420,7 @@ for epoch_i in range(0, epochs):
             'Validation Time': validation_time
         }
     )
+
     # Early Stopping
 
     if avg_val_accuracy > best_val_acc:
@@ -545,7 +436,7 @@ for epoch_i in range(0, epochs):
         last_saved_model = model_path
         model_path.mkdir(parents=True, exist_ok=True)
         best_val_acc = avg_val_accuracy
-        model.save_pretrained(model_path)
+        torch.save(model, join(model_path, "best-model.pth"))
         best_epoch = epoch_i
         n_epochs_no_improvement = 0
     elif avg_val_accuracy > best_curr_val:
@@ -559,9 +450,6 @@ for epoch_i in range(0, epochs):
         print(f"====>Stopping training, the model did not improve for {n_epochs_no_improvement}\n====>Best epoch: {best_epoch}.")
         break
 
-    # mean_val_acc_over_epochs += avg_val_accuracy.item()
-
-# mean_val_acc_over_epochs /= epochs
 print("")
 print("Training complete!")
 
@@ -584,7 +472,6 @@ del train_corpus
 del val_corpus
 del model
 torch.cuda.empty_cache()
-
 
 predict(last_saved_model, dataset, batch_size, labels_dict, device)
 
