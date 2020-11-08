@@ -176,9 +176,9 @@ class Net(nn.Module):
         self.classifier = nn.Linear(512, num_labels)
 
     def forward(self, bert_ids, bert_mask, Y):
-        outputs = self.bert_model(input_ids=bert_ids, attention_mask=bert_mask, return_dict=True)
+        outputs = self.bert_model(input_ids=bert_ids, attention_mask=bert_mask)
         self.bert_model.eval()
-        hidden_states = outputs.hidden_states[1:]
+        hidden_states = outputs[2][1:]
         outputs = torch.cat(tuple([hidden_states[i] for i in [-1, -2, -3, -4]]), dim=-1)
         bert_mask = bert_mask.unsqueeze(2)
         # Multiply output with mask to only retain non-paddding tokens

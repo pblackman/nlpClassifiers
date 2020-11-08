@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch Program",
             "console": "integratedTerminal",
-            "program": "${workspaceRoot}/scripts/bert_embeddings.py",
+            "program": "${workspaceRoot}/scripts/early_stop_classifier_bert_features_extraction.py",
             "env": {
                 "CUDA_VISIBLE_DEVICES": "0",
                 "WANDB_API_KEY": "0e642a1378e770181ff7ab31c46714c042181381"
