@@ -20,14 +20,14 @@
                 "--reset-layers", "3",
                 "--layerwise-lr", "0.9",
                 "--wandb", "0",
-                "--epochs", "30",
+                "--epochs", "1",
                 "--bert-path", "bert-base-cased",
                 "--bert-size", "base",
                 "--save-name", "llrd-20epochs-early-stop-reinit-3",
                 "--dataset", "agent-benchmark",
-                "--batch-size", "8",
+                "--batch-size", "3",
                 "--sentence-max-len", "30",
-                "--lr","5e-3"
+                "--lr","1e-2"
             ]
         }
     ]

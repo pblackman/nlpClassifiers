@@ -1,14 +1,18 @@
+# https://blog.floydhub.com/long-short-term-memory-from-zero-to-hero-with-pytorch/
+# https://colab.research.google.com/drive/1ZQvuAVwA3IjybezQOXnrXMGAnMyZRuPU#scrollTo=E_t4cM6KLc98
 import matplotlib.pyplot as plt
 import torch.nn as nn
 from os.path import join
 import torch
 from nlpClassifiers.data.dataset  import NLPDataset
+from nlpClassifiers.models.models import LSTM
 from torch.optim import SGD
 from torch.utils.data import DataLoader, SequentialSampler, RandomSampler
 from transformers import BertForSequenceClassification, AdamW, BertConfig, BertModel
 from transformers import get_linear_schedule_with_warmup
 from torch.nn import LayerNorm as BertLayerNorm
 import numpy as np
+import torch.nn.functional as F
 import time
 import logging
 import datetime
@@ -79,7 +83,7 @@ def predict(
     labels_dict,
     device: torch.device
 ):
-       
+
     print(f"====Loading dataset for testing")
     test_corpus = NLPDataset(dataset, "test", sentence_max_len, bert_path, labels_dict)
     test_dataloader = DataLoader(
@@ -106,10 +110,12 @@ def predict(
 
     print("====Testing model...")
     for batch in test_dataloader:
+        h = model.init_hidden(len(batch[0]), device)
         batch = tuple(t.to(device) for t in batch)
         b_input_ids, b_segment_ids, b_input_mask, b_labels = batch
         with torch.no_grad():
-            loss, logits = model(b_input_ids, b_segment_ids, b_labels)
+            h = tuple([each.data for each in h])
+            loss, logits, h = model(b_input_ids, h,  b_segment_ids, b_labels)
             preds = np.argmax(logits.cpu(), axis=1) # Convert one-hot to index
             b_labels = b_labels.int()
             pred_labels.extend(_list_from_tensor(preds))
@@ -132,7 +138,7 @@ def predict(
                 "weighted avg precision": class_results_dict["weighted avg"]["precision"],
                 "weighted avg recall": class_results_dict["weighted avg"]["recall"],
                 "weighted avg f1-score": class_results_dict["weighted avg"]["f1-score"],
-                "weighted avg support": class_results_dict["weighted avg"]["support"]                
+                "weighted avg support": class_results_dict["weighted avg"]["support"]
             }
         )
 
@@ -156,7 +162,7 @@ def format_time(elapsed):
     '''
     # Round to the nearest second.
     elapsed_rounded = int(round((elapsed)))
-    
+
     # Format as hh:mm:ss
     return str(datetime.timedelta(seconds=elapsed_rounded))
 
@@ -187,7 +193,7 @@ class Net(nn.Module):
         outputs = outputs[:, 0, :]
         outputs = self.pre_classifier(outputs)
         outputs = self.dropout(outputs)
-        outputs = self.classifier(outputs)
+        outputs = torch.sigmoid(self.classifier(outputs))
         loss = criterion(outputs, Y)
         return loss, outputs
 
@@ -224,7 +230,7 @@ train_dataloader = DataLoader(
 )
 
 validation_dataloader = DataLoader(
-            val_corpus, 
+            val_corpus,
             sampler = RandomSampler(val_corpus),
             batch_size = batch_size,
             pin_memory=True,
@@ -233,12 +239,12 @@ validation_dataloader = DataLoader(
 )
 
 criterion = torch.nn.CrossEntropyLoss()
-model = Net(criterion, train_corpus.num_labels)
+model = LSTM(bert_path, criterion, batch_size, 1, 656, train_corpus.num_labels)
 #nn.init.normal_(model.classifier.weight.data, 0, 0.02)
 #nn.init.zeros_(model.classifier.bias.data)
 model = model.to(device)
-#optimizer = AdamW(model.parameters(),lr, betas=(0.9, 0.999), eps=0.000001)
-optimizer = SGD(model.parameters(), lr)
+optimizer = AdamW(model.parameters(),lr, betas=(0.8, 0.999))
+#optimizer = SGD(model.parameters(), lr)
 
 if log_wandb:
     wandb.watch(model)
@@ -252,13 +258,13 @@ warmup_steps = int(t_total * 0.1) # 10% of total steps during fine-tuning
 print(f"====>WARMUP STEPS: {warmup_steps}")
 
 total_steps = len(train_dataloader) * epochs
-'''
+
 scheduler = get_linear_schedule_with_warmup(
-    optimizer, 
+    optimizer,
     num_warmup_steps = warmup_steps,
     num_training_steps = t_total # We used total_steps before.... Why?
 )
-'''
+
 
 training_stats = []
 
@@ -268,6 +274,7 @@ torch.cuda.empty_cache()
 total_t0 = time.time()
 
 for epoch_i in range(0, epochs):
+
     print("")
     print('======== Epoch {:} / {:} ========'.format(epoch_i + 1, epochs))
     print('Training...')
@@ -276,43 +283,46 @@ for epoch_i in range(0, epochs):
     model.train()
 
     for step, batch in enumerate(train_dataloader):
+        h = model.init_hidden(len(batch[0]), device)
+        h = tuple([e.data for e in h])
         # Progress update every 40 batches.
         if step % 40 == 0 and not step == 0:
             elapsed = format_time(time.time() - t0)
             print('  Batch {:>5,}  of  {:>5,}.    Elapsed: {:}.'.format(step, len(train_dataloader), elapsed))
         #
-        # As we unpack the batch, we'll also copy each tensor to the GPU using the 
+        # As we unpack the batch, we'll also copy each tensor to the GPU using the
         # `to` method.
         #
         # `batch` contains three pytorch tensors:
-        #   [0]: input ids 
+        #   [0]: input ids
         #   [1]: segment_ids
-        #   [2]: attention masks    
-        #   [3]: labels 
+        #   [2]: attention masks
+        #   [3]: labels
         b_input_ids = batch[0].to(device)
         b_segment_ids = batch[1].to(device)
         b_input_mask = batch[2].to(device)
         b_labels = batch[3].to(device)
 
         # Always clear any previously calculated gradients before performing a
-        # backward pass. PyTorch doesn't do this automatically because 
-        # accumulating the gradients is "convenient while training RNNs". 
+        # backward pass. PyTorch doesn't do this automatically because
+        # accumulating the gradients is "convenient while training RNNs".
         # (source: https://stackoverflow.com/questions/48001598/why-do-we-need-to-call-zero-grad-in-pytorch)
-        model.zero_grad()        
+        model.zero_grad()
 
         # Perform a forward pass (evaluate the model on this training batch).
-        # The documentation for this `model` function is here: 
+        # The documentation for this `model` function is here:
         # https://huggingface.co/transformers/v2.2.0/model_doc/bert.html#transformers.BertForSequenceClassification
         # It returns different numbers of parameters depending on what arguments
         # arge given and what flags are set. For our useage here, it returns
         # the loss (because we provided labels) and the "logits"--the model
         # outputs prior to activation.
 
-        loss, logits = model(b_input_ids, b_segment_ids, b_labels)
+        loss, logits, h = model(b_input_ids, h, b_segment_ids, b_labels)
         loss.backward()
         # Clip the norm of the gradients to 1.0.
         # This is to help prevent the "exploding gradients" problem.
-        #torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+
+        torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
         step_loss = loss.item()
         if step % 40 == 0 and not step == 0:
             print("  step loss: {0:.2f}".format(step_loss))
@@ -320,14 +330,14 @@ for epoch_i in range(0, epochs):
         total_train_loss += step_loss
         # Update parameters and take a step using the computed gradient.
         # The optimizer dictates the "update rule"--how the parameters are
-        # modified based on their gradients, the learning rate, etc.        
+        # modified based on their gradients, the learning rate, etc.
         optimizer.step()
         # Update the learning rate.
-        #scheduler.step()
+        scheduler.step()
         global_step += 1
             # Calculate the average loss over all of the batches.
     # print(f"====>SIZE OF TRAIN DATALOADER={len(train_corpus)}")
-    avg_train_loss = total_train_loss / len(train_dataloader)        
+    avg_train_loss = total_train_loss / len(train_dataloader)
     # Measure how long this epoch took.
     training_time = format_time(time.time() - t0)
 
@@ -343,41 +353,42 @@ for epoch_i in range(0, epochs):
     # during evaluation.
     model.eval()
 
-    # Tracking variables 
+    # Tracking variables
     total_eval_accuracy = 0.0
     total_eval_loss = 0
     nb_eval_steps = 0
 
     # Evaluate data for one epoch
     for step, batch in enumerate(validation_dataloader):
-        
-        # Unpack this training batch from our dataloader. 
+        val_h = model.init_hidden(len(batch[0]), device)
+        val_h = tuple([each.data for each in val_h])
+        # Unpack this training batch from our dataloader.
         #
-        # As we unpack the batch, we'll also copy each tensor to the GPU using 
+        # As we unpack the batch, we'll also copy each tensor to the GPU using
         # the `to` method.
         #
         # `batch` contains three pytorch tensors:
-        #   [0]: input ids 
+        #   [0]: input ids
         #   [1]: attention masks
-        #   [2]: labels 
+        #   [2]: labels
         b_input_ids = batch[0].to(device)
         b_segment_ids = batch[1].to(device)
         b_input_mask = batch[2].to(device)
         b_labels = batch[3].to(device)
-        
+
         # Tell pytorch not to bother with constructing the compute graph during
         # the forward pass, since this is only needed for backprop (training).
-        with torch.no_grad():        
+        with torch.no_grad():
 
             # Forward pass, calculate logit predictions.
-            # token_type_ids is the same as the "segment ids", which 
+            # token_type_ids is the same as the "segment ids", which
             # differentiates sentence 1 and 2 in 2-sentence tasks.
-            # The documentation for this `model` function is here: 
+            # The documentation for this `model` function is here:
             # https://huggingface.co/transformers/v2.2.0/model_doc/bert.html#transformers.BertForSequenceClassification
             # Get the "logits" output by the model. The "logits" are the output
             # values prior to applying an activation function like the softmax.
-            loss, logits = model(b_input_ids, b_segment_ids, b_labels)
-            
+            loss, logits, val_h = model(b_input_ids, val_h, b_segment_ids, b_labels)
+
         # Accumulate the validation loss.
         total_eval_loss += loss
         batch_acc = get_accuracy_from_logits(logits, b_labels)
@@ -391,7 +402,7 @@ for epoch_i in range(0, epochs):
         # Calculate the accuracy for this batch of test sentences, and
         # accumulate it over all batches.
         # total_eval_accuracy += flat_accuracy(logits, label_ids)
-        
+
 
     # Report the final accuracy for this validation run.
     # print(f"====> Avg_val_accuracy type={}")
@@ -430,7 +441,7 @@ for epoch_i in range(0, epochs):
         if last_saved_model:
             shutil.rmtree(last_saved_model)
         model_path = Path(
-            FULL_PATH_TO_MODELS, 
+            FULL_PATH_TO_MODELS,
             f"base-dataset-{dataset}-{save_name}"
         )
         last_saved_model = model_path
@@ -445,7 +456,7 @@ for epoch_i in range(0, epochs):
     else:
         n_epochs_no_improvement += 1
         print(f"The model does not improve for {n_epochs_no_improvement} epochs!")
-    
+
     if n_epochs_no_improvement > patience:
         print(f"====>Stopping training, the model did not improve for {n_epochs_no_improvement}\n====>Best epoch: {best_epoch}.")
         break

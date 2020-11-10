@@ -16,7 +16,7 @@ class NLPDataset(Dataset):
         BASE_PATH_TO_DATASET = {"virtual-operator": settings.PATH_TO_VIRTUAL_OPERATOR_DATA, "agent-benchmark": settings.PATH_TO_AGENT_BENCHMARK_DATA, "mercado-livre-pt": settings.PATH_TO_ML_PT_DATA}
         BASE_PATH_TO_DATASET = {"train": join(BASE_PATH_TO_DATASET[self.dataset], "train.csv"), "val": join(BASE_PATH_TO_DATASET[self.dataset], "val.csv"), "test": join(BASE_PATH_TO_DATASET[self.dataset], "test.csv")}
         FULL_PATH_TO_DATASET = BASE_PATH_TO_DATASET[subset]
-        self.df = self.read_data(FULL_PATH_TO_DATASET)#.head(1000)
+        self.df = self.read_data(FULL_PATH_TO_DATASET)#.head(500)
         
         if labels_dict == None:
             self.labels_dict = self.get_label_to_ix()
