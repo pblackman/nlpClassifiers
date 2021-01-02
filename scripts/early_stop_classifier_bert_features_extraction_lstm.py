@@ -51,6 +51,7 @@ parser.add_argument("--early-stop-patience", type=int, default=4)
 parser.add_argument("--bert-path", type=str, default="")
 parser.add_argument("--sentence-max-len", type=int, default=30)
 parser.add_argument("--seed", type=int, default=0)
+parser.add_argument("--debug", type=int, default=0)
 
 
 args = parser.parse_args()
@@ -70,6 +71,7 @@ batch_size = args.batch_size
 patience = args.early_stop_patience
 bert_path = args.bert_path
 seed = args.seed
+debug = args.debug
 
 save_data = []
 
@@ -173,30 +175,6 @@ def get_accuracy_from_logits(logits, labels):
     acc = (labels.cpu() == logits.cpu().argmax(-1)).float().detach().numpy()
     return float(100 * acc.sum() / len(acc))
 
-class Net(nn.Module):
-    def __init__(self, criterion, num_labels):
-        super(Net, self).__init__()
-        self.bert_model = BertModel.from_pretrained(bert_path, output_hidden_states=True)
-        self.pre_classifier = nn.Linear(3072, 512)
-        self.dropout = nn.Dropout(0.2)
-        self.classifier = nn.Linear(512, num_labels)
-
-    def forward(self, bert_ids, bert_mask, Y):
-        outputs = self.bert_model(input_ids=bert_ids, attention_mask=bert_mask)
-        self.bert_model.eval()
-        hidden_states = outputs[2][1:]
-        outputs = torch.cat(tuple([hidden_states[i] for i in [-1, -2, -3, -4]]), dim=-1)
-        bert_mask = bert_mask.unsqueeze(2)
-        # Multiply output with mask to only retain non-paddding tokens
-        outputs = torch.mul(outputs, bert_mask)
-        # First item ['CLS'] is sentence representation
-        outputs = outputs[:, 0, :]
-        outputs = self.pre_classifier(outputs)
-        outputs = self.dropout(outputs)
-        outputs = torch.sigmoid(self.classifier(outputs))
-        loss = criterion(outputs, Y)
-        return loss, outputs
-
 set_seed(seed)
 
 device = torch.device(f"cuda:{gpu}")
@@ -243,8 +221,10 @@ model = LSTM(bert_path, criterion, batch_size, 1, 656, train_corpus.num_labels)
 #nn.init.normal_(model.classifier.weight.data, 0, 0.02)
 #nn.init.zeros_(model.classifier.bias.data)
 model = model.to(device)
-optimizer = AdamW(model.parameters(),lr, betas=(0.8, 0.999))
-#optimizer = SGD(model.parameters(), lr)
+if debug:
+    optimizer = SGD(model.parameters(), lr)
+else:
+    optimizer = AdamW(model.parameters(),lr, betas=(0.8, 0.999))
 
 if log_wandb:
     wandb.watch(model)

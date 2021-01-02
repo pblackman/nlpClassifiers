@@ -1,8 +1,6 @@
 import torch
 import torch.nn as nn
 from transformers import AdamW, BertModel
-from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
-from torch.nn import LayerNorm as BertLayerNorm
 import numpy as np
 import torch.nn.functional as F
 
@@ -55,3 +53,28 @@ class LSTM(nn.Module):
         hidden = (weight.new(self.n_layers, batch_size, self.hidden_dim).zero_().to(device),
                       weight.new(self.n_layers, batch_size, self.hidden_dim).zero_().to(device))
         return hidden
+
+class BertSentenceFeaturesModel(nn.Module):
+    def __init__(self, bert_path, criterion, num_labels):
+        super(BertSentenceFeaturesModel, self).__init__()
+        self.bert_model = BertModel.from_pretrained(bert_path, output_hidden_states=True)
+        self.pre_classifier = nn.Linear(3072, 512)
+        self.criterion = criterion
+        self.dropout = nn.Dropout(0.1)
+        self.classifier = nn.Linear(512, num_labels)
+
+    def forward(self, bert_ids, bert_mask, Y):
+        outputs = self.bert_model(input_ids=bert_ids, attention_mask=bert_mask)
+        self.bert_model.eval()
+        hidden_states = outputs[2][1:]
+        outputs = torch.cat(tuple([hidden_states[i] for i in [-1, -2, -3, -4]]), dim=-1)
+        bert_mask = bert_mask.unsqueeze(2)
+        # Multiply output with mask to only retain non-paddding tokens
+        outputs = torch.mul(outputs, bert_mask)
+        # First item ['CLS'] is sentence representation
+        outputs = outputs[:, 0, :]
+        outputs = self.pre_classifier(outputs)
+        outputs = self.dropout(nn.ReLU()(outputs))
+        outputs = nn.Softmax(dim=0)(self.classifier(outputs))
+        loss = self.criterion(outputs, Y)
+        return loss, outputs

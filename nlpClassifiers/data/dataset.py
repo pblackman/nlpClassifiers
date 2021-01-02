@@ -7,11 +7,12 @@ from transformers import BertTokenizer
 
 class NLPDataset(Dataset):
 
-    def __init__(self, dataset, subset, maxlen, bert_path, labels_dict = None):
+    def __init__(self, dataset, subset, maxlen, bert_path=None, labels_dict = None):
         #Store the contents of the file in a pandas dataframe
         self.dataset = dataset
         #Initialize the BERT tokenizer
-        self.tokenizer = BertTokenizer.from_pretrained(bert_path)
+        if bert_path:
+            self.tokenizer = BertTokenizer.from_pretrained(bert_path)
         
         BASE_PATH_TO_DATASET = {"virtual-operator": settings.PATH_TO_VIRTUAL_OPERATOR_DATA, "agent-benchmark": settings.PATH_TO_AGENT_BENCHMARK_DATA, "mercado-livre-pt": settings.PATH_TO_ML_PT_DATA}
         BASE_PATH_TO_DATASET = {"train": join(BASE_PATH_TO_DATASET[self.dataset], "train.csv"), "val": join(BASE_PATH_TO_DATASET[self.dataset], "val.csv"), "test": join(BASE_PATH_TO_DATASET[self.dataset], "test.csv")}
