@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import torch.nn as nn
 from os.path import join
 import torch
-from nlpClassifiers.data.dataset  import NLPDataset,Vocabulary
+from nlpClassifiers.data.dataset  import NLPDataset, Vocabulary
 from nlpClassifiers.models.models import BOWClassifier
 from torch.optim import SGD
 from torch.utils.data import DataLoader, SequentialSampler, RandomSampler
@@ -183,9 +183,6 @@ def read_data(dataset, subset):
     data = pd.read_csv(FULL_PATH_TO_DATASET, sep=sep, names =['utterance','label'], header=None, dtype={'utterance':str, 'label': str} )
     return data
 
-
-
-
 set_seed(seed)
 
 device = torch.device(f"cuda:{gpu}")
@@ -202,6 +199,8 @@ best_curr_val = 0
 if log_wandb:
     wandb_conf = vars(args)
     wandb.init(project="huggingface", config=wandb_conf, reinit=True)
+    wandb.run.name = save_name
+    wandb.run.save()
 
 
 train_df = read_data(dataset, "train")

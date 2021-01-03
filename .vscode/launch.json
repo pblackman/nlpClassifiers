@@ -17,7 +17,7 @@
             "args": [
                 "--save-stats", "1",
                 "--save-model", "1",
-                "--wandb", "0",
+                "--wandb", "1",
                 "--epochs", "100",
                 "--save-name", "llrd-20epochs-early-stop-reinit-3",
                 "--dataset", "agent-benchmark",
