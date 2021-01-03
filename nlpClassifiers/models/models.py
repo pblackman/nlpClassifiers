@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+from torch.nn.init import kaiming_uniform_
 from transformers import AdamW, BertModel
 import numpy as np
 import torch.nn.functional as F
@@ -78,3 +79,25 @@ class BertSentenceFeaturesModel(nn.Module):
         outputs = nn.Softmax(dim=0)(self.classifier(outputs))
         loss = self.criterion(outputs, Y)
         return loss, outputs
+
+
+class BOWClassifier(nn.Module):
+    def __init__(self, num_labels, vocab_size, criterion):
+        super(BOWClassifier, self).__init__()
+        self.hidden = nn.Linear(vocab_size, 1000)
+        self.act1 = nn.ReLU()
+        kaiming_uniform_(self.hidden.weight, nonlinearity='relu')
+        self.dropout = nn.Dropout(0.5)
+        self.output = nn.Linear(1000, num_labels) 
+        kaiming_uniform_(self.output.weight, nonlinearity='sigmoid')
+        self.act2 = nn.Softmax()
+        self.criterion = criterion
+        
+    def forward(self, x, y):
+        x = self.hidden(x)
+        x = self.act1(x)
+        x = self.dropout(x)
+        x = self.output(x)
+        #x = self.act2(x)
+        loss = self.criterion(x, y)
+        return loss, x

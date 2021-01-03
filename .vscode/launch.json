@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch Program",
             "console": "integratedTerminal",
-            "program": "${workspaceRoot}/scripts/early_stop_classifier_bert_features_extraction_cls.py",
+            "program": "${workspaceRoot}/scripts/bow_classifier.py",
             "env": {
                 "CUDA_VISIBLE_DEVICES": "0",
                 "WANDB_API_KEY": "0e642a1378e770181ff7ab31c46714c042181381"
@@ -17,18 +17,15 @@
             "args": [
                 "--save-stats", "1",
                 "--save-model", "1",
-                "--reset-layers", "3",
-                "--layerwise-lr", "0.9",
                 "--wandb", "0",
-                "--epochs", "10",
-                "--bert-path", "bert-base-cased",
-                "--bert-size", "base",
+                "--epochs", "100",
                 "--save-name", "llrd-20epochs-early-stop-reinit-3",
                 "--dataset", "agent-benchmark",
-                "--batch-size", "3",
+                "--batch-size", "512",
                 "--sentence-max-len", "30",
-                "--lr","1e-5",
-                "--debug","1"
+                "--lr","1e-3",
+                "--debug","0",
+                "--early-stop-patience","5"
             ]
         }
     ]
