@@ -94,9 +94,10 @@ class BOWTokenizer():
 
 class NLPDataset(Dataset):
 
-    def __init__(self, dataset, subset, maxlen, bert_path=None, labels_dict = None, vocab = None):
+    def __init__(self, dataset, subset, maxlen, bert_path=None, labels_dict = None, vocab = None, one_hot=False):
         #Store the contents of the file in a pandas dataframe
         self.dataset = dataset
+        self.one_hot = one_hot
         BASE_PATH_TO_DATASET = {"virtual-operator": settings.PATH_TO_VIRTUAL_OPERATOR_DATA, "agent-benchmark": settings.PATH_TO_AGENT_BENCHMARK_DATA, "mercado-livre-pt": settings.PATH_TO_ML_PT_DATA}
         BASE_PATH_TO_DATASET = {"train": join(BASE_PATH_TO_DATASET[self.dataset], "train.csv"), "val": join(BASE_PATH_TO_DATASET[self.dataset], "val.csv"), "test": join(BASE_PATH_TO_DATASET[self.dataset], "test.csv")}
         FULL_PATH_TO_DATASET = BASE_PATH_TO_DATASET[subset]
@@ -143,6 +144,17 @@ class NLPDataset(Dataset):
                 vec[self.vocab.word2index[word]] = 1
         return vec, self.labels_dict[label]
 
+    def get_tokens_from_sentence(self, sentence):
+        # create a vector of zeros of vocab size = len(word_to_idx)
+        vec = torch.zeros(self.maxlen)
+        i = 0
+        for word in sentence.split():
+            if word in self.vocab.word2index:
+                if i == self.maxlen:
+                    break
+                vec[i] = self.vocab.word2index[word]
+                i+=1
+        return vec
 
     def get_bert_data(self, sentence, label):
         token_ids = self.tokenizer.encode(
@@ -176,7 +188,10 @@ class NLPDataset(Dataset):
         label = self.df.loc[index, 'label']
 
         if self.vocab:
-            return self.get_bow_data(sentence, label)
+            if self.one_hot:
+                return self.get_bow_data(sentence, label)
+            else:
+                return (self.get_tokens_from_sentence(sentence), self.labels_dict[label])
         else:
             return self.get_bert_data(sentence, label)
             

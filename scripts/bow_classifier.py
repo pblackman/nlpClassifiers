@@ -83,7 +83,7 @@ def predict(
 ):
 
     print(f"====Loading dataset for testing")
-    test_corpus = NLPDataset(dataset, "test", sentence_max_len, labels_dict = labels_dict, vocab= voc)
+    test_corpus = NLPDataset(dataset, "test", sentence_max_len, labels_dict = labels_dict, vocab= voc, one_hot=True)
 
     test_dataloader = DataLoader(
         test_corpus,
@@ -212,9 +212,9 @@ voc.build_vocab(train_df['utterance'].tolist() +  val_df['utterance'].tolist(), 
 if voc.num_words < max_vocab_size or max_vocab_size == 0:
     max_vocab_size = voc.num_words
 
-train_corpus = NLPDataset(dataset, "train", sentence_max_len, vocab= voc)
+train_corpus = NLPDataset(dataset, "train", sentence_max_len, vocab= voc, one_hot=True)
 labels_dict = train_corpus.labels_dict
-val_corpus = NLPDataset(dataset, "val", sentence_max_len, labels_dict = labels_dict, vocab= voc)
+val_corpus = NLPDataset(dataset, "val", sentence_max_len, labels_dict = labels_dict, vocab= voc, one_hot=True)
 
 
 

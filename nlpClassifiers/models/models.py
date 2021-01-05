@@ -101,3 +101,37 @@ class BOWClassifier(nn.Module):
         #x = self.act2(x)
         loss = self.criterion(x, y)
         return loss, x
+
+# loosely based onhttps://github.com/gaussic/text-classification/blob/master/cnn_pytorch.py
+class CNNClassifier(nn.Module):
+    def __init__(self, num_labels, seq_max_len, vocab_size, embedding_dim, criterion):
+        super(CNNClassifier, self).__init__()
+        self.criterion = criterion
+        self.embeddings = nn.Embedding(vocab_size, embedding_dim)
+        self.conv = nn.Conv1d(embedding_dim, 256, 4)
+        self.dropout = nn.Dropout(0.5)  # a dropout layer
+        self.act1 = nn.ReLU()
+        self.act2 = nn.ReLU()
+        self.fc1 = nn.Linear(256, 512)  # a dense layer for classification
+        self.act3 = nn.Softmax(dim=1)
+        self.fc2 = nn.Linear(512, num_labels)  # a dense layer for classification
+
+
+    @staticmethod
+    def global_max_pool(x):
+        """Convolution and global max pooling layer"""
+        return x.permute(0, 2, 1).max(1)[0]
+
+    def forward(self, x, y):
+        # Conv1d takes in (batch, channels, seq_len), but raw embedded is (batch, seq_len, channels)
+        embedded = self.embeddings(x).permute(0, 2, 1)
+        x = self.conv(embedded)
+        x = self.global_max_pool(x)
+        x = self.act1(x)
+        #x = self.dropout(x)
+        x = self.fc1(x) 
+        x = self.act2(x)
+        x = self.fc2(x) 
+        #x = self.act3(x)
+        loss = self.criterion(x, y)
+        return loss, x
