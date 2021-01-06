@@ -104,10 +104,12 @@ class BOWClassifier(nn.Module):
 
 # loosely based onhttps://github.com/gaussic/text-classification/blob/master/cnn_pytorch.py
 class CNNClassifier(nn.Module):
-    def __init__(self, num_labels, seq_max_len, vocab_size, embedding_dim, criterion):
+    def __init__(self, num_labels, seq_max_len, vocab_size, criterion, embedding_dim, embedding_weights=None):
         super(CNNClassifier, self).__init__()
         self.criterion = criterion
         self.embeddings = nn.Embedding(vocab_size, embedding_dim)
+        if(embedding_weights is not None):
+            self.embeddings.from_pretrained(embedding_weights, freeze=True)
         self.conv = nn.Conv1d(embedding_dim, 256, 4)
         self.dropout = nn.Dropout(0.5)  # a dropout layer
         self.act1 = nn.ReLU()

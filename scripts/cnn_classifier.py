@@ -216,17 +216,19 @@ if log_wandb:
 train_df = read_data(dataset, "train")
 val_df = read_data(dataset, "val")
 
-voc = Vocabulary('BOW', stopwords_lang)
-voc.build_vocab(train_df['utterance'].tolist() +  val_df['utterance'].tolist(), max_vocab_size)
+EMBEDDING_DIM = 300
+EMBEDDINGS_FILE = 'data/embeddings/fasttext/cc.en.300.vec'
 
+voc = Vocabulary('CNN', stopwords_lang)
+voc.build_vocab(train_df['utterance'].tolist() +  val_df['utterance'].tolist(), max_vocab_size)
+embedding_weights = voc.load_embeddings(EMBEDDINGS_FILE, EMBEDDING_DIM)
+#embedding_weights = None
 if voc.num_words < max_vocab_size or max_vocab_size == 0:
     max_vocab_size = voc.num_words
 
 train_corpus = NLPDataset(dataset, "train", sentence_max_len, vocab= voc)
 labels_dict = train_corpus.labels_dict
 val_corpus = NLPDataset(dataset, "val", sentence_max_len, labels_dict = labels_dict, vocab= voc)
-
-EMBEDDING_DIM = 300
 
 print(f"Loading dataset ...")
 train_dataloader = DataLoader(
@@ -248,7 +250,7 @@ validation_dataloader = DataLoader(
 )
 
 criterion = torch.nn.CrossEntropyLoss()
-model = CNNClassifier(train_corpus.num_labels,sentence_max_len, max_vocab_size, EMBEDDING_DIM, criterion)
+model = CNNClassifier(train_corpus.num_labels,sentence_max_len, max_vocab_size, criterion, EMBEDDING_DIM, embedding_weights)
 
 #nn.init.normal_(model.classifier.weight.data, 0, 0.02)
 #nn.init.zeros_(model.classifier.bias.data)

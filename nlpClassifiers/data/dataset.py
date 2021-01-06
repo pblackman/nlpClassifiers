@@ -7,7 +7,9 @@ from transformers import BertTokenizer
 import itertools
 import operator
 import nltk
+import numpy as np
 from nltk.corpus import stopwords
+from gensim.models import KeyedVectors
 
 class Vocabulary:
     def __init__(self, dataset, stopwords_lang=None):
@@ -76,6 +78,25 @@ class Vocabulary:
 
     def to_index(self, word):
         return self.word2index[word]
+    
+    def load_embeddings(self, path, embedding_dim):
+        model = KeyedVectors.load_word2vec_format(path)
+        num_words = len(self.word2count)
+        not_found = 0
+        embedding_matrix = np.zeros((num_words, embedding_dim))
+        for word,i in self.word2index.items():
+            try:
+                embedding_vector = model[word]
+            except:
+                not_found+=1
+            if embedding_vector is not None:
+                # words not found in embedding index will be all-zeros.
+                embedding_matrix[i] = embedding_vector
+        print('%s tokens not found in vocabulary.' % not_found)
+        weights = torch.FloatTensor(model.vectors) 
+        del model
+        return weights
+        
 
 class BOWTokenizer():
     def __init__(self, data):
