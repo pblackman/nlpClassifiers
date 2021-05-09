@@ -1,59 +1,88 @@
 import torch
 import torch.nn as nn
-from torch.nn.init import kaiming_uniform_
 from transformers import AdamW, BertModel
-import numpy as np
 import torch.nn.functional as F
+from torch.optim.lr_scheduler import ReduceLROnPlateau
+from torch.nn.init import kaiming_uniform_
+from torch.optim import SGD
+from torch.utils.data import DataLoader, SequentialSampler, RandomSampler
+from torch.optim import Adam
 
-class LSTM(nn.Module):
-    def __init__(self, bert_path, criterion, batch_size, num_layers, hidden_layers, num_labels):
-        super(LSTM, self).__init__()
-        self.output_size = num_labels
-        self.embedding_dim = 3072
+
+class LSTMNet(nn.Module):
+    def __init__(self, device, num_classes, num_features, criterion, embedding_dim, bidirectional, embedding_weights=None):
+        super(LSTMNet, self).__init__()
         self.criterion = criterion
-        self.batch_size = batch_size
-        self.n_layers = num_layers
-        self.hidden_dim = hidden_layers
-        self.bert_model = BertModel.from_pretrained(bert_path, output_hidden_states=True)
-        self.lstm = nn.LSTM(self.embedding_dim,
-                            self.hidden_dim,
-                            self.n_layers,
-                            dropout=0.2,
-                            batch_first=True)
+        self.embedding_dim = embedding_dim
+        self.lstm_units = 300
+        self.lstm_act = nn.Tanh()
+        self.num_directions = 2 if bidirectional else 1
+        self.device = device
+        self.n_layers = 1
+        self.embedding = nn.Embedding(num_features, embedding_dim)
+        if(embedding_weights is not None):
+            print("Embedding layer Weights won't be updated.")
+            self.embedding.from_pretrained(embedding_weights, freeze=True)
+            #self.embedding.weight.requires_grad = False
+        else:
+            self.embedding.weight.requires_grad = True
+            self.embedding.weight.data.uniform_(-1, 1)
+        
+       
+        self.lstm = nn.LSTM(embedding_dim, self.lstm_units, num_layers=self.n_layers, bidirectional=bidirectional, batch_first=True)
+        self.num_directions = 2 if bidirectional else 1
 
-        self.dropout = nn.Dropout(p=0.2)
-        self.fc = nn.Linear(self.hidden_dim, self.output_size)
-        self.sigmoid = nn.Sigmoid()
+        for name, param in self.lstm.named_parameters():
+            if 'bias' in name:
+                nn.init.constant_(param, 0.0)
+            elif 'weight_ih' in name:
+                nn.init.kaiming_normal_(param)
+            elif 'weight_hh' in name:
+                nn.init.orthogonal_(param)
 
-    def forward(self, bert_ids, hidden, bert_mask, Y):
-        batch_size = bert_ids.size(0)
-        outputs = self.bert_model(input_ids=bert_ids, attention_mask=bert_mask)
-        self.bert_model.eval()
-        hidden_states = outputs[2][1:]
-        outputs = torch.cat(tuple([hidden_states[i] for i in [-1, -2, -3, -4]]), dim=-1)
-        bert_mask = bert_mask.unsqueeze(2)
-        # Multiply output with mask to only retain non-paddding tokens
-        #outputs = torch.mul(outputs, bert_mask)
-        # First item ['CLS'] is sentence representation
-        #outputs = outputs[:, 0, :]
-        #packed_input = pack_padded_sequence(outputs, 30, batch_first=True, enforce_sorted=False)
-        lstm_out, hidden = self.lstm(outputs, hidden)
-         #lstm_out = lstm_out.contiguous().view(-1, self.hidden_dim)
+        self.dropout = nn.Dropout(0.2)       
+        
+        self.linear = nn.Linear(self.num_directions * self.lstm_units, num_classes)
+        self.init_weights()
+    def forward(self, x, y):
 
-        out = self.dropout(lstm_out)
-        out = self.fc(out)
-        out = self.sigmoid(out)
+        # lstm step => then ONLY take the sequence's final timetep to pass into the linear/dense layer
+        # Note: lstm_out contains outputs for every step of the sequence we are looping over (for BPTT)
+        # but we just need the output of the last step of the sequence, aka lstm_out[-1]
+        #print("x input:", x.size())
+        x = self.embedding(x)
+        #print("embeddings:", x.size())
+        #lstm_out, (ht, ct) = self.lstm(x)
+        x_, (h_n, c_n) = self.lstm(x)
+        if self.num_directions == 2:
+            h = torch.cat((h_n[-2, :, :], h_n[-1, :, :]), dim=1)
+        else:
+            h = h_n[-1, :, :]
 
-        #out = out.view(batch_size, -1)
-        out = out[:,-1]
-        loss = self.criterion(out.squeeze(), Y)
-        return loss, out, hidden
-
-    def init_hidden(self, batch_size, device):
-        weight = next(self.parameters()).data
-        hidden = (weight.new(self.n_layers, batch_size, self.hidden_dim).zero_().to(device),
-                      weight.new(self.n_layers, batch_size, self.hidden_dim).zero_().to(device))
-        return hidden
+        #print("h before activation:", h.size())
+        h = self.lstm_act(h)
+        #print("h after activation:", h.size())
+        output = self.dropout(h)
+        output = self.linear(output)
+        #print("output after linear:", output.size())
+        loss = self.criterion(output.squeeze(), y)
+        #print("loss:", loss.size())
+        return loss,output
+   
+    def init_weights(self):
+        """
+        Here we reproduce Keras default initialization weights to initialize Embeddings/LSTM weights
+        """
+        ih = (param.data for name, param in self.named_parameters() if 'weight_ih' in name)
+        hh = (param.data for name, param in self.named_parameters() if 'weight_hh' in name)
+        b = (param.data for name, param in self.named_parameters() if 'bias' in name)
+        nn.init.uniform(self.embedding.weight.data, a=-0.5, b=0.5)
+        for t in ih:
+            nn.init.xavier_uniform(t)
+        for t in hh:
+            nn.init.orthogonal(t)
+        for t in b:
+            nn.init.constant(t, 0)
 
 class BertSentenceFeaturesModel(nn.Module):
     def __init__(self, bert_path, criterion, num_labels):
@@ -88,52 +117,16 @@ class BOWClassifier(nn.Module):
         self.act1 = nn.ReLU()
         kaiming_uniform_(self.hidden.weight, nonlinearity='relu')
         self.dropout = nn.Dropout(0.5)
-        self.output = nn.Linear(1000, num_labels) 
+        self.output = nn.Linear(1000, num_labels)
         kaiming_uniform_(self.output.weight, nonlinearity='sigmoid')
         self.act2 = nn.Softmax()
         self.criterion = criterion
-        
+
     def forward(self, x, y):
         x = self.hidden(x)
         x = self.act1(x)
         x = self.dropout(x)
         x = self.output(x)
         #x = self.act2(x)
-        loss = self.criterion(x, y)
-        return loss, x
-
-# loosely based onhttps://github.com/gaussic/text-classification/blob/master/cnn_pytorch.py
-class CNNClassifier(nn.Module):
-    def __init__(self, num_labels, seq_max_len, vocab_size, criterion, embedding_dim, embedding_weights=None):
-        super(CNNClassifier, self).__init__()
-        self.criterion = criterion
-        self.embeddings = nn.Embedding(vocab_size, embedding_dim)
-        if(embedding_weights is not None):
-            self.embeddings.from_pretrained(embedding_weights, freeze=True)
-        self.conv = nn.Conv1d(embedding_dim, 256, 4)
-        self.dropout = nn.Dropout(0.5)  # a dropout layer
-        self.act1 = nn.ReLU()
-        self.act2 = nn.ReLU()
-        self.fc1 = nn.Linear(256, 512)  # a dense layer for classification
-        self.act3 = nn.Softmax(dim=1)
-        self.fc2 = nn.Linear(512, num_labels)  # a dense layer for classification
-
-
-    @staticmethod
-    def global_max_pool(x):
-        """Convolution and global max pooling layer"""
-        return x.permute(0, 2, 1).max(1)[0]
-
-    def forward(self, x, y):
-        # Conv1d takes in (batch, channels, seq_len), but raw embedded is (batch, seq_len, channels)
-        embedded = self.embeddings(x).permute(0, 2, 1)
-        x = self.conv(embedded)
-        x = self.global_max_pool(x)
-        x = self.act1(x)
-        #x = self.dropout(x)
-        x = self.fc1(x) 
-        x = self.act2(x)
-        x = self.fc2(x) 
-        #x = self.act3(x)
         loss = self.criterion(x, y)
         return loss, x

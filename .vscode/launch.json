@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch Program",
             "console": "integratedTerminal",
-            "program": "${workspaceRoot}/scripts/cnn_classifier.py",
+            "program": "${workspaceRoot}/scripts/early_stop_classifier_bert_features_extraction_cls.py",
             "env": {
                 "CUDA_VISIBLE_DEVICES": "0",
                 "WANDB_API_KEY": "0e642a1378e770181ff7ab31c46714c042181381"
@@ -19,13 +19,15 @@
                 "--save-model", "1",
                 "--wandb", "0",
                 "--epochs", "100",
+                "--bert-path", "bert-base-cased",
                 "--save-name", "llrd-20epochs-early-stop-reinit-3",
                 "--dataset", "agent-benchmark",
                 "--batch-size", "512",
                 "--sentence-max-len", "30",
                 "--lr","0.001",
                 "--debug","0",
-                "--early-stop-patience","5"            ]
+                "--early-stop-patience","5",
+                "--gpu","-1" ], 
         }
     ]
 }

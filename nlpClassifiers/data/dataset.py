@@ -60,7 +60,7 @@ class Vocabulary:
         else:
             # Word exists; increase word count
             self.word2count[word] += 1
-            
+
     def add_sentence(self, sentence):
         sentence_len = 0
         for word in sentence.split(' '):
@@ -78,7 +78,7 @@ class Vocabulary:
 
     def to_index(self, word):
         return self.word2index[word]
-    
+
     def load_embeddings(self, path, embedding_dim):
         model = KeyedVectors.load_word2vec_format(path)
         num_words = len(self.word2count)
@@ -93,10 +93,10 @@ class Vocabulary:
                 # words not found in embedding index will be all-zeros.
                 embedding_matrix[i] = embedding_vector
         print('%s tokens not found in vocabulary.' % not_found)
-        weights = torch.FloatTensor(model.vectors) 
+        weights = torch.FloatTensor(embedding_matrix)
         del model
         return weights
-        
+
 
 class BOWTokenizer():
     def __init__(self, data):
@@ -106,7 +106,7 @@ class BOWTokenizer():
                 if word not in word_to_ix:
                     word_to_ix[word] = len(word_to_ix)
         self.word_to_ix = word_to_ix
-    
+
     def add_tokens(self, data):
         for sent in data:
             for word in sent.split():
@@ -135,7 +135,7 @@ class NLPDataset(Dataset):
             self.labels_dict = self.get_label_to_ix()
         else:
             self.labels_dict = labels_dict
-        
+
         self.maxlen = maxlen
         self.num_labels = len(self.labels_dict)
 
@@ -155,7 +155,7 @@ class NLPDataset(Dataset):
         for label in self.df.label:
             if label not in label_to_ix:
                 label_to_ix[label]=len(label_to_ix)
-        return label_to_ix        
+        return label_to_ix
 
     def get_bow_data(self, sentence, label):
         # create a vector of zeros of vocab size = len(word_to_idx)
@@ -195,8 +195,8 @@ class NLPDataset(Dataset):
 
         segments_ids = [1] * len(token_ids)
         #Converting the list to a pytorch tensor
-        tokens_ids_tensor = torch.tensor(token_ids) 
-        segments_ids_tensor = torch.tensor(segments_ids) 
+        tokens_ids_tensor = torch.tensor(token_ids)
+        segments_ids_tensor = torch.tensor(segments_ids)
 
         #Obtaining the attention mask i.e a tensor containing 1s for no padded tokens and 0s for padded ones
         attn_mask = (tokens_ids_tensor != 0).long()
@@ -208,7 +208,7 @@ class NLPDataset(Dataset):
         sentence = self.df.loc[index, 'utterance']
         label = self.df.loc[index, 'label']
 
-        if self.vocab:
+        if hasattr(self, 'vocab'):
             if self.one_hot:
                 return self.get_bow_data(sentence, label)
             else:
@@ -216,6 +216,3 @@ class NLPDataset(Dataset):
         else:
             return self.get_bert_data(sentence, label)
             
-
-
-        

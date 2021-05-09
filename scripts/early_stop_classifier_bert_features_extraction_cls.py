@@ -145,8 +145,9 @@ def predict(
 
 def set_seed(seed):
     torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)  # if you are using multi-GPU.
+    if(gpu != -1):
+        torch.cuda.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)  # if you are using multi-GPU.
     np.random.seed(seed)  # Numpy module.
     random.seed(seed)  # Python random module.
     torch.manual_seed(seed)
@@ -173,7 +174,8 @@ def get_accuracy_from_logits(logits, labels):
 
 set_seed(seed)
 
-device = torch.device(f"cuda:{gpu}")
+if(gpu != -1):
+    device = torch.device(f"cuda:{gpu}")
 
 best_epoch = -1
 last_saved_model = ""
@@ -216,7 +218,8 @@ criterion = torch.nn.CrossEntropyLoss()
 model = BertSentenceFeaturesModel(bert_path, criterion, train_corpus.num_labels)
 #nn.init.normal_(model.classifier.weight.data, 0, 0.02)
 #nn.init.zeros_(model.classifier.bias.data)
-model = model.to(device)
+if(gpu != -1):
+    model = model.to(device)
 if debug:
     optimizer = SGD(model.parameters(), lr)
 else:
@@ -272,11 +275,16 @@ for epoch_i in range(0, epochs):
         #   [1]: segment_ids
         #   [2]: attention masks
         #   [3]: labels
-        b_input_ids = batch[0].to(device)
-        b_segment_ids = batch[1].to(device)
-        b_input_mask = batch[2].to(device)
-        b_labels = batch[3].to(device)
-
+        if(gpu != -1):
+            b_input_ids = batch[0].to(device)
+            b_segment_ids = batch[1].to(device)
+            b_input_mask = batch[2].to(device)
+            b_labels = batch[3].to(device)
+        else:
+            b_input_ids = batch[0]
+            b_segment_ids = batch[1]
+            b_input_mask = batch[2]
+            b_labels = batch[3]
         # Always clear any previously calculated gradients before performing a
         # backward pass. PyTorch doesn't do this automatically because
         # accumulating the gradients is "convenient while training RNNs".
@@ -343,10 +351,16 @@ for epoch_i in range(0, epochs):
         #   [0]: input ids
         #   [1]: attention masks
         #   [2]: labels
-        b_input_ids = batch[0].to(device)
-        b_segment_ids = batch[1].to(device)
-        b_input_mask = batch[2].to(device)
-        b_labels = batch[3].to(device)
+        if(gpu != -1):
+            b_input_ids = batch[0].to(device)
+            b_segment_ids = batch[1].to(device)
+            b_input_mask = batch[2].to(device)
+            b_labels = batch[3].to(device)
+        else:
+            b_input_ids = batch[0]
+            b_segment_ids = batch[1]
+            b_input_mask = batch[2]
+            b_labels = batch[3]
 
         # Tell pytorch not to bother with constructing the compute graph during
         # the forward pass, since this is only needed for backprop (training).
