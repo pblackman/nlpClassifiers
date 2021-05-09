@@ -83,7 +83,7 @@ class Vocabulary:
         model = KeyedVectors.load_word2vec_format(path)
         num_words = len(self.word2count)
         not_found = 0
-        embedding_matrix = np.zeros((num_words, embedding_dim))
+        embedding_matrix = np.random.normal(scale=0.6, size=(num_words, embedding_dim))
         for word,i in self.word2index.items():
             try:
                 embedding_vector = model[word]
