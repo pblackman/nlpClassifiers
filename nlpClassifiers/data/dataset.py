@@ -36,6 +36,10 @@ class Vocabulary:
         sorted_dict = {}
 
         self.num_words = 0
+        self.word2index['<pad>'] = self.num_words
+        self.index2word[self.num_words] = '<pad>'
+        self.num_words += 1
+
         for tuple in sorted_d:
             word = tuple[0]
             count = tuple[1]
@@ -83,10 +87,11 @@ class Vocabulary:
         model = KeyedVectors.load_word2vec_format(path)
         num_words = len(self.word2count)
         not_found = 0
-        embedding_matrix = np.random.normal(scale=0.6, size=(num_words, embedding_dim))
+        embedding_matrix = np.zeros((num_words, embedding_dim))
         for word,i in self.word2index.items():
             try:
-                embedding_vector = model[word]
+                if word != '<pad>':
+                   embedding_vector = model[word]
             except:
                 not_found+=1
             if embedding_vector is not None:
