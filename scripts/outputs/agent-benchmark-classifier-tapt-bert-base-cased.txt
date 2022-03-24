@@ -1,0 +1,3527 @@
+wandb: Currently logged in as: pbsphaier (use `wandb login --relogin` to force relogin)
+Parameters: {'gpu': 0, 'dataset': 'agent-benchmark', 'save_stats': 1, 'save_name': 'agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased', 'save_model': 1, 'bert_size': 'base', 'layerwise_lr': 0.9, 'wandb': 1, 'reset_layers': 3, 'lr': 2e-05, 'epochs': 100, 'batch_size': 16, 'early_stop_patience': 4, 'bert_path': '../models/agent-benchmark/bert-adaptive-base-finetuned/', 'sentence_max_len': 30, 'seed': 0}
+wandb: wandb version 0.10.8 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.10.2
+wandb: Run data is saved locally in wandb/run-20201103_151648-12y3ni56
+wandb: Syncing run worldly-morning-55
+wandb: \u2b50\ufe0f View project at https://wandb.ai/pbsphaier/huggingface
+wandb: \U0001f680 View run at https://wandb.ai/pbsphaier/huggingface/runs/12y3ni56
+wandb: Run `wandb off` to turn off syncing.
+2020-11-03 15:16:49,756: Model name '../models/agent-benchmark/bert-adaptive-base-finetuned/' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased, TurkuNLP/bert-base-finnish-cased-v1, TurkuNLP/bert-base-finnish-uncased-v1, wietsedv/bert-base-dutch-cased). Assuming '../models/agent-benchmark/bert-adaptive-base-finetuned/' is a path, a model identifier, or url to a directory containing tokenizer files.
+2020-11-03 15:16:49,756: Didn't find file ../models/agent-benchmark/bert-adaptive-base-finetuned/tokenizer.json. We won't load it.
+2020-11-03 15:16:49,757: loading file ../models/agent-benchmark/bert-adaptive-base-finetuned/vocab.txt
+2020-11-03 15:16:49,757: loading file ../models/agent-benchmark/bert-adaptive-base-finetuned/added_tokens.json
+2020-11-03 15:16:49,757: loading file ../models/agent-benchmark/bert-adaptive-base-finetuned/special_tokens_map.json
+2020-11-03 15:16:49,757: loading file ../models/agent-benchmark/bert-adaptive-base-finetuned/tokenizer_config.json
+2020-11-03 15:16:49,757: loading file None
+2020-11-03 15:16:49,888: Model name '../models/agent-benchmark/bert-adaptive-base-finetuned/' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased, TurkuNLP/bert-base-finnish-cased-v1, TurkuNLP/bert-base-finnish-uncased-v1, wietsedv/bert-base-dutch-cased). Assuming '../models/agent-benchmark/bert-adaptive-base-finetuned/' is a path, a model identifier, or url to a directory containing tokenizer files.
+2020-11-03 15:16:49,888: Didn't find file ../models/agent-benchmark/bert-adaptive-base-finetuned/tokenizer.json. We won't load it.
+2020-11-03 15:16:49,889: loading file ../models/agent-benchmark/bert-adaptive-base-finetuned/vocab.txt
+2020-11-03 15:16:49,889: loading file ../models/agent-benchmark/bert-adaptive-base-finetuned/added_tokens.json
+2020-11-03 15:16:49,889: loading file ../models/agent-benchmark/bert-adaptive-base-finetuned/special_tokens_map.json
+2020-11-03 15:16:49,889: loading file ../models/agent-benchmark/bert-adaptive-base-finetuned/tokenizer_config.json
+2020-11-03 15:16:49,889: loading file None
+Loading dataset ...
+Loading bert_model...
+Using BertForSequenceClassification
+2020-11-03 15:16:49,935: loading configuration file ../models/agent-benchmark/bert-adaptive-base-finetuned/config.json
+2020-11-03 15:16:49,936: Model config BertConfig {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2",
+    "3": "LABEL_3",
+    "4": "LABEL_4",
+    "5": "LABEL_5",
+    "6": "LABEL_6",
+    "7": "LABEL_7",
+    "8": "LABEL_8",
+    "9": "LABEL_9",
+    "10": "LABEL_10",
+    "11": "LABEL_11",
+    "12": "LABEL_12",
+    "13": "LABEL_13",
+    "14": "LABEL_14",
+    "15": "LABEL_15",
+    "16": "LABEL_16",
+    "17": "LABEL_17",
+    "18": "LABEL_18",
+    "19": "LABEL_19",
+    "20": "LABEL_20",
+    "21": "LABEL_21",
+    "22": "LABEL_22",
+    "23": "LABEL_23",
+    "24": "LABEL_24",
+    "25": "LABEL_25",
+    "26": "LABEL_26",
+    "27": "LABEL_27",
+    "28": "LABEL_28",
+    "29": "LABEL_29",
+    "30": "LABEL_30",
+    "31": "LABEL_31",
+    "32": "LABEL_32",
+    "33": "LABEL_33",
+    "34": "LABEL_34",
+    "35": "LABEL_35",
+    "36": "LABEL_36",
+    "37": "LABEL_37",
+    "38": "LABEL_38",
+    "39": "LABEL_39",
+    "40": "LABEL_40",
+    "41": "LABEL_41",
+    "42": "LABEL_42",
+    "43": "LABEL_43",
+    "44": "LABEL_44",
+    "45": "LABEL_45",
+    "46": "LABEL_46",
+    "47": "LABEL_47",
+    "48": "LABEL_48",
+    "49": "LABEL_49",
+    "50": "LABEL_50",
+    "51": "LABEL_51",
+    "52": "LABEL_52",
+    "53": "LABEL_53",
+    "54": "LABEL_54",
+    "55": "LABEL_55",
+    "56": "LABEL_56",
+    "57": "LABEL_57",
+    "58": "LABEL_58",
+    "59": "LABEL_59",
+    "60": "LABEL_60",
+    "61": "LABEL_61",
+    "62": "LABEL_62",
+    "63": "LABEL_63"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_10": 10,
+    "LABEL_11": 11,
+    "LABEL_12": 12,
+    "LABEL_13": 13,
+    "LABEL_14": 14,
+    "LABEL_15": 15,
+    "LABEL_16": 16,
+    "LABEL_17": 17,
+    "LABEL_18": 18,
+    "LABEL_19": 19,
+    "LABEL_2": 2,
+    "LABEL_20": 20,
+    "LABEL_21": 21,
+    "LABEL_22": 22,
+    "LABEL_23": 23,
+    "LABEL_24": 24,
+    "LABEL_25": 25,
+    "LABEL_26": 26,
+    "LABEL_27": 27,
+    "LABEL_28": 28,
+    "LABEL_29": 29,
+    "LABEL_3": 3,
+    "LABEL_30": 30,
+    "LABEL_31": 31,
+    "LABEL_32": 32,
+    "LABEL_33": 33,
+    "LABEL_34": 34,
+    "LABEL_35": 35,
+    "LABEL_36": 36,
+    "LABEL_37": 37,
+    "LABEL_38": 38,
+    "LABEL_39": 39,
+    "LABEL_4": 4,
+    "LABEL_40": 40,
+    "LABEL_41": 41,
+    "LABEL_42": 42,
+    "LABEL_43": 43,
+    "LABEL_44": 44,
+    "LABEL_45": 45,
+    "LABEL_46": 46,
+    "LABEL_47": 47,
+    "LABEL_48": 48,
+    "LABEL_49": 49,
+    "LABEL_5": 5,
+    "LABEL_50": 50,
+    "LABEL_51": 51,
+    "LABEL_52": 52,
+    "LABEL_53": 53,
+    "LABEL_54": 54,
+    "LABEL_55": 55,
+    "LABEL_56": 56,
+    "LABEL_57": 57,
+    "LABEL_58": 58,
+    "LABEL_59": 59,
+    "LABEL_6": 6,
+    "LABEL_60": 60,
+    "LABEL_61": 61,
+    "LABEL_62": 62,
+    "LABEL_63": 63,
+    "LABEL_7": 7,
+    "LABEL_8": 8,
+    "LABEL_9": 9
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "type_vocab_size": 2,
+  "vocab_size": 28996
+}
+
+2020-11-03 15:16:49,936: loading weights file ../models/agent-benchmark/bert-adaptive-base-finetuned/pytorch_model.bin
+2020-11-03 15:16:54,562: Some weights of the model checkpoint at ../models/agent-benchmark/bert-adaptive-base-finetuned/ were not used when initializing BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPretraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+2020-11-03 15:16:54,562: Some weights of BertForSequenceClassification were not initialized from the model checkpoint at ../models/agent-benchmark/bert-adaptive-base-finetuned/ and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+====>Reseting layer 9!
+====>Reseting layer 10!
+====>Reseting layer 11!
+====>Using layerwise learning rate with decay=0.9
+====>TOTAL NUMBER OF STEPS: 115100
+====>WARMUP STEPS: 11510
+
+======== Epoch 1 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:05.
+  Batch    80  of  1,151.    Elapsed: 0:00:09.
+  Batch   120  of  1,151.    Elapsed: 0:00:14.
+  Batch   160  of  1,151.    Elapsed: 0:00:18.
+  Batch   200  of  1,151.    Elapsed: 0:00:22.
+  Batch   240  of  1,151.    Elapsed: 0:00:27.
+  Batch   280  of  1,151.    Elapsed: 0:00:31.
+  Batch   320  of  1,151.    Elapsed: 0:00:35.
+  Batch   360  of  1,151.    Elapsed: 0:00:39.
+  Batch   400  of  1,151.    Elapsed: 0:00:43.
+  Batch   440  of  1,151.    Elapsed: 0:00:48.
+  Batch   480  of  1,151.    Elapsed: 0:00:52.
+  Batch   520  of  1,151.    Elapsed: 0:00:57.
+  Batch   560  of  1,151.    Elapsed: 0:01:01.
+  Batch   600  of  1,151.    Elapsed: 0:01:05.
+  Batch   640  of  1,151.    Elapsed: 0:01:09.
+  Batch   680  of  1,151.    Elapsed: 0:01:13.
+  Batch   720  of  1,151.    Elapsed: 0:01:18.
+  Batch   760  of  1,151.    Elapsed: 0:01:22.
+  Batch   800  of  1,151.    Elapsed: 0:01:26.
+  Batch   840  of  1,151.    Elapsed: 0:01:31.
+  Batch   880  of  1,151.    Elapsed: 0:01:35.
+  Batch   920  of  1,151.    Elapsed: 0:01:40.
+  Batch   960  of  1,151.    Elapsed: 0:01:44.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:48.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:53.
+  Batch 1,080  of  1,151.    Elapsed: 0:01:57.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:01.
+
+  Average training loss: 0.26
+  Training epcoh took: 0:02:05
+
+Running Validation...
+Batch accuracy: 18.75
+Batch accuracy: 18.75
+Batch accuracy: 0.00
+Batch accuracy: 6.25
+Batch accuracy: 6.25
+Batch accuracy: 6.25
+Batch accuracy: 6.25
+Batch accuracy: 18.75
+Batch accuracy: 12.50
+Batch accuracy: 12.50
+Batch accuracy: 18.75
+Batch accuracy: 12.50
+Batch accuracy: 12.50
+Batch accuracy: 12.50
+Batch accuracy: 0.00
+Batch accuracy: 6.25
+Batch accuracy: 0.00
+Batch accuracy: 0.00
+Batch accuracy: 12.50
+Batch accuracy: 12.50
+Batch accuracy: 18.75
+Batch accuracy: 6.25
+Batch accuracy: 25.00
+Batch accuracy: 6.25
+Batch accuracy: 18.75
+Batch accuracy: 0.00
+Batch accuracy: 0.00
+Batch accuracy: 12.50
+Batch accuracy: 12.50
+Batch accuracy: 18.75
+Batch accuracy: 6.25
+Batch accuracy: 0.00
+Batch accuracy: 6.25
+Batch accuracy: 12.50
+Batch accuracy: 12.50
+Batch accuracy: 25.00
+Batch accuracy: 18.75
+Batch accuracy: 6.25
+Batch accuracy: 18.75
+Batch accuracy: 6.25
+Batch accuracy: 6.25
+Batch accuracy: 0.00
+Batch accuracy: 6.25
+Batch accuracy: 12.50
+Batch accuracy: 12.50
+Batch accuracy: 12.50
+Batch accuracy: 0.00
+Batch accuracy: 6.25
+Batch accuracy: 12.50
+Batch accuracy: 12.50
+Batch accuracy: 6.25
+Batch accuracy: 12.50
+Batch accuracy: 25.00
+Batch accuracy: 12.50
+Batch accuracy: 6.25
+Batch accuracy: 25.00
+Batch accuracy: 12.50
+Batch accuracy: 12.50
+Batch accuracy: 6.25
+Batch accuracy: 6.25
+Batch accuracy: 6.25
+Batch accuracy: 0.00
+Batch accuracy: 12.50
+Batch accuracy: 0.00
+Batch accuracy: 12.50
+Batch accuracy: 12.50
+Batch accuracy: 0.00
+Batch accuracy: 12.50
+Batch accuracy: 0.00
+Batch accuracy: 18.75
+Batch accuracy: 0.00
+Batch accuracy: 0.00
+Batch accuracy: 6.25
+Batch accuracy: 18.75
+Batch accuracy: 6.25
+Batch accuracy: 12.50
+Batch accuracy: 6.25
+Batch accuracy: 6.25
+Batch accuracy: 18.75
+Batch accuracy: 6.25
+Batch accuracy: 12.50
+Batch accuracy: 12.50
+Batch accuracy: 18.75
+Batch accuracy: 12.50
+Batch accuracy: 12.50
+Batch accuracy: 0.00
+Batch accuracy: 6.25
+Batch accuracy: 18.75
+Batch accuracy: 18.75
+Batch accuracy: 6.25
+Batch accuracy: 12.50
+Batch accuracy: 6.25
+Batch accuracy: 12.50
+Batch accuracy: 6.25
+Batch accuracy: 25.00
+Batch accuracy: 18.75
+Batch accuracy: 6.25
+Batch accuracy: 18.75
+Batch accuracy: 0.00
+Batch accuracy: 12.50
+Batch accuracy: 0.00
+Batch accuracy: 6.25
+Batch accuracy: 18.75
+Batch accuracy: 18.75
+Batch accuracy: 0.00
+Batch accuracy: 12.50
+Batch accuracy: 18.75
+Batch accuracy: 12.50
+Batch accuracy: 6.25
+Batch accuracy: 12.50
+Batch accuracy: 12.50
+Batch accuracy: 0.00
+Batch accuracy: 6.25
+Batch accuracy: 12.50
+Batch accuracy: 0.00
+Batch accuracy: 12.50
+Batch accuracy: 6.25
+Batch accuracy: 0.00
+Batch accuracy: 0.00
+Batch accuracy: 18.75
+Batch accuracy: 12.50
+Batch accuracy: 6.25
+Batch accuracy: 18.75
+Batch accuracy: 25.00
+Batch accuracy: 18.75
+Batch accuracy: 18.75
+Batch accuracy: 12.50
+Batch accuracy: 6.67
+  Accuracy: 10.31
+  Validation Loss: 0.24
+  Validation took: 0:00:03
+New best model, saving it!
+2020-11-03 15:19:05,249: Configuration saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/config.json
+2020-11-03 15:19:06,322: Model weights saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/pytorch_model.bin
+
+======== Epoch 2 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:04.
+  Batch    80  of  1,151.    Elapsed: 0:00:09.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:17.
+  Batch   200  of  1,151.    Elapsed: 0:00:21.
+  Batch   240  of  1,151.    Elapsed: 0:00:25.
+  Batch   280  of  1,151.    Elapsed: 0:00:30.
+  Batch   320  of  1,151.    Elapsed: 0:00:34.
+  Batch   360  of  1,151.    Elapsed: 0:00:39.
+  Batch   400  of  1,151.    Elapsed: 0:00:43.
+  Batch   440  of  1,151.    Elapsed: 0:00:47.
+  Batch   480  of  1,151.    Elapsed: 0:00:51.
+  Batch   520  of  1,151.    Elapsed: 0:00:55.
+  Batch   560  of  1,151.    Elapsed: 0:01:00.
+  Batch   600  of  1,151.    Elapsed: 0:01:04.
+  Batch   640  of  1,151.    Elapsed: 0:01:08.
+  Batch   680  of  1,151.    Elapsed: 0:01:12.
+  Batch   720  of  1,151.    Elapsed: 0:01:16.
+  Batch   760  of  1,151.    Elapsed: 0:01:21.
+  Batch   800  of  1,151.    Elapsed: 0:01:25.
+  Batch   840  of  1,151.    Elapsed: 0:01:29.
+  Batch   880  of  1,151.    Elapsed: 0:01:35.
+  Batch   920  of  1,151.    Elapsed: 0:01:39.
+  Batch   960  of  1,151.    Elapsed: 0:01:44.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:48.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:52.
+  Batch 1,080  of  1,151.    Elapsed: 0:01:57.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:01.
+
+  Average training loss: 0.22
+  Training epcoh took: 0:02:06
+
+Running Validation...
+Batch accuracy: 43.75
+Batch accuracy: 18.75
+Batch accuracy: 31.25
+Batch accuracy: 37.50
+Batch accuracy: 25.00
+Batch accuracy: 50.00
+Batch accuracy: 43.75
+Batch accuracy: 31.25
+Batch accuracy: 37.50
+Batch accuracy: 37.50
+Batch accuracy: 37.50
+Batch accuracy: 31.25
+Batch accuracy: 50.00
+Batch accuracy: 18.75
+Batch accuracy: 50.00
+Batch accuracy: 50.00
+Batch accuracy: 31.25
+Batch accuracy: 43.75
+Batch accuracy: 37.50
+Batch accuracy: 25.00
+Batch accuracy: 37.50
+Batch accuracy: 43.75
+Batch accuracy: 37.50
+Batch accuracy: 18.75
+Batch accuracy: 31.25
+Batch accuracy: 37.50
+Batch accuracy: 25.00
+Batch accuracy: 25.00
+Batch accuracy: 56.25
+Batch accuracy: 37.50
+Batch accuracy: 25.00
+Batch accuracy: 25.00
+Batch accuracy: 43.75
+Batch accuracy: 37.50
+Batch accuracy: 43.75
+Batch accuracy: 6.25
+Batch accuracy: 62.50
+Batch accuracy: 31.25
+Batch accuracy: 43.75
+Batch accuracy: 43.75
+Batch accuracy: 25.00
+Batch accuracy: 31.25
+Batch accuracy: 56.25
+Batch accuracy: 25.00
+Batch accuracy: 37.50
+Batch accuracy: 31.25
+Batch accuracy: 25.00
+Batch accuracy: 31.25
+Batch accuracy: 56.25
+Batch accuracy: 18.75
+Batch accuracy: 18.75
+Batch accuracy: 18.75
+Batch accuracy: 31.25
+Batch accuracy: 18.75
+Batch accuracy: 62.50
+Batch accuracy: 37.50
+Batch accuracy: 37.50
+Batch accuracy: 50.00
+Batch accuracy: 31.25
+Batch accuracy: 31.25
+Batch accuracy: 31.25
+Batch accuracy: 37.50
+Batch accuracy: 37.50
+Batch accuracy: 25.00
+Batch accuracy: 37.50
+Batch accuracy: 62.50
+Batch accuracy: 43.75
+Batch accuracy: 31.25
+Batch accuracy: 37.50
+Batch accuracy: 43.75
+Batch accuracy: 37.50
+Batch accuracy: 37.50
+Batch accuracy: 50.00
+Batch accuracy: 43.75
+Batch accuracy: 37.50
+Batch accuracy: 56.25
+Batch accuracy: 25.00
+Batch accuracy: 50.00
+Batch accuracy: 43.75
+Batch accuracy: 43.75
+Batch accuracy: 31.25
+Batch accuracy: 31.25
+Batch accuracy: 43.75
+Batch accuracy: 31.25
+Batch accuracy: 25.00
+Batch accuracy: 37.50
+Batch accuracy: 31.25
+Batch accuracy: 37.50
+Batch accuracy: 25.00
+Batch accuracy: 37.50
+Batch accuracy: 18.75
+Batch accuracy: 31.25
+Batch accuracy: 37.50
+Batch accuracy: 50.00
+Batch accuracy: 25.00
+Batch accuracy: 37.50
+Batch accuracy: 31.25
+Batch accuracy: 62.50
+Batch accuracy: 43.75
+Batch accuracy: 31.25
+Batch accuracy: 31.25
+Batch accuracy: 18.75
+Batch accuracy: 50.00
+Batch accuracy: 31.25
+Batch accuracy: 31.25
+Batch accuracy: 37.50
+Batch accuracy: 18.75
+Batch accuracy: 37.50
+Batch accuracy: 31.25
+Batch accuracy: 31.25
+Batch accuracy: 56.25
+Batch accuracy: 37.50
+Batch accuracy: 18.75
+Batch accuracy: 37.50
+Batch accuracy: 25.00
+Batch accuracy: 62.50
+Batch accuracy: 37.50
+Batch accuracy: 43.75
+Batch accuracy: 25.00
+Batch accuracy: 31.25
+Batch accuracy: 56.25
+Batch accuracy: 31.25
+Batch accuracy: 43.75
+Batch accuracy: 56.25
+Batch accuracy: 25.00
+Batch accuracy: 56.25
+Batch accuracy: 18.75
+Batch accuracy: 40.00
+  Accuracy: 36.35
+  Validation Loss: 0.18
+  Validation took: 0:00:03
+New best model, saving it!
+2020-11-03 15:21:15,063: Configuration saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/config.json
+
+2020-11-03 15:21:16,163: Model weights saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/pytorch_model.bin
+======== Epoch 3 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:04.
+  Batch    80  of  1,151.    Elapsed: 0:00:08.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:18.
+  Batch   200  of  1,151.    Elapsed: 0:00:23.
+  Batch   240  of  1,151.    Elapsed: 0:00:27.
+  Batch   280  of  1,151.    Elapsed: 0:00:31.
+  Batch   320  of  1,151.    Elapsed: 0:00:36.
+  Batch   360  of  1,151.    Elapsed: 0:00:40.
+  Batch   400  of  1,151.    Elapsed: 0:00:45.
+  Batch   440  of  1,151.    Elapsed: 0:00:49.
+  Batch   480  of  1,151.    Elapsed: 0:00:53.
+  Batch   520  of  1,151.    Elapsed: 0:00:58.
+  Batch   560  of  1,151.    Elapsed: 0:01:02.
+  Batch   600  of  1,151.    Elapsed: 0:01:06.
+  Batch   640  of  1,151.    Elapsed: 0:01:10.
+  Batch   680  of  1,151.    Elapsed: 0:01:14.
+  Batch   720  of  1,151.    Elapsed: 0:01:19.
+  Batch   760  of  1,151.    Elapsed: 0:01:23.
+  Batch   800  of  1,151.    Elapsed: 0:01:28.
+  Batch   840  of  1,151.    Elapsed: 0:01:32.
+  Batch   880  of  1,151.    Elapsed: 0:01:36.
+  Batch   920  of  1,151.    Elapsed: 0:01:41.
+  Batch   960  of  1,151.    Elapsed: 0:01:45.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:50.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:54.
+  Batch 1,080  of  1,151.    Elapsed: 0:01:58.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:02.
+
+  Average training loss: 0.16
+  Training epcoh took: 0:02:05
+
+Running Validation...
+Batch accuracy: 43.75
+Batch accuracy: 56.25
+Batch accuracy: 62.50
+Batch accuracy: 25.00
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 43.75
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 56.25
+Batch accuracy: 56.25
+Batch accuracy: 56.25
+Batch accuracy: 31.25
+Batch accuracy: 43.75
+Batch accuracy: 43.75
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 43.75
+Batch accuracy: 68.75
+Batch accuracy: 43.75
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 56.25
+Batch accuracy: 50.00
+Batch accuracy: 75.00
+Batch accuracy: 50.00
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 43.75
+Batch accuracy: 50.00
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 50.00
+Batch accuracy: 56.25
+Batch accuracy: 43.75
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 50.00
+Batch accuracy: 43.75
+Batch accuracy: 43.75
+Batch accuracy: 62.50
+Batch accuracy: 56.25
+Batch accuracy: 43.75
+Batch accuracy: 56.25
+Batch accuracy: 56.25
+Batch accuracy: 43.75
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 50.00
+Batch accuracy: 56.25
+Batch accuracy: 50.00
+Batch accuracy: 56.25
+Batch accuracy: 56.25
+Batch accuracy: 25.00
+Batch accuracy: 75.00
+Batch accuracy: 50.00
+Batch accuracy: 50.00
+Batch accuracy: 81.25
+Batch accuracy: 56.25
+Batch accuracy: 37.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 56.25
+Batch accuracy: 56.25
+Batch accuracy: 43.75
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 56.25
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 50.00
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 37.50
+Batch accuracy: 62.50
+Batch accuracy: 50.00
+Batch accuracy: 75.00
+Batch accuracy: 50.00
+Batch accuracy: 56.25
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 50.00
+Batch accuracy: 37.50
+Batch accuracy: 56.25
+Batch accuracy: 43.75
+Batch accuracy: 50.00
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 56.25
+Batch accuracy: 68.75
+Batch accuracy: 37.50
+Batch accuracy: 43.75
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 43.75
+Batch accuracy: 50.00
+Batch accuracy: 25.00
+Batch accuracy: 43.75
+Batch accuracy: 68.75
+Batch accuracy: 43.75
+Batch accuracy: 50.00
+Batch accuracy: 56.25
+Batch accuracy: 62.50
+Batch accuracy: 43.75
+Batch accuracy: 62.50
+Batch accuracy: 43.75
+Batch accuracy: 43.75
+Batch accuracy: 56.25
+Batch accuracy: 68.75
+Batch accuracy: 56.25
+Batch accuracy: 62.50
+Batch accuracy: 50.00
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 60.00
+  Accuracy: 57.16
+  Validation Loss: 0.12
+  Validation took: 0:00:03
+New best model, saving it!
+2020-11-03 15:23:24,730: Configuration saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/config.json
+2020-11-03 15:23:25,808: Model weights saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/pytorch_model.bin
+
+======== Epoch 4 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:04.
+  Batch    80  of  1,151.    Elapsed: 0:00:09.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:17.
+  Batch   200  of  1,151.    Elapsed: 0:00:21.
+  Batch   240  of  1,151.    Elapsed: 0:00:25.
+  Batch   280  of  1,151.    Elapsed: 0:00:30.
+  Batch   320  of  1,151.    Elapsed: 0:00:34.
+  Batch   360  of  1,151.    Elapsed: 0:00:39.
+  Batch   400  of  1,151.    Elapsed: 0:00:43.
+  Batch   440  of  1,151.    Elapsed: 0:00:47.
+  Batch   480  of  1,151.    Elapsed: 0:00:51.
+  Batch   520  of  1,151.    Elapsed: 0:00:55.
+  Batch   560  of  1,151.    Elapsed: 0:01:00.
+  Batch   600  of  1,151.    Elapsed: 0:01:04.
+  Batch   640  of  1,151.    Elapsed: 0:01:08.
+  Batch   680  of  1,151.    Elapsed: 0:01:13.
+  Batch   720  of  1,151.    Elapsed: 0:01:17.
+  Batch   760  of  1,151.    Elapsed: 0:01:21.
+  Batch   800  of  1,151.    Elapsed: 0:01:25.
+  Batch   840  of  1,151.    Elapsed: 0:01:29.
+  Batch   880  of  1,151.    Elapsed: 0:01:34.
+  Batch   920  of  1,151.    Elapsed: 0:01:38.
+  Batch   960  of  1,151.    Elapsed: 0:01:43.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:47.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:51.
+  Batch 1,080  of  1,151.    Elapsed: 0:01:55.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:00.
+
+  Average training loss: 0.10
+  Training epcoh took: 0:02:03
+
+Running Validation...
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 56.25
+Batch accuracy: 87.50
+Batch accuracy: 50.00
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 50.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 50.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 50.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 56.25
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 50.00
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 56.25
+Batch accuracy: 50.00
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 56.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 56.25
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 50.00
+Batch accuracy: 75.00
+Batch accuracy: 50.00
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 50.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 56.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 50.00
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 100.00
+Batch accuracy: 75.00
+Batch accuracy: 73.33
+  Accuracy: 71.37
+  Validation Loss: 0.08
+  Validation took: 0:00:03
+New best model, saving it!
+2020-11-03 15:25:32,296: Configuration saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/config.json
+2020-11-03 15:25:33,336: Model weights saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/pytorch_model.bin
+
+======== Epoch 5 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:04.
+  Batch    80  of  1,151.    Elapsed: 0:00:08.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:17.
+  Batch   200  of  1,151.    Elapsed: 0:00:21.
+  Batch   240  of  1,151.    Elapsed: 0:00:25.
+  Batch   280  of  1,151.    Elapsed: 0:00:29.
+  Batch   320  of  1,151.    Elapsed: 0:00:34.
+  Batch   360  of  1,151.    Elapsed: 0:00:38.
+  Batch   400  of  1,151.    Elapsed: 0:00:43.
+  Batch   440  of  1,151.    Elapsed: 0:00:47.
+  Batch   480  of  1,151.    Elapsed: 0:00:51.
+  Batch   520  of  1,151.    Elapsed: 0:00:55.
+  Batch   560  of  1,151.    Elapsed: 0:00:59.
+  Batch   600  of  1,151.    Elapsed: 0:01:04.
+  Batch   640  of  1,151.    Elapsed: 0:01:08.
+  Batch   680  of  1,151.    Elapsed: 0:01:12.
+  Batch   720  of  1,151.    Elapsed: 0:01:17.
+  Batch   760  of  1,151.    Elapsed: 0:01:21.
+  Batch   800  of  1,151.    Elapsed: 0:01:25.
+  Batch   840  of  1,151.    Elapsed: 0:01:29.
+  Batch   880  of  1,151.    Elapsed: 0:01:33.
+  Batch   920  of  1,151.    Elapsed: 0:01:38.
+  Batch   960  of  1,151.    Elapsed: 0:01:42.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:46.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:50.
+  Batch 1,080  of  1,151.    Elapsed: 0:01:54.
+  Batch 1,120  of  1,151.    Elapsed: 0:01:59.
+
+  Average training loss: 0.07
+  Training epcoh took: 0:02:02
+
+Running Validation...
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 56.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 56.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 50.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 56.25
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 56.25
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 50.00
+Batch accuracy: 81.25
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 50.00
+Batch accuracy: 81.25
+Batch accuracy: 56.25
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 53.33
+  Accuracy: 75.95
+  Validation Loss: 0.06
+  Validation took: 0:00:03
+New best model, saving it!
+2020-11-03 15:27:38,625: Configuration saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/config.json
+2020-11-03 15:27:39,740: Model weights saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/pytorch_model.bin
+
+======== Epoch 6 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:04.
+  Batch    80  of  1,151.    Elapsed: 0:00:09.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:17.
+  Batch   200  of  1,151.    Elapsed: 0:00:21.
+  Batch   240  of  1,151.    Elapsed: 0:00:25.
+  Batch   280  of  1,151.    Elapsed: 0:00:30.
+  Batch   320  of  1,151.    Elapsed: 0:00:34.
+  Batch   360  of  1,151.    Elapsed: 0:00:39.
+  Batch   400  of  1,151.    Elapsed: 0:00:43.
+  Batch   440  of  1,151.    Elapsed: 0:00:47.
+  Batch   480  of  1,151.    Elapsed: 0:00:52.
+  Batch   520  of  1,151.    Elapsed: 0:00:56.
+  Batch   560  of  1,151.    Elapsed: 0:01:00.
+  Batch   600  of  1,151.    Elapsed: 0:01:04.
+  Batch   640  of  1,151.    Elapsed: 0:01:08.
+  Batch   680  of  1,151.    Elapsed: 0:01:13.
+  Batch   720  of  1,151.    Elapsed: 0:01:17.
+  Batch   760  of  1,151.    Elapsed: 0:01:22.
+  Batch   800  of  1,151.    Elapsed: 0:01:26.
+  Batch   840  of  1,151.    Elapsed: 0:01:30.
+  Batch   880  of  1,151.    Elapsed: 0:01:35.
+  Batch   920  of  1,151.    Elapsed: 0:01:39.
+  Batch   960  of  1,151.    Elapsed: 0:01:44.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:48.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:52.
+  Batch 1,080  of  1,151.    Elapsed: 0:01:57.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:01.
+
+  Average training loss: 0.06
+  Training epcoh took: 0:02:05
+
+Running Validation...
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 56.25
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 56.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 100.00
+Batch accuracy: 87.50
+Batch accuracy: 100.00
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 100.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 100.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 100.00
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 56.25
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 86.67
+  Accuracy: 77.78
+  Validation Loss: 0.05
+  Validation took: 0:00:03
+New best model, saving it!
+2020-11-03 15:29:47,558: Configuration saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/config.json
+2020-11-03 15:29:48,630: Model weights saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/pytorch_model.bin
+
+======== Epoch 7 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:04.
+  Batch    80  of  1,151.    Elapsed: 0:00:08.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:17.
+  Batch   200  of  1,151.    Elapsed: 0:00:22.
+  Batch   240  of  1,151.    Elapsed: 0:00:26.
+  Batch   280  of  1,151.    Elapsed: 0:00:30.
+  Batch   320  of  1,151.    Elapsed: 0:00:35.
+  Batch   360  of  1,151.    Elapsed: 0:00:39.
+  Batch   400  of  1,151.    Elapsed: 0:00:44.
+  Batch   440  of  1,151.    Elapsed: 0:00:48.
+  Batch   480  of  1,151.    Elapsed: 0:00:52.
+  Batch   520  of  1,151.    Elapsed: 0:00:56.
+  Batch   560  of  1,151.    Elapsed: 0:01:00.
+  Batch   600  of  1,151.    Elapsed: 0:01:05.
+  Batch   640  of  1,151.    Elapsed: 0:01:09.
+  Batch   680  of  1,151.    Elapsed: 0:01:13.
+  Batch   720  of  1,151.    Elapsed: 0:01:18.
+  Batch   760  of  1,151.    Elapsed: 0:01:23.
+  Batch   800  of  1,151.    Elapsed: 0:01:28.
+  Batch   840  of  1,151.    Elapsed: 0:01:32.
+  Batch   880  of  1,151.    Elapsed: 0:01:37.
+  Batch   920  of  1,151.    Elapsed: 0:01:43.
+  Batch   960  of  1,151.    Elapsed: 0:01:47.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:52.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:56.
+  Batch 1,080  of  1,151.    Elapsed: 0:02:00.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:06.
+
+  Average training loss: 0.05
+  Training epcoh took: 0:02:10
+
+Running Validation...
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 50.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 100.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 56.25
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 100.00
+Batch accuracy: 100.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 50.00
+Batch accuracy: 73.33
+  Accuracy: 79.19
+  Validation Loss: 0.05
+  Validation took: 0:00:03
+New best model, saving it!
+2020-11-03 15:32:01,416: Configuration saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/config.json
+2020-11-03 15:32:02,594: Model weights saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/pytorch_model.bin
+
+======== Epoch 8 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:04.
+  Batch    80  of  1,151.    Elapsed: 0:00:10.
+  Batch   120  of  1,151.    Elapsed: 0:00:14.
+  Batch   160  of  1,151.    Elapsed: 0:00:19.
+  Batch   200  of  1,151.    Elapsed: 0:00:23.
+  Batch   240  of  1,151.    Elapsed: 0:00:27.
+  Batch   280  of  1,151.    Elapsed: 0:00:33.
+  Batch   320  of  1,151.    Elapsed: 0:00:37.
+  Batch   360  of  1,151.    Elapsed: 0:00:43.
+  Batch   400  of  1,151.    Elapsed: 0:00:47.
+  Batch   440  of  1,151.    Elapsed: 0:00:51.
+  Batch   480  of  1,151.    Elapsed: 0:00:56.
+  Batch   520  of  1,151.    Elapsed: 0:01:01.
+  Batch   560  of  1,151.    Elapsed: 0:01:06.
+  Batch   600  of  1,151.    Elapsed: 0:01:10.
+  Batch   640  of  1,151.    Elapsed: 0:01:14.
+  Batch   680  of  1,151.    Elapsed: 0:01:20.
+  Batch   720  of  1,151.    Elapsed: 0:01:24.
+  Batch   760  of  1,151.    Elapsed: 0:01:29.
+  Batch   800  of  1,151.    Elapsed: 0:01:33.
+  Batch   840  of  1,151.    Elapsed: 0:01:37.
+  Batch   880  of  1,151.    Elapsed: 0:01:42.
+  Batch   920  of  1,151.    Elapsed: 0:01:46.
+  Batch   960  of  1,151.    Elapsed: 0:01:51.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:55.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:59.
+  Batch 1,080  of  1,151.    Elapsed: 0:02:03.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:07.
+
+  Average training loss: 0.04
+  Training epcoh took: 0:02:11
+
+Running Validation...
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 62.50
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 100.00
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 56.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 73.33
+  Accuracy: 79.48
+  Validation Loss: 0.05
+  Validation took: 0:00:03
+New best model, saving it!
+2020-11-03 15:34:16,889: Configuration saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/config.json
+2020-11-03 15:34:17,901: Model weights saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/pytorch_model.bin
+
+======== Epoch 9 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:04.
+  Batch    80  of  1,151.    Elapsed: 0:00:08.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:17.
+  Batch   200  of  1,151.    Elapsed: 0:00:21.
+  Batch   240  of  1,151.    Elapsed: 0:00:25.
+  Batch   280  of  1,151.    Elapsed: 0:00:29.
+  Batch   320  of  1,151.    Elapsed: 0:00:34.
+  Batch   360  of  1,151.    Elapsed: 0:00:38.
+  Batch   400  of  1,151.    Elapsed: 0:00:43.
+  Batch   440  of  1,151.    Elapsed: 0:00:47.
+  Batch   480  of  1,151.    Elapsed: 0:00:51.
+  Batch   520  of  1,151.    Elapsed: 0:00:55.
+  Batch   560  of  1,151.    Elapsed: 0:00:59.
+  Batch   600  of  1,151.    Elapsed: 0:01:04.
+  Batch   640  of  1,151.    Elapsed: 0:01:08.
+  Batch   680  of  1,151.    Elapsed: 0:01:12.
+  Batch   720  of  1,151.    Elapsed: 0:01:16.
+  Batch   760  of  1,151.    Elapsed: 0:01:21.
+  Batch   800  of  1,151.    Elapsed: 0:01:26.
+  Batch   840  of  1,151.    Elapsed: 0:01:30.
+  Batch   880  of  1,151.    Elapsed: 0:01:34.
+  Batch   920  of  1,151.    Elapsed: 0:01:38.
+  Batch   960  of  1,151.    Elapsed: 0:01:42.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:47.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:51.
+  Batch 1,080  of  1,151.    Elapsed: 0:01:55.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:00.
+
+  Average training loss: 0.03
+  Training epcoh took: 0:02:03
+
+Running Validation...
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 100.00
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 31.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 56.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 100.00
+Batch accuracy: 56.25
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 66.67
+  Accuracy: 80.26
+  Validation Loss: 0.05
+  Validation took: 0:00:03
+New best model, saving it!
+2020-11-03 15:36:23,771: Configuration saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/config.json
+2020-11-03 15:36:24,884: Model weights saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/pytorch_model.bin
+
+======== Epoch 10 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:04.
+  Batch    80  of  1,151.    Elapsed: 0:00:09.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:18.
+  Batch   200  of  1,151.    Elapsed: 0:00:22.
+  Batch   240  of  1,151.    Elapsed: 0:00:26.
+  Batch   280  of  1,151.    Elapsed: 0:00:30.
+  Batch   320  of  1,151.    Elapsed: 0:00:34.
+  Batch   360  of  1,151.    Elapsed: 0:00:39.
+  Batch   400  of  1,151.    Elapsed: 0:00:43.
+  Batch   440  of  1,151.    Elapsed: 0:00:47.
+  Batch   480  of  1,151.    Elapsed: 0:00:51.
+  Batch   520  of  1,151.    Elapsed: 0:00:55.
+  Batch   560  of  1,151.    Elapsed: 0:01:00.
+  Batch   600  of  1,151.    Elapsed: 0:01:04.
+  Batch   640  of  1,151.    Elapsed: 0:01:08.
+  Batch   680  of  1,151.    Elapsed: 0:01:13.
+  Batch   720  of  1,151.    Elapsed: 0:01:17.
+  Batch   760  of  1,151.    Elapsed: 0:01:22.
+  Batch   800  of  1,151.    Elapsed: 0:01:26.
+  Batch   840  of  1,151.    Elapsed: 0:01:30.
+  Batch   880  of  1,151.    Elapsed: 0:01:34.
+  Batch   920  of  1,151.    Elapsed: 0:01:38.
+  Batch   960  of  1,151.    Elapsed: 0:01:43.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:48.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:52.
+  Batch 1,080  of  1,151.    Elapsed: 0:01:57.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:01.
+
+  Average training loss: 0.03
+  Training epcoh took: 0:02:04
+
+Running Validation...
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 100.00
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 50.00
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 56.25
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 50.00
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 93.33
+  Accuracy: 80.37
+  Validation Loss: 0.05
+  Validation took: 0:00:03
+New best model, saving it!
+2020-11-03 15:38:32,337: Configuration saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/config.json
+2020-11-03 15:38:33,400: Model weights saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/pytorch_model.bin
+
+======== Epoch 11 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:04.
+  Batch    80  of  1,151.    Elapsed: 0:00:08.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:17.
+  Batch   200  of  1,151.    Elapsed: 0:00:22.
+  Batch   240  of  1,151.    Elapsed: 0:00:26.
+  Batch   280  of  1,151.    Elapsed: 0:00:30.
+  Batch   320  of  1,151.    Elapsed: 0:00:34.
+  Batch   360  of  1,151.    Elapsed: 0:00:38.
+  Batch   400  of  1,151.    Elapsed: 0:00:43.
+  Batch   440  of  1,151.    Elapsed: 0:00:47.
+  Batch   480  of  1,151.    Elapsed: 0:00:51.
+  Batch   520  of  1,151.    Elapsed: 0:00:56.
+  Batch   560  of  1,151.    Elapsed: 0:01:00.
+  Batch   600  of  1,151.    Elapsed: 0:01:05.
+  Batch   640  of  1,151.    Elapsed: 0:01:09.
+  Batch   680  of  1,151.    Elapsed: 0:01:13.
+  Batch   720  of  1,151.    Elapsed: 0:01:18.
+  Batch   760  of  1,151.    Elapsed: 0:01:22.
+  Batch   800  of  1,151.    Elapsed: 0:01:27.
+  Batch   840  of  1,151.    Elapsed: 0:01:31.
+  Batch   880  of  1,151.    Elapsed: 0:01:35.
+  Batch   920  of  1,151.    Elapsed: 0:01:40.
+  Batch   960  of  1,151.    Elapsed: 0:01:44.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:48.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:52.
+  Batch 1,080  of  1,151.    Elapsed: 0:01:57.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:01.
+
+  Average training loss: 0.02
+  Training epcoh took: 0:02:04
+
+Running Validation...
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 100.00
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 56.25
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 56.25
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 100.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 100.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 56.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 100.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 37.50
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 50.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 56.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 50.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 66.67
+  Accuracy: 80.11
+  Validation Loss: 0.05
+  Validation took: 0:00:03
+The model does not improve for 1 epochs!
+
+======== Epoch 12 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:05.
+  Batch    80  of  1,151.    Elapsed: 0:00:09.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:17.
+  Batch   200  of  1,151.    Elapsed: 0:00:21.
+  Batch   240  of  1,151.    Elapsed: 0:00:26.
+  Batch   280  of  1,151.    Elapsed: 0:00:30.
+  Batch   320  of  1,151.    Elapsed: 0:00:34.
+  Batch   360  of  1,151.    Elapsed: 0:00:39.
+  Batch   400  of  1,151.    Elapsed: 0:00:43.
+  Batch   440  of  1,151.    Elapsed: 0:00:48.
+  Batch   480  of  1,151.    Elapsed: 0:00:52.
+  Batch   520  of  1,151.    Elapsed: 0:00:56.
+  Batch   560  of  1,151.    Elapsed: 0:01:01.
+  Batch   600  of  1,151.    Elapsed: 0:01:05.
+  Batch   640  of  1,151.    Elapsed: 0:01:10.
+  Batch   680  of  1,151.    Elapsed: 0:01:14.
+  Batch   720  of  1,151.    Elapsed: 0:01:18.
+  Batch   760  of  1,151.    Elapsed: 0:01:23.
+  Batch   800  of  1,151.    Elapsed: 0:01:27.
+  Batch   840  of  1,151.    Elapsed: 0:01:32.
+  Batch   880  of  1,151.    Elapsed: 0:01:36.
+  Batch   920  of  1,151.    Elapsed: 0:01:40.
+  Batch   960  of  1,151.    Elapsed: 0:01:44.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:48.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:53.
+  Batch 1,080  of  1,151.    Elapsed: 0:01:57.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:01.
+
+  Average training loss: 0.02
+  Training epcoh took: 0:02:05
+
+Running Validation...
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 100.00
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 100.00
+Batch accuracy: 75.00
+Batch accuracy: 56.25
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 56.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 100.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 100.00
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 100.00
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 80.00
+  Accuracy: 80.36
+  Validation Loss: 0.05
+  Validation took: 0:00:03
+The model does not improve for 2 epochs!
+
+======== Epoch 13 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:04.
+  Batch    80  of  1,151.    Elapsed: 0:00:08.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:17.
+  Batch   200  of  1,151.    Elapsed: 0:00:22.
+  Batch   240  of  1,151.    Elapsed: 0:00:26.
+  Batch   280  of  1,151.    Elapsed: 0:00:30.
+  Batch   320  of  1,151.    Elapsed: 0:00:35.
+  Batch   360  of  1,151.    Elapsed: 0:00:39.
+  Batch   400  of  1,151.    Elapsed: 0:00:44.
+  Batch   440  of  1,151.    Elapsed: 0:00:48.
+  Batch   480  of  1,151.    Elapsed: 0:00:52.
+  Batch   520  of  1,151.    Elapsed: 0:00:56.
+  Batch   560  of  1,151.    Elapsed: 0:01:00.
+  Batch   600  of  1,151.    Elapsed: 0:01:06.
+  Batch   640  of  1,151.    Elapsed: 0:01:10.
+  Batch   680  of  1,151.    Elapsed: 0:01:14.
+  Batch   720  of  1,151.    Elapsed: 0:01:19.
+  Batch   760  of  1,151.    Elapsed: 0:01:23.
+  Batch   800  of  1,151.    Elapsed: 0:01:29.
+  Batch   840  of  1,151.    Elapsed: 0:01:33.
+  Batch   880  of  1,151.    Elapsed: 0:01:37.
+  Batch   920  of  1,151.    Elapsed: 0:01:42.
+  Batch   960  of  1,151.    Elapsed: 0:01:46.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:52.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:56.
+  Batch 1,080  of  1,151.    Elapsed: 0:02:00.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:05.
+
+  Average training loss: 0.01
+  Training epcoh took: 0:02:08
+
+Running Validation...
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 100.00
+Batch accuracy: 93.75
+Batch accuracy: 100.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 100.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 100.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 100.00
+Batch accuracy: 68.75
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 50.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 100.00
+Batch accuracy: 81.25
+Batch accuracy: 100.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 73.33
+  Accuracy: 80.50
+  Validation Loss: 0.05
+  Validation took: 0:00:03
+New best model, saving it!
+2020-11-03 15:45:00,260: Configuration saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/config.json
+2020-11-03 15:45:01,371: Model weights saved in /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/pytorch_model.bin
+
+======== Epoch 14 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:05.
+  Batch    80  of  1,151.    Elapsed: 0:00:10.
+  Batch   120  of  1,151.    Elapsed: 0:00:14.
+  Batch   160  of  1,151.    Elapsed: 0:00:19.
+  Batch   200  of  1,151.    Elapsed: 0:00:23.
+  Batch   240  of  1,151.    Elapsed: 0:00:29.
+  Batch   280  of  1,151.    Elapsed: 0:00:33.
+  Batch   320  of  1,151.    Elapsed: 0:00:37.
+  Batch   360  of  1,151.    Elapsed: 0:00:42.
+  Batch   400  of  1,151.    Elapsed: 0:00:46.
+  Batch   440  of  1,151.    Elapsed: 0:00:51.
+  Batch   480  of  1,151.    Elapsed: 0:00:55.
+  Batch   520  of  1,151.    Elapsed: 0:00:59.
+  Batch   560  of  1,151.    Elapsed: 0:01:04.
+  Batch   600  of  1,151.    Elapsed: 0:01:08.
+  Batch   640  of  1,151.    Elapsed: 0:01:12.
+  Batch   680  of  1,151.    Elapsed: 0:01:16.
+  Batch   720  of  1,151.    Elapsed: 0:01:20.
+  Batch   760  of  1,151.    Elapsed: 0:01:25.
+  Batch   800  of  1,151.    Elapsed: 0:01:30.
+  Batch   840  of  1,151.    Elapsed: 0:01:34.
+  Batch   880  of  1,151.    Elapsed: 0:01:38.
+  Batch   920  of  1,151.    Elapsed: 0:01:42.
+  Batch   960  of  1,151.    Elapsed: 0:01:47.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:51.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:57.
+  Batch 1,080  of  1,151.    Elapsed: 0:02:01.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:05.
+
+  Average training loss: 0.01
+  Training epcoh took: 0:02:08
+
+Running Validation...
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 56.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 100.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 100.00
+Batch accuracy: 100.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 100.00
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 56.25
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 73.33
+  Accuracy: 79.24
+  Validation Loss: 0.06
+  Validation took: 0:00:03
+The model does not improve for 1 epochs!
+
+======== Epoch 15 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:04.
+  Batch    80  of  1,151.    Elapsed: 0:00:08.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:16.
+  Batch   200  of  1,151.    Elapsed: 0:00:21.
+  Batch   240  of  1,151.    Elapsed: 0:00:25.
+  Batch   280  of  1,151.    Elapsed: 0:00:29.
+  Batch   320  of  1,151.    Elapsed: 0:00:34.
+  Batch   360  of  1,151.    Elapsed: 0:00:38.
+  Batch   400  of  1,151.    Elapsed: 0:00:43.
+  Batch   440  of  1,151.    Elapsed: 0:00:47.
+  Batch   480  of  1,151.    Elapsed: 0:00:51.
+  Batch   520  of  1,151.    Elapsed: 0:00:55.
+  Batch   560  of  1,151.    Elapsed: 0:00:59.
+  Batch   600  of  1,151.    Elapsed: 0:01:04.
+  Batch   640  of  1,151.    Elapsed: 0:01:08.
+  Batch   680  of  1,151.    Elapsed: 0:01:12.
+  Batch   720  of  1,151.    Elapsed: 0:01:16.
+  Batch   760  of  1,151.    Elapsed: 0:01:20.
+  Batch   800  of  1,151.    Elapsed: 0:01:25.
+  Batch   840  of  1,151.    Elapsed: 0:01:29.
+  Batch   880  of  1,151.    Elapsed: 0:01:34.
+  Batch   920  of  1,151.    Elapsed: 0:01:39.
+  Batch   960  of  1,151.    Elapsed: 0:01:43.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:48.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:52.
+  Batch 1,080  of  1,151.    Elapsed: 0:01:57.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:02.
+
+  Average training loss: 0.01
+  Training epcoh took: 0:02:05
+
+Running Validation...
+Batch accuracy: 93.75
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 100.00
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 56.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 100.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 100.00
+Batch accuracy: 87.50
+Batch accuracy: 100.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 100.00
+Batch accuracy: 75.00
+Batch accuracy: 100.00
+Batch accuracy: 62.50
+Batch accuracy: 100.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 93.33
+  Accuracy: 80.47
+  Validation Loss: 0.06
+  Validation took: 0:00:03
+The model does not improve for 2 epochs!
+
+======== Epoch 16 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:05.
+  Batch    80  of  1,151.    Elapsed: 0:00:09.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:19.
+  Batch   200  of  1,151.    Elapsed: 0:00:23.
+  Batch   240  of  1,151.    Elapsed: 0:00:27.
+  Batch   280  of  1,151.    Elapsed: 0:00:31.
+  Batch   320  of  1,151.    Elapsed: 0:00:35.
+  Batch   360  of  1,151.    Elapsed: 0:00:40.
+  Batch   400  of  1,151.    Elapsed: 0:00:44.
+  Batch   440  of  1,151.    Elapsed: 0:00:48.
+  Batch   480  of  1,151.    Elapsed: 0:00:52.
+  Batch   520  of  1,151.    Elapsed: 0:00:56.
+  Batch   560  of  1,151.    Elapsed: 0:01:01.
+  Batch   600  of  1,151.    Elapsed: 0:01:05.
+  Batch   640  of  1,151.    Elapsed: 0:01:10.
+  Batch   680  of  1,151.    Elapsed: 0:01:14.
+  Batch   720  of  1,151.    Elapsed: 0:01:18.
+  Batch   760  of  1,151.    Elapsed: 0:01:23.
+  Batch   800  of  1,151.    Elapsed: 0:01:27.
+  Batch   840  of  1,151.    Elapsed: 0:01:32.
+  Batch   880  of  1,151.    Elapsed: 0:01:36.
+  Batch   920  of  1,151.    Elapsed: 0:01:40.
+  Batch   960  of  1,151.    Elapsed: 0:01:45.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:49.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:54.
+  Batch 1,080  of  1,151.    Elapsed: 0:01:58.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:02.
+
+  Average training loss: 0.01
+  Training epcoh took: 0:02:05
+
+Running Validation...
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 50.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 100.00
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 100.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 100.00
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 56.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 100.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 93.33
+  Accuracy: 80.07
+  Validation Loss: 0.06
+  Validation took: 0:00:03
+The model does not improve for 3 epochs!
+
+======== Epoch 17 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:04.
+  Batch    80  of  1,151.    Elapsed: 0:00:08.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:17.
+  Batch   200  of  1,151.    Elapsed: 0:00:21.
+  Batch   240  of  1,151.    Elapsed: 0:00:25.
+  Batch   280  of  1,151.    Elapsed: 0:00:29.
+  Batch   320  of  1,151.    Elapsed: 0:00:34.
+  Batch   360  of  1,151.    Elapsed: 0:00:38.
+  Batch   400  of  1,151.    Elapsed: 0:00:42.
+  Batch   440  of  1,151.    Elapsed: 0:00:47.
+  Batch   480  of  1,151.    Elapsed: 0:00:51.
+  Batch   520  of  1,151.    Elapsed: 0:00:55.
+  Batch   560  of  1,151.    Elapsed: 0:00:59.
+  Batch   600  of  1,151.    Elapsed: 0:01:04.
+  Batch   640  of  1,151.    Elapsed: 0:01:08.
+  Batch   680  of  1,151.    Elapsed: 0:01:12.
+  Batch   720  of  1,151.    Elapsed: 0:01:17.
+  Batch   760  of  1,151.    Elapsed: 0:01:21.
+  Batch   800  of  1,151.    Elapsed: 0:01:25.
+  Batch   840  of  1,151.    Elapsed: 0:01:29.
+  Batch   880  of  1,151.    Elapsed: 0:01:33.
+  Batch   920  of  1,151.    Elapsed: 0:01:38.
+  Batch   960  of  1,151.    Elapsed: 0:01:42.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:47.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:51.
+  Batch 1,080  of  1,151.    Elapsed: 0:01:55.
+  Batch 1,120  of  1,151.    Elapsed: 0:01:59.
+
+  Average training loss: 0.01
+  Training epcoh took: 0:02:02
+
+Running Validation...
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 100.00
+Batch accuracy: 100.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 43.75
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 80.00
+  Accuracy: 80.07
+  Validation Loss: 0.06
+  Validation took: 0:00:03
+The model does not improve for 4 epochs!
+
+======== Epoch 18 / 100 ========
+Training...
+  Batch    40  of  1,151.    Elapsed: 0:00:05.
+  Batch    80  of  1,151.    Elapsed: 0:00:09.
+  Batch   120  of  1,151.    Elapsed: 0:00:13.
+  Batch   160  of  1,151.    Elapsed: 0:00:19.
+  Batch   200  of  1,151.    Elapsed: 0:00:23.
+  Batch   240  of  1,151.    Elapsed: 0:00:28.
+  Batch   280  of  1,151.    Elapsed: 0:00:32.
+  Batch   320  of  1,151.    Elapsed: 0:00:36.
+  Batch   360  of  1,151.    Elapsed: 0:00:41.
+  Batch   400  of  1,151.    Elapsed: 0:00:45.
+  Batch   440  of  1,151.    Elapsed: 0:00:51.
+  Batch   480  of  1,151.    Elapsed: 0:00:55.
+  Batch   520  of  1,151.    Elapsed: 0:00:59.
+  Batch   560  of  1,151.    Elapsed: 0:01:05.
+  Batch   600  of  1,151.    Elapsed: 0:01:09.
+  Batch   640  of  1,151.    Elapsed: 0:01:14.
+  Batch   680  of  1,151.    Elapsed: 0:01:18.
+  Batch   720  of  1,151.    Elapsed: 0:01:22.
+  Batch   760  of  1,151.    Elapsed: 0:01:27.
+  Batch   800  of  1,151.    Elapsed: 0:01:31.
+  Batch   840  of  1,151.    Elapsed: 0:01:36.
+  Batch   880  of  1,151.    Elapsed: 0:01:40.
+  Batch   920  of  1,151.    Elapsed: 0:01:44.
+  Batch   960  of  1,151.    Elapsed: 0:01:49.
+  Batch 1,000  of  1,151.    Elapsed: 0:01:53.
+  Batch 1,040  of  1,151.    Elapsed: 0:01:57.
+  Batch 1,080  of  1,151.    Elapsed: 0:02:01.
+  Batch 1,120  of  1,151.    Elapsed: 0:02:06.
+
+  Average training loss: 0.01
+  Training epcoh took: 0:02:10
+
+Running Validation...
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 56.25
+Batch accuracy: 68.75
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 100.00
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 62.50
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 62.50
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 100.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 56.25
+Batch accuracy: 68.75
+Batch accuracy: 100.00
+Batch accuracy: 62.50
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 56.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 68.75
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 100.00
+Batch accuracy: 81.25
+Batch accuracy: 81.25
+Batch accuracy: 50.00
+Batch accuracy: 81.25
+Batch accuracy: 75.00
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 75.00
+Batch accuracy: 100.00
+Batch accuracy: 81.25
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 81.25
+Batch accuracy: 68.75
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 68.75
+Batch accuracy: 87.50
+Batch accuracy: 75.00
+Batch accuracy: 100.00
+Batch accuracy: 75.00
+Batch accuracy: 81.25
+Batch accuracy: 66.67
+  Accuracy: 80.16
+  Validation Loss: 0.06
+  Validation took: 0:00:03
+The model does not improve for 5 epochs!
+====>Stopping training, the model did not improve for 5
+====>Best epoch: 12.
+
+Training complete!
+Total training took 0:38:50 (h:mm:ss)
+Training stats: [{'epoch': 1, 'Training Loss': 0.25859496783148556, 'Valid. Loss': tensor(0.2442, device='cuda:0'), 'Valid. Accur.': 10.305989583333334, 'Training Time': '0:02:05', 'Validation Time': '0:00:03'}, {'epoch': 2, 'Training Loss': 0.22257636713975154, 'Valid. Loss': tensor(0.1840, device='cuda:0'), 'Valid. Accur.': 36.34765625, 'Training Time': '0:02:06', 'Validation Time': '0:00:03'}, {'epoch': 3, 'Training Loss': 0.15686699843685037, 'Valid. Loss': tensor(0.1166, device='cuda:0'), 'Valid. Accur.': 57.158203125, 'Training Time': '0:02:05', 'Validation Time': '0:00:03'}, {'epoch': 4, 'Training Loss': 0.10333585901296627, 'Valid. Loss': tensor(0.0794, device='cuda:0'), 'Valid. Accur.': 71.37369791666667, 'Training Time': '0:02:03', 'Validation Time': '0:00:03'}, {'epoch': 5, 'Training Loss': 0.07347650091640981, 'Valid. Loss': tensor(0.0608, device='cuda:0'), 'Valid. Accur.': 75.95377604166667, 'Training Time': '0:02:02', 'Validation Time': '0:00:03'}, {'epoch': 6, 'Training Loss': 0.05666459325519943, 'Valid. Loss': tensor(0.0524, device='cuda:0'), 'Valid. Accur.': 77.77669270833333, 'Training Time': '0:02:05', 'Validation Time': '0:00:03'}, {'epoch': 7, 'Training Loss': 0.04597293875591606, 'Valid. Loss': tensor(0.0485, device='cuda:0'), 'Valid. Accur.': 79.18619791666667, 'Training Time': '0:02:10', 'Validation Time': '0:00:03'}, {'epoch': 8, 'Training Loss': 0.03783139472151139, 'Valid. Loss': tensor(0.0467, device='cuda:0'), 'Valid. Accur.': 79.47916666666667, 'Training Time': '0:02:11', 'Validation Time': '0:00:03'}, {'epoch': 9, 'Training Loss': 0.031535289908738814, 'Valid. Loss': tensor(0.0460, device='cuda:0'), 'Valid. Accur.': 80.25716145833333, 'Training Time': '0:02:03', 'Validation Time': '0:00:03'}, {'epoch': 10, 'Training Loss': 0.02593085353517869, 'Valid. Loss': tensor(0.0472, device='cuda:0'), 'Valid. Accur.': 80.36783854166667, 'Training Time': '0:02:04', 'Validation Time': '0:00:03'}, {'epoch': 11, 'Training Loss': 0.021273418237762933, 'Valid. Loss': tensor(0.0488, device='cuda:0'), 'Valid. Accur.': 80.11067708333333, 'Training Time': '0:02:04', 'Validation Time': '0:00:03'}, {'epoch': 12, 'Training Loss': 0.01720689368731879, 'Valid. Loss': tensor(0.0517, device='cuda:0'), 'Valid. Accur.': 80.361328125, 'Training Time': '0:02:05', 'Validation Time': '0:00:03'}, {'epoch': 13, 'Training Loss': 0.014572043417559235, 'Valid. Loss': tensor(0.0529, device='cuda:0'), 'Valid. Accur.': 80.50455729166667, 'Training Time': '0:02:08', 'Validation Time': '0:00:03'}, {'epoch': 14, 'Training Loss': 0.012500179639556972, 'Valid. Loss': tensor(0.0561, device='cuda:0'), 'Valid. Accur.': 79.23502604166667, 'Training Time': '0:02:08', 'Validation Time': '0:00:03'}, {'epoch': 15, 'Training Loss': 0.010432997315782197, 'Valid. Loss': tensor(0.0585, device='cuda:0'), 'Valid. Accur.': 80.46549479166667, 'Training Time': '0:02:05', 'Validation Time': '0:00:03'}, {'epoch': 16, 'Training Loss': 0.009244277539627362, 'Valid. Loss': tensor(0.0608, device='cuda:0'), 'Valid. Accur.': 80.07486979166667, 'Training Time': '0:02:05', 'Validation Time': '0:00:03'}, {'epoch': 17, 'Training Loss': 0.008329449971398667, 'Valid. Loss': tensor(0.0637, device='cuda:0'), 'Valid. Accur.': 80.068359375, 'Training Time': '0:02:02', 'Validation Time': '0:00:03'}, {'epoch': 18, 'Training Loss': 0.007880856565636246, 'Valid. Loss': tensor(0.0648, device='cuda:0'), 'Valid. Accur.': 80.15950520833333, 'Training Time': '0:02:10', 'Validation Time': '0:00:03'}]
+====Loading dataset for testing
+2020-11-03 15:55:48,859: Model name '../models/agent-benchmark/bert-adaptive-base-finetuned/' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased, TurkuNLP/bert-base-finnish-cased-v1, TurkuNLP/bert-base-finnish-uncased-v1, wietsedv/bert-base-dutch-cased). Assuming '../models/agent-benchmark/bert-adaptive-base-finetuned/' is a path, a model identifier, or url to a directory containing tokenizer files.
+2020-11-03 15:55:48,860: Didn't find file ../models/agent-benchmark/bert-adaptive-base-finetuned/tokenizer.json. We won't load it.
+2020-11-03 15:55:48,860: loading file ../models/agent-benchmark/bert-adaptive-base-finetuned/vocab.txt
+2020-11-03 15:55:48,860: loading file ../models/agent-benchmark/bert-adaptive-base-finetuned/added_tokens.json
+2020-11-03 15:55:48,860: loading file ../models/agent-benchmark/bert-adaptive-base-finetuned/special_tokens_map.json
+2020-11-03 15:55:48,860: loading file ../models/agent-benchmark/bert-adaptive-base-finetuned/tokenizer_config.json
+2020-11-03 15:55:48,861: loading file None
+====Loading model for testing
+2020-11-03 15:55:48,901: loading configuration file /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/config.json
+2020-11-03 15:55:48,902: Model config BertConfig {
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1",
+    "2": "LABEL_2",
+    "3": "LABEL_3",
+    "4": "LABEL_4",
+    "5": "LABEL_5",
+    "6": "LABEL_6",
+    "7": "LABEL_7",
+    "8": "LABEL_8",
+    "9": "LABEL_9",
+    "10": "LABEL_10",
+    "11": "LABEL_11",
+    "12": "LABEL_12",
+    "13": "LABEL_13",
+    "14": "LABEL_14",
+    "15": "LABEL_15",
+    "16": "LABEL_16",
+    "17": "LABEL_17",
+    "18": "LABEL_18",
+    "19": "LABEL_19",
+    "20": "LABEL_20",
+    "21": "LABEL_21",
+    "22": "LABEL_22",
+    "23": "LABEL_23",
+    "24": "LABEL_24",
+    "25": "LABEL_25",
+    "26": "LABEL_26",
+    "27": "LABEL_27",
+    "28": "LABEL_28",
+    "29": "LABEL_29",
+    "30": "LABEL_30",
+    "31": "LABEL_31",
+    "32": "LABEL_32",
+    "33": "LABEL_33",
+    "34": "LABEL_34",
+    "35": "LABEL_35",
+    "36": "LABEL_36",
+    "37": "LABEL_37",
+    "38": "LABEL_38",
+    "39": "LABEL_39",
+    "40": "LABEL_40",
+    "41": "LABEL_41",
+    "42": "LABEL_42",
+    "43": "LABEL_43",
+    "44": "LABEL_44",
+    "45": "LABEL_45",
+    "46": "LABEL_46",
+    "47": "LABEL_47",
+    "48": "LABEL_48",
+    "49": "LABEL_49",
+    "50": "LABEL_50",
+    "51": "LABEL_51",
+    "52": "LABEL_52",
+    "53": "LABEL_53",
+    "54": "LABEL_54",
+    "55": "LABEL_55",
+    "56": "LABEL_56",
+    "57": "LABEL_57",
+    "58": "LABEL_58",
+    "59": "LABEL_59",
+    "60": "LABEL_60",
+    "61": "LABEL_61",
+    "62": "LABEL_62",
+    "63": "LABEL_63"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_10": 10,
+    "LABEL_11": 11,
+    "LABEL_12": 12,
+    "LABEL_13": 13,
+    "LABEL_14": 14,
+    "LABEL_15": 15,
+    "LABEL_16": 16,
+    "LABEL_17": 17,
+    "LABEL_18": 18,
+    "LABEL_19": 19,
+    "LABEL_2": 2,
+    "LABEL_20": 20,
+    "LABEL_21": 21,
+    "LABEL_22": 22,
+    "LABEL_23": 23,
+    "LABEL_24": 24,
+    "LABEL_25": 25,
+    "LABEL_26": 26,
+    "LABEL_27": 27,
+    "LABEL_28": 28,
+    "LABEL_29": 29,
+    "LABEL_3": 3,
+    "LABEL_30": 30,
+    "LABEL_31": 31,
+    "LABEL_32": 32,
+    "LABEL_33": 33,
+    "LABEL_34": 34,
+    "LABEL_35": 35,
+    "LABEL_36": 36,
+    "LABEL_37": 37,
+    "LABEL_38": 38,
+    "LABEL_39": 39,
+    "LABEL_4": 4,
+    "LABEL_40": 40,
+    "LABEL_41": 41,
+    "LABEL_42": 42,
+    "LABEL_43": 43,
+    "LABEL_44": 44,
+    "LABEL_45": 45,
+    "LABEL_46": 46,
+    "LABEL_47": 47,
+    "LABEL_48": 48,
+    "LABEL_49": 49,
+    "LABEL_5": 5,
+    "LABEL_50": 50,
+    "LABEL_51": 51,
+    "LABEL_52": 52,
+    "LABEL_53": 53,
+    "LABEL_54": 54,
+    "LABEL_55": 55,
+    "LABEL_56": 56,
+    "LABEL_57": 57,
+    "LABEL_58": 58,
+    "LABEL_59": 59,
+    "LABEL_6": 6,
+    "LABEL_60": 60,
+    "LABEL_61": 61,
+    "LABEL_62": 62,
+    "LABEL_63": 63,
+    "LABEL_7": 7,
+    "LABEL_8": 8,
+    "LABEL_9": 9
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "output_hidden_states": true,
+  "pad_token_id": 0,
+  "type_vocab_size": 2,
+  "vocab_size": 28996
+}
+
+2020-11-03 15:55:48,902: loading weights file /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased/pytorch_model.bin
+2020-11-03 15:55:54,253: All model checkpoint weights were used when initializing BertForSequenceClassification.
+
+2020-11-03 15:55:54,253: All the weights of BertForSequenceClassification were initialized from the model checkpoint at /data/models/agent-benchmark/bert-base-portuguese-tapt-classifier/base-dataset-agent-benchmark-agent-benchmark-100-epochs-early-stop-reset-3-tapt-bert-base-cased.
+If your task is similar to the task the model of the ckeckpoint was trained on, you can already use BertForSequenceClassification for predictions without further training.
+====Testing model...
+2020-11-03 15:56:01,966:                            precision    recall  f1-score   support
+
+    calendar_notification      0.302     0.422     0.352        45
+     transport_directions      0.759     0.537     0.629        41
+           cooking_recipe      0.829     0.644     0.725        45
+               radio_play      0.852     0.827     0.839       139
+             lists_remove      0.943     0.815     0.874        81
+               news_query      0.805     0.678     0.736       146
+         cooking_question      0.571     0.651     0.609        43
+           contacts_query      0.841     0.698     0.763        53
+             general_joke      0.913     0.933     0.923        45
+               audio_mute      0.769     0.789     0.779        38
+            QA_open_query      0.467     0.475     0.471       120
+          transport_train      0.814     0.968     0.885        95
+         weather_question      0.711     0.727     0.719        88
+           music_question      0.821     0.523     0.639        44
+               QA_factoid      0.817     0.779     0.798       195
+              email_query      0.964     0.904     0.933       177
+              lists_query      0.930     0.851     0.889        94
+     general_conversation      0.633     0.640     0.636       164
+recommendation_locations       0.733     0.786     0.759        42
+       calendar_set_event      0.875     0.843     0.859       191
+          weather_request      0.758     0.804     0.780       168
+            QA_definition      0.879     0.879     0.879       124
+           takeaway_query      0.976     0.851     0.909        47
+                  IOT_hue      0.972     0.986     0.979       214
+           datetime_query      0.867     0.828     0.847       134
+              email_reply      0.919     0.791     0.850        43
+                 QA_maths      0.750     0.789     0.769        38
+             lists_adding      0.897     0.765     0.825        34
+             QA_celebrity      0.822     0.769     0.794       108
+               music_play      0.747     0.861     0.800       244
+                game_play      0.879     0.911     0.895        56
+                 IOT_wemo      0.949     0.902     0.925        41
+          general_mistake      0.558     0.592     0.574        49
+           music_settings      0.593     0.700     0.642        50
+              alarm_query      0.744     0.865     0.800        37
+    recommendation_movies      0.900     0.419     0.571        43
+    calendar_delete_event      0.859     0.918     0.887       146
+             social_query      0.867     0.848     0.857        46
+           takeaway_order      0.783     0.818     0.800        44
+        transport_traffic      0.851     0.930     0.889        43
+           audiobook_play      0.913     0.764     0.832        55
+         email_send_email      0.844     0.947     0.893       114
+         general_feedback      0.808     0.737     0.771       137
+               IOT_coffee      0.923     0.980     0.950        49
+            podcasts_play      0.949     0.771     0.851        96
+             alarm_remove      0.897     0.650     0.754        40
+                alarm_set      0.833     0.833     0.833        48
+           reminder_query      0.829     0.630     0.716        46
+              social_post      0.933     0.957     0.945       116
+           lists_creating      0.800     0.857     0.828        42
+        datetime_question      0.659     0.674     0.667        43
+                 QA_stock      0.920     0.920     0.920        50
+        general_confusion      0.606     0.878     0.717        49
+        calendar_question      0.806     0.690     0.744        42
+             audio_volume      0.707     0.804     0.752        51
+    news_set_notification      0.443     0.643     0.524        42
+   recommendation_events       0.547     0.814     0.654        43
+        music_preferences      0.648     0.687     0.667        83
+             IOT_cleaning      0.938     0.938     0.938        48
+     general_confirmation      0.485     0.372     0.421        43
+     calendar_query_event      0.667     0.721     0.693       122
+           transport_taxi      1.000     0.902     0.949        41
+             reminder_set      0.541     0.541     0.541        74
+         datetime_convert      0.651     0.800     0.718        35
+
+                 accuracy                          0.790      5104
+                macro avg      0.785     0.769     0.771      5104
+             weighted avg      0.799     0.790     0.790      5104
+
+wandb: Waiting for W&B process to finish, PID 1566
+wandb: Program ended successfully.
+wandb: - 0.03MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.50MB of 0.50MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Find user logs for this run at: wandb/run-20201103_151648-12y3ni56/logs/debug.log
+wandb: Find internal logs for this run at: wandb/run-20201103_151648-12y3ni56/logs/debug-internal.log
+wandb: Run summary:
+wandb:                                                             Layer 0 0.223927304148674
+wandb:                                                             Layer 1 0.2364276945590973
+wandb:                                                             Layer 2 0.29635465145111084
+wandb:                                                             Layer 3 0.30731338262557983
+wandb:                                                             Layer 4 0.35143905878067017
+wandb:                                                             Layer 5 0.36170151829719543
+wandb:                                                             Layer 6 0.3539060354232788
+wandb:                                                             Layer 7 0.3158537745475769
+wandb:                                                             Layer 8 0.19517309963703156
+wandb:                                                             Layer 9 0.11212866008281708
+wandb:                                                            Layer 10 0.08337479829788208
+wandb:                                                            Layer 11 0.09157900512218475
+wandb:                                                              pooler 0.0751609206199646
+wandb:                                                          classifier 0.16877193748950958
+wandb:                                                               _step 227
+wandb:                                                            _runtime 2352
+wandb:                                                          _timestamp 1604418961
+wandb:                                                               epoch 17
+wandb:                                                                loss 0.007880856565636246
+wandb:                                                            val_loss 0.06476385146379471
+wandb:                                                             val_acc 80.15950520833333
+wandb:                                                          best_epoch 12
+wandb:                                                            accuracy 0.789576802507837
+wandb:                                                 macro avg precision 0.7853377452940515
+wandb:                                                    macro avg recall 0.7691754183132645
+wandb:                                                  macro avg f1-score 0.7713360295823501
+wandb:                                                   macro avg support 5104
+wandb:                                              weighted avg precision 0.7991084860908949
+wandb:                                                 weighted avg recall 0.789576802507837
+wandb:                                               weighted avg f1-score 0.7904188206044875
+wandb:                                                weighted avg support 5104
+wandb: Synced 5 W&B file(s), 1 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: 
+wandb: Synced worldly-morning-55: https://wandb.ai/pbsphaier/huggingface/runs/12y3ni56
+

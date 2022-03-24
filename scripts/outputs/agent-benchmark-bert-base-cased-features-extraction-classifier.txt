@@ -1,0 +1,65 @@
+wandb: Currently logged in as: pbsphaier (use `wandb login --relogin` to force relogin)
+Parameters: {'gpu': 6, 'dataset': 'agent-benchmark', 'save_stats': 1, 'save_name': 'bert-features-classifier-early-stop-100-epochs', 'save_model': 1, 'bert_size': 'base', 'layerwise_lr': 0.9, 'wandb': 1, 'reset_layers': 3, 'lr': 0.005, 'epochs': 100, 'batch_size': 16, 'early_stop_patience': 4, 'bert_path': 'bert-base-cased', 'sentence_max_len': 30, 'seed': 0}
+wandb: wandb version 0.10.9 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.10.2
+wandb: Run data is saved locally in wandb/run-20201107_215543-37qe24ox
+wandb: Syncing run legendary-pyramid-63
+wandb: \u2b50\ufe0f View project at https://wandb.ai/pbsphaier/huggingface
+wandb: \U0001f680 View run at https://wandb.ai/pbsphaier/huggingface/runs/37qe24ox
+wandb: Run `wandb off` to turn off syncing.
+2020-11-07 21:55:45,651: loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-cased-vocab.txt from cache at /root/.cache/torch/transformers/5e8a2b4893d13790ed4150ca1906be5f7a03d6c4ddf62296c383f6db42814db2.e13dbb970cb325137104fb2e5f36fe865f27746c6b526f6352861b1980eb80b1
+2020-11-07 21:55:46,379: loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-cased-vocab.txt from cache at /root/.cache/torch/transformers/5e8a2b4893d13790ed4150ca1906be5f7a03d6c4ddf62296c383f6db42814db2.e13dbb970cb325137104fb2e5f36fe865f27746c6b526f6352861b1980eb80b1
+Loading dataset ...
+2020-11-07 21:55:46,940: loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-cased-config.json from cache at /root/.cache/torch/transformers/b945b69218e98b3e2c95acf911789741307dec43c698d35fad11c1ae28bda352.9da767be51e1327499df13488672789394e2ca38b877837e52618a67d7002391
+2020-11-07 21:55:46,940: Model config BertConfig {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "output_hidden_states": true,
+  "pad_token_id": 0,
+  "type_vocab_size": 2,
+  "vocab_size": 28996
+}
+
+2020-11-07 21:55:47,336: loading weights file https://cdn.huggingface.co/bert-base-cased-pytorch_model.bin from cache at /root/.cache/torch/transformers/d8f11f061e407be64c4d5d7867ee61d1465263e24085cfa26abf183fdc830569.3fadbea36527ae472139fe84cddaa65454d7429f12d543d80bfc3ad70de55ac2
+2020-11-07 21:55:50,152: All model checkpoint weights were used when initializing BertModel.
+
+2020-11-07 21:55:50,152: All the weights of BertModel were initialized from the model checkpoint at bert-base-cased.
+If your task is similar to the task the model of the ckeckpoint was trained on, you can already use BertModel for predictions without further training.
+====>TOTAL NUMBER OF STEPS: 115100
+====>WARMUP STEPS: 11510
+
+======== Epoch 1 / 100 ========
+Training...
+Traceback (most recent call last):
+  File "early_stop_bert_embeddings.py", line 309, in <module>
+    loss, logits = model(b_input_ids, b_segment_ids, b_labels)
+  File "/usr/local/lib/python3.6/dist-packages/torch/nn/modules/module.py", line 722, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "early_stop_bert_embeddings.py", line 179, in forward
+    outputs = self.bert_model(input_ids=bert_ids, attention_mask=bert_mask, return_dict=True)
+  File "/usr/local/lib/python3.6/dist-packages/torch/nn/modules/module.py", line 722, in _call_impl
+    result = self.forward(*input, **kwargs)
+TypeError: forward() got an unexpected keyword argument 'return_dict'
+wandb: Waiting for W&B process to finish, PID 1013
+wandb: Program failed with code 1.  Press ctrl-c to abort syncing.
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Find user logs for this run at: wandb/run-20201107_215543-37qe24ox/logs/debug.log
+wandb: Find internal logs for this run at: wandb/run-20201107_215543-37qe24ox/logs/debug-internal.log
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: 
+wandb: Synced legendary-pyramid-63: https://wandb.ai/pbsphaier/huggingface/runs/37qe24ox
+

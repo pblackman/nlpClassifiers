@@ -1,0 +1,3108 @@
+wandb: Currently logged in as: pbsphaier (use `wandb login --relogin` to force relogin)
+Parameters: {'gpu': 0, 'dataset': 'virtual-operator', 'save_stats': 1, 'save_name': 'virtual-operator-bow-classifier-no-stopwords', 'save_model': 1, 'wandb': 1, 'lr': 0.001, 'epochs': 100, 'batch_size': 512, 'early_stop_patience': 4, 'sentence_max_len': 30, 'seed': 0, 'debug': 0, 'stopwords_lang': 'portuguese', 'max_vocab_size': 0}
+wandb: Tracking run with wandb version 0.10.12
+wandb: Syncing run curious-grass-86
+wandb: \u2b50\ufe0f View project at https://wandb.ai/pbsphaier/huggingface
+wandb: \U0001f680 View run at https://wandb.ai/pbsphaier/huggingface/runs/39z02613
+wandb: Run data is saved locally in /data/scripts/wandb/run-20210103_144737-39z02613
+wandb: Run `wandb offline` to turn off syncing.
+wandb: WARNING Calling run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
+Loading dataset ...
+====>TOTAL NUMBER OF STEPS: 94300
+
+======== Epoch 1 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 2.68
+  Batch    80  of    943.    Elapsed: 0:00:07.
+  step loss: 1.42
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 1.09
+  Batch   160  of    943.    Elapsed: 0:00:14.
+  step loss: 0.82
+  Batch   200  of    943.    Elapsed: 0:00:18.
+  step loss: 0.77
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.79
+  Batch   280  of    943.    Elapsed: 0:00:25.
+  step loss: 0.75
+  Batch   320  of    943.    Elapsed: 0:00:29.
+  step loss: 0.64
+  Batch   360  of    943.    Elapsed: 0:00:32.
+  step loss: 0.63
+  Batch   400  of    943.    Elapsed: 0:00:36.
+  step loss: 0.55
+  Batch   440  of    943.    Elapsed: 0:00:40.
+  step loss: 0.56
+  Batch   480  of    943.    Elapsed: 0:00:43.
+  step loss: 0.58
+  Batch   520  of    943.    Elapsed: 0:00:47.
+  step loss: 0.55
+  Batch   560  of    943.    Elapsed: 0:00:50.
+  step loss: 0.48
+  Batch   600  of    943.    Elapsed: 0:00:54.
+  step loss: 0.50
+  Batch   640  of    943.    Elapsed: 0:00:58.
+  step loss: 0.54
+  Batch   680  of    943.    Elapsed: 0:01:01.
+  step loss: 0.54
+  Batch   720  of    943.    Elapsed: 0:01:05.
+  step loss: 0.53
+  Batch   760  of    943.    Elapsed: 0:01:08.
+  step loss: 0.50
+  Batch   800  of    943.    Elapsed: 0:01:12.
+  step loss: 0.41
+  Batch   840  of    943.    Elapsed: 0:01:15.
+  step loss: 0.46
+  Batch   880  of    943.    Elapsed: 0:01:19.
+  step loss: 0.45
+  Batch   920  of    943.    Elapsed: 0:01:23.
+  step loss: 0.53
+
+  Average training loss: 0.83
+
+Running Validation...
+Batch accuracy: 86.72
+Batch accuracy: 87.30
+Batch accuracy: 88.09
+Batch accuracy: 86.72
+Batch accuracy: 86.13
+Batch accuracy: 87.50
+Batch accuracy: 84.38
+Batch accuracy: 86.91
+Batch accuracy: 89.65
+Batch accuracy: 90.62
+Batch accuracy: 88.09
+Batch accuracy: 84.96
+Batch accuracy: 87.30
+Batch accuracy: 88.87
+Batch accuracy: 81.45
+Batch accuracy: 86.72
+Batch accuracy: 87.89
+Batch accuracy: 86.33
+Batch accuracy: 86.52
+Batch accuracy: 87.30
+Batch accuracy: 87.30
+Batch accuracy: 85.55
+Batch accuracy: 88.67
+Batch accuracy: 83.98
+Batch accuracy: 89.45
+Batch accuracy: 85.74
+Batch accuracy: 84.18
+Batch accuracy: 89.06
+Batch accuracy: 90.23
+Batch accuracy: 87.30
+Batch accuracy: 85.94
+Batch accuracy: 85.74
+Batch accuracy: 87.70
+Batch accuracy: 88.67
+Batch accuracy: 87.30
+Batch accuracy: 88.09
+Batch accuracy: 84.77
+Batch accuracy: 87.11
+Batch accuracy: 85.94
+Batch accuracy: 87.70
+Batch accuracy: 88.09
+Batch accuracy: 86.72
+Batch accuracy: 86.72
+Batch accuracy: 86.13
+Batch accuracy: 86.33
+Batch accuracy: 87.11
+Batch accuracy: 88.67
+Batch accuracy: 87.50
+Batch accuracy: 84.96
+Batch accuracy: 87.50
+Batch accuracy: 87.30
+Batch accuracy: 84.77
+Batch accuracy: 86.91
+Batch accuracy: 86.13
+Batch accuracy: 89.06
+Batch accuracy: 86.33
+Batch accuracy: 87.70
+Batch accuracy: 86.33
+Batch accuracy: 86.91
+Batch accuracy: 88.28
+Batch accuracy: 87.70
+Batch accuracy: 85.94
+Batch accuracy: 87.11
+Batch accuracy: 83.59
+Batch accuracy: 87.11
+Batch accuracy: 86.33
+Batch accuracy: 84.77
+Batch accuracy: 86.91
+Batch accuracy: 88.09
+Batch accuracy: 87.89
+Batch accuracy: 85.74
+Batch accuracy: 87.11
+Batch accuracy: 86.91
+Batch accuracy: 89.65
+Batch accuracy: 89.65
+Batch accuracy: 87.11
+Batch accuracy: 87.30
+Batch accuracy: 87.11
+Batch accuracy: 86.91
+Batch accuracy: 85.35
+Batch accuracy: 85.94
+Batch accuracy: 88.28
+Batch accuracy: 87.89
+Batch accuracy: 87.30
+Batch accuracy: 85.94
+Batch accuracy: 88.09
+Batch accuracy: 88.28
+Batch accuracy: 85.55
+Batch accuracy: 85.35
+Batch accuracy: 87.70
+Batch accuracy: 88.09
+Batch accuracy: 87.11
+Batch accuracy: 87.70
+Batch accuracy: 88.09
+Batch accuracy: 88.67
+Batch accuracy: 85.74
+Batch accuracy: 85.74
+Batch accuracy: 87.70
+Batch accuracy: 84.38
+Batch accuracy: 86.13
+Batch accuracy: 86.13
+Batch accuracy: 88.09
+Batch accuracy: 88.87
+Batch accuracy: 88.28
+Batch accuracy: 89.91
+  Accuracy: 87.03
+  Validation Loss: 0.44
+  Validation took: 0:00:09
+New best model, saving it!
+
+======== Epoch 2 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.36
+  Batch    80  of    943.    Elapsed: 0:00:07.
+  step loss: 0.35
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.36
+  Batch   160  of    943.    Elapsed: 0:00:14.
+  step loss: 0.43
+  Batch   200  of    943.    Elapsed: 0:00:18.
+  step loss: 0.40
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.35
+  Batch   280  of    943.    Elapsed: 0:00:25.
+  step loss: 0.36
+  Batch   320  of    943.    Elapsed: 0:00:29.
+  step loss: 0.37
+  Batch   360  of    943.    Elapsed: 0:00:32.
+  step loss: 0.39
+  Batch   400  of    943.    Elapsed: 0:00:36.
+  step loss: 0.34
+  Batch   440  of    943.    Elapsed: 0:00:39.
+  step loss: 0.36
+  Batch   480  of    943.    Elapsed: 0:00:43.
+  step loss: 0.33
+  Batch   520  of    943.    Elapsed: 0:00:46.
+  step loss: 0.37
+  Batch   560  of    943.    Elapsed: 0:00:50.
+  step loss: 0.39
+  Batch   600  of    943.    Elapsed: 0:00:54.
+  step loss: 0.33
+  Batch   640  of    943.    Elapsed: 0:00:57.
+  step loss: 0.36
+  Batch   680  of    943.    Elapsed: 0:01:01.
+  step loss: 0.29
+  Batch   720  of    943.    Elapsed: 0:01:04.
+  step loss: 0.38
+  Batch   760  of    943.    Elapsed: 0:01:08.
+  step loss: 0.30
+  Batch   800  of    943.    Elapsed: 0:01:12.
+  step loss: 0.36
+  Batch   840  of    943.    Elapsed: 0:01:15.
+  step loss: 0.42
+  Batch   880  of    943.    Elapsed: 0:01:19.
+  step loss: 0.38
+  Batch   920  of    943.    Elapsed: 0:01:22.
+  step loss: 0.45
+
+  Average training loss: 0.38
+
+Running Validation...
+Batch accuracy: 86.33
+Batch accuracy: 84.38
+Batch accuracy: 87.30
+Batch accuracy: 87.70
+Batch accuracy: 85.35
+Batch accuracy: 86.33
+Batch accuracy: 89.84
+Batch accuracy: 91.41
+Batch accuracy: 88.09
+Batch accuracy: 87.30
+Batch accuracy: 89.65
+Batch accuracy: 88.28
+Batch accuracy: 87.11
+Batch accuracy: 90.04
+Batch accuracy: 88.28
+Batch accuracy: 88.67
+Batch accuracy: 88.67
+Batch accuracy: 87.89
+Batch accuracy: 88.67
+Batch accuracy: 88.87
+Batch accuracy: 90.43
+Batch accuracy: 88.48
+Batch accuracy: 88.09
+Batch accuracy: 90.62
+Batch accuracy: 87.30
+Batch accuracy: 88.28
+Batch accuracy: 88.09
+Batch accuracy: 88.67
+Batch accuracy: 88.48
+Batch accuracy: 87.50
+Batch accuracy: 88.28
+Batch accuracy: 90.23
+Batch accuracy: 87.11
+Batch accuracy: 87.30
+Batch accuracy: 87.89
+Batch accuracy: 87.70
+Batch accuracy: 88.09
+Batch accuracy: 89.06
+Batch accuracy: 88.28
+Batch accuracy: 88.67
+Batch accuracy: 89.06
+Batch accuracy: 89.65
+Batch accuracy: 87.30
+Batch accuracy: 89.06
+Batch accuracy: 89.06
+Batch accuracy: 88.67
+Batch accuracy: 87.70
+Batch accuracy: 88.48
+Batch accuracy: 87.70
+Batch accuracy: 87.30
+Batch accuracy: 89.84
+Batch accuracy: 87.89
+Batch accuracy: 87.50
+Batch accuracy: 87.70
+Batch accuracy: 89.45
+Batch accuracy: 86.91
+Batch accuracy: 89.06
+Batch accuracy: 86.72
+Batch accuracy: 88.09
+Batch accuracy: 89.06
+Batch accuracy: 88.48
+Batch accuracy: 88.09
+Batch accuracy: 85.94
+Batch accuracy: 89.06
+Batch accuracy: 86.52
+Batch accuracy: 90.04
+Batch accuracy: 86.72
+Batch accuracy: 89.84
+Batch accuracy: 85.74
+Batch accuracy: 88.28
+Batch accuracy: 86.33
+Batch accuracy: 88.67
+Batch accuracy: 89.45
+Batch accuracy: 90.62
+Batch accuracy: 86.72
+Batch accuracy: 84.38
+Batch accuracy: 87.30
+Batch accuracy: 87.70
+Batch accuracy: 86.52
+Batch accuracy: 86.52
+Batch accuracy: 88.67
+Batch accuracy: 89.84
+Batch accuracy: 88.09
+Batch accuracy: 88.09
+Batch accuracy: 86.91
+Batch accuracy: 89.06
+Batch accuracy: 88.48
+Batch accuracy: 88.09
+Batch accuracy: 89.65
+Batch accuracy: 91.80
+Batch accuracy: 88.67
+Batch accuracy: 90.82
+Batch accuracy: 89.65
+Batch accuracy: 88.48
+Batch accuracy: 90.04
+Batch accuracy: 87.50
+Batch accuracy: 90.62
+Batch accuracy: 90.23
+Batch accuracy: 87.70
+Batch accuracy: 87.89
+Batch accuracy: 86.13
+Batch accuracy: 89.65
+Batch accuracy: 87.70
+Batch accuracy: 87.11
+Batch accuracy: 88.18
+  Accuracy: 88.26
+  Validation Loss: 0.38
+  Validation took: 0:00:09
+New best model, saving it!
+
+======== Epoch 3 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.35
+  Batch    80  of    943.    Elapsed: 0:00:07.
+  step loss: 0.36
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.33
+  Batch   160  of    943.    Elapsed: 0:00:15.
+  step loss: 0.29
+  Batch   200  of    943.    Elapsed: 0:00:18.
+  step loss: 0.24
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.30
+  Batch   280  of    943.    Elapsed: 0:00:26.
+  step loss: 0.27
+  Batch   320  of    943.    Elapsed: 0:00:29.
+  step loss: 0.29
+  Batch   360  of    943.    Elapsed: 0:00:33.
+  step loss: 0.25
+  Batch   400  of    943.    Elapsed: 0:00:36.
+  step loss: 0.30
+  Batch   440  of    943.    Elapsed: 0:00:40.
+  step loss: 0.27
+  Batch   480  of    943.    Elapsed: 0:00:44.
+  step loss: 0.31
+  Batch   520  of    943.    Elapsed: 0:00:47.
+  step loss: 0.26
+  Batch   560  of    943.    Elapsed: 0:00:51.
+  step loss: 0.25
+  Batch   600  of    943.    Elapsed: 0:00:54.
+  step loss: 0.32
+  Batch   640  of    943.    Elapsed: 0:00:58.
+  step loss: 0.30
+  Batch   680  of    943.    Elapsed: 0:01:02.
+  step loss: 0.30
+  Batch   720  of    943.    Elapsed: 0:01:05.
+  step loss: 0.30
+  Batch   760  of    943.    Elapsed: 0:01:09.
+  step loss: 0.35
+  Batch   800  of    943.    Elapsed: 0:01:12.
+  step loss: 0.31
+  Batch   840  of    943.    Elapsed: 0:01:16.
+  step loss: 0.33
+  Batch   880  of    943.    Elapsed: 0:01:19.
+  step loss: 0.36
+  Batch   920  of    943.    Elapsed: 0:01:23.
+  step loss: 0.30
+
+  Average training loss: 0.30
+
+Running Validation...
+Batch accuracy: 89.84
+Batch accuracy: 87.30
+Batch accuracy: 85.35
+Batch accuracy: 88.67
+Batch accuracy: 87.70
+Batch accuracy: 89.65
+Batch accuracy: 90.62
+Batch accuracy: 88.48
+Batch accuracy: 88.28
+Batch accuracy: 88.48
+Batch accuracy: 89.45
+Batch accuracy: 90.82
+Batch accuracy: 87.70
+Batch accuracy: 86.33
+Batch accuracy: 91.02
+Batch accuracy: 87.50
+Batch accuracy: 90.04
+Batch accuracy: 88.09
+Batch accuracy: 89.84
+Batch accuracy: 89.26
+Batch accuracy: 90.23
+Batch accuracy: 91.41
+Batch accuracy: 90.23
+Batch accuracy: 88.48
+Batch accuracy: 90.04
+Batch accuracy: 86.13
+Batch accuracy: 87.11
+Batch accuracy: 89.45
+Batch accuracy: 90.43
+Batch accuracy: 91.80
+Batch accuracy: 87.50
+Batch accuracy: 88.87
+Batch accuracy: 89.45
+Batch accuracy: 89.26
+Batch accuracy: 86.91
+Batch accuracy: 89.65
+Batch accuracy: 88.48
+Batch accuracy: 88.87
+Batch accuracy: 87.50
+Batch accuracy: 87.70
+Batch accuracy: 88.28
+Batch accuracy: 89.45
+Batch accuracy: 87.30
+Batch accuracy: 89.06
+Batch accuracy: 87.89
+Batch accuracy: 87.50
+Batch accuracy: 85.94
+Batch accuracy: 89.26
+Batch accuracy: 91.02
+Batch accuracy: 89.45
+Batch accuracy: 85.55
+Batch accuracy: 88.87
+Batch accuracy: 91.21
+Batch accuracy: 88.09
+Batch accuracy: 89.06
+Batch accuracy: 91.41
+Batch accuracy: 90.23
+Batch accuracy: 88.67
+Batch accuracy: 86.33
+Batch accuracy: 90.43
+Batch accuracy: 89.26
+Batch accuracy: 88.48
+Batch accuracy: 89.45
+Batch accuracy: 89.65
+Batch accuracy: 88.09
+Batch accuracy: 87.89
+Batch accuracy: 90.23
+Batch accuracy: 89.84
+Batch accuracy: 88.09
+Batch accuracy: 89.26
+Batch accuracy: 89.84
+Batch accuracy: 90.62
+Batch accuracy: 89.65
+Batch accuracy: 86.13
+Batch accuracy: 87.89
+Batch accuracy: 89.45
+Batch accuracy: 88.67
+Batch accuracy: 89.45
+Batch accuracy: 86.13
+Batch accuracy: 90.82
+Batch accuracy: 90.04
+Batch accuracy: 89.26
+Batch accuracy: 86.52
+Batch accuracy: 91.21
+Batch accuracy: 90.62
+Batch accuracy: 90.43
+Batch accuracy: 88.48
+Batch accuracy: 87.30
+Batch accuracy: 87.89
+Batch accuracy: 89.26
+Batch accuracy: 87.70
+Batch accuracy: 91.41
+Batch accuracy: 90.04
+Batch accuracy: 88.28
+Batch accuracy: 88.48
+Batch accuracy: 90.43
+Batch accuracy: 89.06
+Batch accuracy: 89.06
+Batch accuracy: 90.04
+Batch accuracy: 86.91
+Batch accuracy: 88.67
+Batch accuracy: 87.50
+Batch accuracy: 89.26
+Batch accuracy: 88.09
+Batch accuracy: 90.78
+  Accuracy: 88.90
+  Validation Loss: 0.36
+  Validation took: 0:00:09
+New best model, saving it!
+
+======== Epoch 4 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.35
+  Batch    80  of    943.    Elapsed: 0:00:07.
+  step loss: 0.24
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.26
+  Batch   160  of    943.    Elapsed: 0:00:14.
+  step loss: 0.26
+  Batch   200  of    943.    Elapsed: 0:00:18.
+  step loss: 0.25
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.21
+  Batch   280  of    943.    Elapsed: 0:00:25.
+  step loss: 0.25
+  Batch   320  of    943.    Elapsed: 0:00:29.
+  step loss: 0.24
+  Batch   360  of    943.    Elapsed: 0:00:32.
+  step loss: 0.22
+  Batch   400  of    943.    Elapsed: 0:00:36.
+  step loss: 0.19
+  Batch   440  of    943.    Elapsed: 0:00:39.
+  step loss: 0.30
+  Batch   480  of    943.    Elapsed: 0:00:43.
+  step loss: 0.28
+  Batch   520  of    943.    Elapsed: 0:00:46.
+  step loss: 0.28
+  Batch   560  of    943.    Elapsed: 0:00:50.
+  step loss: 0.21
+  Batch   600  of    943.    Elapsed: 0:00:54.
+  step loss: 0.22
+  Batch   640  of    943.    Elapsed: 0:00:57.
+  step loss: 0.20
+  Batch   680  of    943.    Elapsed: 0:01:01.
+  step loss: 0.29
+  Batch   720  of    943.    Elapsed: 0:01:04.
+  step loss: 0.24
+  Batch   760  of    943.    Elapsed: 0:01:08.
+  step loss: 0.22
+  Batch   800  of    943.    Elapsed: 0:01:11.
+  step loss: 0.21
+  Batch   840  of    943.    Elapsed: 0:01:15.
+  step loss: 0.27
+  Batch   880  of    943.    Elapsed: 0:01:18.
+  step loss: 0.24
+  Batch   920  of    943.    Elapsed: 0:01:22.
+  step loss: 0.26
+
+  Average training loss: 0.25
+
+Running Validation...
+Batch accuracy: 89.45
+Batch accuracy: 89.26
+Batch accuracy: 89.45
+Batch accuracy: 90.23
+Batch accuracy: 90.82
+Batch accuracy: 89.45
+Batch accuracy: 89.65
+Batch accuracy: 88.48
+Batch accuracy: 88.09
+Batch accuracy: 91.60
+Batch accuracy: 89.84
+Batch accuracy: 90.04
+Batch accuracy: 86.52
+Batch accuracy: 88.48
+Batch accuracy: 88.87
+Batch accuracy: 90.82
+Batch accuracy: 88.28
+Batch accuracy: 90.82
+Batch accuracy: 88.09
+Batch accuracy: 89.65
+Batch accuracy: 89.45
+Batch accuracy: 88.48
+Batch accuracy: 87.70
+Batch accuracy: 89.45
+Batch accuracy: 89.45
+Batch accuracy: 88.87
+Batch accuracy: 90.43
+Batch accuracy: 89.26
+Batch accuracy: 89.45
+Batch accuracy: 88.67
+Batch accuracy: 88.67
+Batch accuracy: 88.87
+Batch accuracy: 90.04
+Batch accuracy: 87.70
+Batch accuracy: 87.50
+Batch accuracy: 88.28
+Batch accuracy: 90.82
+Batch accuracy: 91.60
+Batch accuracy: 89.06
+Batch accuracy: 88.67
+Batch accuracy: 87.89
+Batch accuracy: 89.84
+Batch accuracy: 88.67
+Batch accuracy: 90.23
+Batch accuracy: 87.89
+Batch accuracy: 88.09
+Batch accuracy: 91.21
+Batch accuracy: 87.30
+Batch accuracy: 86.91
+Batch accuracy: 90.23
+Batch accuracy: 87.50
+Batch accuracy: 88.87
+Batch accuracy: 88.48
+Batch accuracy: 90.43
+Batch accuracy: 88.48
+Batch accuracy: 88.87
+Batch accuracy: 88.28
+Batch accuracy: 88.67
+Batch accuracy: 86.91
+Batch accuracy: 88.09
+Batch accuracy: 88.87
+Batch accuracy: 90.62
+Batch accuracy: 89.06
+Batch accuracy: 87.50
+Batch accuracy: 87.11
+Batch accuracy: 90.43
+Batch accuracy: 88.48
+Batch accuracy: 89.26
+Batch accuracy: 87.50
+Batch accuracy: 87.50
+Batch accuracy: 89.65
+Batch accuracy: 90.43
+Batch accuracy: 88.67
+Batch accuracy: 90.23
+Batch accuracy: 89.45
+Batch accuracy: 90.82
+Batch accuracy: 90.23
+Batch accuracy: 89.45
+Batch accuracy: 87.89
+Batch accuracy: 88.67
+Batch accuracy: 89.26
+Batch accuracy: 88.48
+Batch accuracy: 87.30
+Batch accuracy: 89.45
+Batch accuracy: 89.06
+Batch accuracy: 89.65
+Batch accuracy: 90.04
+Batch accuracy: 90.23
+Batch accuracy: 88.67
+Batch accuracy: 88.67
+Batch accuracy: 88.28
+Batch accuracy: 88.87
+Batch accuracy: 90.23
+Batch accuracy: 90.04
+Batch accuracy: 88.87
+Batch accuracy: 88.28
+Batch accuracy: 89.06
+Batch accuracy: 90.82
+Batch accuracy: 88.67
+Batch accuracy: 88.28
+Batch accuracy: 87.11
+Batch accuracy: 90.04
+Batch accuracy: 90.23
+Batch accuracy: 85.94
+Batch accuracy: 88.18
+  Accuracy: 89.04
+  Validation Loss: 0.35
+  Validation took: 0:00:10
+New best model, saving it!
+
+======== Epoch 5 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.15
+  Batch    80  of    943.    Elapsed: 0:00:07.
+  step loss: 0.23
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.21
+  Batch   160  of    943.    Elapsed: 0:00:14.
+  step loss: 0.20
+  Batch   200  of    943.    Elapsed: 0:00:18.
+  step loss: 0.17
+  Batch   240  of    943.    Elapsed: 0:00:21.
+  step loss: 0.26
+  Batch   280  of    943.    Elapsed: 0:00:25.
+  step loss: 0.23
+  Batch   320  of    943.    Elapsed: 0:00:29.
+  step loss: 0.20
+  Batch   360  of    943.    Elapsed: 0:00:32.
+  step loss: 0.21
+  Batch   400  of    943.    Elapsed: 0:00:36.
+  step loss: 0.17
+  Batch   440  of    943.    Elapsed: 0:00:39.
+  step loss: 0.21
+  Batch   480  of    943.    Elapsed: 0:00:43.
+  step loss: 0.19
+  Batch   520  of    943.    Elapsed: 0:00:46.
+  step loss: 0.20
+  Batch   560  of    943.    Elapsed: 0:00:50.
+  step loss: 0.22
+  Batch   600  of    943.    Elapsed: 0:00:54.
+  step loss: 0.20
+  Batch   640  of    943.    Elapsed: 0:00:57.
+  step loss: 0.24
+  Batch   680  of    943.    Elapsed: 0:01:01.
+  step loss: 0.26
+  Batch   720  of    943.    Elapsed: 0:01:04.
+  step loss: 0.29
+  Batch   760  of    943.    Elapsed: 0:01:08.
+  step loss: 0.25
+  Batch   800  of    943.    Elapsed: 0:01:12.
+  step loss: 0.20
+  Batch   840  of    943.    Elapsed: 0:01:15.
+  step loss: 0.21
+  Batch   880  of    943.    Elapsed: 0:01:19.
+  step loss: 0.22
+  Batch   920  of    943.    Elapsed: 0:01:22.
+  step loss: 0.19
+
+  Average training loss: 0.22
+
+Running Validation...
+Batch accuracy: 89.65
+Batch accuracy: 92.58
+Batch accuracy: 86.33
+Batch accuracy: 87.30
+Batch accuracy: 88.48
+Batch accuracy: 88.48
+Batch accuracy: 88.09
+Batch accuracy: 88.28
+Batch accuracy: 86.52
+Batch accuracy: 88.87
+Batch accuracy: 91.99
+Batch accuracy: 86.72
+Batch accuracy: 89.84
+Batch accuracy: 89.65
+Batch accuracy: 90.23
+Batch accuracy: 89.45
+Batch accuracy: 88.87
+Batch accuracy: 91.21
+Batch accuracy: 88.48
+Batch accuracy: 87.30
+Batch accuracy: 90.43
+Batch accuracy: 87.30
+Batch accuracy: 91.80
+Batch accuracy: 88.67
+Batch accuracy: 91.80
+Batch accuracy: 87.89
+Batch accuracy: 88.48
+Batch accuracy: 88.48
+Batch accuracy: 90.82
+Batch accuracy: 88.87
+Batch accuracy: 92.19
+Batch accuracy: 88.87
+Batch accuracy: 89.84
+Batch accuracy: 91.60
+Batch accuracy: 90.43
+Batch accuracy: 90.23
+Batch accuracy: 89.26
+Batch accuracy: 88.48
+Batch accuracy: 87.11
+Batch accuracy: 86.91
+Batch accuracy: 89.26
+Batch accuracy: 88.87
+Batch accuracy: 88.09
+Batch accuracy: 88.09
+Batch accuracy: 89.84
+Batch accuracy: 89.06
+Batch accuracy: 89.45
+Batch accuracy: 86.13
+Batch accuracy: 90.82
+Batch accuracy: 88.09
+Batch accuracy: 88.67
+Batch accuracy: 90.82
+Batch accuracy: 89.65
+Batch accuracy: 91.99
+Batch accuracy: 87.70
+Batch accuracy: 87.50
+Batch accuracy: 90.43
+Batch accuracy: 91.41
+Batch accuracy: 86.33
+Batch accuracy: 87.89
+Batch accuracy: 88.09
+Batch accuracy: 90.23
+Batch accuracy: 87.50
+Batch accuracy: 87.89
+Batch accuracy: 87.89
+Batch accuracy: 88.87
+Batch accuracy: 88.28
+Batch accuracy: 89.45
+Batch accuracy: 87.30
+Batch accuracy: 88.87
+Batch accuracy: 88.28
+Batch accuracy: 89.65
+Batch accuracy: 87.70
+Batch accuracy: 88.28
+Batch accuracy: 88.28
+Batch accuracy: 90.23
+Batch accuracy: 87.30
+Batch accuracy: 88.67
+Batch accuracy: 88.67
+Batch accuracy: 91.02
+Batch accuracy: 90.04
+Batch accuracy: 88.28
+Batch accuracy: 92.58
+Batch accuracy: 89.65
+Batch accuracy: 89.65
+Batch accuracy: 91.02
+Batch accuracy: 91.41
+Batch accuracy: 88.87
+Batch accuracy: 90.82
+Batch accuracy: 89.84
+Batch accuracy: 90.23
+Batch accuracy: 88.28
+Batch accuracy: 87.70
+Batch accuracy: 88.28
+Batch accuracy: 91.60
+Batch accuracy: 91.02
+Batch accuracy: 90.82
+Batch accuracy: 89.65
+Batch accuracy: 88.67
+Batch accuracy: 87.70
+Batch accuracy: 90.43
+Batch accuracy: 92.77
+Batch accuracy: 88.09
+Batch accuracy: 88.87
+Batch accuracy: 87.32
+  Accuracy: 89.18
+  Validation Loss: 0.35
+  Validation took: 0:00:09
+New best model, saving it!
+
+======== Epoch 6 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.17
+  Batch    80  of    943.    Elapsed: 0:00:08.
+  step loss: 0.20
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.14
+  Batch   160  of    943.    Elapsed: 0:00:15.
+  step loss: 0.20
+  Batch   200  of    943.    Elapsed: 0:00:19.
+  step loss: 0.19
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.20
+  Batch   280  of    943.    Elapsed: 0:00:26.
+  step loss: 0.20
+  Batch   320  of    943.    Elapsed: 0:00:30.
+  step loss: 0.20
+  Batch   360  of    943.    Elapsed: 0:00:33.
+  step loss: 0.20
+  Batch   400  of    943.    Elapsed: 0:00:37.
+  step loss: 0.16
+  Batch   440  of    943.    Elapsed: 0:00:40.
+  step loss: 0.20
+  Batch   480  of    943.    Elapsed: 0:00:44.
+  step loss: 0.20
+  Batch   520  of    943.    Elapsed: 0:00:48.
+  step loss: 0.20
+  Batch   560  of    943.    Elapsed: 0:00:51.
+  step loss: 0.15
+  Batch   600  of    943.    Elapsed: 0:00:55.
+  step loss: 0.17
+  Batch   640  of    943.    Elapsed: 0:00:59.
+  step loss: 0.26
+  Batch   680  of    943.    Elapsed: 0:01:02.
+  step loss: 0.19
+  Batch   720  of    943.    Elapsed: 0:01:06.
+  step loss: 0.20
+  Batch   760  of    943.    Elapsed: 0:01:09.
+  step loss: 0.19
+  Batch   800  of    943.    Elapsed: 0:01:13.
+  step loss: 0.20
+  Batch   840  of    943.    Elapsed: 0:01:17.
+  step loss: 0.19
+  Batch   880  of    943.    Elapsed: 0:01:20.
+  step loss: 0.14
+  Batch   920  of    943.    Elapsed: 0:01:24.
+  step loss: 0.18
+
+  Average training loss: 0.19
+
+Running Validation...
+Batch accuracy: 90.23
+Batch accuracy: 89.26
+Batch accuracy: 89.45
+Batch accuracy: 89.45
+Batch accuracy: 89.26
+Batch accuracy: 88.87
+Batch accuracy: 88.48
+Batch accuracy: 91.21
+Batch accuracy: 88.67
+Batch accuracy: 89.45
+Batch accuracy: 89.84
+Batch accuracy: 91.02
+Batch accuracy: 89.84
+Batch accuracy: 89.84
+Batch accuracy: 88.67
+Batch accuracy: 90.04
+Batch accuracy: 88.67
+Batch accuracy: 89.84
+Batch accuracy: 90.62
+Batch accuracy: 90.62
+Batch accuracy: 88.87
+Batch accuracy: 88.87
+Batch accuracy: 90.62
+Batch accuracy: 87.89
+Batch accuracy: 91.41
+Batch accuracy: 87.50
+Batch accuracy: 88.09
+Batch accuracy: 88.87
+Batch accuracy: 88.67
+Batch accuracy: 87.89
+Batch accuracy: 89.84
+Batch accuracy: 90.23
+Batch accuracy: 90.62
+Batch accuracy: 91.41
+Batch accuracy: 89.26
+Batch accuracy: 90.04
+Batch accuracy: 89.06
+Batch accuracy: 88.48
+Batch accuracy: 91.02
+Batch accuracy: 89.65
+Batch accuracy: 89.45
+Batch accuracy: 88.48
+Batch accuracy: 88.87
+Batch accuracy: 88.48
+Batch accuracy: 86.91
+Batch accuracy: 89.45
+Batch accuracy: 89.45
+Batch accuracy: 89.65
+Batch accuracy: 90.04
+Batch accuracy: 86.13
+Batch accuracy: 88.87
+Batch accuracy: 87.70
+Batch accuracy: 87.89
+Batch accuracy: 89.26
+Batch accuracy: 90.43
+Batch accuracy: 89.06
+Batch accuracy: 88.67
+Batch accuracy: 89.26
+Batch accuracy: 91.41
+Batch accuracy: 89.26
+Batch accuracy: 91.02
+Batch accuracy: 90.04
+Batch accuracy: 86.52
+Batch accuracy: 87.70
+Batch accuracy: 91.02
+Batch accuracy: 89.26
+Batch accuracy: 88.28
+Batch accuracy: 87.70
+Batch accuracy: 88.48
+Batch accuracy: 90.23
+Batch accuracy: 86.72
+Batch accuracy: 88.67
+Batch accuracy: 89.45
+Batch accuracy: 90.43
+Batch accuracy: 90.23
+Batch accuracy: 88.48
+Batch accuracy: 88.09
+Batch accuracy: 89.65
+Batch accuracy: 90.04
+Batch accuracy: 87.11
+Batch accuracy: 90.04
+Batch accuracy: 88.09
+Batch accuracy: 89.65
+Batch accuracy: 91.02
+Batch accuracy: 89.26
+Batch accuracy: 88.48
+Batch accuracy: 91.41
+Batch accuracy: 88.28
+Batch accuracy: 88.48
+Batch accuracy: 87.11
+Batch accuracy: 89.45
+Batch accuracy: 87.50
+Batch accuracy: 91.21
+Batch accuracy: 87.89
+Batch accuracy: 90.23
+Batch accuracy: 88.28
+Batch accuracy: 90.43
+Batch accuracy: 89.06
+Batch accuracy: 90.43
+Batch accuracy: 89.45
+Batch accuracy: 91.02
+Batch accuracy: 90.04
+Batch accuracy: 89.26
+Batch accuracy: 91.21
+Batch accuracy: 86.74
+  Accuracy: 89.27
+  Validation Loss: 0.36
+  Validation took: 0:00:10
+New best model, saving it!
+
+======== Epoch 7 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.13
+  Batch    80  of    943.    Elapsed: 0:00:07.
+  step loss: 0.20
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.16
+  Batch   160  of    943.    Elapsed: 0:00:15.
+  step loss: 0.19
+  Batch   200  of    943.    Elapsed: 0:00:18.
+  step loss: 0.13
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.15
+  Batch   280  of    943.    Elapsed: 0:00:26.
+  step loss: 0.16
+  Batch   320  of    943.    Elapsed: 0:00:29.
+  step loss: 0.17
+  Batch   360  of    943.    Elapsed: 0:00:33.
+  step loss: 0.19
+  Batch   400  of    943.    Elapsed: 0:00:36.
+  step loss: 0.19
+  Batch   440  of    943.    Elapsed: 0:00:40.
+  step loss: 0.14
+  Batch   480  of    943.    Elapsed: 0:00:44.
+  step loss: 0.17
+  Batch   520  of    943.    Elapsed: 0:00:47.
+  step loss: 0.18
+  Batch   560  of    943.    Elapsed: 0:00:51.
+  step loss: 0.20
+  Batch   600  of    943.    Elapsed: 0:00:55.
+  step loss: 0.15
+  Batch   640  of    943.    Elapsed: 0:00:58.
+  step loss: 0.16
+  Batch   680  of    943.    Elapsed: 0:01:02.
+  step loss: 0.21
+  Batch   720  of    943.    Elapsed: 0:01:06.
+  step loss: 0.19
+  Batch   760  of    943.    Elapsed: 0:01:09.
+  step loss: 0.17
+  Batch   800  of    943.    Elapsed: 0:01:13.
+  step loss: 0.19
+  Batch   840  of    943.    Elapsed: 0:01:17.
+  step loss: 0.15
+  Batch   880  of    943.    Elapsed: 0:01:20.
+  step loss: 0.21
+  Batch   920  of    943.    Elapsed: 0:01:24.
+  step loss: 0.18
+
+  Average training loss: 0.17
+
+Running Validation...
+Batch accuracy: 89.26
+Batch accuracy: 86.91
+Batch accuracy: 88.67
+Batch accuracy: 90.62
+Batch accuracy: 88.09
+Batch accuracy: 89.84
+Batch accuracy: 88.87
+Batch accuracy: 88.87
+Batch accuracy: 89.45
+Batch accuracy: 89.84
+Batch accuracy: 88.87
+Batch accuracy: 87.50
+Batch accuracy: 91.02
+Batch accuracy: 90.23
+Batch accuracy: 87.89
+Batch accuracy: 87.50
+Batch accuracy: 88.28
+Batch accuracy: 90.62
+Batch accuracy: 90.82
+Batch accuracy: 88.87
+Batch accuracy: 91.21
+Batch accuracy: 87.89
+Batch accuracy: 87.70
+Batch accuracy: 87.70
+Batch accuracy: 90.43
+Batch accuracy: 91.41
+Batch accuracy: 88.87
+Batch accuracy: 89.06
+Batch accuracy: 89.45
+Batch accuracy: 89.45
+Batch accuracy: 88.09
+Batch accuracy: 91.02
+Batch accuracy: 88.48
+Batch accuracy: 89.84
+Batch accuracy: 87.70
+Batch accuracy: 90.62
+Batch accuracy: 89.84
+Batch accuracy: 91.80
+Batch accuracy: 89.06
+Batch accuracy: 90.82
+Batch accuracy: 89.45
+Batch accuracy: 89.65
+Batch accuracy: 90.62
+Batch accuracy: 88.67
+Batch accuracy: 91.99
+Batch accuracy: 87.11
+Batch accuracy: 89.45
+Batch accuracy: 89.45
+Batch accuracy: 91.02
+Batch accuracy: 90.23
+Batch accuracy: 88.09
+Batch accuracy: 88.87
+Batch accuracy: 89.84
+Batch accuracy: 87.50
+Batch accuracy: 90.43
+Batch accuracy: 89.45
+Batch accuracy: 87.11
+Batch accuracy: 87.89
+Batch accuracy: 89.65
+Batch accuracy: 90.23
+Batch accuracy: 89.84
+Batch accuracy: 88.67
+Batch accuracy: 90.82
+Batch accuracy: 89.26
+Batch accuracy: 88.09
+Batch accuracy: 88.67
+Batch accuracy: 90.82
+Batch accuracy: 86.72
+Batch accuracy: 89.06
+Batch accuracy: 87.30
+Batch accuracy: 89.06
+Batch accuracy: 90.04
+Batch accuracy: 90.43
+Batch accuracy: 89.26
+Batch accuracy: 88.87
+Batch accuracy: 91.60
+Batch accuracy: 87.50
+Batch accuracy: 88.48
+Batch accuracy: 89.45
+Batch accuracy: 90.23
+Batch accuracy: 87.50
+Batch accuracy: 87.70
+Batch accuracy: 87.89
+Batch accuracy: 90.62
+Batch accuracy: 88.28
+Batch accuracy: 89.84
+Batch accuracy: 87.11
+Batch accuracy: 89.65
+Batch accuracy: 89.84
+Batch accuracy: 90.23
+Batch accuracy: 87.70
+Batch accuracy: 89.45
+Batch accuracy: 89.84
+Batch accuracy: 89.06
+Batch accuracy: 89.65
+Batch accuracy: 86.91
+Batch accuracy: 88.67
+Batch accuracy: 89.45
+Batch accuracy: 89.45
+Batch accuracy: 88.28
+Batch accuracy: 88.87
+Batch accuracy: 89.84
+Batch accuracy: 87.70
+Batch accuracy: 91.21
+Batch accuracy: 90.78
+  Accuracy: 89.23
+  Validation Loss: 0.36
+  Validation took: 0:00:10
+The model does not improve for 1 epochs!
+
+======== Epoch 8 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.14
+  Batch    80  of    943.    Elapsed: 0:00:08.
+  step loss: 0.16
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.19
+  Batch   160  of    943.    Elapsed: 0:00:15.
+  step loss: 0.20
+  Batch   200  of    943.    Elapsed: 0:00:19.
+  step loss: 0.15
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.22
+  Batch   280  of    943.    Elapsed: 0:00:26.
+  step loss: 0.10
+  Batch   320  of    943.    Elapsed: 0:00:29.
+  step loss: 0.14
+  Batch   360  of    943.    Elapsed: 0:00:33.
+  step loss: 0.16
+  Batch   400  of    943.    Elapsed: 0:00:37.
+  step loss: 0.17
+  Batch   440  of    943.    Elapsed: 0:00:40.
+  step loss: 0.15
+  Batch   480  of    943.    Elapsed: 0:00:44.
+  step loss: 0.15
+  Batch   520  of    943.    Elapsed: 0:00:48.
+  step loss: 0.18
+  Batch   560  of    943.    Elapsed: 0:00:52.
+  step loss: 0.15
+  Batch   600  of    943.    Elapsed: 0:00:55.
+  step loss: 0.23
+  Batch   640  of    943.    Elapsed: 0:00:59.
+  step loss: 0.13
+  Batch   680  of    943.    Elapsed: 0:01:03.
+  step loss: 0.17
+  Batch   720  of    943.    Elapsed: 0:01:06.
+  step loss: 0.16
+  Batch   760  of    943.    Elapsed: 0:01:10.
+  step loss: 0.19
+  Batch   800  of    943.    Elapsed: 0:01:14.
+  step loss: 0.14
+  Batch   840  of    943.    Elapsed: 0:01:18.
+  step loss: 0.14
+  Batch   880  of    943.    Elapsed: 0:01:21.
+  step loss: 0.16
+  Batch   920  of    943.    Elapsed: 0:01:25.
+  step loss: 0.11
+
+  Average training loss: 0.16
+
+Running Validation...
+Batch accuracy: 89.06
+Batch accuracy: 87.89
+Batch accuracy: 88.48
+Batch accuracy: 88.67
+Batch accuracy: 88.67
+Batch accuracy: 87.89
+Batch accuracy: 91.60
+Batch accuracy: 88.87
+Batch accuracy: 88.48
+Batch accuracy: 90.62
+Batch accuracy: 88.28
+Batch accuracy: 89.06
+Batch accuracy: 91.21
+Batch accuracy: 88.28
+Batch accuracy: 89.84
+Batch accuracy: 88.09
+Batch accuracy: 91.80
+Batch accuracy: 88.28
+Batch accuracy: 89.06
+Batch accuracy: 89.84
+Batch accuracy: 88.09
+Batch accuracy: 89.84
+Batch accuracy: 89.26
+Batch accuracy: 88.28
+Batch accuracy: 89.06
+Batch accuracy: 89.45
+Batch accuracy: 89.26
+Batch accuracy: 87.30
+Batch accuracy: 87.70
+Batch accuracy: 88.48
+Batch accuracy: 90.04
+Batch accuracy: 90.04
+Batch accuracy: 92.38
+Batch accuracy: 89.45
+Batch accuracy: 92.19
+Batch accuracy: 90.62
+Batch accuracy: 89.84
+Batch accuracy: 90.43
+Batch accuracy: 86.72
+Batch accuracy: 91.60
+Batch accuracy: 87.11
+Batch accuracy: 88.48
+Batch accuracy: 91.21
+Batch accuracy: 88.87
+Batch accuracy: 89.06
+Batch accuracy: 88.48
+Batch accuracy: 91.02
+Batch accuracy: 87.70
+Batch accuracy: 86.72
+Batch accuracy: 89.65
+Batch accuracy: 90.04
+Batch accuracy: 89.84
+Batch accuracy: 89.06
+Batch accuracy: 90.62
+Batch accuracy: 90.04
+Batch accuracy: 88.87
+Batch accuracy: 87.50
+Batch accuracy: 86.72
+Batch accuracy: 89.45
+Batch accuracy: 89.65
+Batch accuracy: 88.09
+Batch accuracy: 89.45
+Batch accuracy: 89.26
+Batch accuracy: 91.21
+Batch accuracy: 88.09
+Batch accuracy: 90.82
+Batch accuracy: 89.45
+Batch accuracy: 90.43
+Batch accuracy: 90.23
+Batch accuracy: 90.82
+Batch accuracy: 90.04
+Batch accuracy: 87.70
+Batch accuracy: 88.09
+Batch accuracy: 89.65
+Batch accuracy: 89.65
+Batch accuracy: 90.82
+Batch accuracy: 89.84
+Batch accuracy: 90.43
+Batch accuracy: 89.06
+Batch accuracy: 90.04
+Batch accuracy: 90.82
+Batch accuracy: 89.26
+Batch accuracy: 90.23
+Batch accuracy: 88.48
+Batch accuracy: 90.23
+Batch accuracy: 88.67
+Batch accuracy: 89.65
+Batch accuracy: 89.45
+Batch accuracy: 87.11
+Batch accuracy: 90.04
+Batch accuracy: 88.67
+Batch accuracy: 91.02
+Batch accuracy: 89.65
+Batch accuracy: 88.87
+Batch accuracy: 90.04
+Batch accuracy: 90.04
+Batch accuracy: 90.23
+Batch accuracy: 89.65
+Batch accuracy: 89.26
+Batch accuracy: 89.26
+Batch accuracy: 88.67
+Batch accuracy: 88.28
+Batch accuracy: 88.87
+Batch accuracy: 88.09
+Batch accuracy: 89.05
+  Accuracy: 89.34
+Epoch     8: reducing learning rate of group 0 to 1.0000e-04.
+  Validation Loss: 0.37
+  Validation took: 0:00:09
+New best model, saving it!
+
+======== Epoch 9 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.13
+  Batch    80  of    943.    Elapsed: 0:00:08.
+  step loss: 0.14
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.13
+  Batch   160  of    943.    Elapsed: 0:00:15.
+  step loss: 0.12
+  Batch   200  of    943.    Elapsed: 0:00:19.
+  step loss: 0.16
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.13
+  Batch   280  of    943.    Elapsed: 0:00:26.
+  step loss: 0.12
+  Batch   320  of    943.    Elapsed: 0:00:30.
+  step loss: 0.10
+  Batch   360  of    943.    Elapsed: 0:00:33.
+  step loss: 0.11
+  Batch   400  of    943.    Elapsed: 0:00:37.
+  step loss: 0.12
+  Batch   440  of    943.    Elapsed: 0:00:40.
+  step loss: 0.14
+  Batch   480  of    943.    Elapsed: 0:00:44.
+  step loss: 0.13
+  Batch   520  of    943.    Elapsed: 0:00:48.
+  step loss: 0.12
+  Batch   560  of    943.    Elapsed: 0:00:52.
+  step loss: 0.14
+  Batch   600  of    943.    Elapsed: 0:00:56.
+  step loss: 0.13
+  Batch   640  of    943.    Elapsed: 0:00:59.
+  step loss: 0.13
+  Batch   680  of    943.    Elapsed: 0:01:03.
+  step loss: 0.12
+  Batch   720  of    943.    Elapsed: 0:01:06.
+  step loss: 0.13
+  Batch   760  of    943.    Elapsed: 0:01:10.
+  step loss: 0.13
+  Batch   800  of    943.    Elapsed: 0:01:14.
+  step loss: 0.14
+  Batch   840  of    943.    Elapsed: 0:01:18.
+  step loss: 0.16
+  Batch   880  of    943.    Elapsed: 0:01:21.
+  step loss: 0.10
+  Batch   920  of    943.    Elapsed: 0:01:25.
+  step loss: 0.17
+
+  Average training loss: 0.14
+
+Running Validation...
+Batch accuracy: 88.67
+Batch accuracy: 90.04
+Batch accuracy: 88.67
+Batch accuracy: 88.67
+Batch accuracy: 91.80
+Batch accuracy: 86.91
+Batch accuracy: 92.58
+Batch accuracy: 90.04
+Batch accuracy: 90.62
+Batch accuracy: 88.67
+Batch accuracy: 91.41
+Batch accuracy: 89.65
+Batch accuracy: 90.43
+Batch accuracy: 90.43
+Batch accuracy: 89.45
+Batch accuracy: 88.09
+Batch accuracy: 91.99
+Batch accuracy: 89.65
+Batch accuracy: 90.23
+Batch accuracy: 87.89
+Batch accuracy: 91.99
+Batch accuracy: 89.45
+Batch accuracy: 88.87
+Batch accuracy: 89.65
+Batch accuracy: 86.13
+Batch accuracy: 87.70
+Batch accuracy: 88.09
+Batch accuracy: 87.70
+Batch accuracy: 88.67
+Batch accuracy: 89.26
+Batch accuracy: 89.06
+Batch accuracy: 87.30
+Batch accuracy: 89.26
+Batch accuracy: 90.43
+Batch accuracy: 89.06
+Batch accuracy: 90.43
+Batch accuracy: 89.06
+Batch accuracy: 87.89
+Batch accuracy: 90.43
+Batch accuracy: 89.45
+Batch accuracy: 90.43
+Batch accuracy: 90.23
+Batch accuracy: 87.30
+Batch accuracy: 91.02
+Batch accuracy: 89.84
+Batch accuracy: 89.45
+Batch accuracy: 88.28
+Batch accuracy: 89.84
+Batch accuracy: 90.23
+Batch accuracy: 91.99
+Batch accuracy: 88.48
+Batch accuracy: 89.45
+Batch accuracy: 88.09
+Batch accuracy: 89.84
+Batch accuracy: 89.84
+Batch accuracy: 89.45
+Batch accuracy: 88.48
+Batch accuracy: 90.82
+Batch accuracy: 87.89
+Batch accuracy: 89.45
+Batch accuracy: 91.99
+Batch accuracy: 88.09
+Batch accuracy: 88.87
+Batch accuracy: 90.23
+Batch accuracy: 88.48
+Batch accuracy: 88.67
+Batch accuracy: 88.48
+Batch accuracy: 90.04
+Batch accuracy: 88.28
+Batch accuracy: 90.82
+Batch accuracy: 87.70
+Batch accuracy: 89.26
+Batch accuracy: 89.84
+Batch accuracy: 89.65
+Batch accuracy: 90.23
+Batch accuracy: 89.84
+Batch accuracy: 90.04
+Batch accuracy: 88.09
+Batch accuracy: 87.50
+Batch accuracy: 89.45
+Batch accuracy: 89.45
+Batch accuracy: 88.48
+Batch accuracy: 88.67
+Batch accuracy: 88.28
+Batch accuracy: 86.72
+Batch accuracy: 88.48
+Batch accuracy: 90.04
+Batch accuracy: 87.50
+Batch accuracy: 87.89
+Batch accuracy: 91.41
+Batch accuracy: 91.41
+Batch accuracy: 89.45
+Batch accuracy: 88.09
+Batch accuracy: 89.45
+Batch accuracy: 91.99
+Batch accuracy: 88.48
+Batch accuracy: 89.45
+Batch accuracy: 90.43
+Batch accuracy: 89.45
+Batch accuracy: 89.06
+Batch accuracy: 91.80
+Batch accuracy: 89.84
+Batch accuracy: 87.50
+Batch accuracy: 90.23
+Batch accuracy: 89.34
+  Accuracy: 89.38
+  Validation Loss: 0.36
+  Validation took: 0:00:10
+New best model, saving it!
+
+======== Epoch 10 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.12
+  Batch    80  of    943.    Elapsed: 0:00:08.
+  step loss: 0.13
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.15
+  Batch   160  of    943.    Elapsed: 0:00:15.
+  step loss: 0.12
+  Batch   200  of    943.    Elapsed: 0:00:19.
+  step loss: 0.16
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.18
+  Batch   280  of    943.    Elapsed: 0:00:26.
+  step loss: 0.17
+  Batch   320  of    943.    Elapsed: 0:00:30.
+  step loss: 0.15
+  Batch   360  of    943.    Elapsed: 0:00:33.
+  step loss: 0.13
+  Batch   400  of    943.    Elapsed: 0:00:37.
+  step loss: 0.14
+  Batch   440  of    943.    Elapsed: 0:00:41.
+  step loss: 0.11
+  Batch   480  of    943.    Elapsed: 0:00:44.
+  step loss: 0.11
+  Batch   520  of    943.    Elapsed: 0:00:48.
+  step loss: 0.15
+  Batch   560  of    943.    Elapsed: 0:00:52.
+  step loss: 0.11
+  Batch   600  of    943.    Elapsed: 0:00:55.
+  step loss: 0.14
+  Batch   640  of    943.    Elapsed: 0:00:59.
+  step loss: 0.15
+  Batch   680  of    943.    Elapsed: 0:01:03.
+  step loss: 0.16
+  Batch   720  of    943.    Elapsed: 0:01:06.
+  step loss: 0.15
+  Batch   760  of    943.    Elapsed: 0:01:10.
+  step loss: 0.14
+  Batch   800  of    943.    Elapsed: 0:01:14.
+  step loss: 0.11
+  Batch   840  of    943.    Elapsed: 0:01:17.
+  step loss: 0.15
+  Batch   880  of    943.    Elapsed: 0:01:21.
+  step loss: 0.11
+  Batch   920  of    943.    Elapsed: 0:01:25.
+  step loss: 0.15
+
+  Average training loss: 0.14
+
+Running Validation...
+Batch accuracy: 86.33
+Batch accuracy: 88.87
+Batch accuracy: 89.65
+Batch accuracy: 89.45
+Batch accuracy: 88.87
+Batch accuracy: 88.67
+Batch accuracy: 88.87
+Batch accuracy: 90.43
+Batch accuracy: 88.87
+Batch accuracy: 90.62
+Batch accuracy: 89.45
+Batch accuracy: 91.41
+Batch accuracy: 88.28
+Batch accuracy: 90.62
+Batch accuracy: 88.48
+Batch accuracy: 90.23
+Batch accuracy: 89.65
+Batch accuracy: 90.43
+Batch accuracy: 89.84
+Batch accuracy: 88.48
+Batch accuracy: 90.23
+Batch accuracy: 87.50
+Batch accuracy: 89.45
+Batch accuracy: 90.43
+Batch accuracy: 91.60
+Batch accuracy: 90.04
+Batch accuracy: 87.89
+Batch accuracy: 89.84
+Batch accuracy: 90.62
+Batch accuracy: 89.65
+Batch accuracy: 88.28
+Batch accuracy: 85.35
+Batch accuracy: 87.89
+Batch accuracy: 89.06
+Batch accuracy: 89.65
+Batch accuracy: 90.04
+Batch accuracy: 91.21
+Batch accuracy: 87.50
+Batch accuracy: 87.89
+Batch accuracy: 88.67
+Batch accuracy: 90.23
+Batch accuracy: 88.09
+Batch accuracy: 89.65
+Batch accuracy: 90.62
+Batch accuracy: 90.23
+Batch accuracy: 87.70
+Batch accuracy: 90.23
+Batch accuracy: 88.48
+Batch accuracy: 90.62
+Batch accuracy: 90.04
+Batch accuracy: 91.21
+Batch accuracy: 89.45
+Batch accuracy: 91.80
+Batch accuracy: 88.28
+Batch accuracy: 90.82
+Batch accuracy: 89.65
+Batch accuracy: 88.28
+Batch accuracy: 89.65
+Batch accuracy: 88.09
+Batch accuracy: 89.84
+Batch accuracy: 87.89
+Batch accuracy: 91.99
+Batch accuracy: 89.06
+Batch accuracy: 91.41
+Batch accuracy: 91.80
+Batch accuracy: 89.45
+Batch accuracy: 88.48
+Batch accuracy: 90.82
+Batch accuracy: 90.62
+Batch accuracy: 86.91
+Batch accuracy: 88.28
+Batch accuracy: 89.45
+Batch accuracy: 90.82
+Batch accuracy: 90.23
+Batch accuracy: 91.41
+Batch accuracy: 88.48
+Batch accuracy: 89.65
+Batch accuracy: 90.23
+Batch accuracy: 89.45
+Batch accuracy: 88.87
+Batch accuracy: 87.50
+Batch accuracy: 89.65
+Batch accuracy: 89.26
+Batch accuracy: 92.19
+Batch accuracy: 91.02
+Batch accuracy: 88.48
+Batch accuracy: 90.04
+Batch accuracy: 90.62
+Batch accuracy: 87.11
+Batch accuracy: 90.62
+Batch accuracy: 88.67
+Batch accuracy: 87.89
+Batch accuracy: 87.89
+Batch accuracy: 87.70
+Batch accuracy: 86.33
+Batch accuracy: 88.09
+Batch accuracy: 88.87
+Batch accuracy: 90.23
+Batch accuracy: 90.04
+Batch accuracy: 90.62
+Batch accuracy: 92.19
+Batch accuracy: 87.89
+Batch accuracy: 89.06
+Batch accuracy: 90.04
+Batch accuracy: 85.59
+  Accuracy: 89.39
+  Validation Loss: 0.37
+  Validation took: 0:00:10
+New best model, saving it!
+
+======== Epoch 11 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.13
+  Batch    80  of    943.    Elapsed: 0:00:08.
+  step loss: 0.15
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.11
+  Batch   160  of    943.    Elapsed: 0:00:15.
+  step loss: 0.13
+  Batch   200  of    943.    Elapsed: 0:00:19.
+  step loss: 0.15
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.12
+  Batch   280  of    943.    Elapsed: 0:00:26.
+  step loss: 0.12
+  Batch   320  of    943.    Elapsed: 0:00:30.
+  step loss: 0.14
+  Batch   360  of    943.    Elapsed: 0:00:33.
+  step loss: 0.15
+  Batch   400  of    943.    Elapsed: 0:00:37.
+  step loss: 0.11
+  Batch   440  of    943.    Elapsed: 0:00:41.
+  step loss: 0.14
+  Batch   480  of    943.    Elapsed: 0:00:44.
+  step loss: 0.12
+  Batch   520  of    943.    Elapsed: 0:00:48.
+  step loss: 0.15
+  Batch   560  of    943.    Elapsed: 0:00:52.
+  step loss: 0.17
+  Batch   600  of    943.    Elapsed: 0:00:56.
+  step loss: 0.14
+  Batch   640  of    943.    Elapsed: 0:00:59.
+  step loss: 0.15
+  Batch   680  of    943.    Elapsed: 0:01:03.
+  step loss: 0.11
+  Batch   720  of    943.    Elapsed: 0:01:07.
+  step loss: 0.13
+  Batch   760  of    943.    Elapsed: 0:01:10.
+  step loss: 0.13
+  Batch   800  of    943.    Elapsed: 0:01:14.
+  step loss: 0.11
+  Batch   840  of    943.    Elapsed: 0:01:18.
+  step loss: 0.15
+  Batch   880  of    943.    Elapsed: 0:01:21.
+  step loss: 0.11
+  Batch   920  of    943.    Elapsed: 0:01:25.
+  step loss: 0.14
+
+  Average training loss: 0.13
+
+Running Validation...
+Batch accuracy: 88.48
+Batch accuracy: 90.23
+Batch accuracy: 91.02
+Batch accuracy: 91.60
+Batch accuracy: 93.36
+Batch accuracy: 90.23
+Batch accuracy: 86.91
+Batch accuracy: 90.82
+Batch accuracy: 89.06
+Batch accuracy: 88.87
+Batch accuracy: 88.48
+Batch accuracy: 89.26
+Batch accuracy: 89.84
+Batch accuracy: 87.11
+Batch accuracy: 88.09
+Batch accuracy: 88.48
+Batch accuracy: 91.41
+Batch accuracy: 89.65
+Batch accuracy: 88.87
+Batch accuracy: 90.82
+Batch accuracy: 90.43
+Batch accuracy: 89.06
+Batch accuracy: 91.02
+Batch accuracy: 88.87
+Batch accuracy: 88.28
+Batch accuracy: 89.45
+Batch accuracy: 86.52
+Batch accuracy: 89.06
+Batch accuracy: 90.23
+Batch accuracy: 88.28
+Batch accuracy: 88.28
+Batch accuracy: 89.65
+Batch accuracy: 89.06
+Batch accuracy: 88.09
+Batch accuracy: 87.50
+Batch accuracy: 91.41
+Batch accuracy: 89.65
+Batch accuracy: 90.23
+Batch accuracy: 89.26
+Batch accuracy: 88.67
+Batch accuracy: 88.67
+Batch accuracy: 90.04
+Batch accuracy: 90.23
+Batch accuracy: 88.67
+Batch accuracy: 90.23
+Batch accuracy: 90.43
+Batch accuracy: 86.72
+Batch accuracy: 89.65
+Batch accuracy: 90.04
+Batch accuracy: 90.23
+Batch accuracy: 89.84
+Batch accuracy: 90.43
+Batch accuracy: 89.26
+Batch accuracy: 90.04
+Batch accuracy: 88.87
+Batch accuracy: 87.30
+Batch accuracy: 87.30
+Batch accuracy: 88.67
+Batch accuracy: 90.04
+Batch accuracy: 92.38
+Batch accuracy: 91.21
+Batch accuracy: 89.65
+Batch accuracy: 88.87
+Batch accuracy: 91.02
+Batch accuracy: 88.48
+Batch accuracy: 90.23
+Batch accuracy: 90.04
+Batch accuracy: 89.26
+Batch accuracy: 86.13
+Batch accuracy: 90.43
+Batch accuracy: 91.41
+Batch accuracy: 92.58
+Batch accuracy: 90.43
+Batch accuracy: 88.67
+Batch accuracy: 88.67
+Batch accuracy: 88.28
+Batch accuracy: 89.45
+Batch accuracy: 88.67
+Batch accuracy: 87.30
+Batch accuracy: 89.84
+Batch accuracy: 88.87
+Batch accuracy: 91.41
+Batch accuracy: 89.65
+Batch accuracy: 88.28
+Batch accuracy: 88.87
+Batch accuracy: 88.48
+Batch accuracy: 86.72
+Batch accuracy: 88.09
+Batch accuracy: 89.84
+Batch accuracy: 91.02
+Batch accuracy: 89.45
+Batch accuracy: 86.91
+Batch accuracy: 87.50
+Batch accuracy: 90.62
+Batch accuracy: 89.65
+Batch accuracy: 90.82
+Batch accuracy: 88.09
+Batch accuracy: 89.45
+Batch accuracy: 89.84
+Batch accuracy: 90.23
+Batch accuracy: 90.62
+Batch accuracy: 88.48
+Batch accuracy: 88.09
+Batch accuracy: 89.26
+Batch accuracy: 90.49
+  Accuracy: 89.39
+  Validation Loss: 0.37
+  Validation took: 0:00:10
+The model does not improve for 1 epochs!
+
+======== Epoch 12 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.12
+  Batch    80  of    943.    Elapsed: 0:00:08.
+  step loss: 0.09
+  Batch   120  of    943.    Elapsed: 0:00:12.
+  step loss: 0.11
+  Batch   160  of    943.    Elapsed: 0:00:15.
+  step loss: 0.12
+  Batch   200  of    943.    Elapsed: 0:00:19.
+  step loss: 0.17
+  Batch   240  of    943.    Elapsed: 0:00:23.
+  step loss: 0.11
+  Batch   280  of    943.    Elapsed: 0:00:26.
+  step loss: 0.13
+  Batch   320  of    943.    Elapsed: 0:00:30.
+  step loss: 0.11
+  Batch   360  of    943.    Elapsed: 0:00:34.
+  step loss: 0.15
+  Batch   400  of    943.    Elapsed: 0:00:38.
+  step loss: 0.12
+  Batch   440  of    943.    Elapsed: 0:00:41.
+  step loss: 0.15
+  Batch   480  of    943.    Elapsed: 0:00:45.
+  step loss: 0.09
+  Batch   520  of    943.    Elapsed: 0:00:49.
+  step loss: 0.11
+  Batch   560  of    943.    Elapsed: 0:00:53.
+  step loss: 0.14
+  Batch   600  of    943.    Elapsed: 0:00:56.
+  step loss: 0.13
+  Batch   640  of    943.    Elapsed: 0:01:00.
+  step loss: 0.10
+  Batch   680  of    943.    Elapsed: 0:01:04.
+  step loss: 0.16
+  Batch   720  of    943.    Elapsed: 0:01:07.
+  step loss: 0.10
+  Batch   760  of    943.    Elapsed: 0:01:11.
+  step loss: 0.16
+  Batch   800  of    943.    Elapsed: 0:01:15.
+  step loss: 0.13
+  Batch   840  of    943.    Elapsed: 0:01:18.
+  step loss: 0.14
+  Batch   880  of    943.    Elapsed: 0:01:22.
+  step loss: 0.13
+  Batch   920  of    943.    Elapsed: 0:01:26.
+  step loss: 0.17
+
+  Average training loss: 0.13
+
+Running Validation...
+Batch accuracy: 84.96
+Batch accuracy: 89.65
+Batch accuracy: 90.62
+Batch accuracy: 87.70
+Batch accuracy: 87.50
+Batch accuracy: 88.28
+Batch accuracy: 86.33
+Batch accuracy: 88.48
+Batch accuracy: 89.84
+Batch accuracy: 89.45
+Batch accuracy: 88.48
+Batch accuracy: 90.82
+Batch accuracy: 88.09
+Batch accuracy: 89.06
+Batch accuracy: 91.21
+Batch accuracy: 89.65
+Batch accuracy: 91.02
+Batch accuracy: 90.62
+Batch accuracy: 88.67
+Batch accuracy: 87.30
+Batch accuracy: 88.67
+Batch accuracy: 89.84
+Batch accuracy: 90.43
+Batch accuracy: 90.62
+Batch accuracy: 90.82
+Batch accuracy: 89.65
+Batch accuracy: 90.04
+Batch accuracy: 91.02
+Batch accuracy: 88.28
+Batch accuracy: 88.28
+Batch accuracy: 89.45
+Batch accuracy: 90.23
+Batch accuracy: 90.82
+Batch accuracy: 90.43
+Batch accuracy: 90.62
+Batch accuracy: 89.06
+Batch accuracy: 89.84
+Batch accuracy: 90.82
+Batch accuracy: 91.21
+Batch accuracy: 90.43
+Batch accuracy: 90.43
+Batch accuracy: 89.45
+Batch accuracy: 88.87
+Batch accuracy: 89.06
+Batch accuracy: 90.43
+Batch accuracy: 91.99
+Batch accuracy: 91.21
+Batch accuracy: 91.41
+Batch accuracy: 87.11
+Batch accuracy: 90.04
+Batch accuracy: 90.43
+Batch accuracy: 86.91
+Batch accuracy: 87.89
+Batch accuracy: 89.06
+Batch accuracy: 89.26
+Batch accuracy: 90.23
+Batch accuracy: 91.21
+Batch accuracy: 90.43
+Batch accuracy: 87.50
+Batch accuracy: 89.06
+Batch accuracy: 87.30
+Batch accuracy: 89.65
+Batch accuracy: 91.02
+Batch accuracy: 88.67
+Batch accuracy: 93.16
+Batch accuracy: 88.87
+Batch accuracy: 87.89
+Batch accuracy: 89.26
+Batch accuracy: 87.70
+Batch accuracy: 90.43
+Batch accuracy: 91.21
+Batch accuracy: 89.45
+Batch accuracy: 86.72
+Batch accuracy: 90.04
+Batch accuracy: 91.60
+Batch accuracy: 90.43
+Batch accuracy: 87.89
+Batch accuracy: 88.28
+Batch accuracy: 88.87
+Batch accuracy: 89.06
+Batch accuracy: 89.84
+Batch accuracy: 86.91
+Batch accuracy: 90.43
+Batch accuracy: 89.65
+Batch accuracy: 91.21
+Batch accuracy: 90.04
+Batch accuracy: 90.62
+Batch accuracy: 91.21
+Batch accuracy: 87.30
+Batch accuracy: 89.45
+Batch accuracy: 89.84
+Batch accuracy: 87.89
+Batch accuracy: 88.09
+Batch accuracy: 87.50
+Batch accuracy: 90.23
+Batch accuracy: 90.62
+Batch accuracy: 90.04
+Batch accuracy: 88.67
+Batch accuracy: 87.11
+Batch accuracy: 88.09
+Batch accuracy: 85.94
+Batch accuracy: 88.87
+Batch accuracy: 90.23
+Batch accuracy: 90.04
+Batch accuracy: 89.63
+  Accuracy: 89.40
+Epoch    12: reducing learning rate of group 0 to 1.0000e-05.
+  Validation Loss: 0.37
+  Validation took: 0:00:10
+New best model, saving it!
+
+======== Epoch 13 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.12
+  Batch    80  of    943.    Elapsed: 0:00:07.
+  step loss: 0.10
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.15
+  Batch   160  of    943.    Elapsed: 0:00:15.
+  step loss: 0.12
+  Batch   200  of    943.    Elapsed: 0:00:19.
+  step loss: 0.09
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.13
+  Batch   280  of    943.    Elapsed: 0:00:26.
+  step loss: 0.11
+  Batch   320  of    943.    Elapsed: 0:00:30.
+  step loss: 0.13
+  Batch   360  of    943.    Elapsed: 0:00:34.
+  step loss: 0.12
+  Batch   400  of    943.    Elapsed: 0:00:37.
+  step loss: 0.11
+  Batch   440  of    943.    Elapsed: 0:00:41.
+  step loss: 0.13
+  Batch   480  of    943.    Elapsed: 0:00:45.
+  step loss: 0.11
+  Batch   520  of    943.    Elapsed: 0:00:48.
+  step loss: 0.13
+  Batch   560  of    943.    Elapsed: 0:00:52.
+  step loss: 0.14
+  Batch   600  of    943.    Elapsed: 0:00:56.
+  step loss: 0.12
+  Batch   640  of    943.    Elapsed: 0:01:00.
+  step loss: 0.09
+  Batch   680  of    943.    Elapsed: 0:01:04.
+  step loss: 0.13
+  Batch   720  of    943.    Elapsed: 0:01:08.
+  step loss: 0.12
+  Batch   760  of    943.    Elapsed: 0:01:11.
+  step loss: 0.16
+  Batch   800  of    943.    Elapsed: 0:01:15.
+  step loss: 0.16
+  Batch   840  of    943.    Elapsed: 0:01:19.
+  step loss: 0.07
+  Batch   880  of    943.    Elapsed: 0:01:23.
+  step loss: 0.14
+  Batch   920  of    943.    Elapsed: 0:01:27.
+  step loss: 0.13
+
+  Average training loss: 0.13
+
+Running Validation...
+Batch accuracy: 87.89
+Batch accuracy: 91.21
+Batch accuracy: 87.70
+Batch accuracy: 91.80
+Batch accuracy: 88.28
+Batch accuracy: 91.02
+Batch accuracy: 89.06
+Batch accuracy: 87.50
+Batch accuracy: 88.28
+Batch accuracy: 90.04
+Batch accuracy: 89.65
+Batch accuracy: 90.62
+Batch accuracy: 86.72
+Batch accuracy: 90.62
+Batch accuracy: 90.62
+Batch accuracy: 88.28
+Batch accuracy: 91.02
+Batch accuracy: 90.04
+Batch accuracy: 88.48
+Batch accuracy: 90.62
+Batch accuracy: 88.48
+Batch accuracy: 91.41
+Batch accuracy: 90.04
+Batch accuracy: 91.02
+Batch accuracy: 89.06
+Batch accuracy: 90.23
+Batch accuracy: 89.65
+Batch accuracy: 89.45
+Batch accuracy: 88.09
+Batch accuracy: 90.82
+Batch accuracy: 90.62
+Batch accuracy: 89.84
+Batch accuracy: 87.89
+Batch accuracy: 90.23
+Batch accuracy: 86.72
+Batch accuracy: 88.09
+Batch accuracy: 89.06
+Batch accuracy: 88.67
+Batch accuracy: 87.30
+Batch accuracy: 89.06
+Batch accuracy: 88.87
+Batch accuracy: 92.77
+Batch accuracy: 92.97
+Batch accuracy: 89.65
+Batch accuracy: 88.28
+Batch accuracy: 92.19
+Batch accuracy: 91.41
+Batch accuracy: 90.23
+Batch accuracy: 90.43
+Batch accuracy: 88.28
+Batch accuracy: 89.45
+Batch accuracy: 88.48
+Batch accuracy: 89.26
+Batch accuracy: 90.82
+Batch accuracy: 89.84
+Batch accuracy: 88.48
+Batch accuracy: 87.70
+Batch accuracy: 90.82
+Batch accuracy: 91.02
+Batch accuracy: 87.11
+Batch accuracy: 89.06
+Batch accuracy: 89.26
+Batch accuracy: 90.62
+Batch accuracy: 89.06
+Batch accuracy: 88.87
+Batch accuracy: 88.28
+Batch accuracy: 90.62
+Batch accuracy: 88.67
+Batch accuracy: 89.84
+Batch accuracy: 89.65
+Batch accuracy: 88.67
+Batch accuracy: 90.43
+Batch accuracy: 88.28
+Batch accuracy: 89.84
+Batch accuracy: 88.09
+Batch accuracy: 89.26
+Batch accuracy: 87.89
+Batch accuracy: 89.45
+Batch accuracy: 88.67
+Batch accuracy: 89.26
+Batch accuracy: 89.26
+Batch accuracy: 88.09
+Batch accuracy: 92.97
+Batch accuracy: 88.48
+Batch accuracy: 89.45
+Batch accuracy: 90.82
+Batch accuracy: 88.48
+Batch accuracy: 87.70
+Batch accuracy: 88.48
+Batch accuracy: 88.48
+Batch accuracy: 90.04
+Batch accuracy: 90.23
+Batch accuracy: 87.89
+Batch accuracy: 90.23
+Batch accuracy: 89.45
+Batch accuracy: 89.26
+Batch accuracy: 85.94
+Batch accuracy: 88.67
+Batch accuracy: 88.48
+Batch accuracy: 88.67
+Batch accuracy: 93.16
+Batch accuracy: 89.84
+Batch accuracy: 89.26
+Batch accuracy: 88.87
+Batch accuracy: 90.78
+  Accuracy: 89.43
+  Validation Loss: 0.37
+  Validation took: 0:00:10
+New best model, saving it!
+
+======== Epoch 14 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.12
+  Batch    80  of    943.    Elapsed: 0:00:08.
+  step loss: 0.13
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.12
+  Batch   160  of    943.    Elapsed: 0:00:15.
+  step loss: 0.12
+  Batch   200  of    943.    Elapsed: 0:00:19.
+  step loss: 0.12
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.11
+  Batch   280  of    943.    Elapsed: 0:00:26.
+  step loss: 0.14
+  Batch   320  of    943.    Elapsed: 0:00:30.
+  step loss: 0.15
+  Batch   360  of    943.    Elapsed: 0:00:34.
+  step loss: 0.16
+  Batch   400  of    943.    Elapsed: 0:00:37.
+  step loss: 0.11
+  Batch   440  of    943.    Elapsed: 0:00:41.
+  step loss: 0.13
+  Batch   480  of    943.    Elapsed: 0:00:45.
+  step loss: 0.11
+  Batch   520  of    943.    Elapsed: 0:00:48.
+  step loss: 0.12
+  Batch   560  of    943.    Elapsed: 0:00:52.
+  step loss: 0.13
+  Batch   600  of    943.    Elapsed: 0:00:56.
+  step loss: 0.14
+  Batch   640  of    943.    Elapsed: 0:00:59.
+  step loss: 0.15
+  Batch   680  of    943.    Elapsed: 0:01:03.
+  step loss: 0.11
+  Batch   720  of    943.    Elapsed: 0:01:07.
+  step loss: 0.16
+  Batch   760  of    943.    Elapsed: 0:01:10.
+  step loss: 0.09
+  Batch   800  of    943.    Elapsed: 0:01:14.
+  step loss: 0.15
+  Batch   840  of    943.    Elapsed: 0:01:18.
+  step loss: 0.11
+  Batch   880  of    943.    Elapsed: 0:01:22.
+  step loss: 0.09
+  Batch   920  of    943.    Elapsed: 0:01:25.
+  step loss: 0.14
+
+  Average training loss: 0.13
+
+Running Validation...
+Batch accuracy: 89.26
+Batch accuracy: 88.67
+Batch accuracy: 90.43
+Batch accuracy: 89.45
+Batch accuracy: 87.30
+Batch accuracy: 89.65
+Batch accuracy: 87.70
+Batch accuracy: 88.09
+Batch accuracy: 88.28
+Batch accuracy: 90.82
+Batch accuracy: 90.43
+Batch accuracy: 91.41
+Batch accuracy: 87.89
+Batch accuracy: 88.09
+Batch accuracy: 89.65
+Batch accuracy: 88.48
+Batch accuracy: 90.04
+Batch accuracy: 89.26
+Batch accuracy: 88.48
+Batch accuracy: 88.48
+Batch accuracy: 89.65
+Batch accuracy: 88.87
+Batch accuracy: 88.67
+Batch accuracy: 89.45
+Batch accuracy: 88.09
+Batch accuracy: 85.74
+Batch accuracy: 91.02
+Batch accuracy: 87.70
+Batch accuracy: 88.67
+Batch accuracy: 90.04
+Batch accuracy: 89.26
+Batch accuracy: 90.04
+Batch accuracy: 90.04
+Batch accuracy: 88.67
+Batch accuracy: 90.04
+Batch accuracy: 88.87
+Batch accuracy: 89.26
+Batch accuracy: 89.65
+Batch accuracy: 90.04
+Batch accuracy: 86.52
+Batch accuracy: 90.04
+Batch accuracy: 90.62
+Batch accuracy: 88.09
+Batch accuracy: 90.23
+Batch accuracy: 91.21
+Batch accuracy: 90.62
+Batch accuracy: 90.62
+Batch accuracy: 90.23
+Batch accuracy: 90.23
+Batch accuracy: 90.62
+Batch accuracy: 90.82
+Batch accuracy: 87.30
+Batch accuracy: 89.45
+Batch accuracy: 88.67
+Batch accuracy: 90.43
+Batch accuracy: 88.67
+Batch accuracy: 87.50
+Batch accuracy: 88.67
+Batch accuracy: 90.04
+Batch accuracy: 90.82
+Batch accuracy: 90.82
+Batch accuracy: 90.23
+Batch accuracy: 89.65
+Batch accuracy: 91.99
+Batch accuracy: 90.04
+Batch accuracy: 91.41
+Batch accuracy: 87.70
+Batch accuracy: 87.70
+Batch accuracy: 91.80
+Batch accuracy: 91.02
+Batch accuracy: 90.62
+Batch accuracy: 88.67
+Batch accuracy: 85.74
+Batch accuracy: 87.89
+Batch accuracy: 91.41
+Batch accuracy: 88.28
+Batch accuracy: 89.06
+Batch accuracy: 90.82
+Batch accuracy: 92.38
+Batch accuracy: 88.87
+Batch accuracy: 90.04
+Batch accuracy: 89.26
+Batch accuracy: 91.80
+Batch accuracy: 88.48
+Batch accuracy: 88.09
+Batch accuracy: 88.87
+Batch accuracy: 91.21
+Batch accuracy: 89.84
+Batch accuracy: 88.67
+Batch accuracy: 90.43
+Batch accuracy: 91.41
+Batch accuracy: 89.45
+Batch accuracy: 89.06
+Batch accuracy: 88.67
+Batch accuracy: 90.62
+Batch accuracy: 90.04
+Batch accuracy: 91.21
+Batch accuracy: 88.48
+Batch accuracy: 87.11
+Batch accuracy: 91.21
+Batch accuracy: 87.30
+Batch accuracy: 88.09
+Batch accuracy: 89.26
+Batch accuracy: 88.48
+Batch accuracy: 87.32
+  Accuracy: 89.40
+  Validation Loss: 0.37
+  Validation took: 0:00:09
+The model does not improve for 1 epochs!
+
+======== Epoch 15 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.14
+  Batch    80  of    943.    Elapsed: 0:00:07.
+  step loss: 0.12
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.15
+  Batch   160  of    943.    Elapsed: 0:00:15.
+  step loss: 0.11
+  Batch   200  of    943.    Elapsed: 0:00:19.
+  step loss: 0.14
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.17
+  Batch   280  of    943.    Elapsed: 0:00:26.
+  step loss: 0.16
+  Batch   320  of    943.    Elapsed: 0:00:30.
+  step loss: 0.16
+  Batch   360  of    943.    Elapsed: 0:00:33.
+  step loss: 0.12
+  Batch   400  of    943.    Elapsed: 0:00:37.
+  step loss: 0.13
+  Batch   440  of    943.    Elapsed: 0:00:41.
+  step loss: 0.14
+  Batch   480  of    943.    Elapsed: 0:00:44.
+  step loss: 0.14
+  Batch   520  of    943.    Elapsed: 0:00:48.
+  step loss: 0.16
+  Batch   560  of    943.    Elapsed: 0:00:52.
+  step loss: 0.17
+  Batch   600  of    943.    Elapsed: 0:00:55.
+  step loss: 0.12
+  Batch   640  of    943.    Elapsed: 0:00:59.
+  step loss: 0.12
+  Batch   680  of    943.    Elapsed: 0:01:03.
+  step loss: 0.14
+  Batch   720  of    943.    Elapsed: 0:01:06.
+  step loss: 0.13
+  Batch   760  of    943.    Elapsed: 0:01:10.
+  step loss: 0.14
+  Batch   800  of    943.    Elapsed: 0:01:14.
+  step loss: 0.11
+  Batch   840  of    943.    Elapsed: 0:01:18.
+  step loss: 0.11
+  Batch   880  of    943.    Elapsed: 0:01:21.
+  step loss: 0.13
+  Batch   920  of    943.    Elapsed: 0:01:25.
+  step loss: 0.13
+
+  Average training loss: 0.13
+
+Running Validation...
+Batch accuracy: 91.21
+Batch accuracy: 89.84
+Batch accuracy: 88.48
+Batch accuracy: 90.43
+Batch accuracy: 89.45
+Batch accuracy: 89.06
+Batch accuracy: 89.06
+Batch accuracy: 88.67
+Batch accuracy: 90.43
+Batch accuracy: 90.43
+Batch accuracy: 89.84
+Batch accuracy: 88.48
+Batch accuracy: 88.48
+Batch accuracy: 91.41
+Batch accuracy: 87.50
+Batch accuracy: 87.70
+Batch accuracy: 90.23
+Batch accuracy: 90.43
+Batch accuracy: 89.84
+Batch accuracy: 92.38
+Batch accuracy: 89.84
+Batch accuracy: 90.23
+Batch accuracy: 89.45
+Batch accuracy: 88.48
+Batch accuracy: 89.84
+Batch accuracy: 90.43
+Batch accuracy: 90.43
+Batch accuracy: 90.62
+Batch accuracy: 89.26
+Batch accuracy: 89.45
+Batch accuracy: 90.04
+Batch accuracy: 87.11
+Batch accuracy: 89.45
+Batch accuracy: 89.26
+Batch accuracy: 88.87
+Batch accuracy: 89.65
+Batch accuracy: 90.82
+Batch accuracy: 88.09
+Batch accuracy: 90.82
+Batch accuracy: 90.82
+Batch accuracy: 91.02
+Batch accuracy: 88.67
+Batch accuracy: 90.62
+Batch accuracy: 88.09
+Batch accuracy: 90.62
+Batch accuracy: 89.65
+Batch accuracy: 89.06
+Batch accuracy: 88.67
+Batch accuracy: 87.50
+Batch accuracy: 89.45
+Batch accuracy: 87.11
+Batch accuracy: 87.50
+Batch accuracy: 88.28
+Batch accuracy: 90.43
+Batch accuracy: 88.09
+Batch accuracy: 91.41
+Batch accuracy: 89.26
+Batch accuracy: 90.43
+Batch accuracy: 89.45
+Batch accuracy: 90.43
+Batch accuracy: 87.11
+Batch accuracy: 89.26
+Batch accuracy: 90.82
+Batch accuracy: 88.67
+Batch accuracy: 86.91
+Batch accuracy: 92.38
+Batch accuracy: 89.65
+Batch accuracy: 88.67
+Batch accuracy: 90.04
+Batch accuracy: 87.89
+Batch accuracy: 88.28
+Batch accuracy: 89.26
+Batch accuracy: 90.04
+Batch accuracy: 90.04
+Batch accuracy: 88.48
+Batch accuracy: 88.87
+Batch accuracy: 87.70
+Batch accuracy: 90.82
+Batch accuracy: 90.23
+Batch accuracy: 87.70
+Batch accuracy: 90.23
+Batch accuracy: 88.87
+Batch accuracy: 90.82
+Batch accuracy: 88.48
+Batch accuracy: 91.99
+Batch accuracy: 88.09
+Batch accuracy: 88.67
+Batch accuracy: 91.60
+Batch accuracy: 88.67
+Batch accuracy: 89.45
+Batch accuracy: 89.06
+Batch accuracy: 87.30
+Batch accuracy: 89.26
+Batch accuracy: 88.67
+Batch accuracy: 85.55
+Batch accuracy: 87.30
+Batch accuracy: 89.84
+Batch accuracy: 88.48
+Batch accuracy: 88.28
+Batch accuracy: 90.43
+Batch accuracy: 90.62
+Batch accuracy: 90.23
+Batch accuracy: 89.06
+Batch accuracy: 91.80
+Batch accuracy: 90.78
+  Accuracy: 89.41
+  Validation Loss: 0.37
+  Validation took: 0:00:09
+The model does not improve for 2 epochs!
+
+======== Epoch 16 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.11
+  Batch    80  of    943.    Elapsed: 0:00:08.
+  step loss: 0.12
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.13
+  Batch   160  of    943.    Elapsed: 0:00:15.
+  step loss: 0.11
+  Batch   200  of    943.    Elapsed: 0:00:19.
+  step loss: 0.12
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.14
+  Batch   280  of    943.    Elapsed: 0:00:26.
+  step loss: 0.11
+  Batch   320  of    943.    Elapsed: 0:00:30.
+  step loss: 0.09
+  Batch   360  of    943.    Elapsed: 0:00:33.
+  step loss: 0.11
+  Batch   400  of    943.    Elapsed: 0:00:37.
+  step loss: 0.14
+  Batch   440  of    943.    Elapsed: 0:00:41.
+  step loss: 0.12
+  Batch   480  of    943.    Elapsed: 0:00:44.
+  step loss: 0.11
+  Batch   520  of    943.    Elapsed: 0:00:48.
+  step loss: 0.12
+  Batch   560  of    943.    Elapsed: 0:00:52.
+  step loss: 0.15
+  Batch   600  of    943.    Elapsed: 0:00:56.
+  step loss: 0.11
+  Batch   640  of    943.    Elapsed: 0:00:59.
+  step loss: 0.12
+  Batch   680  of    943.    Elapsed: 0:01:03.
+  step loss: 0.14
+  Batch   720  of    943.    Elapsed: 0:01:07.
+  step loss: 0.14
+  Batch   760  of    943.    Elapsed: 0:01:10.
+  step loss: 0.10
+  Batch   800  of    943.    Elapsed: 0:01:14.
+  step loss: 0.14
+  Batch   840  of    943.    Elapsed: 0:01:18.
+  step loss: 0.14
+  Batch   880  of    943.    Elapsed: 0:01:21.
+  step loss: 0.15
+  Batch   920  of    943.    Elapsed: 0:01:25.
+  step loss: 0.15
+
+  Average training loss: 0.13
+
+Running Validation...
+Batch accuracy: 90.62
+Batch accuracy: 90.23
+Batch accuracy: 87.70
+Batch accuracy: 87.30
+Batch accuracy: 89.84
+Batch accuracy: 89.65
+Batch accuracy: 85.74
+Batch accuracy: 91.99
+Batch accuracy: 88.87
+Batch accuracy: 90.43
+Batch accuracy: 88.48
+Batch accuracy: 89.45
+Batch accuracy: 90.43
+Batch accuracy: 89.84
+Batch accuracy: 89.45
+Batch accuracy: 89.84
+Batch accuracy: 91.60
+Batch accuracy: 89.65
+Batch accuracy: 90.04
+Batch accuracy: 90.23
+Batch accuracy: 84.96
+Batch accuracy: 88.48
+Batch accuracy: 86.91
+Batch accuracy: 89.06
+Batch accuracy: 89.45
+Batch accuracy: 89.84
+Batch accuracy: 91.02
+Batch accuracy: 89.06
+Batch accuracy: 89.84
+Batch accuracy: 89.84
+Batch accuracy: 89.45
+Batch accuracy: 86.72
+Batch accuracy: 88.48
+Batch accuracy: 91.21
+Batch accuracy: 88.48
+Batch accuracy: 91.41
+Batch accuracy: 90.23
+Batch accuracy: 89.45
+Batch accuracy: 91.80
+Batch accuracy: 89.26
+Batch accuracy: 89.26
+Batch accuracy: 88.67
+Batch accuracy: 88.48
+Batch accuracy: 89.65
+Batch accuracy: 90.23
+Batch accuracy: 89.06
+Batch accuracy: 89.84
+Batch accuracy: 91.02
+Batch accuracy: 88.87
+Batch accuracy: 89.26
+Batch accuracy: 88.87
+Batch accuracy: 89.06
+Batch accuracy: 90.43
+Batch accuracy: 91.02
+Batch accuracy: 90.23
+Batch accuracy: 89.45
+Batch accuracy: 88.48
+Batch accuracy: 89.06
+Batch accuracy: 91.41
+Batch accuracy: 90.04
+Batch accuracy: 88.67
+Batch accuracy: 90.82
+Batch accuracy: 89.26
+Batch accuracy: 87.50
+Batch accuracy: 89.45
+Batch accuracy: 89.65
+Batch accuracy: 89.06
+Batch accuracy: 89.84
+Batch accuracy: 86.91
+Batch accuracy: 91.60
+Batch accuracy: 89.65
+Batch accuracy: 89.65
+Batch accuracy: 88.87
+Batch accuracy: 87.89
+Batch accuracy: 89.65
+Batch accuracy: 91.80
+Batch accuracy: 90.23
+Batch accuracy: 89.84
+Batch accuracy: 89.84
+Batch accuracy: 89.06
+Batch accuracy: 89.06
+Batch accuracy: 87.50
+Batch accuracy: 89.06
+Batch accuracy: 87.50
+Batch accuracy: 88.48
+Batch accuracy: 90.43
+Batch accuracy: 89.84
+Batch accuracy: 90.23
+Batch accuracy: 92.77
+Batch accuracy: 87.70
+Batch accuracy: 90.62
+Batch accuracy: 88.87
+Batch accuracy: 88.87
+Batch accuracy: 90.23
+Batch accuracy: 89.26
+Batch accuracy: 90.82
+Batch accuracy: 87.89
+Batch accuracy: 89.65
+Batch accuracy: 88.48
+Batch accuracy: 86.72
+Batch accuracy: 90.43
+Batch accuracy: 88.48
+Batch accuracy: 89.45
+Batch accuracy: 87.50
+Batch accuracy: 91.93
+  Accuracy: 89.43
+Epoch    16: reducing learning rate of group 0 to 1.0000e-06.
+  Validation Loss: 0.37
+  Validation took: 0:00:10
+The model does not improve for 3 epochs!
+
+======== Epoch 17 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.13
+  Batch    80  of    943.    Elapsed: 0:00:08.
+  step loss: 0.11
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.11
+  Batch   160  of    943.    Elapsed: 0:00:15.
+  step loss: 0.13
+  Batch   200  of    943.    Elapsed: 0:00:18.
+  step loss: 0.16
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.12
+  Batch   280  of    943.    Elapsed: 0:00:26.
+  step loss: 0.15
+  Batch   320  of    943.    Elapsed: 0:00:30.
+  step loss: 0.11
+  Batch   360  of    943.    Elapsed: 0:00:33.
+  step loss: 0.12
+  Batch   400  of    943.    Elapsed: 0:00:37.
+  step loss: 0.12
+  Batch   440  of    943.    Elapsed: 0:00:41.
+  step loss: 0.13
+  Batch   480  of    943.    Elapsed: 0:00:44.
+  step loss: 0.12
+  Batch   520  of    943.    Elapsed: 0:00:48.
+  step loss: 0.14
+  Batch   560  of    943.    Elapsed: 0:00:52.
+  step loss: 0.15
+  Batch   600  of    943.    Elapsed: 0:00:55.
+  step loss: 0.15
+  Batch   640  of    943.    Elapsed: 0:00:59.
+  step loss: 0.12
+  Batch   680  of    943.    Elapsed: 0:01:02.
+  step loss: 0.11
+  Batch   720  of    943.    Elapsed: 0:01:06.
+  step loss: 0.11
+  Batch   760  of    943.    Elapsed: 0:01:10.
+  step loss: 0.12
+  Batch   800  of    943.    Elapsed: 0:01:13.
+  step loss: 0.15
+  Batch   840  of    943.    Elapsed: 0:01:17.
+  step loss: 0.12
+  Batch   880  of    943.    Elapsed: 0:01:21.
+  step loss: 0.14
+  Batch   920  of    943.    Elapsed: 0:01:24.
+  step loss: 0.14
+
+  Average training loss: 0.13
+
+Running Validation...
+Batch accuracy: 88.67
+Batch accuracy: 90.43
+Batch accuracy: 91.80
+Batch accuracy: 91.41
+Batch accuracy: 89.84
+Batch accuracy: 88.87
+Batch accuracy: 90.62
+Batch accuracy: 90.04
+Batch accuracy: 88.67
+Batch accuracy: 88.87
+Batch accuracy: 91.41
+Batch accuracy: 88.28
+Batch accuracy: 90.23
+Batch accuracy: 91.02
+Batch accuracy: 89.84
+Batch accuracy: 90.43
+Batch accuracy: 90.43
+Batch accuracy: 90.62
+Batch accuracy: 89.26
+Batch accuracy: 88.87
+Batch accuracy: 89.06
+Batch accuracy: 89.65
+Batch accuracy: 89.26
+Batch accuracy: 90.82
+Batch accuracy: 88.67
+Batch accuracy: 89.45
+Batch accuracy: 89.26
+Batch accuracy: 90.82
+Batch accuracy: 86.52
+Batch accuracy: 89.06
+Batch accuracy: 90.04
+Batch accuracy: 89.45
+Batch accuracy: 87.70
+Batch accuracy: 88.28
+Batch accuracy: 91.02
+Batch accuracy: 87.70
+Batch accuracy: 87.70
+Batch accuracy: 89.65
+Batch accuracy: 89.65
+Batch accuracy: 88.48
+Batch accuracy: 90.43
+Batch accuracy: 88.28
+Batch accuracy: 89.84
+Batch accuracy: 86.52
+Batch accuracy: 90.62
+Batch accuracy: 87.70
+Batch accuracy: 89.06
+Batch accuracy: 90.23
+Batch accuracy: 90.82
+Batch accuracy: 88.48
+Batch accuracy: 86.13
+Batch accuracy: 90.04
+Batch accuracy: 87.11
+Batch accuracy: 88.67
+Batch accuracy: 87.89
+Batch accuracy: 89.45
+Batch accuracy: 91.41
+Batch accuracy: 89.84
+Batch accuracy: 88.28
+Batch accuracy: 88.48
+Batch accuracy: 87.70
+Batch accuracy: 92.19
+Batch accuracy: 90.23
+Batch accuracy: 86.52
+Batch accuracy: 88.87
+Batch accuracy: 89.45
+Batch accuracy: 86.91
+Batch accuracy: 89.26
+Batch accuracy: 91.80
+Batch accuracy: 90.23
+Batch accuracy: 88.67
+Batch accuracy: 89.26
+Batch accuracy: 89.84
+Batch accuracy: 89.65
+Batch accuracy: 90.04
+Batch accuracy: 88.09
+Batch accuracy: 91.41
+Batch accuracy: 90.82
+Batch accuracy: 88.87
+Batch accuracy: 91.21
+Batch accuracy: 87.50
+Batch accuracy: 91.02
+Batch accuracy: 87.89
+Batch accuracy: 88.09
+Batch accuracy: 88.28
+Batch accuracy: 90.23
+Batch accuracy: 88.48
+Batch accuracy: 89.06
+Batch accuracy: 88.28
+Batch accuracy: 89.45
+Batch accuracy: 91.41
+Batch accuracy: 90.04
+Batch accuracy: 88.87
+Batch accuracy: 88.09
+Batch accuracy: 90.23
+Batch accuracy: 91.21
+Batch accuracy: 90.43
+Batch accuracy: 91.41
+Batch accuracy: 90.04
+Batch accuracy: 88.48
+Batch accuracy: 89.45
+Batch accuracy: 89.26
+Batch accuracy: 90.04
+Batch accuracy: 90.82
+Batch accuracy: 87.90
+  Accuracy: 89.41
+  Validation Loss: 0.37
+  Validation took: 0:00:10
+The model does not improve for 4 epochs!
+
+======== Epoch 18 / 100 ========
+Training...
+  Batch    40  of    943.    Elapsed: 0:00:04.
+  step loss: 0.12
+  Batch    80  of    943.    Elapsed: 0:00:07.
+  step loss: 0.12
+  Batch   120  of    943.    Elapsed: 0:00:11.
+  step loss: 0.13
+  Batch   160  of    943.    Elapsed: 0:00:15.
+  step loss: 0.10
+  Batch   200  of    943.    Elapsed: 0:00:19.
+  step loss: 0.14
+  Batch   240  of    943.    Elapsed: 0:00:22.
+  step loss: 0.11
+  Batch   280  of    943.    Elapsed: 0:00:26.
+  step loss: 0.12
+  Batch   320  of    943.    Elapsed: 0:00:29.
+  step loss: 0.11
+  Batch   360  of    943.    Elapsed: 0:00:33.
+  step loss: 0.15
+  Batch   400  of    943.    Elapsed: 0:00:37.
+  step loss: 0.13
+  Batch   440  of    943.    Elapsed: 0:00:41.
+  step loss: 0.11
+  Batch   480  of    943.    Elapsed: 0:00:44.
+  step loss: 0.13
+  Batch   520  of    943.    Elapsed: 0:00:48.
+  step loss: 0.10
+  Batch   560  of    943.    Elapsed: 0:00:51.
+  step loss: 0.12
+  Batch   600  of    943.    Elapsed: 0:00:55.
+  step loss: 0.14
+  Batch   640  of    943.    Elapsed: 0:00:59.
+  step loss: 0.14
+  Batch   680  of    943.    Elapsed: 0:01:02.
+  step loss: 0.15
+  Batch   720  of    943.    Elapsed: 0:01:06.
+  step loss: 0.13
+  Batch   760  of    943.    Elapsed: 0:01:10.
+  step loss: 0.19
+  Batch   800  of    943.    Elapsed: 0:01:13.
+  step loss: 0.12
+  Batch   840  of    943.    Elapsed: 0:01:17.
+  step loss: 0.11
+  Batch   880  of    943.    Elapsed: 0:01:21.
+  step loss: 0.15
+  Batch   920  of    943.    Elapsed: 0:01:24.
+  step loss: 0.10
+
+  Average training loss: 0.13
+
+Running Validation...
+Batch accuracy: 87.50
+Batch accuracy: 90.62
+Batch accuracy: 88.48
+Batch accuracy: 89.26
+Batch accuracy: 87.70
+Batch accuracy: 90.04
+Batch accuracy: 89.26
+Batch accuracy: 87.11
+Batch accuracy: 90.62
+Batch accuracy: 87.89
+Batch accuracy: 89.06
+Batch accuracy: 90.04
+Batch accuracy: 89.26
+Batch accuracy: 90.43
+Batch accuracy: 89.45
+Batch accuracy: 89.65
+Batch accuracy: 91.02
+Batch accuracy: 90.62
+Batch accuracy: 90.62
+Batch accuracy: 90.04
+Batch accuracy: 90.23
+Batch accuracy: 87.11
+Batch accuracy: 85.74
+Batch accuracy: 88.09
+Batch accuracy: 91.99
+Batch accuracy: 91.21
+Batch accuracy: 89.45
+Batch accuracy: 88.48
+Batch accuracy: 88.28
+Batch accuracy: 89.26
+Batch accuracy: 86.72
+Batch accuracy: 87.89
+Batch accuracy: 87.70
+Batch accuracy: 90.04
+Batch accuracy: 90.04
+Batch accuracy: 89.26
+Batch accuracy: 89.65
+Batch accuracy: 89.26
+Batch accuracy: 88.09
+Batch accuracy: 89.84
+Batch accuracy: 85.74
+Batch accuracy: 87.89
+Batch accuracy: 90.62
+Batch accuracy: 90.04
+Batch accuracy: 90.62
+Batch accuracy: 90.43
+Batch accuracy: 90.04
+Batch accuracy: 92.58
+Batch accuracy: 90.04
+Batch accuracy: 90.04
+Batch accuracy: 88.67
+Batch accuracy: 87.50
+Batch accuracy: 89.65
+Batch accuracy: 89.65
+Batch accuracy: 88.09
+Batch accuracy: 90.04
+Batch accuracy: 87.50
+Batch accuracy: 91.41
+Batch accuracy: 89.84
+Batch accuracy: 89.45
+Batch accuracy: 91.02
+Batch accuracy: 90.43
+Batch accuracy: 89.45
+Batch accuracy: 87.70
+Batch accuracy: 89.84
+Batch accuracy: 91.99
+Batch accuracy: 87.89
+Batch accuracy: 91.99
+Batch accuracy: 88.09
+Batch accuracy: 88.09
+Batch accuracy: 89.65
+Batch accuracy: 89.06
+Batch accuracy: 86.72
+Batch accuracy: 89.26
+Batch accuracy: 91.02
+Batch accuracy: 90.82
+Batch accuracy: 87.89
+Batch accuracy: 91.99
+Batch accuracy: 88.67
+Batch accuracy: 90.04
+Batch accuracy: 90.23
+Batch accuracy: 88.87
+Batch accuracy: 90.23
+Batch accuracy: 88.48
+Batch accuracy: 90.43
+Batch accuracy: 90.43
+Batch accuracy: 88.87
+Batch accuracy: 88.28
+Batch accuracy: 89.06
+Batch accuracy: 88.28
+Batch accuracy: 91.02
+Batch accuracy: 89.84
+Batch accuracy: 90.62
+Batch accuracy: 91.21
+Batch accuracy: 90.62
+Batch accuracy: 88.09
+Batch accuracy: 88.28
+Batch accuracy: 88.67
+Batch accuracy: 89.45
+Batch accuracy: 90.04
+Batch accuracy: 89.65
+Batch accuracy: 89.45
+Batch accuracy: 90.43
+Batch accuracy: 88.09
+Batch accuracy: 91.35
+  Accuracy: 89.41
+  Validation Loss: 0.37
+  Validation took: 0:00:10
+The model does not improve for 5 epochs!
+====>Stopping training, the model did not improve for 5
+====>Best epoch: 12.
+
+Training complete!
+Total training took 0:28:45 (h:mm:ss)
+Training stats: [{'epoch': 1, 'Training Loss': 0.8256333178642067, 'Valid. Loss': tensor(0.4432, device='cuda:0'), 'Valid. Accur.': 87.03377483017704, 'Training Time': '0:01:24', 'Validation Time': '0:00:09'}, {'epoch': 2, 'Training Loss': 0.37574596884774, 'Valid. Loss': tensor(0.3835, device='cuda:0'), 'Valid. Accur.': 88.25614643371757, 'Training Time': '0:01:24', 'Validation Time': '0:00:09'}, {'epoch': 3, 'Training Loss': 0.2955185659901335, 'Valid. Loss': tensor(0.3609, device='cuda:0'), 'Valid. Accur.': 88.90026759983533, 'Training Time': '0:01:25', 'Validation Time': '0:00:09'}, {'epoch': 4, 'Training Loss': 0.24678531673086032, 'Valid. Loss': tensor(0.3533, device='cuda:0'), 'Valid. Accur.': 89.03553631466995, 'Training Time': '0:01:24', 'Validation Time': '0:00:10'}, {'epoch': 5, 'Training Loss': 0.21517326678855547, 'Valid. Loss': tensor(0.3536, device='cuda:0'), 'Valid. Accur.': 89.17983223548785, 'Training Time': '0:01:24', 'Validation Time': '0:00:09'}, {'epoch': 6, 'Training Loss': 0.19184771974986836, 'Valid. Loss': tensor(0.3555, device='cuda:0'), 'Valid. Accur.': 89.2710691985728, 'Training Time': '0:01:26', 'Validation Time': '0:00:10'}, {'epoch': 7, 'Training Loss': 0.1736306805214978, 'Valid. Loss': tensor(0.3607, device='cuda:0'), 'Valid. Accur.': 89.22764855221628, 'Training Time': '0:01:26', 'Validation Time': '0:00:10'}, {'epoch': 8, 'Training Loss': 0.15981376826889568, 'Valid. Loss': tensor(0.3670, device='cuda:0'), 'Valid. Accur.': 89.34138920337587, 'Training Time': '0:01:27', 'Validation Time': '0:00:09'}, {'epoch': 9, 'Training Loss': 0.1391514420651555, 'Valid. Loss': tensor(0.3650, device='cuda:0'), 'Valid. Accur.': 89.37761595992863, 'Training Time': '0:01:27', 'Validation Time': '0:00:10'}, {'epoch': 10, 'Training Loss': 0.13562583290475044, 'Valid. Loss': tensor(0.3665, device='cuda:0'), 'Valid. Accur.': 89.39215919617126, 'Training Time': '0:01:27', 'Validation Time': '0:00:10'}, {'epoch': 11, 'Training Loss': 0.1330943717636081, 'Valid. Loss': tensor(0.3673, device='cuda:0'), 'Valid. Accur.': 89.39045453375874, 'Training Time': '0:01:27', 'Validation Time': '0:00:10'}, {'epoch': 12, 'Training Loss': 0.1308992432780003, 'Valid. Loss': tensor(0.3687, device='cuda:0'), 'Valid. Accur.': 89.40268200219569, 'Training Time': '0:01:28', 'Validation Time': '0:00:10'}, {'epoch': 13, 'Training Loss': 0.1283130993788088, 'Valid. Loss': tensor(0.3684, device='cuda:0'), 'Valid. Accur.': 89.42854140935914, 'Training Time': '0:01:29', 'Validation Time': '0:00:10'}, {'epoch': 14, 'Training Loss': 0.12766305514446372, 'Valid. Loss': tensor(0.3688, device='cuda:0'), 'Valid. Accur.': 89.40490664024976, 'Training Time': '0:01:27', 'Validation Time': '0:00:09'}, {'epoch': 15, 'Training Loss': 0.12758922728602226, 'Valid. Loss': tensor(0.3687, device='cuda:0'), 'Valid. Accur.': 89.41366045697818, 'Training Time': '0:01:27', 'Validation Time': '0:00:09'}, {'epoch': 16, 'Training Loss': 0.1274130720870366, 'Valid. Loss': tensor(0.3687, device='cuda:0'), 'Valid. Accur.': 89.4264990308083, 'Training Time': '0:01:27', 'Validation Time': '0:00:10'}, {'epoch': 17, 'Training Loss': 0.12710994023786243, 'Valid. Loss': tensor(0.3691, device='cuda:0'), 'Valid. Accur.': 89.41039586764101, 'Training Time': '0:01:26', 'Validation Time': '0:00:10'}, {'epoch': 18, 'Training Loss': 0.1268736272457738, 'Valid. Loss': tensor(0.3689, device='cuda:0'), 'Valid. Accur.': 89.41356932722657, 'Training Time': '0:01:26', 'Validation Time': '0:00:10'}]
+====Loading dataset for testing
+====Loading model for testing
+====Testing model...
+/usr/local/lib/python3.6/dist-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/usr/local/lib/python3.6/dist-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/usr/local/lib/python3.6/dist-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/usr/local/lib/python3.6/dist-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/usr/local/lib/python3.6/dist-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/usr/local/lib/python3.6/dist-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+2021-01-03 15:16:52,634:                                                                   precision    recall  f1-score   support
+
+                              Sintomas.Gen\xe9rico.Sky n\xe3o funciona      0.895     0.878     0.886      8357
+                                    Sintomas.Gen\xe9rico.Instala\xe7\xe3o      0.957     0.966     0.962       647
+                                Sintomas.Gen\xe9rico.Canal n\xe3o pega      0.849     0.882     0.865      5967
+                    Sintomas.Gen\xe9rico.Equipamento n\xe3o funciona G      0.888     0.924     0.906      2318
+                                     Sintomas.Gen\xe9rico.Sem sinal      0.899     0.903     0.901     14552
+                               Sintomas.Qualificado.Cancelamento      0.887     0.926     0.906      1847
+                           Sintomas.Qualificado.Outros problemas      0.770     0.632     0.694       729
+                              Sintomas.Qualificado.N\xe3oT\xe9c_fatura      0.827     0.802     0.815      1451
+                          Sintomas.Qualificado.Mudan\xe7a de c\xf4modo      0.907     0.925     0.916      1975
+                        Sintomas.Gen\xe9rico.Equipamento queimado G      0.958     0.971     0.964      2106
+                      Sintomas.Gen\xe9rico.Problema com equipamento      0.916     0.924     0.920      9645
+                        Sintomas.Gen\xe9rico.Equipamento quebrado G      0.758     0.711     0.734      1441
+              Sintomas.Qualificado.Controle n\xe3o funciona para tv      0.752     0.710     0.731       107
+                           Sintomas.Gen\xe9rico.Falar com atendente      0.960     0.964     0.962      8262
+                            Sintomas.Gen\xe9rico.Problema com canal      0.921     0.900     0.911      3547
+                       Sintomas.Qualificado.T\xe9cnico n\xe3o resolveu      0.597     0.440     0.506        91
+                          Sintomas.Gen\xe9rico.Troca de equipamento      0.935     0.943     0.939      3737
+                              Sintomas.Qualificado.N\xe3oT\xe9c_outros      0.858     0.747     0.799       186
+                                Sintomas.Qualificado.Banda larga      0.982     0.987     0.984      2590
+                                       Sintomas.Gen\xe9rico.Mudan\xe7a      0.948     0.937     0.942       891
+                          Sintomas.Qualificado.Aus\xeancia de sinal      0.971     0.983     0.977     10158
+                         Sintomas.Qualificado.Cabos e conectores      0.975     0.983     0.979      1558
+                           Sintomas.Qualificado.T\xe9cnico n\xe3o veio      0.872     0.872     0.872      1474
+                     Sintomas.Qualificado.N\xe3oT\xe9c ponto adicional      0.793     0.798     0.796      2049
+                        Sintomas.Qualificado.Mudan\xe7a de endere\xe7o      0.940     0.949     0.945      3343
+                          Sintomas.Gen\xe9rico.Canal Globo n\xe3o pega      0.512     0.431     0.468       304
+                           Sintomas.Qualificado.Controle perdido      0.808     0.892     0.848       306
+                          Sintomas.Qualificado.Tela com chuvisco      0.791     0.825     0.808       234
+                         Sintomas.Gen\xe9rico.Mudan\xe7a de endere\xe7o G      0.986     0.982     0.984      2501
+                           Sintomas.Gen\xe9rico.Problema com imagem      0.900     0.886     0.893      6605
+         Sintomas.Qualificado.Equipamento liga e desliga sozinho      0.832     0.807     0.819       455
+                                   Sintomas.Qualificado.C\xf3digo 6      0.828     0.801     0.814       905
+                       Sintomas.Qualificado.Equipamento n\xe3o liga      0.925     0.944     0.935      1816
+                               Sintomas.Qualificado.N\xe3oT\xe9c_plano      0.758     0.778     0.768      1683
+                          Sintomas.Qualificado.Programa\xe7\xe3o local      0.822     0.861     0.841       380
+                                   Sintomas.Qualificado.Grava\xe7\xe3o      0.920     0.928     0.924       997
+                                 Sintomas.Qualificado.Sky Online      0.892     0.892     0.892      1926
+                      Sintomas.Gen\xe9rico.Canal comum n\xe3o pega (G)      0.718     0.752     0.734      1200
+                   Sintomas.Gen\xe9rico.Problema com visita t\xe9cnica      0.929     0.994     0.960      2193
+                       Sintomas.Gen\xe9rico.Texto ou c\xf3digo na tela      0.811     0.754     0.782      1694
+                              Sintomas.Qualificado.C\xf3digo 1-2-25      0.843     0.805     0.824       658
+                                 Sintomas.Qualificado.Tela preta      0.836     0.846     0.841       861
+                Sintomas.Qualificado.Travado no canal do cliente      0.715     0.698     0.706       506
+             Sintomas.Qualificado.Controle n\xe3o funciona para sky      0.633     0.648     0.640       125
+                   Sintomas.Qualificado.Apenas imagem, sem \xe1udio      0.754     0.792     0.773       562
+              Sintomas.Qualificado.Canal PPV n\xe3o est\xe1 dispon\xedvel      0.863     0.891     0.877      1016
+                        Sintomas.Qualificado.Evento indispon\xedvel      0.816     0.854     0.835       130
+                                  Sintomas.Qualificado.C\xf3digo 56      0.965     0.985     0.975       585
+                      Sintomas.Qualificado.Priorizar atendimento      0.813     0.796     0.804      1140
+                            Sintomas.Gen\xe9rico.Problema Controle2      0.890     0.900     0.895      1661
+                           Sintomas.Gen\xe9rico.Canal HD n\xe3o pega G      0.775     0.809     0.792       697
+                       Sintomas.Qualificado.Reativar programa\xe7\xe3o      0.909     1.000     0.952        60
+                                  Sintomas.Qualificado.C\xf3digo 77      0.785     0.879     0.829      1094
+                          Sintomas.Qualificado.N\xe3oT\xe9c upgrade hd      0.786     0.800     0.793       419
+Sintomas.Qualificado.Informa\xe7\xf5es e confirma\xe7\xe3o de visita t\xe9cnica      0.879     0.860     0.870       910
+                                   Sintomas.Qualificado.C\xf3digo 4      0.832     0.832     0.832       980
+                     Sintomas.Qualificado.Agendar visita t\xe9cnica      0.944     0.858     0.899       316
+                        Sintomas.Qualificado.Chip do equipamento      0.938     0.989     0.963        92
+                  Sintomas.Qualificado.Equipamento superaquecido      0.868     0.881     0.874        67
+                        Sintomas.Qualificado.Irrita\xe7\xe3o ou Anatel      0.936     0.943     0.940       950
+                         Sintomas.Qualificado.C\xf3digo diagn\xf3stico      0.960     0.975     0.967       122
+                            Sintomas.Gen\xe9rico.Tela monocrom\xe1tica      0.819     0.652     0.726       187
+                           Sintomas.Gen\xe9rico.Entendimento errado      0.801     0.665     0.727       322
+                                       Sintomas.Gen\xe9rico.N\xe3o sei      0.758     0.711     0.734       440
+                                    Sintomas.Gen\xe9rico.C\xf3digo sim      0.370     0.149     0.213        67
+            Sintomas.Qualificado.Atualiza\xe7\xe3o cr\xedtica de endere\xe7o      0.750     0.706     0.727        17
+                            Sintomas.Gen\xe9rico.Problema com \xe1udio      0.885     0.817     0.850       301
+                             Sintomas.Qualificado.Senha - padr\xe3o      0.756     0.775     0.765       120
+                                  Sintomas.Qualificado.Tela azul      0.761     0.903     0.826       134
+                  Sintomas.Qualificado.Mudan\xe7a de posi\xe7\xe3o antena      0.817     0.783     0.799       654
+                            Sintomas.Gen\xe9rico.Problema de antena      0.855     0.855     0.855        83
+                             Sintomas.Qualificado.Aplicativo Sky      0.995     0.993     0.994       809
+                                 Sintomas.Gen\xe9rico.Canal travado      0.854     0.849     0.852       477
+                Sintomas.Qualificado.Resolvido com sinal booster      0.627     0.642     0.634       212
+                          Sintomas.Qualificado.Legenda incorreta      0.692     0.600     0.643        30
+                                 Sintomas.Qualificado.C\xf3digo 109      0.957     0.957     0.957        93
+                        Sintomas.Qualificado.Equipamento travado      0.558     0.258     0.353        93
+                         Sintomas.Gen\xe9rico.Mudan\xe7a de instala\xe7\xe3o      0.980     1.000     0.990        98
+                       Sintomas.Gen\xe9rico.Canal opcional n\xe3o pega      0.736     0.703     0.719       222
+                                  Sintomas.Qualificado.C\xf3digo 19      0.979     0.939     0.958        49
+                             Sintomas.Gen\xe9rico.Mudan\xe7a de antena      0.954     0.957     0.956       372
+                              Sintomas.Qualificado.N\xe3oT\xe9c_compra      0.748     0.597     0.664       129
+                           Sintomas.Qualificado.N\xe3oT\xe9c sky livre      0.894     0.929     0.911       127
+                      Sintomas.Qualificado.Reset de senha padr\xe3o      0.832     0.817     0.825       115
+                          Sintomas.Qualificado.Controle quebrado      0.773     0.616     0.685       138
+                                  Sintomas.Qualificado.C\xf3digo 14      0.947     0.964     0.955       111
+                        Sintomas.Qualificado.Guia de programa\xe7\xe3o      0.971     0.966     0.968       409
+                             Sintomas.Qualificado.Numera\xe7\xe3o nova      0.642     0.604     0.622       101
+                      Sintomas.Qualificado.TV \xe9 HD, mas Sky \xe9 SD      0.827     0.769     0.797       268
+                          Sintomas.Gen\xe9rico.Sem sinal nem c\xf3digo      0.673     0.466     0.551       146
+                               Sintomas.Qualificado.Cancelar Sky      0.273     0.060     0.098        50
+                                    Sintomas.Qualificado.Recarga      0.857     0.667     0.750        27
+                       Sintomas.Qualificado.Novo Controle Pedido      0.837     0.808     0.822       146
+                       Sintomas.Qualificado.Equipamento queimado      0.765     0.687     0.724       147
+                            Sintomas.Gen\xe9rico.Problema com senha      0.990     0.993     0.991       291
+                            Sintomas.Qualificado.N\xe3oT\xe9c_cadastro      0.796     0.747     0.770       292
+                         Sintomas.Qualificado.Criar senha padr\xe3o      1.000     0.400     0.571        20
+                              Sintomas.Qualificado.Alterar \xe1udio      0.911     0.902     0.906       204
+                        Sintomas.Qualificado.Canal fora da grade      0.775     0.775     0.775       342
+                          Sintomas.Gen\xe9rico.Problema com legenda      0.939     0.921     0.930       252
+                              Sintomas.Qualificado.Problema tudo      0.844     0.786     0.814       145
+                                   Sintomas.Qualificado.C\xf3digo 9      0.857     0.667     0.750         9
+                      Sintomas.Qualificado.Imagem preto e branco      0.845     0.747     0.793        95
+                               Sintomas.Qualificado.N\xfamero da OS      0.000     0.000     0.000         2
+                     Sintomas.Gen\xe9rico.Atualiza\xe7\xe3o de endere\xe7o G      0.946     0.921     0.933        76
+                 Sintomas.Qualificado.Habilitar recurso de senha      0.825     0.846     0.835        78
+                     Sintomas.Gen\xe9rico.Canal adulto n\xe3o pega (G)      0.658     0.735     0.694        34
+                   Sintomas.Gen\xe9rico.Problema com troca de canal      0.800     0.211     0.333        19
+                         Sintomas.Qualificado.Cliente est\xe1 longe      0.556     0.156     0.244        32
+    Sintomas.Qualificado.Procurando sinal sintonizador terrestre      0.853     0.935     0.892        31
+                      Sintomas.Qualificado.Equipamento com ru\xeddo      0.867     0.619     0.722        21
+                                  Sintomas.Qualificado.C\xf3digo 13      1.000     0.913     0.955        23
+                         Sintomas.Qualificado.Travado exceto 200      0.200     0.059     0.091        17
+                Sintomas.Qualificado.Legenda n\xe3o aparece na tela      0.724     0.786     0.753        70
+                      Sintomas.Qualificado.Ativar closed caption      0.000     0.000     0.000         6
+                            Sintomas.Gen\xe9rico.Promessa de oferta      0.400     0.154     0.222        13
+                       Sintomas.Qualificado.Aus\xeancia sinal geral      0.733     0.524     0.611        21
+                             Sintomas.Qualificado.\xc1udio atrasado      1.000     0.333     0.500         6
+                      Sintomas.Qualificado.Lentid\xe3o trocar canal      0.625     0.625     0.625         8
+                    Sintomas.Qualificado.Msg carregando conte\xfado      1.000     1.000     1.000         3
+                   Sintomas.Gen\xe9rico.Problema com closed caption      1.000     1.000     1.000         4
+
+                                                        accuracy                          0.896    133986
+                                                       macro avg      0.812     0.767     0.781    133986
+                                                    weighted avg      0.895     0.896     0.895    133986
+
+wandb: Waiting for W&B process to finish, PID 49727
+wandb: Program ended successfully.
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.10MB of 0.10MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Find user logs for this run at: /data/scripts/wandb/run-20210103_144737-39z02613/logs/debug.log
+wandb: Find internal logs for this run at: /data/scripts/wandb/run-20210103_144737-39z02613/logs/debug-internal.log
+wandb: Run summary:
+wandb:                     epoch 17
+wandb:                      loss 0.12687
+wandb:                  val_loss 0.36892
+wandb:                   val_acc 89.41357
+wandb:                     _step 19
+wandb:                  _runtime 1755
+wandb:                _timestamp 1609687012
+wandb:                best_epoch 12
+wandb:                  accuracy 0.8958
+wandb:       macro avg precision 0.81216
+wandb:          macro avg recall 0.7673
+wandb:        macro avg f1-score 0.7812
+wandb:         macro avg support 133986
+wandb:    weighted avg precision 0.89457
+wandb:       weighted avg recall 0.8958
+wandb:     weighted avg f1-score 0.89471
+wandb:      weighted avg support 133986
+wandb: Synced 5 W&B file(s), 1 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: 
+wandb: Synced curious-grass-86: https://wandb.ai/pbsphaier/huggingface/runs/39z02613
+

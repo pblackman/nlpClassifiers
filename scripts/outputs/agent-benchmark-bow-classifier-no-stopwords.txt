@@ -1,0 +1,376 @@
+wandb: Currently logged in as: pbsphaier (use `wandb login --relogin` to force relogin)
+Parameters: {'gpu': 2, 'dataset': 'agent-benchmark', 'save_stats': 1, 'save_name': 'agent-benchmark-bow-classifier-no-stopwords', 'save_model': 1, 'wandb': 1, 'lr': 0.001, 'epochs': 100, 'batch_size': 512, 'early_stop_patience': 4, 'sentence_max_len': 30, 'seed': 0, 'debug': 0, 'stopwords_lang': 'english', 'max_vocab_size': 0}
+wandb: Tracking run with wandb version 0.10.12
+wandb: Syncing run valiant-grass-84
+wandb: \u2b50\ufe0f View project at https://wandb.ai/pbsphaier/huggingface
+wandb: \U0001f680 View run at https://wandb.ai/pbsphaier/huggingface/runs/37u9ufu1
+wandb: Run data is saved locally in /data/scripts/wandb/run-20210103_144647-37u9ufu1
+wandb: Run `wandb offline` to turn off syncing.
+wandb: WARNING Calling run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
+Loading dataset ...
+====>TOTAL NUMBER OF STEPS: 3600
+
+======== Epoch 1 / 100 ========
+Training...
+
+  Average training loss: 3.75
+
+Running Validation...
+Batch accuracy: 34.96
+Batch accuracy: 38.28
+Batch accuracy: 36.52
+Batch accuracy: 41.49
+  Accuracy: 37.81
+  Validation Loss: 3.15
+  Validation took: 0:00:00
+New best model, saving it!
+
+======== Epoch 2 / 100 ========
+Training...
+
+  Average training loss: 2.46
+
+Running Validation...
+Batch accuracy: 60.35
+Batch accuracy: 63.67
+Batch accuracy: 61.91
+Batch accuracy: 60.86
+  Accuracy: 61.70
+  Validation Loss: 1.88
+  Validation took: 0:00:00
+New best model, saving it!
+
+======== Epoch 3 / 100 ========
+Training...
+
+  Average training loss: 1.41
+
+Running Validation...
+Batch accuracy: 68.36
+Batch accuracy: 66.80
+Batch accuracy: 72.66
+Batch accuracy: 71.82
+  Accuracy: 69.91
+  Validation Loss: 1.28
+  Validation took: 0:00:00
+New best model, saving it!
+
+======== Epoch 4 / 100 ========
+Training...
+
+  Average training loss: 0.97
+
+Running Validation...
+Batch accuracy: 72.07
+Batch accuracy: 74.22
+Batch accuracy: 72.27
+Batch accuracy: 70.65
+  Accuracy: 72.30
+  Validation Loss: 1.09
+  Validation took: 0:00:00
+New best model, saving it!
+
+======== Epoch 5 / 100 ========
+Training...
+
+  Average training loss: 0.76
+
+Running Validation...
+Batch accuracy: 75.00
+Batch accuracy: 73.44
+Batch accuracy: 71.09
+Batch accuracy: 73.78
+  Accuracy: 73.33
+  Validation Loss: 1.00
+  Validation took: 0:00:00
+New best model, saving it!
+
+======== Epoch 6 / 100 ========
+Training...
+
+  Average training loss: 0.64
+
+Running Validation...
+Batch accuracy: 76.37
+Batch accuracy: 71.48
+Batch accuracy: 73.05
+Batch accuracy: 73.97
+  Accuracy: 73.72
+  Validation Loss: 0.96
+  Validation took: 0:00:00
+New best model, saving it!
+
+======== Epoch 7 / 100 ========
+Training...
+
+  Average training loss: 0.56
+
+Running Validation...
+Batch accuracy: 73.63
+Batch accuracy: 72.46
+Batch accuracy: 75.39
+Batch accuracy: 75.93
+  Accuracy: 74.35
+  Validation Loss: 0.93
+  Validation took: 0:00:00
+New best model, saving it!
+
+======== Epoch 8 / 100 ========
+Training...
+
+  Average training loss: 0.49
+
+Running Validation...
+Batch accuracy: 75.20
+Batch accuracy: 75.20
+Batch accuracy: 75.20
+Batch accuracy: 72.21
+  Accuracy: 74.45
+  Validation Loss: 0.92
+  Validation took: 0:00:00
+New best model, saving it!
+
+======== Epoch 9 / 100 ========
+Training...
+
+  Average training loss: 0.44
+
+Running Validation...
+Batch accuracy: 73.83
+Batch accuracy: 75.59
+Batch accuracy: 75.20
+Batch accuracy: 71.43
+  Accuracy: 74.01
+  Validation Loss: 0.92
+  Validation took: 0:00:00
+The model does not improve for 1 epochs!
+
+======== Epoch 10 / 100 ========
+Training...
+
+  Average training loss: 0.41
+
+Running Validation...
+Batch accuracy: 74.02
+Batch accuracy: 74.22
+Batch accuracy: 76.37
+Batch accuracy: 73.78
+  Accuracy: 74.60
+  Validation Loss: 0.91
+  Validation took: 0:00:00
+New best model, saving it!
+
+======== Epoch 11 / 100 ========
+Training...
+
+  Average training loss: 0.37
+
+Running Validation...
+Batch accuracy: 74.80
+Batch accuracy: 73.05
+Batch accuracy: 74.41
+Batch accuracy: 77.10
+  Accuracy: 74.84
+  Validation Loss: 0.92
+  Validation took: 0:00:00
+New best model, saving it!
+
+======== Epoch 12 / 100 ========
+Training...
+
+  Average training loss: 0.35
+
+Running Validation...
+Batch accuracy: 75.00
+Batch accuracy: 73.83
+Batch accuracy: 76.76
+Batch accuracy: 74.56
+  Accuracy: 75.04
+  Validation Loss: 0.92
+  Validation took: 0:00:00
+New best model, saving it!
+
+======== Epoch 13 / 100 ========
+Training...
+
+  Average training loss: 0.33
+
+Running Validation...
+Batch accuracy: 71.88
+Batch accuracy: 75.98
+Batch accuracy: 75.39
+Batch accuracy: 73.78
+  Accuracy: 74.25
+  Validation Loss: 0.93
+  Validation took: 0:00:00
+The model does not improve for 1 epochs!
+
+======== Epoch 14 / 100 ========
+Training...
+
+  Average training loss: 0.31
+
+Running Validation...
+Batch accuracy: 76.37
+Batch accuracy: 73.83
+Batch accuracy: 74.61
+Batch accuracy: 73.19
+  Accuracy: 74.50
+Epoch    14: reducing learning rate of group 0 to 1.0000e-04.
+  Validation Loss: 0.93
+  Validation took: 0:00:00
+The model does not improve for 2 epochs!
+
+======== Epoch 15 / 100 ========
+Training...
+
+  Average training loss: 0.29
+
+Running Validation...
+Batch accuracy: 74.61
+Batch accuracy: 76.37
+Batch accuracy: 75.78
+Batch accuracy: 71.23
+  Accuracy: 74.50
+  Validation Loss: 0.93
+  Validation took: 0:00:00
+The model does not improve for 3 epochs!
+
+======== Epoch 16 / 100 ========
+Training...
+
+  Average training loss: 0.29
+
+Running Validation...
+Batch accuracy: 73.83
+Batch accuracy: 76.17
+Batch accuracy: 72.07
+Batch accuracy: 76.32
+  Accuracy: 74.60
+  Validation Loss: 0.93
+  Validation took: 0:00:00
+The model does not improve for 4 epochs!
+
+======== Epoch 17 / 100 ========
+Training...
+
+  Average training loss: 0.29
+
+Running Validation...
+Batch accuracy: 72.66
+Batch accuracy: 78.71
+Batch accuracy: 72.85
+Batch accuracy: 74.17
+  Accuracy: 74.60
+  Validation Loss: 0.93
+  Validation took: 0:00:00
+The model does not improve for 5 epochs!
+====>Stopping training, the model did not improve for 5
+====>Best epoch: 11.
+
+Training complete!
+Total training took 0:00:31 (h:mm:ss)
+Training stats: [{'epoch': 1, 'Training Loss': 3.753383371565077, 'Valid. Loss': tensor(3.1490, device='cuda:2'), 'Valid. Accur.': 37.81322621086106, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 2, 'Training Loss': 2.4560393459267087, 'Valid. Loss': tensor(1.8821, device='cuda:2'), 'Valid. Accur.': 61.69963918786693, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 3, 'Training Loss': 1.4145882394578722, 'Valid. Loss': tensor(1.2837, device='cuda:2'), 'Valid. Accur.': 69.90811521526419, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 4, 'Training Loss': 0.9654161863856845, 'Valid. Loss': tensor(1.0866, device='cuda:2'), 'Valid. Accur.': 72.30012001590019, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 5, 'Training Loss': 0.761548712849617, 'Valid. Loss': tensor(1.0041, device='cuda:2'), 'Valid. Accur.': 73.32703950587084, 'Training Time': '0:00:01', 'Validation Time': '0:00:00'}, {'epoch': 6, 'Training Loss': 0.6417659272750219, 'Valid. Loss': tensor(0.9606, device='cuda:2'), 'Valid. Accur.': 73.7177600599315, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 7, 'Training Loss': 0.5553073576754994, 'Valid. Loss': tensor(0.9333, device='cuda:2'), 'Valid. Accur.': 74.35348122553816, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 8, 'Training Loss': 0.4933435047666232, 'Valid. Loss': tensor(0.9232, device='cuda:2'), 'Valid. Accur.': 74.44932194838552, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 9, 'Training Loss': 0.4431992471218109, 'Valid. Loss': tensor(0.9189, device='cuda:2'), 'Valid. Accur.': 74.00948660714286, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 10, 'Training Loss': 0.40720687558253604, 'Valid. Loss': tensor(0.9128, device='cuda:2'), 'Valid. Accur.': 74.59657075587084, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 11, 'Training Loss': 0.374626303712527, 'Valid. Loss': tensor(0.9174, device='cuda:2'), 'Valid. Accur.': 74.84233579990214, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 12, 'Training Loss': 0.3489367436203692, 'Valid. Loss': tensor(0.9174, device='cuda:2'), 'Valid. Accur.': 75.0364060971135, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 13, 'Training Loss': 0.3318176484770245, 'Valid. Loss': tensor(0.9269, device='cuda:2'), 'Valid. Accur.': 74.25477388087084, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 14, 'Training Loss': 0.3124401950173908, 'Valid. Loss': tensor(0.9317, device='cuda:2'), 'Valid. Accur.': 74.49862784368884, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 15, 'Training Loss': 0.2942782963315646, 'Valid. Loss': tensor(0.9316, device='cuda:2'), 'Valid. Accur.': 74.4976723030822, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 16, 'Training Loss': 0.292515378859308, 'Valid. Loss': tensor(0.9317, device='cuda:2'), 'Valid. Accur.': 74.59781295865949, 'Training Time': '0:00:02', 'Validation Time': '0:00:00'}, {'epoch': 17, 'Training Loss': 0.28861601112617385, 'Valid. Loss': tensor(0.9321, device='cuda:2'), 'Valid. Accur.': 74.59676186399217, 'Training Time': '0:00:01', 'Validation Time': '0:00:00'}]
+====Loading dataset for testing
+====Loading model for testing
+====Testing model...
+[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Unzipping corpora/stopwords.zip.
+2021-01-03 14:47:24,924:                            precision    recall  f1-score   support
+
+    calendar_notification      0.458     0.244     0.319        45
+     transport_directions      0.615     0.585     0.600        41
+           cooking_recipe      0.718     0.622     0.667        45
+               radio_play      0.870     0.820     0.844       139
+             lists_remove      0.941     0.790     0.859        81
+               news_query      0.771     0.740     0.755       146
+         cooking_question      0.548     0.511     0.529        45
+           contacts_query      0.740     0.698     0.718        53
+             general_joke      0.894     0.933     0.913        45
+               audio_mute      0.614     0.711     0.659        38
+            QA_open_query      0.344     0.258     0.295       120
+          transport_train      0.830     0.926     0.876        95
+         weather_question      0.595     0.534     0.563        88
+           music_question      0.600     0.682     0.638        44
+               QA_factoid      0.779     0.759     0.769       195
+              email_query      0.867     0.921     0.893       177
+              lists_query      0.828     0.863     0.845        95
+     general_conversation      0.357     0.552     0.433       165
+recommendation_locations       0.714     0.698     0.706        43
+       calendar_set_event      0.794     0.802     0.798       192
+          weather_request      0.680     0.732     0.705       168
+            QA_definition      0.716     0.855     0.779       124
+           takeaway_query      0.860     0.787     0.822        47
+                  IOT_hue      0.959     0.977     0.968       214
+           datetime_query      0.745     0.867     0.801       135
+              email_reply      0.946     0.814     0.875        43
+                 QA_maths      0.711     0.711     0.711        38
+             lists_adding      0.794     0.794     0.794        34
+             QA_celebrity      0.798     0.657     0.721       108
+               music_play      0.717     0.820     0.765       244
+                game_play      0.857     0.857     0.857        56
+                 IOT_wemo      0.974     0.927     0.950        41
+          general_mistake      0.560     0.286     0.378        49
+           music_settings      0.591     0.520     0.553        50
+              alarm_query      0.558     0.649     0.600        37
+    recommendation_movies      0.714     0.465     0.563        43
+    calendar_delete_event      0.850     0.890     0.870       146
+             social_query      0.821     0.696     0.753        46
+           takeaway_order      0.750     0.750     0.750        44
+        transport_traffic      0.875     0.814     0.843        43
+           audiobook_play      0.918     0.818     0.865        55
+         email_send_email      0.843     0.836     0.840       116
+         general_feedback      0.645     0.719     0.680       139
+               IOT_coffee      0.959     0.940     0.949        50
+            podcasts_play      0.859     0.823     0.840        96
+             alarm_remove      0.793     0.575     0.667        40
+                alarm_set      0.708     0.708     0.708        48
+           reminder_query      0.839     0.565     0.675        46
+              social_post      0.972     0.888     0.928       116
+           lists_creating      0.854     0.833     0.843        42
+        datetime_question      0.595     0.512     0.550        43
+                 QA_stock      0.900     0.900     0.900        50
+        general_confusion      0.537     0.592     0.563        49
+        calendar_question      0.512     0.524     0.518        42
+             audio_volume      0.660     0.608     0.633        51
+    news_set_notification      0.594     0.452     0.514        42
+   recommendation_events       0.634     0.605     0.619        43
+        music_preferences      0.706     0.578     0.636        83
+             IOT_cleaning      0.957     0.917     0.936        48
+     general_confirmation      0.615     0.372     0.464        43
+     calendar_query_event      0.547     0.623     0.582       122
+           transport_taxi      1.000     0.927     0.962        41
+             reminder_set      0.433     0.568     0.491        74
+         datetime_convert      0.839     0.743     0.788        35
+
+                 accuracy                          0.736      5116
+                macro avg      0.739     0.705     0.717      5116
+             weighted avg      0.743     0.736     0.735      5116
+
+wandb: Waiting for W&B process to finish, PID 45773
+wandb: Program ended successfully.
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Find user logs for this run at: /data/scripts/wandb/run-20210103_144647-37u9ufu1/logs/debug.log
+wandb: Find internal logs for this run at: /data/scripts/wandb/run-20210103_144647-37u9ufu1/logs/debug-internal.log
+wandb: Run summary:
+wandb:                    epoch 16
+wandb:                     loss 0.28862
+wandb:                 val_loss 0.93212
+wandb:                  val_acc 74.59676
+wandb:                    _step 18
+wandb:                 _runtime 36
+wandb:               _timestamp 1609685244
+wandb:               best_epoch 11
+wandb:                 accuracy 0.73632
+wandb:      macro avg precision 0.73861
+wandb:         macro avg recall 0.70535
+wandb:       macro avg f1-score 0.71704
+wandb:        macro avg support 5116
+wandb:   weighted avg precision 0.74269
+wandb:      weighted avg recall 0.73632
+wandb:    weighted avg f1-score 0.73539
+wandb:     weighted avg support 5116
+wandb: Synced 5 W&B file(s), 1 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: 
+wandb: Synced valiant-grass-84: https://wandb.ai/pbsphaier/huggingface/runs/37u9ufu1
+

@@ -1,0 +1,4478 @@
+wandb: Currently logged in as: pbsphaier (use `wandb login --relogin` to force relogin)
+Parameters: {'gpu': 1, 'dataset': 'mercado-livre-pt', 'save_stats': 1, 'save_name': 'mercado-livre-pt-bow-classifier', 'save_model': 1, 'wandb': 1, 'lr': 0.001, 'epochs': 100, 'batch_size': 512, 'early_stop_patience': 4, 'sentence_max_len': 30, 'seed': 0, 'debug': 0, 'stopwords_lang': None, 'max_vocab_size': 0}
+wandb: Tracking run with wandb version 0.10.12
+wandb: Syncing run cool-eon-82
+wandb: \u2b50\ufe0f View project at https://wandb.ai/pbsphaier/huggingface
+wandb: \U0001f680 View run at https://wandb.ai/pbsphaier/huggingface/runs/3msjt2el
+wandb: Run data is saved locally in /data/scripts/wandb/run-20210103_141133-3msjt2el
+wandb: Run `wandb offline` to turn off syncing.
+wandb: WARNING Calling run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
+Loading dataset ...
+====>TOTAL NUMBER OF STEPS: 97500
+
+======== Epoch 1 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:26.
+  step loss: 5.00
+  Batch    80  of    975.    Elapsed: 0:00:50.
+  step loss: 3.13
+  Batch   120  of    975.    Elapsed: 0:01:13.
+  step loss: 1.95
+  Batch   160  of    975.    Elapsed: 0:01:35.
+  step loss: 1.44
+  Batch   200  of    975.    Elapsed: 0:01:58.
+  step loss: 1.29
+  Batch   240  of    975.    Elapsed: 0:02:19.
+  step loss: 1.02
+  Batch   280  of    975.    Elapsed: 0:02:42.
+  step loss: 0.86
+  Batch   320  of    975.    Elapsed: 0:03:04.
+  step loss: 0.82
+  Batch   360  of    975.    Elapsed: 0:03:26.
+  step loss: 0.60
+  Batch   400  of    975.    Elapsed: 0:03:48.
+  step loss: 0.63
+  Batch   440  of    975.    Elapsed: 0:04:10.
+  step loss: 0.68
+  Batch   480  of    975.    Elapsed: 0:04:33.
+  step loss: 0.58
+  Batch   520  of    975.    Elapsed: 0:04:55.
+  step loss: 0.48
+  Batch   560  of    975.    Elapsed: 0:05:17.
+  step loss: 0.47
+  Batch   600  of    975.    Elapsed: 0:05:39.
+  step loss: 0.46
+  Batch   640  of    975.    Elapsed: 0:06:01.
+  step loss: 0.36
+  Batch   680  of    975.    Elapsed: 0:06:23.
+  step loss: 0.45
+  Batch   720  of    975.    Elapsed: 0:06:45.
+  step loss: 0.42
+  Batch   760  of    975.    Elapsed: 0:07:07.
+  step loss: 0.37
+  Batch   800  of    975.    Elapsed: 0:07:29.
+  step loss: 0.29
+  Batch   840  of    975.    Elapsed: 0:07:51.
+  step loss: 0.42
+  Batch   880  of    975.    Elapsed: 0:08:13.
+  step loss: 0.39
+  Batch   920  of    975.    Elapsed: 0:08:35.
+  step loss: 0.33
+  Batch   960  of    975.    Elapsed: 0:08:57.
+  step loss: 0.28
+
+  Average training loss: 1.06
+
+Running Validation...
+Batch accuracy: 93.75
+Batch accuracy: 93.36
+Batch accuracy: 93.36
+Batch accuracy: 91.99
+Batch accuracy: 95.31
+Batch accuracy: 93.36
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 93.75
+Batch accuracy: 93.95
+Batch accuracy: 93.36
+Batch accuracy: 93.75
+Batch accuracy: 95.70
+Batch accuracy: 94.34
+Batch accuracy: 93.16
+Batch accuracy: 93.55
+Batch accuracy: 92.77
+Batch accuracy: 93.95
+Batch accuracy: 91.21
+Batch accuracy: 93.95
+Batch accuracy: 93.36
+Batch accuracy: 93.95
+Batch accuracy: 91.99
+Batch accuracy: 93.36
+Batch accuracy: 95.70
+Batch accuracy: 92.19
+Batch accuracy: 92.77
+Batch accuracy: 95.31
+Batch accuracy: 93.55
+Batch accuracy: 94.73
+Batch accuracy: 93.95
+Batch accuracy: 93.16
+Batch accuracy: 92.19
+Batch accuracy: 93.75
+Batch accuracy: 91.21
+Batch accuracy: 94.73
+Batch accuracy: 93.16
+Batch accuracy: 94.34
+Batch accuracy: 91.80
+Batch accuracy: 91.60
+Batch accuracy: 91.60
+Batch accuracy: 93.95
+Batch accuracy: 93.55
+Batch accuracy: 94.53
+Batch accuracy: 93.36
+Batch accuracy: 95.12
+Batch accuracy: 93.75
+Batch accuracy: 93.95
+Batch accuracy: 94.53
+Batch accuracy: 90.62
+Batch accuracy: 93.36
+Batch accuracy: 92.77
+Batch accuracy: 92.97
+Batch accuracy: 94.73
+Batch accuracy: 93.75
+Batch accuracy: 93.95
+Batch accuracy: 95.31
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 94.14
+Batch accuracy: 92.38
+Batch accuracy: 93.16
+Batch accuracy: 94.34
+Batch accuracy: 95.31
+Batch accuracy: 92.58
+Batch accuracy: 92.58
+Batch accuracy: 94.92
+Batch accuracy: 94.14
+Batch accuracy: 93.16
+Batch accuracy: 94.73
+Batch accuracy: 90.04
+Batch accuracy: 94.92
+Batch accuracy: 93.55
+Batch accuracy: 93.95
+Batch accuracy: 93.75
+Batch accuracy: 92.77
+Batch accuracy: 93.55
+Batch accuracy: 94.14
+Batch accuracy: 94.53
+Batch accuracy: 92.97
+Batch accuracy: 93.36
+Batch accuracy: 92.77
+Batch accuracy: 94.34
+Batch accuracy: 93.75
+Batch accuracy: 93.16
+Batch accuracy: 93.75
+Batch accuracy: 92.38
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 94.53
+Batch accuracy: 92.58
+Batch accuracy: 91.80
+Batch accuracy: 92.58
+Batch accuracy: 94.34
+Batch accuracy: 92.77
+Batch accuracy: 96.29
+Batch accuracy: 92.19
+Batch accuracy: 93.16
+Batch accuracy: 91.99
+Batch accuracy: 92.97
+Batch accuracy: 92.19
+Batch accuracy: 93.55
+Batch accuracy: 94.53
+Batch accuracy: 93.95
+Batch accuracy: 93.75
+Batch accuracy: 94.14
+Batch accuracy: 92.58
+Batch accuracy: 91.13
+  Accuracy: 93.52
+  Validation Loss: 0.31
+  Validation took: 0:00:56
+New best model, saving it!
+
+======== Epoch 2 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:23.
+  step loss: 0.11
+  Batch    80  of    975.    Elapsed: 0:00:45.
+  step loss: 0.27
+  Batch   120  of    975.    Elapsed: 0:01:07.
+  step loss: 0.23
+  Batch   160  of    975.    Elapsed: 0:01:29.
+  step loss: 0.15
+  Batch   200  of    975.    Elapsed: 0:01:51.
+  step loss: 0.15
+  Batch   240  of    975.    Elapsed: 0:02:13.
+  step loss: 0.17
+  Batch   280  of    975.    Elapsed: 0:02:35.
+  step loss: 0.12
+  Batch   320  of    975.    Elapsed: 0:02:57.
+  step loss: 0.13
+  Batch   360  of    975.    Elapsed: 0:03:18.
+  step loss: 0.23
+  Batch   400  of    975.    Elapsed: 0:03:40.
+  step loss: 0.26
+  Batch   440  of    975.    Elapsed: 0:04:02.
+  step loss: 0.18
+  Batch   480  of    975.    Elapsed: 0:04:24.
+  step loss: 0.22
+  Batch   520  of    975.    Elapsed: 0:04:46.
+  step loss: 0.18
+  Batch   560  of    975.    Elapsed: 0:05:08.
+  step loss: 0.19
+  Batch   600  of    975.    Elapsed: 0:05:30.
+  step loss: 0.23
+  Batch   640  of    975.    Elapsed: 0:05:53.
+  step loss: 0.16
+  Batch   680  of    975.    Elapsed: 0:06:15.
+  step loss: 0.14
+  Batch   720  of    975.    Elapsed: 0:06:37.
+  step loss: 0.17
+  Batch   760  of    975.    Elapsed: 0:06:59.
+  step loss: 0.17
+  Batch   800  of    975.    Elapsed: 0:07:21.
+  step loss: 0.20
+  Batch   840  of    975.    Elapsed: 0:07:43.
+  step loss: 0.17
+  Batch   880  of    975.    Elapsed: 0:08:06.
+  step loss: 0.17
+  Batch   920  of    975.    Elapsed: 0:08:28.
+  step loss: 0.17
+  Batch   960  of    975.    Elapsed: 0:08:50.
+  step loss: 0.23
+
+  Average training loss: 0.18
+
+Running Validation...
+Batch accuracy: 95.31
+Batch accuracy: 95.12
+Batch accuracy: 94.34
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 93.55
+Batch accuracy: 95.31
+Batch accuracy: 93.95
+Batch accuracy: 94.92
+Batch accuracy: 95.31
+Batch accuracy: 94.73
+Batch accuracy: 96.48
+Batch accuracy: 92.58
+Batch accuracy: 94.14
+Batch accuracy: 92.97
+Batch accuracy: 95.70
+Batch accuracy: 93.55
+Batch accuracy: 94.14
+Batch accuracy: 92.77
+Batch accuracy: 94.14
+Batch accuracy: 94.14
+Batch accuracy: 94.53
+Batch accuracy: 91.80
+Batch accuracy: 93.75
+Batch accuracy: 95.12
+Batch accuracy: 93.36
+Batch accuracy: 95.31
+Batch accuracy: 92.97
+Batch accuracy: 94.34
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 96.48
+Batch accuracy: 95.70
+Batch accuracy: 94.53
+Batch accuracy: 93.95
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 96.09
+Batch accuracy: 94.92
+Batch accuracy: 93.36
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 93.16
+Batch accuracy: 96.68
+Batch accuracy: 93.36
+Batch accuracy: 96.29
+Batch accuracy: 94.53
+Batch accuracy: 94.34
+Batch accuracy: 95.31
+Batch accuracy: 94.73
+Batch accuracy: 92.38
+Batch accuracy: 93.55
+Batch accuracy: 95.90
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 96.29
+Batch accuracy: 94.53
+Batch accuracy: 95.70
+Batch accuracy: 95.12
+Batch accuracy: 95.51
+Batch accuracy: 94.53
+Batch accuracy: 93.36
+Batch accuracy: 95.51
+Batch accuracy: 93.75
+Batch accuracy: 93.36
+Batch accuracy: 93.55
+Batch accuracy: 94.14
+Batch accuracy: 96.48
+Batch accuracy: 95.31
+Batch accuracy: 93.36
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 94.92
+Batch accuracy: 92.58
+Batch accuracy: 95.90
+Batch accuracy: 94.73
+Batch accuracy: 94.73
+Batch accuracy: 93.55
+Batch accuracy: 91.41
+Batch accuracy: 95.90
+Batch accuracy: 94.34
+Batch accuracy: 93.95
+Batch accuracy: 95.51
+Batch accuracy: 95.12
+Batch accuracy: 97.07
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 92.58
+Batch accuracy: 95.31
+Batch accuracy: 95.12
+Batch accuracy: 94.34
+Batch accuracy: 93.36
+Batch accuracy: 94.53
+Batch accuracy: 94.34
+Batch accuracy: 95.70
+Batch accuracy: 93.75
+Batch accuracy: 94.53
+Batch accuracy: 93.75
+Batch accuracy: 94.14
+Batch accuracy: 93.55
+Batch accuracy: 95.12
+Batch accuracy: 93.36
+Batch accuracy: 94.53
+Batch accuracy: 94.34
+Batch accuracy: 93.16
+Batch accuracy: 96.09
+Batch accuracy: 93.55
+  Accuracy: 94.48
+  Validation Loss: 0.24
+  Validation took: 0:00:57
+New best model, saving it!
+
+======== Epoch 3 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:23.
+  step loss: 0.07
+  Batch    80  of    975.    Elapsed: 0:00:45.
+  step loss: 0.08
+  Batch   120  of    975.    Elapsed: 0:01:08.
+  step loss: 0.12
+  Batch   160  of    975.    Elapsed: 0:01:29.
+  step loss: 0.09
+  Batch   200  of    975.    Elapsed: 0:01:52.
+  step loss: 0.09
+  Batch   240  of    975.    Elapsed: 0:02:13.
+  step loss: 0.11
+  Batch   280  of    975.    Elapsed: 0:02:36.
+  step loss: 0.07
+  Batch   320  of    975.    Elapsed: 0:02:59.
+  step loss: 0.08
+  Batch   360  of    975.    Elapsed: 0:03:21.
+  step loss: 0.08
+  Batch   400  of    975.    Elapsed: 0:03:43.
+  step loss: 0.07
+  Batch   440  of    975.    Elapsed: 0:04:05.
+  step loss: 0.12
+  Batch   480  of    975.    Elapsed: 0:04:27.
+  step loss: 0.11
+  Batch   520  of    975.    Elapsed: 0:04:49.
+  step loss: 0.06
+  Batch   560  of    975.    Elapsed: 0:05:11.
+  step loss: 0.07
+  Batch   600  of    975.    Elapsed: 0:05:34.
+  step loss: 0.12
+  Batch   640  of    975.    Elapsed: 0:05:56.
+  step loss: 0.09
+  Batch   680  of    975.    Elapsed: 0:06:18.
+  step loss: 0.08
+  Batch   720  of    975.    Elapsed: 0:06:40.
+  step loss: 0.08
+  Batch   760  of    975.    Elapsed: 0:07:03.
+  step loss: 0.05
+  Batch   800  of    975.    Elapsed: 0:07:25.
+  step loss: 0.10
+  Batch   840  of    975.    Elapsed: 0:07:48.
+  step loss: 0.08
+  Batch   880  of    975.    Elapsed: 0:08:11.
+  step loss: 0.06
+  Batch   920  of    975.    Elapsed: 0:08:33.
+  step loss: 0.11
+  Batch   960  of    975.    Elapsed: 0:08:55.
+  step loss: 0.05
+
+  Average training loss: 0.09
+
+Running Validation...
+Batch accuracy: 95.31
+Batch accuracy: 95.70
+Batch accuracy: 92.38
+Batch accuracy: 93.75
+Batch accuracy: 96.09
+Batch accuracy: 93.16
+Batch accuracy: 94.73
+Batch accuracy: 95.51
+Batch accuracy: 95.90
+Batch accuracy: 93.16
+Batch accuracy: 94.34
+Batch accuracy: 96.09
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 96.68
+Batch accuracy: 93.75
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 95.51
+Batch accuracy: 94.53
+Batch accuracy: 93.55
+Batch accuracy: 93.36
+Batch accuracy: 93.16
+Batch accuracy: 96.29
+Batch accuracy: 94.14
+Batch accuracy: 95.31
+Batch accuracy: 92.77
+Batch accuracy: 93.36
+Batch accuracy: 94.53
+Batch accuracy: 94.34
+Batch accuracy: 94.92
+Batch accuracy: 95.12
+Batch accuracy: 94.34
+Batch accuracy: 94.14
+Batch accuracy: 92.77
+Batch accuracy: 94.73
+Batch accuracy: 95.70
+Batch accuracy: 94.92
+Batch accuracy: 95.90
+Batch accuracy: 95.70
+Batch accuracy: 96.48
+Batch accuracy: 93.75
+Batch accuracy: 93.95
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 92.58
+Batch accuracy: 94.14
+Batch accuracy: 94.14
+Batch accuracy: 93.55
+Batch accuracy: 95.31
+Batch accuracy: 93.75
+Batch accuracy: 95.12
+Batch accuracy: 95.12
+Batch accuracy: 95.51
+Batch accuracy: 93.95
+Batch accuracy: 93.16
+Batch accuracy: 95.51
+Batch accuracy: 94.73
+Batch accuracy: 95.90
+Batch accuracy: 93.16
+Batch accuracy: 94.92
+Batch accuracy: 96.09
+Batch accuracy: 94.14
+Batch accuracy: 93.95
+Batch accuracy: 93.55
+Batch accuracy: 95.31
+Batch accuracy: 95.12
+Batch accuracy: 93.55
+Batch accuracy: 95.31
+Batch accuracy: 94.92
+Batch accuracy: 92.38
+Batch accuracy: 94.92
+Batch accuracy: 96.29
+Batch accuracy: 95.90
+Batch accuracy: 95.12
+Batch accuracy: 93.36
+Batch accuracy: 93.16
+Batch accuracy: 94.73
+Batch accuracy: 95.70
+Batch accuracy: 95.12
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 92.77
+Batch accuracy: 94.14
+Batch accuracy: 93.36
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 93.16
+Batch accuracy: 94.34
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 94.14
+Batch accuracy: 96.29
+Batch accuracy: 95.51
+Batch accuracy: 95.31
+Batch accuracy: 94.53
+Batch accuracy: 95.51
+Batch accuracy: 96.88
+Batch accuracy: 95.12
+Batch accuracy: 93.16
+Batch accuracy: 94.14
+Batch accuracy: 93.95
+Batch accuracy: 93.36
+Batch accuracy: 94.92
+Batch accuracy: 93.36
+Batch accuracy: 95.12
+Batch accuracy: 98.39
+  Accuracy: 94.57
+  Validation Loss: 0.23
+  Validation took: 0:00:55
+New best model, saving it!
+
+======== Epoch 4 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:23.
+  step loss: 0.04
+  Batch    80  of    975.    Elapsed: 0:00:46.
+  step loss: 0.10
+  Batch   120  of    975.    Elapsed: 0:01:08.
+  step loss: 0.04
+  Batch   160  of    975.    Elapsed: 0:01:29.
+  step loss: 0.04
+  Batch   200  of    975.    Elapsed: 0:01:52.
+  step loss: 0.03
+  Batch   240  of    975.    Elapsed: 0:02:13.
+  step loss: 0.06
+  Batch   280  of    975.    Elapsed: 0:02:35.
+  step loss: 0.04
+  Batch   320  of    975.    Elapsed: 0:02:57.
+  step loss: 0.05
+  Batch   360  of    975.    Elapsed: 0:03:19.
+  step loss: 0.07
+  Batch   400  of    975.    Elapsed: 0:03:41.
+  step loss: 0.03
+  Batch   440  of    975.    Elapsed: 0:04:02.
+  step loss: 0.04
+  Batch   480  of    975.    Elapsed: 0:04:25.
+  step loss: 0.03
+  Batch   520  of    975.    Elapsed: 0:04:46.
+  step loss: 0.06
+  Batch   560  of    975.    Elapsed: 0:05:08.
+  step loss: 0.08
+  Batch   600  of    975.    Elapsed: 0:05:30.
+  step loss: 0.05
+  Batch   640  of    975.    Elapsed: 0:05:52.
+  step loss: 0.05
+  Batch   680  of    975.    Elapsed: 0:06:15.
+  step loss: 0.04
+  Batch   720  of    975.    Elapsed: 0:06:38.
+  step loss: 0.03
+  Batch   760  of    975.    Elapsed: 0:07:00.
+  step loss: 0.08
+  Batch   800  of    975.    Elapsed: 0:07:23.
+  step loss: 0.04
+  Batch   840  of    975.    Elapsed: 0:07:45.
+  step loss: 0.04
+  Batch   880  of    975.    Elapsed: 0:08:08.
+  step loss: 0.06
+  Batch   920  of    975.    Elapsed: 0:08:30.
+  step loss: 0.07
+  Batch   960  of    975.    Elapsed: 0:08:52.
+  step loss: 0.05
+
+  Average training loss: 0.05
+
+Running Validation...
+Batch accuracy: 95.51
+Batch accuracy: 93.75
+Batch accuracy: 95.12
+Batch accuracy: 94.14
+Batch accuracy: 93.36
+Batch accuracy: 94.53
+Batch accuracy: 94.73
+Batch accuracy: 91.41
+Batch accuracy: 94.34
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 93.95
+Batch accuracy: 94.34
+Batch accuracy: 96.29
+Batch accuracy: 91.02
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 92.38
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 94.73
+Batch accuracy: 97.46
+Batch accuracy: 95.51
+Batch accuracy: 94.92
+Batch accuracy: 94.92
+Batch accuracy: 92.97
+Batch accuracy: 96.48
+Batch accuracy: 94.73
+Batch accuracy: 95.90
+Batch accuracy: 93.95
+Batch accuracy: 95.12
+Batch accuracy: 94.92
+Batch accuracy: 95.70
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 93.95
+Batch accuracy: 94.53
+Batch accuracy: 93.36
+Batch accuracy: 93.95
+Batch accuracy: 91.60
+Batch accuracy: 94.14
+Batch accuracy: 96.09
+Batch accuracy: 96.29
+Batch accuracy: 95.70
+Batch accuracy: 94.53
+Batch accuracy: 94.34
+Batch accuracy: 94.92
+Batch accuracy: 94.92
+Batch accuracy: 95.31
+Batch accuracy: 94.14
+Batch accuracy: 95.31
+Batch accuracy: 94.92
+Batch accuracy: 95.51
+Batch accuracy: 94.14
+Batch accuracy: 95.90
+Batch accuracy: 96.09
+Batch accuracy: 94.73
+Batch accuracy: 95.70
+Batch accuracy: 95.31
+Batch accuracy: 94.92
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 94.73
+Batch accuracy: 93.36
+Batch accuracy: 92.19
+Batch accuracy: 92.97
+Batch accuracy: 95.70
+Batch accuracy: 94.53
+Batch accuracy: 95.31
+Batch accuracy: 95.70
+Batch accuracy: 94.34
+Batch accuracy: 95.31
+Batch accuracy: 94.92
+Batch accuracy: 93.75
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 94.73
+Batch accuracy: 94.73
+Batch accuracy: 95.12
+Batch accuracy: 92.97
+Batch accuracy: 95.31
+Batch accuracy: 95.70
+Batch accuracy: 93.75
+Batch accuracy: 95.70
+Batch accuracy: 94.53
+Batch accuracy: 95.12
+Batch accuracy: 95.12
+Batch accuracy: 95.31
+Batch accuracy: 95.12
+Batch accuracy: 94.73
+Batch accuracy: 95.51
+Batch accuracy: 95.31
+Batch accuracy: 93.95
+Batch accuracy: 94.53
+Batch accuracy: 94.73
+Batch accuracy: 95.12
+Batch accuracy: 92.38
+Batch accuracy: 94.92
+Batch accuracy: 95.31
+Batch accuracy: 94.92
+Batch accuracy: 92.97
+Batch accuracy: 92.97
+Batch accuracy: 95.31
+Batch accuracy: 94.34
+Batch accuracy: 95.90
+Batch accuracy: 96.48
+Batch accuracy: 93.55
+  Accuracy: 94.60
+  Validation Loss: 0.24
+  Validation took: 0:00:58
+New best model, saving it!
+
+======== Epoch 5 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:23.
+  step loss: 0.02
+  Batch    80  of    975.    Elapsed: 0:00:46.
+  step loss: 0.04
+  Batch   120  of    975.    Elapsed: 0:01:09.
+  step loss: 0.02
+  Batch   160  of    975.    Elapsed: 0:01:32.
+  step loss: 0.02
+  Batch   200  of    975.    Elapsed: 0:01:55.
+  step loss: 0.03
+  Batch   240  of    975.    Elapsed: 0:02:18.
+  step loss: 0.03
+  Batch   280  of    975.    Elapsed: 0:02:41.
+  step loss: 0.03
+  Batch   320  of    975.    Elapsed: 0:03:03.
+  step loss: 0.03
+  Batch   360  of    975.    Elapsed: 0:03:27.
+  step loss: 0.03
+  Batch   400  of    975.    Elapsed: 0:03:49.
+  step loss: 0.03
+  Batch   440  of    975.    Elapsed: 0:04:13.
+  step loss: 0.03
+  Batch   480  of    975.    Elapsed: 0:04:36.
+  step loss: 0.03
+  Batch   520  of    975.    Elapsed: 0:05:00.
+  step loss: 0.03
+  Batch   560  of    975.    Elapsed: 0:05:23.
+  step loss: 0.03
+  Batch   600  of    975.    Elapsed: 0:05:47.
+  step loss: 0.03
+  Batch   640  of    975.    Elapsed: 0:06:10.
+  step loss: 0.05
+  Batch   680  of    975.    Elapsed: 0:06:33.
+  step loss: 0.02
+  Batch   720  of    975.    Elapsed: 0:06:57.
+  step loss: 0.06
+  Batch   760  of    975.    Elapsed: 0:07:20.
+  step loss: 0.03
+  Batch   800  of    975.    Elapsed: 0:07:44.
+  step loss: 0.03
+  Batch   840  of    975.    Elapsed: 0:08:08.
+  step loss: 0.05
+  Batch   880  of    975.    Elapsed: 0:08:31.
+  step loss: 0.04
+  Batch   920  of    975.    Elapsed: 0:08:55.
+  step loss: 0.05
+  Batch   960  of    975.    Elapsed: 0:09:18.
+  step loss: 0.05
+
+  Average training loss: 0.03
+
+Running Validation...
+Batch accuracy: 95.12
+Batch accuracy: 94.34
+Batch accuracy: 92.77
+Batch accuracy: 96.09
+Batch accuracy: 95.12
+Batch accuracy: 93.95
+Batch accuracy: 94.73
+Batch accuracy: 92.58
+Batch accuracy: 93.55
+Batch accuracy: 93.55
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 94.92
+Batch accuracy: 95.31
+Batch accuracy: 95.51
+Batch accuracy: 92.58
+Batch accuracy: 94.92
+Batch accuracy: 93.95
+Batch accuracy: 93.55
+Batch accuracy: 93.95
+Batch accuracy: 95.70
+Batch accuracy: 94.34
+Batch accuracy: 95.90
+Batch accuracy: 94.34
+Batch accuracy: 95.70
+Batch accuracy: 94.53
+Batch accuracy: 94.14
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 93.75
+Batch accuracy: 94.53
+Batch accuracy: 92.38
+Batch accuracy: 95.12
+Batch accuracy: 95.51
+Batch accuracy: 97.46
+Batch accuracy: 93.75
+Batch accuracy: 93.55
+Batch accuracy: 94.34
+Batch accuracy: 93.16
+Batch accuracy: 93.55
+Batch accuracy: 96.29
+Batch accuracy: 95.70
+Batch accuracy: 93.75
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 95.12
+Batch accuracy: 95.90
+Batch accuracy: 94.73
+Batch accuracy: 93.36
+Batch accuracy: 93.95
+Batch accuracy: 95.12
+Batch accuracy: 95.12
+Batch accuracy: 94.34
+Batch accuracy: 94.92
+Batch accuracy: 94.92
+Batch accuracy: 95.51
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 94.53
+Batch accuracy: 92.77
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 94.73
+Batch accuracy: 95.12
+Batch accuracy: 93.75
+Batch accuracy: 95.31
+Batch accuracy: 95.51
+Batch accuracy: 93.75
+Batch accuracy: 94.14
+Batch accuracy: 95.70
+Batch accuracy: 95.31
+Batch accuracy: 96.09
+Batch accuracy: 92.77
+Batch accuracy: 94.92
+Batch accuracy: 97.27
+Batch accuracy: 94.14
+Batch accuracy: 95.12
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 93.55
+Batch accuracy: 96.48
+Batch accuracy: 95.12
+Batch accuracy: 94.73
+Batch accuracy: 94.73
+Batch accuracy: 94.14
+Batch accuracy: 95.31
+Batch accuracy: 95.51
+Batch accuracy: 95.70
+Batch accuracy: 94.92
+Batch accuracy: 93.55
+Batch accuracy: 94.53
+Batch accuracy: 95.31
+Batch accuracy: 93.75
+Batch accuracy: 94.34
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 94.34
+Batch accuracy: 93.55
+Batch accuracy: 93.95
+Batch accuracy: 93.75
+Batch accuracy: 94.34
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 93.36
+Batch accuracy: 94.35
+  Accuracy: 94.57
+  Validation Loss: 0.24
+  Validation took: 0:01:01
+The model does not improve for 1 epochs!
+
+======== Epoch 6 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:24.
+  step loss: 0.02
+  Batch    80  of    975.    Elapsed: 0:00:47.
+  step loss: 0.01
+  Batch   120  of    975.    Elapsed: 0:01:10.
+  step loss: 0.01
+  Batch   160  of    975.    Elapsed: 0:01:35.
+  step loss: 0.02
+  Batch   200  of    975.    Elapsed: 0:01:59.
+  step loss: 0.02
+  Batch   240  of    975.    Elapsed: 0:02:22.
+  step loss: 0.01
+  Batch   280  of    975.    Elapsed: 0:02:46.
+  step loss: 0.02
+  Batch   320  of    975.    Elapsed: 0:03:10.
+  step loss: 0.02
+  Batch   360  of    975.    Elapsed: 0:03:33.
+  step loss: 0.01
+  Batch   400  of    975.    Elapsed: 0:03:57.
+  step loss: 0.02
+  Batch   440  of    975.    Elapsed: 0:04:20.
+  step loss: 0.04
+  Batch   480  of    975.    Elapsed: 0:04:44.
+  step loss: 0.02
+  Batch   520  of    975.    Elapsed: 0:05:08.
+  step loss: 0.02
+  Batch   560  of    975.    Elapsed: 0:05:31.
+  step loss: 0.03
+  Batch   600  of    975.    Elapsed: 0:05:55.
+  step loss: 0.03
+  Batch   640  of    975.    Elapsed: 0:06:19.
+  step loss: 0.02
+  Batch   680  of    975.    Elapsed: 0:06:43.
+  step loss: 0.03
+  Batch   720  of    975.    Elapsed: 0:07:07.
+  step loss: 0.03
+  Batch   760  of    975.    Elapsed: 0:07:30.
+  step loss: 0.04
+  Batch   800  of    975.    Elapsed: 0:07:54.
+  step loss: 0.02
+  Batch   840  of    975.    Elapsed: 0:08:18.
+  step loss: 0.02
+  Batch   880  of    975.    Elapsed: 0:08:42.
+  step loss: 0.02
+  Batch   920  of    975.    Elapsed: 0:09:05.
+  step loss: 0.03
+  Batch   960  of    975.    Elapsed: 0:09:29.
+  step loss: 0.03
+
+  Average training loss: 0.03
+
+Running Validation...
+Batch accuracy: 93.75
+Batch accuracy: 93.36
+Batch accuracy: 93.16
+Batch accuracy: 94.14
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 94.92
+Batch accuracy: 93.75
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 92.97
+Batch accuracy: 94.53
+Batch accuracy: 95.70
+Batch accuracy: 93.16
+Batch accuracy: 93.36
+Batch accuracy: 95.12
+Batch accuracy: 92.77
+Batch accuracy: 93.75
+Batch accuracy: 94.53
+Batch accuracy: 94.14
+Batch accuracy: 93.36
+Batch accuracy: 92.58
+Batch accuracy: 95.12
+Batch accuracy: 93.55
+Batch accuracy: 94.34
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 93.75
+Batch accuracy: 94.53
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 94.14
+Batch accuracy: 95.70
+Batch accuracy: 94.14
+Batch accuracy: 93.16
+Batch accuracy: 93.95
+Batch accuracy: 91.99
+Batch accuracy: 95.12
+Batch accuracy: 93.95
+Batch accuracy: 94.53
+Batch accuracy: 95.70
+Batch accuracy: 95.51
+Batch accuracy: 93.95
+Batch accuracy: 96.88
+Batch accuracy: 95.12
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 93.55
+Batch accuracy: 91.60
+Batch accuracy: 94.73
+Batch accuracy: 95.31
+Batch accuracy: 91.80
+Batch accuracy: 95.31
+Batch accuracy: 94.34
+Batch accuracy: 92.97
+Batch accuracy: 97.27
+Batch accuracy: 96.68
+Batch accuracy: 93.95
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 93.36
+Batch accuracy: 94.34
+Batch accuracy: 95.90
+Batch accuracy: 93.75
+Batch accuracy: 94.34
+Batch accuracy: 93.36
+Batch accuracy: 93.36
+Batch accuracy: 95.12
+Batch accuracy: 95.12
+Batch accuracy: 94.14
+Batch accuracy: 93.75
+Batch accuracy: 94.53
+Batch accuracy: 93.95
+Batch accuracy: 95.12
+Batch accuracy: 95.51
+Batch accuracy: 95.51
+Batch accuracy: 92.97
+Batch accuracy: 97.27
+Batch accuracy: 94.92
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 95.12
+Batch accuracy: 93.95
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 94.34
+Batch accuracy: 94.92
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 95.31
+Batch accuracy: 94.14
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 95.51
+Batch accuracy: 95.51
+Batch accuracy: 92.97
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 95.31
+Batch accuracy: 93.95
+Batch accuracy: 93.95
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 95.51
+Batch accuracy: 93.55
+  Accuracy: 94.37
+  Validation Loss: 0.25
+  Validation took: 0:01:01
+The model does not improve for 2 epochs!
+
+======== Epoch 7 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:24.
+  step loss: 0.01
+  Batch    80  of    975.    Elapsed: 0:00:47.
+  step loss: 0.01
+  Batch   120  of    975.    Elapsed: 0:01:11.
+  step loss: 0.01
+  Batch   160  of    975.    Elapsed: 0:01:36.
+  step loss: 0.02
+  Batch   200  of    975.    Elapsed: 0:02:00.
+  step loss: 0.01
+  Batch   240  of    975.    Elapsed: 0:02:24.
+  step loss: 0.02
+  Batch   280  of    975.    Elapsed: 0:02:47.
+  step loss: 0.03
+  Batch   320  of    975.    Elapsed: 0:03:11.
+  step loss: 0.01
+  Batch   360  of    975.    Elapsed: 0:03:34.
+  step loss: 0.04
+  Batch   400  of    975.    Elapsed: 0:03:58.
+  step loss: 0.02
+  Batch   440  of    975.    Elapsed: 0:04:23.
+  step loss: 0.02
+  Batch   480  of    975.    Elapsed: 0:04:47.
+  step loss: 0.01
+  Batch   520  of    975.    Elapsed: 0:05:11.
+  step loss: 0.03
+  Batch   560  of    975.    Elapsed: 0:05:35.
+  step loss: 0.01
+  Batch   600  of    975.    Elapsed: 0:05:59.
+  step loss: 0.01
+  Batch   640  of    975.    Elapsed: 0:06:24.
+  step loss: 0.02
+  Batch   680  of    975.    Elapsed: 0:06:48.
+  step loss: 0.02
+  Batch   720  of    975.    Elapsed: 0:07:12.
+  step loss: 0.02
+  Batch   760  of    975.    Elapsed: 0:07:36.
+  step loss: 0.03
+  Batch   800  of    975.    Elapsed: 0:08:00.
+  step loss: 0.01
+  Batch   840  of    975.    Elapsed: 0:08:25.
+  step loss: 0.01
+  Batch   880  of    975.    Elapsed: 0:08:49.
+  step loss: 0.02
+  Batch   920  of    975.    Elapsed: 0:09:13.
+  step loss: 0.04
+  Batch   960  of    975.    Elapsed: 0:09:37.
+  step loss: 0.05
+
+  Average training loss: 0.02
+
+Running Validation...
+Batch accuracy: 95.31
+Batch accuracy: 94.14
+Batch accuracy: 92.77
+Batch accuracy: 94.53
+Batch accuracy: 93.55
+Batch accuracy: 93.16
+Batch accuracy: 95.70
+Batch accuracy: 95.90
+Batch accuracy: 95.31
+Batch accuracy: 93.95
+Batch accuracy: 94.73
+Batch accuracy: 94.14
+Batch accuracy: 93.75
+Batch accuracy: 93.55
+Batch accuracy: 94.34
+Batch accuracy: 95.12
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 95.70
+Batch accuracy: 94.14
+Batch accuracy: 91.99
+Batch accuracy: 93.95
+Batch accuracy: 95.51
+Batch accuracy: 93.95
+Batch accuracy: 94.34
+Batch accuracy: 94.73
+Batch accuracy: 93.55
+Batch accuracy: 94.34
+Batch accuracy: 92.19
+Batch accuracy: 93.36
+Batch accuracy: 92.58
+Batch accuracy: 92.97
+Batch accuracy: 94.53
+Batch accuracy: 92.97
+Batch accuracy: 93.55
+Batch accuracy: 94.34
+Batch accuracy: 94.53
+Batch accuracy: 93.75
+Batch accuracy: 94.73
+Batch accuracy: 96.09
+Batch accuracy: 93.75
+Batch accuracy: 94.73
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 95.31
+Batch accuracy: 95.12
+Batch accuracy: 93.75
+Batch accuracy: 96.48
+Batch accuracy: 92.19
+Batch accuracy: 95.12
+Batch accuracy: 93.95
+Batch accuracy: 94.53
+Batch accuracy: 94.73
+Batch accuracy: 92.97
+Batch accuracy: 95.12
+Batch accuracy: 95.51
+Batch accuracy: 93.95
+Batch accuracy: 96.09
+Batch accuracy: 95.51
+Batch accuracy: 93.95
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 93.16
+Batch accuracy: 92.38
+Batch accuracy: 95.70
+Batch accuracy: 95.70
+Batch accuracy: 95.51
+Batch accuracy: 94.14
+Batch accuracy: 93.55
+Batch accuracy: 95.31
+Batch accuracy: 96.48
+Batch accuracy: 94.92
+Batch accuracy: 95.31
+Batch accuracy: 96.29
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 95.51
+Batch accuracy: 92.77
+Batch accuracy: 95.51
+Batch accuracy: 94.53
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 94.73
+Batch accuracy: 95.12
+Batch accuracy: 95.51
+Batch accuracy: 95.12
+Batch accuracy: 94.92
+Batch accuracy: 93.55
+Batch accuracy: 93.55
+Batch accuracy: 92.97
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 94.92
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 93.95
+Batch accuracy: 95.12
+Batch accuracy: 94.92
+Batch accuracy: 94.92
+Batch accuracy: 94.14
+Batch accuracy: 93.55
+Batch accuracy: 93.95
+Batch accuracy: 93.75
+Batch accuracy: 93.36
+Batch accuracy: 93.55
+  Accuracy: 94.42
+Epoch     7: reducing learning rate of group 0 to 1.0000e-04.
+  Validation Loss: 0.26
+  Validation took: 0:01:01
+The model does not improve for 3 epochs!
+
+======== Epoch 8 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:25.
+  step loss: 0.01
+  Batch    80  of    975.    Elapsed: 0:00:49.
+  step loss: 0.01
+  Batch   120  of    975.    Elapsed: 0:01:13.
+  step loss: 0.01
+  Batch   160  of    975.    Elapsed: 0:01:37.
+  step loss: 0.02
+  Batch   200  of    975.    Elapsed: 0:02:02.
+  step loss: 0.01
+  Batch   240  of    975.    Elapsed: 0:02:26.
+  step loss: 0.01
+  Batch   280  of    975.    Elapsed: 0:02:49.
+  step loss: 0.02
+  Batch   320  of    975.    Elapsed: 0:03:13.
+  step loss: 0.01
+  Batch   360  of    975.    Elapsed: 0:03:37.
+  step loss: 0.01
+  Batch   400  of    975.    Elapsed: 0:04:01.
+  step loss: 0.01
+  Batch   440  of    975.    Elapsed: 0:04:25.
+  step loss: 0.01
+  Batch   480  of    975.    Elapsed: 0:04:49.
+  step loss: 0.01
+  Batch   520  of    975.    Elapsed: 0:05:14.
+  step loss: 0.02
+  Batch   560  of    975.    Elapsed: 0:05:38.
+  step loss: 0.00
+  Batch   600  of    975.    Elapsed: 0:06:02.
+  step loss: 0.01
+  Batch   640  of    975.    Elapsed: 0:06:27.
+  step loss: 0.01
+  Batch   680  of    975.    Elapsed: 0:06:51.
+  step loss: 0.01
+  Batch   720  of    975.    Elapsed: 0:07:15.
+  step loss: 0.02
+  Batch   760  of    975.    Elapsed: 0:07:39.
+  step loss: 0.01
+  Batch   800  of    975.    Elapsed: 0:08:03.
+  step loss: 0.01
+  Batch   840  of    975.    Elapsed: 0:08:28.
+  step loss: 0.01
+  Batch   880  of    975.    Elapsed: 0:08:52.
+  step loss: 0.01
+  Batch   920  of    975.    Elapsed: 0:09:16.
+  step loss: 0.01
+  Batch   960  of    975.    Elapsed: 0:09:40.
+  step loss: 0.01
+
+  Average training loss: 0.01
+
+Running Validation...
+Batch accuracy: 95.31
+Batch accuracy: 95.51
+Batch accuracy: 95.90
+Batch accuracy: 92.58
+Batch accuracy: 94.53
+Batch accuracy: 94.14
+Batch accuracy: 93.95
+Batch accuracy: 93.36
+Batch accuracy: 94.34
+Batch accuracy: 93.16
+Batch accuracy: 94.73
+Batch accuracy: 92.19
+Batch accuracy: 93.55
+Batch accuracy: 93.95
+Batch accuracy: 95.70
+Batch accuracy: 93.55
+Batch accuracy: 95.70
+Batch accuracy: 94.14
+Batch accuracy: 95.12
+Batch accuracy: 94.14
+Batch accuracy: 93.95
+Batch accuracy: 95.51
+Batch accuracy: 93.36
+Batch accuracy: 95.12
+Batch accuracy: 94.92
+Batch accuracy: 93.55
+Batch accuracy: 95.70
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 93.95
+Batch accuracy: 93.36
+Batch accuracy: 95.51
+Batch accuracy: 93.55
+Batch accuracy: 94.14
+Batch accuracy: 93.75
+Batch accuracy: 96.68
+Batch accuracy: 93.55
+Batch accuracy: 95.31
+Batch accuracy: 93.55
+Batch accuracy: 94.34
+Batch accuracy: 93.55
+Batch accuracy: 93.55
+Batch accuracy: 95.12
+Batch accuracy: 93.16
+Batch accuracy: 93.16
+Batch accuracy: 94.34
+Batch accuracy: 95.51
+Batch accuracy: 94.34
+Batch accuracy: 97.07
+Batch accuracy: 91.21
+Batch accuracy: 93.55
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 95.90
+Batch accuracy: 93.16
+Batch accuracy: 94.53
+Batch accuracy: 93.95
+Batch accuracy: 95.51
+Batch accuracy: 96.29
+Batch accuracy: 96.09
+Batch accuracy: 95.12
+Batch accuracy: 96.68
+Batch accuracy: 93.75
+Batch accuracy: 95.70
+Batch accuracy: 95.70
+Batch accuracy: 95.90
+Batch accuracy: 95.31
+Batch accuracy: 94.92
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 94.73
+Batch accuracy: 92.77
+Batch accuracy: 93.36
+Batch accuracy: 95.12
+Batch accuracy: 95.51
+Batch accuracy: 96.48
+Batch accuracy: 94.53
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 95.51
+Batch accuracy: 94.73
+Batch accuracy: 95.31
+Batch accuracy: 94.53
+Batch accuracy: 93.75
+Batch accuracy: 96.09
+Batch accuracy: 94.14
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 95.12
+Batch accuracy: 95.70
+Batch accuracy: 97.07
+Batch accuracy: 95.90
+Batch accuracy: 96.09
+Batch accuracy: 95.12
+Batch accuracy: 94.34
+Batch accuracy: 93.55
+Batch accuracy: 95.51
+Batch accuracy: 95.31
+Batch accuracy: 93.95
+Batch accuracy: 93.36
+Batch accuracy: 94.53
+Batch accuracy: 94.34
+Batch accuracy: 93.95
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 95.12
+Batch accuracy: 95.90
+Batch accuracy: 92.74
+  Accuracy: 94.61
+  Validation Loss: 0.26
+  Validation took: 0:01:03
+New best model, saving it!
+
+======== Epoch 9 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:25.
+  step loss: 0.01
+  Batch    80  of    975.    Elapsed: 0:00:50.
+  step loss: 0.01
+  Batch   120  of    975.    Elapsed: 0:01:14.
+  step loss: 0.01
+  Batch   160  of    975.    Elapsed: 0:01:39.
+  step loss: 0.01
+  Batch   200  of    975.    Elapsed: 0:02:04.
+  step loss: 0.01
+  Batch   240  of    975.    Elapsed: 0:02:28.
+  step loss: 0.01
+  Batch   280  of    975.    Elapsed: 0:02:52.
+  step loss: 0.02
+  Batch   320  of    975.    Elapsed: 0:03:16.
+  step loss: 0.01
+  Batch   360  of    975.    Elapsed: 0:03:41.
+  step loss: 0.01
+  Batch   400  of    975.    Elapsed: 0:04:05.
+  step loss: 0.01
+  Batch   440  of    975.    Elapsed: 0:04:29.
+  step loss: 0.01
+  Batch   480  of    975.    Elapsed: 0:04:53.
+  step loss: 0.01
+  Batch   520  of    975.    Elapsed: 0:05:18.
+  step loss: 0.00
+  Batch   560  of    975.    Elapsed: 0:05:42.
+  step loss: 0.01
+  Batch   600  of    975.    Elapsed: 0:06:06.
+  step loss: 0.01
+  Batch   640  of    975.    Elapsed: 0:06:30.
+  step loss: 0.01
+  Batch   680  of    975.    Elapsed: 0:06:55.
+  step loss: 0.00
+  Batch   720  of    975.    Elapsed: 0:07:19.
+  step loss: 0.01
+  Batch   760  of    975.    Elapsed: 0:07:44.
+  step loss: 0.01
+  Batch   800  of    975.    Elapsed: 0:08:08.
+  step loss: 0.01
+  Batch   840  of    975.    Elapsed: 0:08:32.
+  step loss: 0.01
+  Batch   880  of    975.    Elapsed: 0:08:56.
+  step loss: 0.02
+  Batch   920  of    975.    Elapsed: 0:09:20.
+  step loss: 0.01
+  Batch   960  of    975.    Elapsed: 0:09:44.
+  step loss: 0.01
+
+  Average training loss: 0.01
+
+Running Validation...
+Batch accuracy: 94.14
+Batch accuracy: 95.12
+Batch accuracy: 93.36
+Batch accuracy: 93.95
+Batch accuracy: 93.55
+Batch accuracy: 94.92
+Batch accuracy: 94.14
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 93.36
+Batch accuracy: 95.70
+Batch accuracy: 93.36
+Batch accuracy: 95.12
+Batch accuracy: 95.31
+Batch accuracy: 95.12
+Batch accuracy: 95.70
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 93.36
+Batch accuracy: 96.68
+Batch accuracy: 94.92
+Batch accuracy: 95.31
+Batch accuracy: 95.12
+Batch accuracy: 95.31
+Batch accuracy: 94.92
+Batch accuracy: 95.31
+Batch accuracy: 95.31
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 94.92
+Batch accuracy: 94.92
+Batch accuracy: 93.75
+Batch accuracy: 95.51
+Batch accuracy: 93.95
+Batch accuracy: 93.75
+Batch accuracy: 95.31
+Batch accuracy: 94.14
+Batch accuracy: 95.70
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 95.12
+Batch accuracy: 95.31
+Batch accuracy: 94.73
+Batch accuracy: 96.09
+Batch accuracy: 93.95
+Batch accuracy: 95.12
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 93.36
+Batch accuracy: 95.90
+Batch accuracy: 94.73
+Batch accuracy: 92.38
+Batch accuracy: 95.31
+Batch accuracy: 94.53
+Batch accuracy: 93.16
+Batch accuracy: 94.34
+Batch accuracy: 96.09
+Batch accuracy: 95.12
+Batch accuracy: 97.07
+Batch accuracy: 96.48
+Batch accuracy: 95.51
+Batch accuracy: 93.36
+Batch accuracy: 95.31
+Batch accuracy: 94.14
+Batch accuracy: 92.58
+Batch accuracy: 95.70
+Batch accuracy: 95.12
+Batch accuracy: 94.92
+Batch accuracy: 95.12
+Batch accuracy: 93.95
+Batch accuracy: 94.73
+Batch accuracy: 93.95
+Batch accuracy: 94.53
+Batch accuracy: 95.12
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 95.70
+Batch accuracy: 96.68
+Batch accuracy: 95.31
+Batch accuracy: 92.19
+Batch accuracy: 93.36
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 94.14
+Batch accuracy: 96.48
+Batch accuracy: 94.92
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 94.14
+Batch accuracy: 92.19
+Batch accuracy: 92.97
+Batch accuracy: 95.70
+Batch accuracy: 95.51
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 92.77
+Batch accuracy: 93.16
+Batch accuracy: 95.51
+Batch accuracy: 93.55
+Batch accuracy: 94.92
+Batch accuracy: 93.75
+Batch accuracy: 94.53
+Batch accuracy: 93.16
+Batch accuracy: 93.95
+Batch accuracy: 94.92
+Batch accuracy: 92.74
+  Accuracy: 94.61
+  Validation Loss: 0.26
+  Validation took: 0:01:02
+New best model, saving it!
+
+======== Epoch 10 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:25.
+  step loss: 0.00
+  Batch    80  of    975.    Elapsed: 0:00:50.
+  step loss: 0.00
+  Batch   120  of    975.    Elapsed: 0:01:15.
+  step loss: 0.01
+  Batch   160  of    975.    Elapsed: 0:01:39.
+  step loss: 0.01
+  Batch   200  of    975.    Elapsed: 0:02:03.
+  step loss: 0.01
+  Batch   240  of    975.    Elapsed: 0:02:28.
+  step loss: 0.01
+  Batch   280  of    975.    Elapsed: 0:02:51.
+  step loss: 0.02
+  Batch   320  of    975.    Elapsed: 0:03:16.
+  step loss: 0.02
+  Batch   360  of    975.    Elapsed: 0:03:40.
+  step loss: 0.01
+  Batch   400  of    975.    Elapsed: 0:04:04.
+  step loss: 0.01
+  Batch   440  of    975.    Elapsed: 0:04:28.
+  step loss: 0.01
+  Batch   480  of    975.    Elapsed: 0:04:52.
+  step loss: 0.02
+  Batch   520  of    975.    Elapsed: 0:05:16.
+  step loss: 0.00
+  Batch   560  of    975.    Elapsed: 0:05:41.
+  step loss: 0.01
+  Batch   600  of    975.    Elapsed: 0:06:05.
+  step loss: 0.00
+  Batch   640  of    975.    Elapsed: 0:06:28.
+  step loss: 0.02
+  Batch   680  of    975.    Elapsed: 0:06:52.
+  step loss: 0.02
+  Batch   720  of    975.    Elapsed: 0:07:17.
+  step loss: 0.02
+  Batch   760  of    975.    Elapsed: 0:07:41.
+  step loss: 0.01
+  Batch   800  of    975.    Elapsed: 0:08:05.
+  step loss: 0.01
+  Batch   840  of    975.    Elapsed: 0:08:29.
+  step loss: 0.01
+  Batch   880  of    975.    Elapsed: 0:08:54.
+  step loss: 0.00
+  Batch   920  of    975.    Elapsed: 0:09:17.
+  step loss: 0.01
+  Batch   960  of    975.    Elapsed: 0:09:41.
+  step loss: 0.01
+
+  Average training loss: 0.01
+
+Running Validation...
+Batch accuracy: 92.77
+Batch accuracy: 94.73
+Batch accuracy: 93.16
+Batch accuracy: 96.09
+Batch accuracy: 95.51
+Batch accuracy: 94.34
+Batch accuracy: 93.36
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 95.31
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 93.36
+Batch accuracy: 94.73
+Batch accuracy: 94.73
+Batch accuracy: 94.14
+Batch accuracy: 93.16
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 93.36
+Batch accuracy: 93.95
+Batch accuracy: 94.34
+Batch accuracy: 93.75
+Batch accuracy: 94.34
+Batch accuracy: 96.68
+Batch accuracy: 93.75
+Batch accuracy: 92.58
+Batch accuracy: 95.12
+Batch accuracy: 92.97
+Batch accuracy: 94.92
+Batch accuracy: 93.36
+Batch accuracy: 95.51
+Batch accuracy: 95.31
+Batch accuracy: 93.55
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 96.48
+Batch accuracy: 94.92
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 93.75
+Batch accuracy: 96.09
+Batch accuracy: 96.48
+Batch accuracy: 94.92
+Batch accuracy: 93.75
+Batch accuracy: 95.51
+Batch accuracy: 95.51
+Batch accuracy: 95.70
+Batch accuracy: 96.88
+Batch accuracy: 96.09
+Batch accuracy: 94.34
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 95.12
+Batch accuracy: 93.75
+Batch accuracy: 94.14
+Batch accuracy: 94.14
+Batch accuracy: 96.29
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 94.14
+Batch accuracy: 95.70
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 94.92
+Batch accuracy: 95.31
+Batch accuracy: 96.29
+Batch accuracy: 92.77
+Batch accuracy: 94.14
+Batch accuracy: 95.31
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 95.31
+Batch accuracy: 95.31
+Batch accuracy: 95.70
+Batch accuracy: 94.92
+Batch accuracy: 92.77
+Batch accuracy: 95.70
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 95.70
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 94.92
+Batch accuracy: 95.90
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 96.09
+Batch accuracy: 91.80
+Batch accuracy: 95.12
+Batch accuracy: 95.51
+Batch accuracy: 94.34
+Batch accuracy: 92.77
+Batch accuracy: 96.09
+Batch accuracy: 94.73
+Batch accuracy: 94.73
+Batch accuracy: 92.38
+Batch accuracy: 92.58
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 93.75
+Batch accuracy: 93.95
+Batch accuracy: 94.53
+Batch accuracy: 93.55
+  Accuracy: 94.62
+  Validation Loss: 0.26
+  Validation took: 0:01:02
+New best model, saving it!
+
+======== Epoch 11 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:24.
+  step loss: 0.01
+  Batch    80  of    975.    Elapsed: 0:00:48.
+  step loss: 0.01
+  Batch   120  of    975.    Elapsed: 0:01:12.
+  step loss: 0.02
+  Batch   160  of    975.    Elapsed: 0:01:36.
+  step loss: 0.01
+  Batch   200  of    975.    Elapsed: 0:02:00.
+  step loss: 0.01
+  Batch   240  of    975.    Elapsed: 0:02:24.
+  step loss: 0.00
+  Batch   280  of    975.    Elapsed: 0:02:49.
+  step loss: 0.01
+  Batch   320  of    975.    Elapsed: 0:03:13.
+  step loss: 0.02
+  Batch   360  of    975.    Elapsed: 0:03:37.
+  step loss: 0.01
+  Batch   400  of    975.    Elapsed: 0:04:01.
+  step loss: 0.02
+  Batch   440  of    975.    Elapsed: 0:04:26.
+  step loss: 0.01
+  Batch   480  of    975.    Elapsed: 0:04:50.
+  step loss: 0.02
+  Batch   520  of    975.    Elapsed: 0:05:13.
+  step loss: 0.01
+  Batch   560  of    975.    Elapsed: 0:05:37.
+  step loss: 0.01
+  Batch   600  of    975.    Elapsed: 0:06:01.
+  step loss: 0.01
+  Batch   640  of    975.    Elapsed: 0:06:25.
+  step loss: 0.01
+  Batch   680  of    975.    Elapsed: 0:06:50.
+  step loss: 0.00
+  Batch   720  of    975.    Elapsed: 0:07:14.
+  step loss: 0.02
+  Batch   760  of    975.    Elapsed: 0:07:37.
+  step loss: 0.00
+  Batch   800  of    975.    Elapsed: 0:08:02.
+  step loss: 0.01
+  Batch   840  of    975.    Elapsed: 0:08:26.
+  step loss: 0.01
+  Batch   880  of    975.    Elapsed: 0:08:50.
+  step loss: 0.01
+  Batch   920  of    975.    Elapsed: 0:09:14.
+  step loss: 0.01
+  Batch   960  of    975.    Elapsed: 0:09:39.
+  step loss: 0.00
+
+  Average training loss: 0.01
+
+Running Validation...
+Batch accuracy: 95.31
+Batch accuracy: 95.51
+Batch accuracy: 93.95
+Batch accuracy: 95.51
+Batch accuracy: 93.16
+Batch accuracy: 94.73
+Batch accuracy: 95.31
+Batch accuracy: 93.55
+Batch accuracy: 93.75
+Batch accuracy: 94.92
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 94.14
+Batch accuracy: 94.92
+Batch accuracy: 95.12
+Batch accuracy: 94.14
+Batch accuracy: 96.09
+Batch accuracy: 95.12
+Batch accuracy: 93.55
+Batch accuracy: 96.29
+Batch accuracy: 93.55
+Batch accuracy: 95.51
+Batch accuracy: 93.95
+Batch accuracy: 94.53
+Batch accuracy: 94.73
+Batch accuracy: 96.29
+Batch accuracy: 93.95
+Batch accuracy: 92.77
+Batch accuracy: 94.92
+Batch accuracy: 93.95
+Batch accuracy: 95.12
+Batch accuracy: 95.31
+Batch accuracy: 96.88
+Batch accuracy: 93.16
+Batch accuracy: 95.51
+Batch accuracy: 95.12
+Batch accuracy: 92.77
+Batch accuracy: 95.90
+Batch accuracy: 93.36
+Batch accuracy: 93.16
+Batch accuracy: 95.31
+Batch accuracy: 93.75
+Batch accuracy: 93.16
+Batch accuracy: 96.09
+Batch accuracy: 93.75
+Batch accuracy: 94.14
+Batch accuracy: 93.75
+Batch accuracy: 93.75
+Batch accuracy: 93.36
+Batch accuracy: 94.73
+Batch accuracy: 95.90
+Batch accuracy: 95.90
+Batch accuracy: 95.12
+Batch accuracy: 93.36
+Batch accuracy: 94.34
+Batch accuracy: 93.16
+Batch accuracy: 95.31
+Batch accuracy: 93.55
+Batch accuracy: 93.75
+Batch accuracy: 94.92
+Batch accuracy: 97.66
+Batch accuracy: 94.53
+Batch accuracy: 94.14
+Batch accuracy: 93.95
+Batch accuracy: 96.09
+Batch accuracy: 94.14
+Batch accuracy: 92.97
+Batch accuracy: 97.07
+Batch accuracy: 94.92
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 95.31
+Batch accuracy: 96.48
+Batch accuracy: 95.70
+Batch accuracy: 94.92
+Batch accuracy: 94.73
+Batch accuracy: 95.51
+Batch accuracy: 95.70
+Batch accuracy: 95.12
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 96.48
+Batch accuracy: 94.34
+Batch accuracy: 94.14
+Batch accuracy: 93.95
+Batch accuracy: 93.55
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 96.29
+Batch accuracy: 94.92
+Batch accuracy: 93.75
+Batch accuracy: 95.12
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 95.12
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 95.70
+Batch accuracy: 93.16
+Batch accuracy: 93.95
+Batch accuracy: 93.75
+Batch accuracy: 96.09
+Batch accuracy: 94.34
+Batch accuracy: 93.55
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 95.16
+  Accuracy: 94.66
+Epoch    11: reducing learning rate of group 0 to 1.0000e-05.
+  Validation Loss: 0.26
+  Validation took: 0:01:02
+New best model, saving it!
+
+======== Epoch 12 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:24.
+  step loss: 0.00
+  Batch    80  of    975.    Elapsed: 0:00:48.
+  step loss: 0.01
+  Batch   120  of    975.    Elapsed: 0:01:12.
+  step loss: 0.00
+  Batch   160  of    975.    Elapsed: 0:01:36.
+  step loss: 0.00
+  Batch   200  of    975.    Elapsed: 0:02:00.
+  step loss: 0.00
+  Batch   240  of    975.    Elapsed: 0:02:23.
+  step loss: 0.01
+  Batch   280  of    975.    Elapsed: 0:02:48.
+  step loss: 0.01
+  Batch   320  of    975.    Elapsed: 0:03:11.
+  step loss: 0.01
+  Batch   360  of    975.    Elapsed: 0:03:35.
+  step loss: 0.01
+  Batch   400  of    975.    Elapsed: 0:03:59.
+  step loss: 0.01
+  Batch   440  of    975.    Elapsed: 0:04:23.
+  step loss: 0.01
+  Batch   480  of    975.    Elapsed: 0:04:47.
+  step loss: 0.01
+  Batch   520  of    975.    Elapsed: 0:05:11.
+  step loss: 0.00
+  Batch   560  of    975.    Elapsed: 0:05:35.
+  step loss: 0.01
+  Batch   600  of    975.    Elapsed: 0:05:58.
+  step loss: 0.02
+  Batch   640  of    975.    Elapsed: 0:06:22.
+  step loss: 0.02
+  Batch   680  of    975.    Elapsed: 0:06:46.
+  step loss: 0.01
+  Batch   720  of    975.    Elapsed: 0:07:10.
+  step loss: 0.00
+  Batch   760  of    975.    Elapsed: 0:07:34.
+  step loss: 0.01
+  Batch   800  of    975.    Elapsed: 0:07:58.
+  step loss: 0.00
+  Batch   840  of    975.    Elapsed: 0:08:22.
+  step loss: 0.01
+  Batch   880  of    975.    Elapsed: 0:08:46.
+  step loss: 0.01
+  Batch   920  of    975.    Elapsed: 0:09:09.
+  step loss: 0.01
+  Batch   960  of    975.    Elapsed: 0:09:33.
+  step loss: 0.01
+
+  Average training loss: 0.01
+
+Running Validation...
+Batch accuracy: 95.51
+Batch accuracy: 92.58
+Batch accuracy: 96.09
+Batch accuracy: 94.53
+Batch accuracy: 95.12
+Batch accuracy: 94.73
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 96.68
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 93.75
+Batch accuracy: 94.92
+Batch accuracy: 96.09
+Batch accuracy: 95.31
+Batch accuracy: 93.55
+Batch accuracy: 95.12
+Batch accuracy: 93.75
+Batch accuracy: 96.68
+Batch accuracy: 93.55
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 93.36
+Batch accuracy: 95.90
+Batch accuracy: 94.34
+Batch accuracy: 93.75
+Batch accuracy: 95.31
+Batch accuracy: 93.95
+Batch accuracy: 94.34
+Batch accuracy: 92.97
+Batch accuracy: 94.53
+Batch accuracy: 96.29
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 95.51
+Batch accuracy: 95.70
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 96.48
+Batch accuracy: 95.70
+Batch accuracy: 96.68
+Batch accuracy: 94.14
+Batch accuracy: 93.95
+Batch accuracy: 93.36
+Batch accuracy: 94.34
+Batch accuracy: 93.75
+Batch accuracy: 95.12
+Batch accuracy: 94.73
+Batch accuracy: 93.95
+Batch accuracy: 95.51
+Batch accuracy: 93.16
+Batch accuracy: 94.92
+Batch accuracy: 94.92
+Batch accuracy: 94.14
+Batch accuracy: 93.95
+Batch accuracy: 95.51
+Batch accuracy: 94.73
+Batch accuracy: 92.77
+Batch accuracy: 96.29
+Batch accuracy: 94.34
+Batch accuracy: 94.53
+Batch accuracy: 93.75
+Batch accuracy: 93.55
+Batch accuracy: 94.34
+Batch accuracy: 95.31
+Batch accuracy: 95.90
+Batch accuracy: 95.12
+Batch accuracy: 94.14
+Batch accuracy: 95.70
+Batch accuracy: 96.48
+Batch accuracy: 93.36
+Batch accuracy: 95.12
+Batch accuracy: 96.29
+Batch accuracy: 94.14
+Batch accuracy: 95.70
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 93.75
+Batch accuracy: 93.55
+Batch accuracy: 94.34
+Batch accuracy: 93.16
+Batch accuracy: 95.12
+Batch accuracy: 94.14
+Batch accuracy: 96.48
+Batch accuracy: 94.14
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 94.14
+Batch accuracy: 95.70
+Batch accuracy: 93.55
+Batch accuracy: 95.51
+Batch accuracy: 94.34
+Batch accuracy: 95.90
+Batch accuracy: 96.09
+Batch accuracy: 95.70
+Batch accuracy: 94.14
+Batch accuracy: 93.36
+Batch accuracy: 95.31
+Batch accuracy: 93.16
+Batch accuracy: 94.53
+Batch accuracy: 93.75
+Batch accuracy: 94.92
+Batch accuracy: 93.55
+Batch accuracy: 94.73
+Batch accuracy: 93.55
+  Accuracy: 94.67
+  Validation Loss: 0.26
+  Validation took: 0:01:01
+New best model, saving it!
+
+======== Epoch 13 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:24.
+  step loss: 0.01
+  Batch    80  of    975.    Elapsed: 0:00:48.
+  step loss: 0.00
+  Batch   120  of    975.    Elapsed: 0:01:12.
+  step loss: 0.00
+  Batch   160  of    975.    Elapsed: 0:01:36.
+  step loss: 0.01
+  Batch   200  of    975.    Elapsed: 0:02:01.
+  step loss: 0.01
+  Batch   240  of    975.    Elapsed: 0:02:25.
+  step loss: 0.00
+  Batch   280  of    975.    Elapsed: 0:02:49.
+  step loss: 0.01
+  Batch   320  of    975.    Elapsed: 0:03:14.
+  step loss: 0.01
+  Batch   360  of    975.    Elapsed: 0:03:38.
+  step loss: 0.00
+  Batch   400  of    975.    Elapsed: 0:04:02.
+  step loss: 0.01
+  Batch   440  of    975.    Elapsed: 0:04:26.
+  step loss: 0.01
+  Batch   480  of    975.    Elapsed: 0:04:50.
+  step loss: 0.01
+  Batch   520  of    975.    Elapsed: 0:05:14.
+  step loss: 0.00
+  Batch   560  of    975.    Elapsed: 0:05:37.
+  step loss: 0.01
+  Batch   600  of    975.    Elapsed: 0:06:02.
+  step loss: 0.01
+  Batch   640  of    975.    Elapsed: 0:06:26.
+  step loss: 0.00
+  Batch   680  of    975.    Elapsed: 0:06:50.
+  step loss: 0.01
+  Batch   720  of    975.    Elapsed: 0:07:14.
+  step loss: 0.00
+  Batch   760  of    975.    Elapsed: 0:07:38.
+  step loss: 0.01
+  Batch   800  of    975.    Elapsed: 0:08:03.
+  step loss: 0.01
+  Batch   840  of    975.    Elapsed: 0:08:27.
+  step loss: 0.01
+  Batch   880  of    975.    Elapsed: 0:08:51.
+  step loss: 0.02
+  Batch   920  of    975.    Elapsed: 0:09:15.
+  step loss: 0.00
+  Batch   960  of    975.    Elapsed: 0:09:39.
+  step loss: 0.01
+
+  Average training loss: 0.01
+
+Running Validation...
+Batch accuracy: 95.51
+Batch accuracy: 93.36
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 93.36
+Batch accuracy: 95.90
+Batch accuracy: 93.75
+Batch accuracy: 94.34
+Batch accuracy: 95.12
+Batch accuracy: 93.16
+Batch accuracy: 95.12
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 95.31
+Batch accuracy: 94.34
+Batch accuracy: 95.31
+Batch accuracy: 95.31
+Batch accuracy: 93.95
+Batch accuracy: 94.53
+Batch accuracy: 93.95
+Batch accuracy: 93.95
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 95.31
+Batch accuracy: 96.29
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 96.48
+Batch accuracy: 95.31
+Batch accuracy: 95.90
+Batch accuracy: 95.90
+Batch accuracy: 94.14
+Batch accuracy: 93.36
+Batch accuracy: 93.55
+Batch accuracy: 93.75
+Batch accuracy: 95.51
+Batch accuracy: 95.51
+Batch accuracy: 94.92
+Batch accuracy: 96.29
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 93.16
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 93.75
+Batch accuracy: 94.92
+Batch accuracy: 94.73
+Batch accuracy: 94.14
+Batch accuracy: 95.70
+Batch accuracy: 95.51
+Batch accuracy: 93.95
+Batch accuracy: 93.36
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 93.75
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 95.31
+Batch accuracy: 96.29
+Batch accuracy: 94.14
+Batch accuracy: 95.31
+Batch accuracy: 95.70
+Batch accuracy: 94.14
+Batch accuracy: 95.12
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 93.55
+Batch accuracy: 94.53
+Batch accuracy: 92.77
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 94.92
+Batch accuracy: 95.51
+Batch accuracy: 95.70
+Batch accuracy: 96.09
+Batch accuracy: 95.12
+Batch accuracy: 94.34
+Batch accuracy: 96.09
+Batch accuracy: 93.95
+Batch accuracy: 93.16
+Batch accuracy: 93.95
+Batch accuracy: 92.77
+Batch accuracy: 95.12
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 94.53
+Batch accuracy: 93.95
+Batch accuracy: 94.53
+Batch accuracy: 95.51
+Batch accuracy: 92.77
+Batch accuracy: 95.70
+Batch accuracy: 96.29
+Batch accuracy: 95.31
+Batch accuracy: 94.34
+Batch accuracy: 94.53
+Batch accuracy: 93.95
+Batch accuracy: 94.92
+Batch accuracy: 94.92
+Batch accuracy: 96.29
+Batch accuracy: 94.34
+Batch accuracy: 95.70
+Batch accuracy: 95.12
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 94.35
+  Accuracy: 94.66
+  Validation Loss: 0.26
+  Validation took: 0:01:02
+The model does not improve for 1 epochs!
+
+======== Epoch 14 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:25.
+  step loss: 0.01
+  Batch    80  of    975.    Elapsed: 0:00:48.
+  step loss: 0.00
+  Batch   120  of    975.    Elapsed: 0:01:12.
+  step loss: 0.02
+  Batch   160  of    975.    Elapsed: 0:01:36.
+  step loss: 0.00
+  Batch   200  of    975.    Elapsed: 0:02:00.
+  step loss: 0.00
+  Batch   240  of    975.    Elapsed: 0:02:25.
+  step loss: 0.01
+  Batch   280  of    975.    Elapsed: 0:02:49.
+  step loss: 0.00
+  Batch   320  of    975.    Elapsed: 0:03:12.
+  step loss: 0.01
+  Batch   360  of    975.    Elapsed: 0:03:37.
+  step loss: 0.00
+  Batch   400  of    975.    Elapsed: 0:04:01.
+  step loss: 0.00
+  Batch   440  of    975.    Elapsed: 0:04:25.
+  step loss: 0.01
+  Batch   480  of    975.    Elapsed: 0:04:49.
+  step loss: 0.01
+  Batch   520  of    975.    Elapsed: 0:05:14.
+  step loss: 0.01
+  Batch   560  of    975.    Elapsed: 0:05:38.
+  step loss: 0.00
+  Batch   600  of    975.    Elapsed: 0:06:02.
+  step loss: 0.01
+  Batch   640  of    975.    Elapsed: 0:06:27.
+  step loss: 0.00
+  Batch   680  of    975.    Elapsed: 0:06:51.
+  step loss: 0.01
+  Batch   720  of    975.    Elapsed: 0:07:15.
+  step loss: 0.00
+  Batch   760  of    975.    Elapsed: 0:07:40.
+  step loss: 0.01
+  Batch   800  of    975.    Elapsed: 0:08:04.
+  step loss: 0.01
+  Batch   840  of    975.    Elapsed: 0:08:28.
+  step loss: 0.01
+  Batch   880  of    975.    Elapsed: 0:08:52.
+  step loss: 0.00
+  Batch   920  of    975.    Elapsed: 0:09:16.
+  step loss: 0.01
+  Batch   960  of    975.    Elapsed: 0:09:40.
+  step loss: 0.00
+
+  Average training loss: 0.01
+
+Running Validation...
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 93.36
+Batch accuracy: 92.77
+Batch accuracy: 95.51
+Batch accuracy: 96.29
+Batch accuracy: 94.14
+Batch accuracy: 93.16
+Batch accuracy: 94.92
+Batch accuracy: 95.12
+Batch accuracy: 93.36
+Batch accuracy: 94.34
+Batch accuracy: 94.14
+Batch accuracy: 95.51
+Batch accuracy: 94.14
+Batch accuracy: 95.90
+Batch accuracy: 95.31
+Batch accuracy: 93.16
+Batch accuracy: 93.75
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 93.36
+Batch accuracy: 94.92
+Batch accuracy: 94.73
+Batch accuracy: 95.31
+Batch accuracy: 95.70
+Batch accuracy: 92.97
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 95.31
+Batch accuracy: 95.51
+Batch accuracy: 94.73
+Batch accuracy: 94.73
+Batch accuracy: 95.51
+Batch accuracy: 95.12
+Batch accuracy: 94.34
+Batch accuracy: 94.73
+Batch accuracy: 95.70
+Batch accuracy: 96.09
+Batch accuracy: 95.31
+Batch accuracy: 96.88
+Batch accuracy: 95.51
+Batch accuracy: 93.95
+Batch accuracy: 95.31
+Batch accuracy: 95.31
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 93.36
+Batch accuracy: 94.92
+Batch accuracy: 95.51
+Batch accuracy: 95.12
+Batch accuracy: 94.14
+Batch accuracy: 95.12
+Batch accuracy: 94.53
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 96.09
+Batch accuracy: 94.14
+Batch accuracy: 95.70
+Batch accuracy: 96.29
+Batch accuracy: 94.53
+Batch accuracy: 94.73
+Batch accuracy: 92.19
+Batch accuracy: 93.75
+Batch accuracy: 95.12
+Batch accuracy: 95.70
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 93.95
+Batch accuracy: 93.36
+Batch accuracy: 94.73
+Batch accuracy: 95.12
+Batch accuracy: 93.36
+Batch accuracy: 95.12
+Batch accuracy: 95.51
+Batch accuracy: 95.31
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 94.53
+Batch accuracy: 93.75
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 95.12
+Batch accuracy: 92.58
+Batch accuracy: 95.90
+Batch accuracy: 94.53
+Batch accuracy: 94.14
+Batch accuracy: 93.75
+Batch accuracy: 93.16
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 95.51
+Batch accuracy: 93.55
+Batch accuracy: 94.53
+Batch accuracy: 94.73
+Batch accuracy: 94.73
+Batch accuracy: 95.51
+Batch accuracy: 93.16
+Batch accuracy: 95.12
+Batch accuracy: 94.34
+Batch accuracy: 93.95
+Batch accuracy: 95.90
+Batch accuracy: 95.31
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 95.31
+Batch accuracy: 96.77
+  Accuracy: 94.68
+  Validation Loss: 0.26
+  Validation took: 0:01:02
+New best model, saving it!
+
+======== Epoch 15 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:25.
+  step loss: 0.01
+  Batch    80  of    975.    Elapsed: 0:00:49.
+  step loss: 0.01
+  Batch   120  of    975.    Elapsed: 0:01:13.
+  step loss: 0.01
+  Batch   160  of    975.    Elapsed: 0:01:37.
+  step loss: 0.01
+  Batch   200  of    975.    Elapsed: 0:02:01.
+  step loss: 0.00
+  Batch   240  of    975.    Elapsed: 0:02:25.
+  step loss: 0.00
+  Batch   280  of    975.    Elapsed: 0:02:49.
+  step loss: 0.01
+  Batch   320  of    975.    Elapsed: 0:03:13.
+  step loss: 0.01
+  Batch   360  of    975.    Elapsed: 0:03:37.
+  step loss: 0.00
+  Batch   400  of    975.    Elapsed: 0:04:02.
+  step loss: 0.00
+  Batch   440  of    975.    Elapsed: 0:04:26.
+  step loss: 0.01
+  Batch   480  of    975.    Elapsed: 0:04:50.
+  step loss: 0.01
+  Batch   520  of    975.    Elapsed: 0:05:15.
+  step loss: 0.01
+  Batch   560  of    975.    Elapsed: 0:05:39.
+  step loss: 0.01
+  Batch   600  of    975.    Elapsed: 0:06:03.
+  step loss: 0.00
+  Batch   640  of    975.    Elapsed: 0:06:27.
+  step loss: 0.01
+  Batch   680  of    975.    Elapsed: 0:06:52.
+  step loss: 0.01
+  Batch   720  of    975.    Elapsed: 0:07:16.
+  step loss: 0.01
+  Batch   760  of    975.    Elapsed: 0:07:40.
+  step loss: 0.01
+  Batch   800  of    975.    Elapsed: 0:08:04.
+  step loss: 0.01
+  Batch   840  of    975.    Elapsed: 0:08:28.
+  step loss: 0.01
+  Batch   880  of    975.    Elapsed: 0:08:53.
+  step loss: 0.01
+  Batch   920  of    975.    Elapsed: 0:09:17.
+  step loss: 0.00
+  Batch   960  of    975.    Elapsed: 0:09:41.
+  step loss: 0.01
+
+  Average training loss: 0.01
+
+Running Validation...
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 94.92
+Batch accuracy: 97.27
+Batch accuracy: 93.75
+Batch accuracy: 93.55
+Batch accuracy: 93.75
+Batch accuracy: 96.09
+Batch accuracy: 93.95
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 93.95
+Batch accuracy: 95.12
+Batch accuracy: 95.31
+Batch accuracy: 93.95
+Batch accuracy: 94.34
+Batch accuracy: 95.70
+Batch accuracy: 92.58
+Batch accuracy: 95.70
+Batch accuracy: 93.95
+Batch accuracy: 93.55
+Batch accuracy: 95.12
+Batch accuracy: 96.09
+Batch accuracy: 93.95
+Batch accuracy: 93.36
+Batch accuracy: 93.75
+Batch accuracy: 96.29
+Batch accuracy: 95.31
+Batch accuracy: 95.51
+Batch accuracy: 91.99
+Batch accuracy: 96.68
+Batch accuracy: 94.73
+Batch accuracy: 93.95
+Batch accuracy: 95.90
+Batch accuracy: 93.95
+Batch accuracy: 95.51
+Batch accuracy: 92.97
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 94.34
+Batch accuracy: 94.14
+Batch accuracy: 94.92
+Batch accuracy: 93.75
+Batch accuracy: 94.73
+Batch accuracy: 94.73
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 91.99
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 95.70
+Batch accuracy: 95.70
+Batch accuracy: 95.51
+Batch accuracy: 94.92
+Batch accuracy: 95.51
+Batch accuracy: 94.73
+Batch accuracy: 95.90
+Batch accuracy: 93.75
+Batch accuracy: 94.14
+Batch accuracy: 95.70
+Batch accuracy: 94.73
+Batch accuracy: 93.95
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 95.31
+Batch accuracy: 92.19
+Batch accuracy: 94.92
+Batch accuracy: 94.73
+Batch accuracy: 93.95
+Batch accuracy: 95.31
+Batch accuracy: 95.12
+Batch accuracy: 96.29
+Batch accuracy: 94.14
+Batch accuracy: 95.51
+Batch accuracy: 95.31
+Batch accuracy: 95.31
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 94.14
+Batch accuracy: 93.95
+Batch accuracy: 95.51
+Batch accuracy: 93.95
+Batch accuracy: 95.12
+Batch accuracy: 95.31
+Batch accuracy: 94.73
+Batch accuracy: 95.70
+Batch accuracy: 93.36
+Batch accuracy: 94.92
+Batch accuracy: 95.12
+Batch accuracy: 95.90
+Batch accuracy: 95.12
+Batch accuracy: 95.90
+Batch accuracy: 95.51
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 95.90
+Batch accuracy: 94.14
+Batch accuracy: 95.31
+Batch accuracy: 95.51
+Batch accuracy: 93.75
+Batch accuracy: 93.55
+Batch accuracy: 95.12
+Batch accuracy: 94.73
+Batch accuracy: 93.55
+Batch accuracy: 93.55
+Batch accuracy: 98.39
+  Accuracy: 94.68
+Epoch    15: reducing learning rate of group 0 to 1.0000e-06.
+  Validation Loss: 0.26
+  Validation took: 0:01:02
+New best model, saving it!
+
+======== Epoch 16 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:25.
+  step loss: 0.01
+  Batch    80  of    975.    Elapsed: 0:00:50.
+  step loss: 0.00
+  Batch   120  of    975.    Elapsed: 0:01:14.
+  step loss: 0.01
+  Batch   160  of    975.    Elapsed: 0:01:39.
+  step loss: 0.00
+  Batch   200  of    975.    Elapsed: 0:02:04.
+  step loss: 0.01
+  Batch   240  of    975.    Elapsed: 0:02:28.
+  step loss: 0.00
+  Batch   280  of    975.    Elapsed: 0:02:52.
+  step loss: 0.01
+  Batch   320  of    975.    Elapsed: 0:03:16.
+  step loss: 0.01
+  Batch   360  of    975.    Elapsed: 0:03:40.
+  step loss: 0.01
+  Batch   400  of    975.    Elapsed: 0:04:05.
+  step loss: 0.01
+  Batch   440  of    975.    Elapsed: 0:04:29.
+  step loss: 0.01
+  Batch   480  of    975.    Elapsed: 0:04:54.
+  step loss: 0.01
+  Batch   520  of    975.    Elapsed: 0:05:18.
+  step loss: 0.01
+  Batch   560  of    975.    Elapsed: 0:05:43.
+  step loss: 0.01
+  Batch   600  of    975.    Elapsed: 0:06:08.
+  step loss: 0.01
+  Batch   640  of    975.    Elapsed: 0:06:32.
+  step loss: 0.00
+  Batch   680  of    975.    Elapsed: 0:06:57.
+  step loss: 0.01
+  Batch   720  of    975.    Elapsed: 0:07:22.
+  step loss: 0.01
+  Batch   760  of    975.    Elapsed: 0:07:45.
+  step loss: 0.01
+  Batch   800  of    975.    Elapsed: 0:08:10.
+  step loss: 0.00
+  Batch   840  of    975.    Elapsed: 0:08:35.
+  step loss: 0.00
+  Batch   880  of    975.    Elapsed: 0:08:59.
+  step loss: 0.01
+  Batch   920  of    975.    Elapsed: 0:09:23.
+  step loss: 0.01
+  Batch   960  of    975.    Elapsed: 0:09:47.
+  step loss: 0.01
+
+  Average training loss: 0.01
+
+Running Validation...
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 92.77
+Batch accuracy: 95.51
+Batch accuracy: 95.12
+Batch accuracy: 95.90
+Batch accuracy: 96.48
+Batch accuracy: 92.97
+Batch accuracy: 95.51
+Batch accuracy: 96.29
+Batch accuracy: 96.09
+Batch accuracy: 94.73
+Batch accuracy: 95.90
+Batch accuracy: 94.14
+Batch accuracy: 95.12
+Batch accuracy: 95.12
+Batch accuracy: 95.12
+Batch accuracy: 93.36
+Batch accuracy: 95.90
+Batch accuracy: 94.73
+Batch accuracy: 96.29
+Batch accuracy: 96.09
+Batch accuracy: 92.58
+Batch accuracy: 92.58
+Batch accuracy: 94.14
+Batch accuracy: 95.51
+Batch accuracy: 94.14
+Batch accuracy: 95.12
+Batch accuracy: 94.92
+Batch accuracy: 94.73
+Batch accuracy: 93.55
+Batch accuracy: 93.55
+Batch accuracy: 93.75
+Batch accuracy: 93.95
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 95.51
+Batch accuracy: 94.34
+Batch accuracy: 94.53
+Batch accuracy: 96.09
+Batch accuracy: 92.38
+Batch accuracy: 96.29
+Batch accuracy: 96.48
+Batch accuracy: 92.97
+Batch accuracy: 92.97
+Batch accuracy: 93.36
+Batch accuracy: 94.53
+Batch accuracy: 93.55
+Batch accuracy: 94.92
+Batch accuracy: 93.16
+Batch accuracy: 93.55
+Batch accuracy: 95.31
+Batch accuracy: 95.90
+Batch accuracy: 93.95
+Batch accuracy: 94.53
+Batch accuracy: 93.95
+Batch accuracy: 93.95
+Batch accuracy: 95.31
+Batch accuracy: 93.75
+Batch accuracy: 94.53
+Batch accuracy: 92.77
+Batch accuracy: 92.97
+Batch accuracy: 93.16
+Batch accuracy: 93.16
+Batch accuracy: 94.14
+Batch accuracy: 92.97
+Batch accuracy: 95.70
+Batch accuracy: 95.31
+Batch accuracy: 94.92
+Batch accuracy: 96.29
+Batch accuracy: 94.92
+Batch accuracy: 94.73
+Batch accuracy: 95.90
+Batch accuracy: 95.90
+Batch accuracy: 94.73
+Batch accuracy: 95.70
+Batch accuracy: 95.90
+Batch accuracy: 94.34
+Batch accuracy: 95.51
+Batch accuracy: 94.34
+Batch accuracy: 93.75
+Batch accuracy: 94.73
+Batch accuracy: 95.51
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 93.55
+Batch accuracy: 96.48
+Batch accuracy: 93.36
+Batch accuracy: 94.92
+Batch accuracy: 95.12
+Batch accuracy: 94.73
+Batch accuracy: 95.12
+Batch accuracy: 96.29
+Batch accuracy: 94.73
+Batch accuracy: 95.12
+Batch accuracy: 96.68
+Batch accuracy: 95.12
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 95.12
+Batch accuracy: 93.75
+Batch accuracy: 95.31
+Batch accuracy: 93.16
+Batch accuracy: 95.12
+Batch accuracy: 95.12
+Batch accuracy: 93.16
+Batch accuracy: 95.51
+Batch accuracy: 94.35
+  Accuracy: 94.65
+  Validation Loss: 0.26
+  Validation took: 0:01:02
+The model does not improve for 1 epochs!
+
+======== Epoch 17 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:25.
+  step loss: 0.01
+  Batch    80  of    975.    Elapsed: 0:00:49.
+  step loss: 0.01
+  Batch   120  of    975.    Elapsed: 0:01:13.
+  step loss: 0.01
+  Batch   160  of    975.    Elapsed: 0:01:37.
+  step loss: 0.01
+  Batch   200  of    975.    Elapsed: 0:02:01.
+  step loss: 0.01
+  Batch   240  of    975.    Elapsed: 0:02:26.
+  step loss: 0.00
+  Batch   280  of    975.    Elapsed: 0:02:50.
+  step loss: 0.00
+  Batch   320  of    975.    Elapsed: 0:03:14.
+  step loss: 0.01
+  Batch   360  of    975.    Elapsed: 0:03:38.
+  step loss: 0.01
+  Batch   400  of    975.    Elapsed: 0:04:03.
+  step loss: 0.01
+  Batch   440  of    975.    Elapsed: 0:04:27.
+  step loss: 0.00
+  Batch   480  of    975.    Elapsed: 0:04:52.
+  step loss: 0.01
+  Batch   520  of    975.    Elapsed: 0:05:16.
+  step loss: 0.00
+  Batch   560  of    975.    Elapsed: 0:05:39.
+  step loss: 0.00
+  Batch   600  of    975.    Elapsed: 0:06:03.
+  step loss: 0.02
+  Batch   640  of    975.    Elapsed: 0:06:27.
+  step loss: 0.01
+  Batch   680  of    975.    Elapsed: 0:06:51.
+  step loss: 0.01
+  Batch   720  of    975.    Elapsed: 0:07:16.
+  step loss: 0.01
+  Batch   760  of    975.    Elapsed: 0:07:40.
+  step loss: 0.01
+  Batch   800  of    975.    Elapsed: 0:08:05.
+  step loss: 0.00
+  Batch   840  of    975.    Elapsed: 0:08:29.
+  step loss: 0.00
+  Batch   880  of    975.    Elapsed: 0:08:53.
+  step loss: 0.01
+  Batch   920  of    975.    Elapsed: 0:09:18.
+  step loss: 0.00
+  Batch   960  of    975.    Elapsed: 0:09:41.
+  step loss: 0.01
+
+  Average training loss: 0.01
+
+Running Validation...
+Batch accuracy: 93.75
+Batch accuracy: 95.51
+Batch accuracy: 96.68
+Batch accuracy: 94.14
+Batch accuracy: 93.36
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 95.70
+Batch accuracy: 95.31
+Batch accuracy: 97.07
+Batch accuracy: 94.53
+Batch accuracy: 96.29
+Batch accuracy: 94.34
+Batch accuracy: 95.31
+Batch accuracy: 91.99
+Batch accuracy: 95.12
+Batch accuracy: 95.31
+Batch accuracy: 94.34
+Batch accuracy: 94.14
+Batch accuracy: 95.31
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 93.36
+Batch accuracy: 94.92
+Batch accuracy: 92.38
+Batch accuracy: 95.12
+Batch accuracy: 95.90
+Batch accuracy: 94.34
+Batch accuracy: 93.75
+Batch accuracy: 93.55
+Batch accuracy: 95.31
+Batch accuracy: 93.16
+Batch accuracy: 95.31
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 94.92
+Batch accuracy: 95.51
+Batch accuracy: 94.14
+Batch accuracy: 95.12
+Batch accuracy: 96.29
+Batch accuracy: 95.70
+Batch accuracy: 95.12
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 95.31
+Batch accuracy: 93.55
+Batch accuracy: 94.53
+Batch accuracy: 95.31
+Batch accuracy: 94.14
+Batch accuracy: 95.90
+Batch accuracy: 93.16
+Batch accuracy: 95.90
+Batch accuracy: 96.09
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 95.31
+Batch accuracy: 93.16
+Batch accuracy: 93.16
+Batch accuracy: 94.14
+Batch accuracy: 92.97
+Batch accuracy: 95.12
+Batch accuracy: 95.31
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 96.29
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 93.75
+Batch accuracy: 93.36
+Batch accuracy: 94.92
+Batch accuracy: 94.14
+Batch accuracy: 94.14
+Batch accuracy: 93.36
+Batch accuracy: 95.12
+Batch accuracy: 93.95
+Batch accuracy: 95.31
+Batch accuracy: 94.34
+Batch accuracy: 96.09
+Batch accuracy: 95.31
+Batch accuracy: 95.70
+Batch accuracy: 93.55
+Batch accuracy: 94.34
+Batch accuracy: 94.53
+Batch accuracy: 95.12
+Batch accuracy: 93.16
+Batch accuracy: 94.53
+Batch accuracy: 94.73
+Batch accuracy: 93.95
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 95.31
+Batch accuracy: 94.92
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 93.55
+Batch accuracy: 94.53
+Batch accuracy: 94.73
+Batch accuracy: 95.31
+Batch accuracy: 95.51
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 94.92
+Batch accuracy: 94.73
+Batch accuracy: 90.32
+  Accuracy: 94.63
+  Validation Loss: 0.26
+  Validation took: 0:01:00
+The model does not improve for 2 epochs!
+
+======== Epoch 18 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:25.
+  step loss: 0.01
+  Batch    80  of    975.    Elapsed: 0:00:49.
+  step loss: 0.01
+  Batch   120  of    975.    Elapsed: 0:01:13.
+  step loss: 0.01
+  Batch   160  of    975.    Elapsed: 0:01:37.
+  step loss: 0.01
+  Batch   200  of    975.    Elapsed: 0:02:02.
+  step loss: 0.00
+  Batch   240  of    975.    Elapsed: 0:02:26.
+  step loss: 0.01
+  Batch   280  of    975.    Elapsed: 0:02:51.
+  step loss: 0.01
+  Batch   320  of    975.    Elapsed: 0:03:15.
+  step loss: 0.00
+  Batch   360  of    975.    Elapsed: 0:03:39.
+  step loss: 0.00
+  Batch   400  of    975.    Elapsed: 0:04:04.
+  step loss: 0.01
+  Batch   440  of    975.    Elapsed: 0:04:29.
+  step loss: 0.01
+  Batch   480  of    975.    Elapsed: 0:04:54.
+  step loss: 0.01
+  Batch   520  of    975.    Elapsed: 0:05:18.
+  step loss: 0.00
+  Batch   560  of    975.    Elapsed: 0:05:42.
+  step loss: 0.01
+  Batch   600  of    975.    Elapsed: 0:06:07.
+  step loss: 0.00
+  Batch   640  of    975.    Elapsed: 0:06:30.
+  step loss: 0.01
+  Batch   680  of    975.    Elapsed: 0:06:54.
+  step loss: 0.01
+  Batch   720  of    975.    Elapsed: 0:07:19.
+  step loss: 0.01
+  Batch   760  of    975.    Elapsed: 0:07:43.
+  step loss: 0.00
+  Batch   800  of    975.    Elapsed: 0:08:07.
+  step loss: 0.01
+  Batch   840  of    975.    Elapsed: 0:08:31.
+  step loss: 0.01
+  Batch   880  of    975.    Elapsed: 0:08:56.
+  step loss: 0.00
+  Batch   920  of    975.    Elapsed: 0:09:20.
+  step loss: 0.01
+  Batch   960  of    975.    Elapsed: 0:09:44.
+  step loss: 0.01
+
+  Average training loss: 0.01
+
+Running Validation...
+Batch accuracy: 94.53
+Batch accuracy: 94.53
+Batch accuracy: 95.90
+Batch accuracy: 94.53
+Batch accuracy: 95.70
+Batch accuracy: 93.95
+Batch accuracy: 92.58
+Batch accuracy: 95.51
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 94.92
+Batch accuracy: 95.12
+Batch accuracy: 94.73
+Batch accuracy: 94.53
+Batch accuracy: 95.12
+Batch accuracy: 95.70
+Batch accuracy: 93.95
+Batch accuracy: 94.34
+Batch accuracy: 96.09
+Batch accuracy: 94.34
+Batch accuracy: 94.92
+Batch accuracy: 95.70
+Batch accuracy: 94.92
+Batch accuracy: 94.14
+Batch accuracy: 93.75
+Batch accuracy: 94.34
+Batch accuracy: 93.36
+Batch accuracy: 96.48
+Batch accuracy: 94.53
+Batch accuracy: 96.09
+Batch accuracy: 94.53
+Batch accuracy: 94.34
+Batch accuracy: 94.92
+Batch accuracy: 95.70
+Batch accuracy: 95.12
+Batch accuracy: 95.70
+Batch accuracy: 94.34
+Batch accuracy: 93.75
+Batch accuracy: 94.53
+Batch accuracy: 94.14
+Batch accuracy: 95.51
+Batch accuracy: 96.48
+Batch accuracy: 95.31
+Batch accuracy: 93.16
+Batch accuracy: 96.48
+Batch accuracy: 95.31
+Batch accuracy: 94.73
+Batch accuracy: 95.12
+Batch accuracy: 96.09
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 95.12
+Batch accuracy: 94.92
+Batch accuracy: 93.95
+Batch accuracy: 95.12
+Batch accuracy: 94.14
+Batch accuracy: 92.77
+Batch accuracy: 94.34
+Batch accuracy: 95.31
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 93.95
+Batch accuracy: 94.92
+Batch accuracy: 93.95
+Batch accuracy: 92.58
+Batch accuracy: 93.55
+Batch accuracy: 94.53
+Batch accuracy: 93.95
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 93.36
+Batch accuracy: 95.12
+Batch accuracy: 96.29
+Batch accuracy: 93.55
+Batch accuracy: 96.09
+Batch accuracy: 93.95
+Batch accuracy: 95.12
+Batch accuracy: 95.31
+Batch accuracy: 93.55
+Batch accuracy: 92.77
+Batch accuracy: 95.12
+Batch accuracy: 95.51
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 93.16
+Batch accuracy: 95.12
+Batch accuracy: 94.92
+Batch accuracy: 95.12
+Batch accuracy: 92.97
+Batch accuracy: 94.53
+Batch accuracy: 93.36
+Batch accuracy: 94.14
+Batch accuracy: 95.51
+Batch accuracy: 93.16
+Batch accuracy: 92.77
+Batch accuracy: 95.12
+Batch accuracy: 93.95
+Batch accuracy: 93.36
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 95.51
+Batch accuracy: 95.70
+Batch accuracy: 95.90
+Batch accuracy: 95.51
+Batch accuracy: 93.55
+Batch accuracy: 94.73
+Batch accuracy: 95.31
+Batch accuracy: 96.77
+  Accuracy: 94.67
+  Validation Loss: 0.26
+  Validation took: 0:01:03
+The model does not improve for 3 epochs!
+
+======== Epoch 19 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:25.
+  step loss: 0.01
+  Batch    80  of    975.    Elapsed: 0:00:49.
+  step loss: 0.01
+  Batch   120  of    975.    Elapsed: 0:01:14.
+  step loss: 0.00
+  Batch   160  of    975.    Elapsed: 0:01:38.
+  step loss: 0.01
+  Batch   200  of    975.    Elapsed: 0:02:02.
+  step loss: 0.01
+  Batch   240  of    975.    Elapsed: 0:02:25.
+  step loss: 0.00
+  Batch   280  of    975.    Elapsed: 0:02:50.
+  step loss: 0.01
+  Batch   320  of    975.    Elapsed: 0:03:14.
+  step loss: 0.00
+  Batch   360  of    975.    Elapsed: 0:03:39.
+  step loss: 0.01
+  Batch   400  of    975.    Elapsed: 0:04:02.
+  step loss: 0.01
+  Batch   440  of    975.    Elapsed: 0:04:26.
+  step loss: 0.01
+  Batch   480  of    975.    Elapsed: 0:04:51.
+  step loss: 0.01
+  Batch   520  of    975.    Elapsed: 0:05:14.
+  step loss: 0.01
+  Batch   560  of    975.    Elapsed: 0:05:38.
+  step loss: 0.01
+  Batch   600  of    975.    Elapsed: 0:06:02.
+  step loss: 0.01
+  Batch   640  of    975.    Elapsed: 0:06:27.
+  step loss: 0.01
+  Batch   680  of    975.    Elapsed: 0:06:51.
+  step loss: 0.02
+  Batch   720  of    975.    Elapsed: 0:07:14.
+  step loss: 0.00
+  Batch   760  of    975.    Elapsed: 0:07:38.
+  step loss: 0.00
+  Batch   800  of    975.    Elapsed: 0:08:01.
+  step loss: 0.01
+  Batch   840  of    975.    Elapsed: 0:08:25.
+  step loss: 0.01
+  Batch   880  of    975.    Elapsed: 0:08:48.
+  step loss: 0.00
+  Batch   920  of    975.    Elapsed: 0:09:12.
+  step loss: 0.01
+  Batch   960  of    975.    Elapsed: 0:09:35.
+  step loss: 0.01
+
+  Average training loss: 0.01
+
+Running Validation...
+Batch accuracy: 94.34
+Batch accuracy: 93.95
+Batch accuracy: 96.68
+Batch accuracy: 95.90
+Batch accuracy: 93.16
+Batch accuracy: 96.09
+Batch accuracy: 94.73
+Batch accuracy: 93.75
+Batch accuracy: 93.36
+Batch accuracy: 94.73
+Batch accuracy: 96.09
+Batch accuracy: 92.58
+Batch accuracy: 93.95
+Batch accuracy: 95.51
+Batch accuracy: 95.12
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 94.73
+Batch accuracy: 95.70
+Batch accuracy: 94.73
+Batch accuracy: 93.75
+Batch accuracy: 93.95
+Batch accuracy: 94.34
+Batch accuracy: 94.14
+Batch accuracy: 94.92
+Batch accuracy: 95.31
+Batch accuracy: 93.75
+Batch accuracy: 95.70
+Batch accuracy: 94.92
+Batch accuracy: 93.55
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 95.12
+Batch accuracy: 95.31
+Batch accuracy: 95.90
+Batch accuracy: 95.12
+Batch accuracy: 95.31
+Batch accuracy: 95.12
+Batch accuracy: 93.95
+Batch accuracy: 93.75
+Batch accuracy: 96.29
+Batch accuracy: 93.55
+Batch accuracy: 93.55
+Batch accuracy: 93.16
+Batch accuracy: 92.58
+Batch accuracy: 94.34
+Batch accuracy: 95.51
+Batch accuracy: 95.12
+Batch accuracy: 94.34
+Batch accuracy: 96.09
+Batch accuracy: 95.31
+Batch accuracy: 92.19
+Batch accuracy: 96.88
+Batch accuracy: 93.55
+Batch accuracy: 95.90
+Batch accuracy: 94.92
+Batch accuracy: 96.68
+Batch accuracy: 93.95
+Batch accuracy: 94.14
+Batch accuracy: 94.34
+Batch accuracy: 93.16
+Batch accuracy: 94.14
+Batch accuracy: 96.48
+Batch accuracy: 95.90
+Batch accuracy: 96.09
+Batch accuracy: 95.12
+Batch accuracy: 92.97
+Batch accuracy: 94.73
+Batch accuracy: 93.55
+Batch accuracy: 96.29
+Batch accuracy: 95.31
+Batch accuracy: 93.55
+Batch accuracy: 94.53
+Batch accuracy: 95.90
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 95.31
+Batch accuracy: 94.53
+Batch accuracy: 93.36
+Batch accuracy: 94.53
+Batch accuracy: 94.92
+Batch accuracy: 93.75
+Batch accuracy: 94.73
+Batch accuracy: 95.90
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 94.14
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 94.34
+Batch accuracy: 94.53
+Batch accuracy: 93.95
+Batch accuracy: 94.92
+Batch accuracy: 94.34
+Batch accuracy: 93.55
+Batch accuracy: 96.88
+Batch accuracy: 93.36
+Batch accuracy: 94.53
+Batch accuracy: 93.95
+Batch accuracy: 95.12
+Batch accuracy: 94.14
+Batch accuracy: 95.90
+Batch accuracy: 93.95
+Batch accuracy: 94.92
+Batch accuracy: 95.51
+Batch accuracy: 94.35
+  Accuracy: 94.65
+Epoch    19: reducing learning rate of group 0 to 1.0000e-07.
+  Validation Loss: 0.26
+  Validation took: 0:00:59
+The model does not improve for 4 epochs!
+
+======== Epoch 20 / 100 ========
+Training...
+  Batch    40  of    975.    Elapsed: 0:00:23.
+  step loss: 0.00
+  Batch    80  of    975.    Elapsed: 0:00:47.
+  step loss: 0.00
+  Batch   120  of    975.    Elapsed: 0:01:10.
+  step loss: 0.00
+  Batch   160  of    975.    Elapsed: 0:01:34.
+  step loss: 0.01
+  Batch   200  of    975.    Elapsed: 0:01:57.
+  step loss: 0.01
+  Batch   240  of    975.    Elapsed: 0:02:20.
+  step loss: 0.00
+  Batch   280  of    975.    Elapsed: 0:02:44.
+  step loss: 0.01
+  Batch   320  of    975.    Elapsed: 0:03:07.
+  step loss: 0.01
+  Batch   360  of    975.    Elapsed: 0:03:30.
+  step loss: 0.01
+  Batch   400  of    975.    Elapsed: 0:03:53.
+  step loss: 0.01
+  Batch   440  of    975.    Elapsed: 0:04:16.
+  step loss: 0.00
+  Batch   480  of    975.    Elapsed: 0:04:40.
+  step loss: 0.01
+  Batch   520  of    975.    Elapsed: 0:05:03.
+  step loss: 0.00
+  Batch   560  of    975.    Elapsed: 0:05:27.
+  step loss: 0.00
+  Batch   600  of    975.    Elapsed: 0:05:50.
+  step loss: 0.00
+  Batch   640  of    975.    Elapsed: 0:06:14.
+  step loss: 0.00
+  Batch   680  of    975.    Elapsed: 0:06:37.
+  step loss: 0.01
+  Batch   720  of    975.    Elapsed: 0:07:00.
+  step loss: 0.01
+  Batch   760  of    975.    Elapsed: 0:07:24.
+  step loss: 0.01
+  Batch   800  of    975.    Elapsed: 0:07:47.
+  step loss: 0.01
+  Batch   840  of    975.    Elapsed: 0:08:11.
+  step loss: 0.01
+  Batch   880  of    975.    Elapsed: 0:08:34.
+  step loss: 0.00
+  Batch   920  of    975.    Elapsed: 0:08:57.
+  step loss: 0.00
+  Batch   960  of    975.    Elapsed: 0:09:20.
+  step loss: 0.01
+
+  Average training loss: 0.01
+
+Running Validation...
+Batch accuracy: 95.51
+Batch accuracy: 93.16
+Batch accuracy: 95.90
+Batch accuracy: 93.95
+Batch accuracy: 93.95
+Batch accuracy: 95.70
+Batch accuracy: 94.14
+Batch accuracy: 93.95
+Batch accuracy: 95.12
+Batch accuracy: 95.90
+Batch accuracy: 93.95
+Batch accuracy: 96.09
+Batch accuracy: 95.51
+Batch accuracy: 91.99
+Batch accuracy: 95.31
+Batch accuracy: 93.95
+Batch accuracy: 94.73
+Batch accuracy: 94.34
+Batch accuracy: 95.70
+Batch accuracy: 94.73
+Batch accuracy: 96.29
+Batch accuracy: 93.16
+Batch accuracy: 94.92
+Batch accuracy: 92.58
+Batch accuracy: 94.34
+Batch accuracy: 95.51
+Batch accuracy: 95.51
+Batch accuracy: 95.31
+Batch accuracy: 92.97
+Batch accuracy: 96.09
+Batch accuracy: 94.92
+Batch accuracy: 95.12
+Batch accuracy: 96.29
+Batch accuracy: 94.53
+Batch accuracy: 95.51
+Batch accuracy: 93.75
+Batch accuracy: 94.92
+Batch accuracy: 95.70
+Batch accuracy: 94.34
+Batch accuracy: 95.31
+Batch accuracy: 93.75
+Batch accuracy: 96.09
+Batch accuracy: 94.34
+Batch accuracy: 95.51
+Batch accuracy: 94.34
+Batch accuracy: 93.36
+Batch accuracy: 92.38
+Batch accuracy: 93.55
+Batch accuracy: 94.53
+Batch accuracy: 93.95
+Batch accuracy: 94.34
+Batch accuracy: 95.90
+Batch accuracy: 95.51
+Batch accuracy: 93.55
+Batch accuracy: 93.75
+Batch accuracy: 94.73
+Batch accuracy: 94.92
+Batch accuracy: 95.51
+Batch accuracy: 96.88
+Batch accuracy: 92.77
+Batch accuracy: 94.34
+Batch accuracy: 94.53
+Batch accuracy: 93.75
+Batch accuracy: 94.53
+Batch accuracy: 95.51
+Batch accuracy: 95.70
+Batch accuracy: 92.77
+Batch accuracy: 94.14
+Batch accuracy: 95.70
+Batch accuracy: 94.34
+Batch accuracy: 93.75
+Batch accuracy: 96.29
+Batch accuracy: 93.95
+Batch accuracy: 93.16
+Batch accuracy: 93.95
+Batch accuracy: 95.51
+Batch accuracy: 96.29
+Batch accuracy: 92.77
+Batch accuracy: 95.51
+Batch accuracy: 96.29
+Batch accuracy: 95.90
+Batch accuracy: 94.73
+Batch accuracy: 95.12
+Batch accuracy: 94.34
+Batch accuracy: 93.75
+Batch accuracy: 94.14
+Batch accuracy: 95.12
+Batch accuracy: 95.70
+Batch accuracy: 95.70
+Batch accuracy: 93.16
+Batch accuracy: 95.31
+Batch accuracy: 94.34
+Batch accuracy: 93.55
+Batch accuracy: 96.88
+Batch accuracy: 94.53
+Batch accuracy: 92.97
+Batch accuracy: 95.12
+Batch accuracy: 94.92
+Batch accuracy: 94.53
+Batch accuracy: 94.73
+Batch accuracy: 95.12
+Batch accuracy: 94.14
+Batch accuracy: 92.38
+Batch accuracy: 94.14
+Batch accuracy: 95.12
+Batch accuracy: 96.29
+Batch accuracy: 94.73
+Batch accuracy: 93.16
+Batch accuracy: 92.74
+  Accuracy: 94.64
+  Validation Loss: 0.26
+  Validation took: 0:00:59
+The model does not improve for 5 epochs!
+====>Stopping training, the model did not improve for 5
+====>Best epoch: 14.
+
+Training complete!
+Total training took 3:32:27 (h:mm:ss)
+Training stats: [{'epoch': 1, 'Training Loss': 1.0618934944654121, 'Valid. Loss': tensor(0.3079, device='cuda:1'), 'Valid. Accur.': 93.51630706200059, 'Training Time': '0:09:05', 'Validation Time': '0:00:56'}, {'epoch': 2, 'Training Loss': 0.18224480989651803, 'Valid. Loss': tensor(0.2393, device='cuda:1'), 'Valid. Accur.': 94.47922832198876, 'Training Time': '0:08:57', 'Validation Time': '0:00:57'}, {'epoch': 3, 'Training Loss': 0.0875884781859051, 'Valid. Loss': tensor(0.2312, device='cuda:1'), 'Valid. Accur.': 94.57020845664397, 'Training Time': '0:09:03', 'Validation Time': '0:00:55'}, {'epoch': 4, 'Training Loss': 0.05131513966199679, 'Valid. Loss': tensor(0.2366, device='cuda:1'), 'Valid. Accur.': 94.60107465226399, 'Training Time': '0:09:00', 'Validation Time': '0:00:58'}, {'epoch': 5, 'Training Loss': 0.03466137701693254, 'Valid. Loss': tensor(0.2432, device='cuda:1'), 'Valid. Accur.': 94.57084427715301, 'Training Time': '0:09:26', 'Validation Time': '0:01:01'}, {'epoch': 6, 'Training Loss': 0.025918587666864577, 'Valid. Loss': tensor(0.2524, device='cuda:1'), 'Valid. Accur.': 94.37171685409885, 'Training Time': '0:09:37', 'Validation Time': '0:01:01'}, {'epoch': 7, 'Training Loss': 0.02037616689187976, 'Valid. Loss': tensor(0.2624, device='cuda:1'), 'Valid. Accur.': 94.41651329905298, 'Training Time': '0:09:45', 'Validation Time': '0:01:01'}, {'epoch': 8, 'Training Loss': 0.012159387423680761, 'Valid. Loss': tensor(0.2568, device='cuda:1'), 'Valid. Accur.': 94.60801087599881, 'Training Time': '0:09:48', 'Validation Time': '0:01:03'}, {'epoch': 9, 'Training Loss': 0.010228089987157057, 'Valid. Loss': tensor(0.2571, device='cuda:1'), 'Valid. Accur.': 94.61159459159515, 'Training Time': '0:09:52', 'Validation Time': '0:01:02'}, {'epoch': 10, 'Training Loss': 0.009181021301744459, 'Valid. Loss': tensor(0.2574, device='cuda:1'), 'Valid. Accur.': 94.61540951464931, 'Training Time': '0:09:48', 'Validation Time': '0:01:02'}, {'epoch': 11, 'Training Loss': 0.008607857637226773, 'Valid. Loss': tensor(0.2584, device='cuda:1'), 'Valid. Accur.': 94.65887651672094, 'Training Time': '0:09:47', 'Validation Time': '0:01:02'}, {'epoch': 12, 'Training Loss': 0.007756527138229173, 'Valid. Loss': tensor(0.2595, device='cuda:1'), 'Valid. Accur.': 94.67454082198876, 'Training Time': '0:09:41', 'Validation Time': '0:01:01'}, {'epoch': 13, 'Training Loss': 0.00766713123410367, 'Valid. Loss': tensor(0.2596, device='cuda:1'), 'Valid. Accur.': 94.66043716706126, 'Training Time': '0:09:47', 'Validation Time': '0:01:02'}, {'epoch': 14, 'Training Loss': 0.007526039045113019, 'Valid. Loss': tensor(0.2586, device='cuda:1'), 'Valid. Accur.': 94.67546565182006, 'Training Time': '0:09:48', 'Validation Time': '0:01:02'}, {'epoch': 15, 'Training Loss': 0.007473796808925004, 'Valid. Loss': tensor(0.2593, device='cuda:1'), 'Valid. Accur.': 94.68488735572654, 'Training Time': '0:09:49', 'Validation Time': '0:01:02'}, {'epoch': 16, 'Training Loss': 0.007333102466848989, 'Valid. Loss': tensor(0.2597, device='cuda:1'), 'Valid. Accur.': 94.6532697358686, 'Training Time': '0:09:55', 'Validation Time': '0:01:02'}, {'epoch': 17, 'Training Loss': 0.00738625117410452, 'Valid. Loss': tensor(0.2611, device='cuda:1'), 'Valid. Accur.': 94.62523583160699, 'Training Time': '0:09:49', 'Validation Time': '0:01:00'}, {'epoch': 18, 'Training Loss': 0.007260113125666976, 'Valid. Loss': tensor(0.2589, device='cuda:1'), 'Valid. Accur.': 94.67009007842556, 'Training Time': '0:09:52', 'Validation Time': '0:01:03'}, {'epoch': 19, 'Training Loss': 0.007290770811004899, 'Valid. Loss': tensor(0.2598, device='cuda:1'), 'Valid. Accur.': 94.64968602027227, 'Training Time': '0:09:43', 'Validation Time': '0:00:59'}, {'epoch': 20, 'Training Loss': 0.007309939690316335, 'Valid. Loss': tensor(0.2599, device='cuda:1'), 'Valid. Accur.': 94.63668060076947, 'Training Time': '0:09:28', 'Validation Time': '0:00:59'}]
+====Loading dataset for testing
+====Loading model for testing
+====Testing model...
+/usr/local/lib/python3.6/dist-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/usr/local/lib/python3.6/dist-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/usr/local/lib/python3.6/dist-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/usr/local/lib/python3.6/dist-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/usr/local/lib/python3.6/dist-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/usr/local/lib/python3.6/dist-packages/sklearn/metrics/_classification.py:1245: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+2021-01-03 17:46:38,785:                                              precision    recall  f1-score   support
+
+                              FISHING_LINES      0.918     0.921     0.920       584
+                     MOBILE_DEVICE_CHARGERS      0.955     0.981     0.968       804
+                                 SUNGLASSES      0.973     0.981     0.977       875
+                                   FREEZERS      0.907     0.941     0.924       444
+                                 CAR_WHEELS      0.983     0.992     0.988       720
+                           BATHROOM_FAUCETS      0.880     0.900     0.890       521
+                             ACTION_FIGURES      0.711     0.718     0.714       800
+                                      IRONS      0.970     0.986     0.978       433
+                                 MATTRESSES      0.990     0.976     0.983       534
+                      SWIMMING_POOL_HEATERS      0.905     0.905     0.905        21
+                             KITCHEN_KNIVES      0.951     0.970     0.961       202
+                                TELEVISIONS      0.918     0.963     0.940       728
+                   SPORT_AND_BAZAAR_BOTTLES      0.954     0.913     0.933       229
+                                   STARTERS      0.972     0.972     0.972       354
+                                 FACE_MASKS      0.850     0.886     0.867       166
+                            KITCHEN_FAUCETS      0.891     0.907     0.899       431
+    TACTICAL_AND_SPORTING_KNIVES_AND_BLADES      0.994     0.963     0.978       164
+                                  NOTEBOOKS      0.922     0.956     0.939       543
+                                DEEP_FRYERS      0.991     0.954     0.972       455
+                               TORSION_BARS      1.000     1.000     1.000       123
+                           AUDIO_AMPLIFIERS      0.852     0.868     0.860       311
+                             CEILING_LIGHTS      0.928     0.960     0.944       472
+                                      BELTS      0.961     1.000     0.980        49
+                   AUTOMOTIVE_WEATHERSTRIPS      0.957     0.978     0.967       788
+                                 HEADBOARDS      0.996     0.987     0.991       228
+                                      YARNS      0.903     0.923     0.913       142
+                               SMARTWATCHES      0.958     0.956     0.957       724
+                            FOOTBALL_SHIRTS      0.965     0.986     0.975       921
+                     AUTOMOTIVE_CLUTCH_KITS      0.982     0.996     0.989       719
+                               WRISTWATCHES      0.962     0.970     0.966       876
+                                 WALLPAPERS      0.970     0.948     0.959       885
+        AUTOMOTIVE_SIDE_VIEW_MIRROR_GLASSES      0.974     0.987     0.981       536
+                           AUDIO_INTERFACES      0.911     0.923     0.917       300
+                           KITCHEN_PLAYSETS      0.932     0.960     0.946       100
+                                LIGHT_BULBS      0.959     0.957     0.958       829
+                             CELL_BATTERIES      0.964     0.967     0.966       670
+                       SURVEILLANCE_CAMERAS      0.943     0.917     0.930       909
+                                  THERMOSES      0.811     0.900     0.853       100
+                 HUMIDIFIERS_AND_VAPORIZERS      0.965     0.954     0.959       173
+                             KITCHEN_APRONS      0.952     0.741     0.833        27
+                        PORTABLE_GENERATORS      0.992     1.000     0.996       132
+                                 CELLPHONES      0.875     0.933     0.903       329
+                           HANDICRAFT_BOXES      0.759     0.759     0.759       112
+                        EMBROIDERY_MACHINES      0.936     0.863     0.898        51
+                                    CAMERAS      0.797     0.685     0.737        92
+            DESKTOP_COMPUTER_POWER_SUPPLIES      0.982     0.991     0.987       679
+                             BABIES_FORMULA      0.989     0.989     0.989        88
+                    MOTORCYCLE_SPEEDOMETERS      1.000     0.250     0.400         4
+                                    CARPETS      0.961     0.975     0.968       857
+                      CARDS_AND_INVITATIONS      0.886     0.830     0.857        47
+                           ELECTRIC_GUITARS      0.976     0.987     0.981       778
+                          COMPUTER_MONITORS      0.969     0.971     0.970       701
+                         MULTIGAME_MACHINES      0.861     0.883     0.872        77
+                                TABLECLOTHS      0.971     0.978     0.974       544
+                                  VIBRATORS      0.852     0.838     0.845       117
+                                     PLANTS      0.981     0.978     0.979       313
+                               AM_FM_RADIOS      0.939     0.966     0.952       383
+                     ENGINE_CONTROL_MODULES      0.993     0.995     0.994       415
+            LATEX_ENAMEL_AND_ACRYLIC_PAINTS      1.000     1.000     1.000        67
+            MUSICAL_KEYBOARD_CASES_AND_BAGS      0.991     0.984     0.987       760
+                                VIDEO_GAMES      0.981     0.979     0.980       908
+                         ARTIFICIAL_FLOWERS      0.924     0.974     0.948       497
+                         OUTER_TIE_ROD_ENDS      0.988     0.974     0.981       496
+                          EXHAUST_MANIFOLDS      0.800     1.000     0.889         8
+                    DIGITAL_VOICE_RECORDERS      0.920     0.961     0.940       774
+                              REFRIGERATORS      0.948     0.947     0.947       524
+                            DISPOSABLE_CUPS      0.825     0.878     0.851       188
+                                 EYESHADOWS      0.976     0.992     0.984       738
+                                     RANGES      0.973     0.969     0.971       450
+         AUTOMOTIVE_POWER_WINDOW_REGULATORS      0.962     0.928     0.945       138
+                                    HOOKAHS      1.000     0.964     0.982       168
+                      AUTOMOTIVE_AMPLIFIERS      0.965     0.955     0.960       662
+                          PROJECTOR_SCREENS      1.000     1.000     1.000        53
+                         AUTOMOTIVE_EMBLEMS      0.950     0.939     0.944       524
+                          PAINTBALL_MARKERS      0.989     0.959     0.974        97
+              AUTOMOTIVE_SPRING_SUSPENSIONS      0.952     0.992     0.972       121
+                                ENGINE_OILS      0.974     0.981     0.977       770
+                           BATTERY_CHARGERS      0.815     0.733     0.772        30
+                    SWEATSHIRTS_AND_HOODIES      0.940     0.924     0.932       118
+                     CONTINUOUS_INK_SYSTEMS      0.986     0.986     0.986       140
+                             BATHROOM_SINKS      0.947     0.960     0.953       427
+                               MEMORY_CARDS      0.981     0.979     0.980       669
+                                   HANDBAGS      0.943     0.962     0.953       850
+                              KITCHEN_SINKS      0.921     0.917     0.919       253
+                           CAMERA_BATTERIES      0.965     0.948     0.956       554
+                            WATER_RADIATORS      0.955     0.967     0.961       399
+                          CYCLING_COMPUTERS      0.957     0.969     0.963       161
+                               EROTIC_BOOKS      1.000     0.985     0.992        67
+                           MOTORCYCLE_CASES      0.987     0.995     0.991       222
+                                   COSTUMES      0.936     0.953     0.944       276
+                          BODYWEIGHT_SCALES      0.945     0.942     0.944       293
+                     GAMEPADS_AND_JOYSTICKS      0.965     0.984     0.974       612
+                                      PANTS      0.922     0.956     0.939       799
+                                     STOOLS      0.980     0.978     0.979       594
+                              FISHING_REELS      0.992     0.981     0.986       740
+                                    WALLETS      0.985     0.971     0.978       665
+                          MUSICAL_KEYBOARDS      0.962     0.982     0.972       511
+                                 ULTRABOOKS      0.925     0.901     0.913       232
+                            ENGINE_BEARINGS      0.976     0.985     0.980       327
+                   CAR_POWER_STEERING_PUMPS      0.966     0.997     0.981       370
+                                    TABLETS      0.977     0.966     0.972       624
+                             MAKEUP_BRUSHES      0.987     0.978     0.982       534
+                              HORSE_SADDLES      1.000     1.000     1.000       102
+                         CD_AND_DVD_PLAYERS      0.951     0.938     0.945       291
+                   VIDEO_GAME_PREPAID_CARDS      0.938     0.882     0.909        68
+                            SCREEN_PRINTERS      0.927     0.974     0.950       156
+                                 ROOF_RACKS      0.991     0.988     0.989       428
+                                 HEADPHONES      0.968     0.952     0.960       189
+                      ELECTRIC_SCREWDRIVERS      0.862     0.820     0.840       122
+                            VACUUM_CLEANERS      0.933     0.875     0.903        16
+                                FLASHLIGHTS      0.987     0.979     0.983       606
+                               HOME_SHELVES      0.873     0.873     0.873       157
+                              BRUSH_CUTTERS      0.945     0.945     0.945       110
+                        COMPUTER_PROCESSORS      0.988     0.970     0.979       794
+                                   NECKTIES      0.978     0.993     0.985       134
+                         MOTORCYCLE_JACKETS      0.967     0.956     0.962       551
+                                   WRENCHES      0.976     0.981     0.978       371
+                                WHEELCHAIRS      0.968     1.000     0.984        90
+                         RAM_MEMORY_MODULES      0.991     0.987     0.989       822
+                               PENCIL_CASES      0.949     0.913     0.930       183
+               AUTOMOTIVE_SHIFT_LEVER_KNOBS      0.999     1.000     0.999       938
+                                       MUGS      0.939     0.939     0.939       329
+                             WALKIE_TALKIES      0.952     0.982     0.967       283
+                                      DOLLS      0.922     0.940     0.931       843
+                                 TREADMILLS      0.969     0.969     0.969        65
+                                SPARK_PLUGS      0.972     0.953     0.962       726
+                              HAIR_CLIPPERS      0.867     0.906     0.886       714
+                                  SUITCASES      0.964     0.979     0.972       582
+                                BLANK_DISCS      0.938     0.933     0.935       178
+                                   SPEAKERS      0.953     0.956     0.954       525
+                              DVD_RECORDERS      0.975     0.967     0.971       450
+                    KEYBOARD_AND_MOUSE_KITS      0.970     0.949     0.960       275
+                            CAR_SEAT_COVERS      0.987     0.998     0.993       942
+         AUTOMOTIVE_SUSPENSION_CONTROL_ARMS      0.962     0.984     0.973       254
+                          BAR_CODE_SCANNERS      0.988     0.976     0.982       254
+                        AUTOMOTIVE_MOLDINGS      0.967     0.979     0.973       720
+                              BABY_SWIMWEAR      0.894     0.909     0.902       121
+                       TABLE_AND_DESK_LAMPS      0.918     0.946     0.932       260
+                          JACKETS_AND_COATS      0.934     0.950     0.942       815
+                                 CHAMPAGNES      0.926     0.806     0.862        31
+                             FOOTBALL_SHOES      0.996     1.000     0.998       734
+                          CHARMS_AND_MEDALS      0.931     0.942     0.936        86
+                                MICROPHONES      0.962     0.978     0.970       465
+                        PERMANENT_EPILATORS      0.944     0.904     0.924        94
+                             WOMEN_SWIMWEAR      0.974     0.960     0.967       500
+                 PARTY_DECORATIVE_BACKDROPS      0.971     0.962     0.967       105
+                              ROLLER_SKATES      0.998     0.995     0.997       586
+                                     COMICS      0.786     0.818     0.802       534
+                                      BOOKS      0.765     0.845     0.803       834
+                             CUPCAKE_STANDS      0.636     0.875     0.737         8
+                              UPS_BATTERIES      0.887     0.734     0.803        64
+                                CAKE_STANDS      0.977     0.933     0.955        45
+           REAR_WHEEL_HUBS_BEARING_ASSEMBLY      0.983     1.000     0.991       401
+                           DIECAST_VEHICLES      0.935     0.947     0.941       606
+                                CALCULATORS      0.994     0.989     0.992       536
+                                TV_ANTENNAS      0.978     0.987     0.982       310
+                                PAPER_CLIPS      1.000     0.941     0.970        51
+                             MALE_UNDERWEAR      0.981     0.974     0.977       422
+                                 ALL_IN_ONE      0.957     0.952     0.955       189
+                           DRINKING_GLASSES      0.864     0.861     0.862       382
+                                      DRUMS      0.924     0.981     0.952       212
+                              WELDING_MASKS      1.000     0.905     0.950        63
+                                   WHISKEYS      0.949     0.985     0.967       267
+                              VIDEO_CAMERAS      0.875     0.946     0.909        37
+                              COFFEE_MAKERS      0.981     0.981     0.981       567
+                       KNEE_BRACES_SUPPORTS      0.926     0.977     0.951       129
+                                WALL_CLOCKS      0.983     0.975     0.979       480
+                                WALL_LIGHTS      0.988     0.983     0.985       172
+                             GARDEN_BENCHES      0.909     0.714     0.800        14
+                                 SCULPTURES      0.932     0.936     0.934       437
+                                       FANS      0.980     0.980     0.980       597
+                                FOUNDATIONS      0.956     0.960     0.958       706
+                                  EYELINERS      0.957     0.880     0.917        50
+                                 DRILL_BITS      0.993     0.979     0.986       143
+                               PC_KEYBOARDS      0.826     0.731     0.776        26
+                              EROTIC_CREAMS      0.922     0.932     0.927       279
+                          DESKTOP_COMPUTERS      0.889     0.889     0.889        36
+                          DECORATIVE_VINYLS      0.921     0.955     0.938       709
+                                BOARD_GAMES      0.934     0.948     0.941       654
+                        KITCHEN_RANGE_HOODS      0.984     0.987     0.985       309
+                                    DRAWERS      0.975     0.985     0.980       198
+                            FURNITURE_KNOBS      0.954     0.993     0.973       147
+       HOME_APPLIANCE_CONTACTORS_AND_RELAYS      0.985     0.973     0.979       408
+                           SHAVING_MACHINES      0.843     0.824     0.833       449
+                               TOOTHBRUSHES      0.963     0.989     0.976       265
+                    STREAMING_MEDIA_DEVICES      0.932     0.964     0.948       415
+                     CAR_AC_HOSE_ASSEMBLIES      0.889     0.471     0.615        17
+                             SWAY_BAR_LINKS      0.963     0.876     0.918        89
+                              PREAMPLIFIERS      0.500     0.261     0.343        23
+                                 FISH_TANKS      0.986     0.945     0.965       145
+                                     DRONES      0.986     0.986     0.986       653
+                           EMERGENCY_LIGHTS      0.958     0.944     0.951       288
+                                   BLENDERS      0.939     0.947     0.943       452
+                             LASER_MEASURES      0.914     0.964     0.938        55
+                               CASH_DRAWERS      1.000     0.921     0.959        38
+                            CAMERA_CHARGERS      0.878     0.912     0.895       285
+                           CAR_AV_RECEIVERS      0.929     0.951     0.940       589
+                           STEERING_COLUMNS      0.966     0.993     0.979       143
+                                     SKIRTS      0.955     0.955     0.955       154
+                            SANDER_MACHINES      0.986     0.959     0.972       292
+                               RICE_COOKERS      0.981     1.000     0.990        52
+                             BRAKE_BOOSTERS      0.993     0.993     0.993       139
+                                   NETBOOKS      0.925     0.938     0.932       145
+                              FISHING_LURES      0.843     0.881     0.861        67
+                           AUTOMOTIVE_TIRES      0.844     0.812     0.828        80
+                                    STATUES      0.600     0.391     0.474        23
+                                   T_SHIRTS      0.957     0.965     0.961       742
+                            OFFICE_SOFTWARE      0.729     0.756     0.743        82
+                             BABY_CAR_SEATS      0.970     0.989     0.979       550
+                                WATCH_BANDS      0.926     0.902     0.914       265
+                                       PENS      0.647     0.815     0.721        27
+                  BATHROOM_ACCESSORIES_SETS      0.778     0.808     0.792        78
+                                CAR_STEREOS      0.875     0.864     0.870       243
+ CELLPHONE_TABLET_AND_GPS_SCREEN_PROTECTORS      0.922     0.916     0.919       155
+                             GLASSES_FRAMES      0.956     0.949     0.953       296
+                               AIRSOFT_GUNS      0.975     0.967     0.971       245
+                                  HAND_FANS      0.861     0.969     0.912        32
+                                 SIDEBOARDS      0.961     0.985     0.973       201
+                           VEHICLE_STICKERS      0.975     0.966     0.971       530
+                             BABY_STROLLERS      0.973     0.985     0.979       468
+                                     MOVIES      0.917     0.775     0.840        71
+                         MICRO_ROTARY_TOOLS      1.000     0.986     0.993        69
+                                  SOUVENIRS      0.926     0.907     0.916       151
+                                     VODKAS      0.957     0.936     0.946        94
+                              PUREBRED_DOGS      0.987     0.989     0.988       705
+                                    VIOLINS      0.987     0.993     0.990       151
+                                HOVERBOARDS      0.994     0.994     0.994       480
+                     SUSPENSION_BALL_JOINTS      0.976     0.978     0.977       579
+                                  BACKPACKS      0.965     0.987     0.976       699
+                             ADHESIVE_TAPES      0.972     0.957     0.964       253
+                          ELECTRICAL_CABLES      0.988     0.996     0.992       250
+                              COFFEE_TABLES      0.923     0.923     0.923        26
+                 INTERACTIVE_GAMING_FIGURES      0.972     0.988     0.980       246
+                  AUTOMOTIVE_AC_COMPRESSORS      0.976     0.953     0.965        43
+                      HAIRDRESSING_SCISSORS      0.981     0.988     0.984       160
+                                   CUSHIONS      0.940     0.962     0.951       213
+                  THERMAL_CUPS_AND_TUMBLERS      0.922     0.839     0.879        56
+        TV_REPLACEMENT_BACKLIGHT_LED_STRIPS      0.991     0.930     0.960       115
+                        ENGINE_INTAKE_HOSES      0.914     0.968     0.940       373
+                   AUTOMOBILE_FENDER_LINERS      0.941     0.889     0.914        18
+                             DJ_CONTROLLERS      0.936     0.914     0.925       175
+                               STUFFED_TOYS      0.870     0.885     0.877       679
+             MARTIAL_ARTS_AND_BOXING_GLOVES      0.996     0.984     0.990       254
+                              CAMERA_LENSES      0.972     0.936     0.953       219
+                               EROTIC_PUMPS      1.000     0.955     0.977        89
+                              PAINT_ROLLERS      1.000     0.909     0.952        11
+                               MEN_SWIMWEAR      0.867     0.722     0.788        18
+                PORTABLE_CELLPHONE_CHARGERS      0.967     0.946     0.957       500
+                             ANALOG_CAMERAS      0.923     0.967     0.944       457
+                            HAIR_TREATMENTS      0.929     0.876     0.902        89
+                      DJ_EFFECTS_PROCESSORS      0.880     0.797     0.836       202
+                    BUMPER_IMPACT_ABSORBERS      0.944     0.967     0.956       245
+                 NOTEBOOKS_AND_WRITING_PADS      0.962     0.980     0.971       153
+                        FINGERPRINT_READERS      1.000     0.917     0.957        24
+                                   BLANKETS      0.874     0.901     0.887       131
+                                SUPPLEMENTS      0.906     0.900     0.903       430
+                                   HAMMOCKS      0.976     1.000     0.988        82
+               AUTOMOTIVE_SIDE_VIEW_MIRRORS      0.969     0.978     0.974       737
+                  FACIAL_SKIN_CARE_PRODUCTS      0.852     0.859     0.855       341
+                            PACKAGING_ROLLS      1.000     1.000     1.000        26
+                      TV_AND_MONITOR_MOUNTS      0.982     0.985     0.984       546
+                               CAR_ANTENNAS      0.998     0.995     0.996       934
+                                   CACHACAS      0.980     0.955     0.968       157
+                                    TV_SMPS      0.909     0.900     0.905       279
+                             KITCHEN_TOWELS      0.975     0.989     0.982       277
+                                   CALIPERS      1.000     0.955     0.977        22
+                            PARKING_SENSORS      0.982     0.989     0.985       539
+                  ELECTRIC_PRESSURE_WASHERS      0.994     0.977     0.985       343
+             HAIR_SHAMPOOS_AND_CONDITIONERS      0.897     0.795     0.843        44
+                               STETHOSCOPES      1.000     0.889     0.941        36
+                                   PRINTERS      0.965     0.970     0.968       400
+                            ELECTRIC_DRILLS      0.955     0.973     0.964       414
+                               KITCHEN_POTS      0.959     0.967     0.963       485
+                             FUEL_INJECTORS      0.845     0.951     0.895       103
+                           VEHICLE_SPEAKERS      0.972     0.983     0.978       421
+                          HOME_OFFICE_DESKS      0.967     0.987     0.977       149
+                             GUITAR_STRINGS      0.981     0.981     0.981       106
+                            DISC_PACKAGINGS      0.905     0.905     0.905        74
+                                LIP_GLOSSES      0.922     0.937     0.930       190
+                                    DRESSES      0.975     0.977     0.976       692
+                               BASS_GUITARS      0.972     0.976     0.974       467
+                                 TURNTABLES      0.863     0.907     0.884       270
+                          TOY_BUILDING_SETS      0.933     0.900     0.916       249
+                                 BED_SHEETS      0.899     0.947     0.922        75
+                              CAR_GEARBOXES      0.964     0.996     0.980       267
+                               FLOOD_LIGHTS      0.967     0.965     0.966       462
+                         SOLDERING_MACHINES      0.995     0.982     0.988       383
+                           ELECTRONIC_DRUMS      0.955     0.915     0.934       117
+                   DATA_CABLES_AND_ADAPTERS      0.847     0.900     0.873        80
+                     AUTOMOTIVE_WATER_PUMPS      0.911     0.895     0.903       391
+                             FOOTBALL_BALLS      0.981     0.987     0.984       156
+                               LENS_FILTERS      0.961     0.987     0.974        75
+                      INSTRUMENT_AMPLIFIERS      0.945     0.958     0.951       449
+                               MUSIC_STANDS      1.000     0.844     0.915        32
+                       CAR_DISTRIBUTOR_CAPS      0.954     0.917     0.935       205
+                                 MOUSE_PADS      0.975     0.960     0.967       201
+                                    FABRICS      0.912     0.934     0.923       379
+                              CABIN_FILTERS      0.984     1.000     0.992       244
+                            SEWING_MACHINES      0.969     0.966     0.967       292
+                                     MIXERS      0.977     0.971     0.974       350
+                        MOTORCYCLE_FAIRINGS      0.946     0.935     0.940       353
+                                  CV_JOINTS      0.986     0.966     0.976       443
+                 HAIR_STRAIGHTENING_BRUSHES      0.929     1.000     0.963        26
+                            WHEELS_BEARINGS      0.987     0.987     0.987       547
+                               AV_RECEIVERS      0.868     0.872     0.870       188
+                             NETWORK_CABLES      0.963     0.963     0.963       190
+                                      CRIBS      0.901     0.901     0.901       242
+                               HOME_HEATERS      0.957     0.944     0.951       234
+                 BRACELETS_AND_ANKLE_BRACES      0.921     0.942     0.931       346
+                                   SNEAKERS      0.957     0.931     0.944        72
+                 AUTOMOTIVE_THROTTLE_BODIES      0.979     0.940     0.959        50
+                             COOKING_SCALES      0.922     0.947     0.934       412
+                              PEDAL_EFFECTS      0.973     0.968     0.970       695
+                             ENGINE_PISTONS      0.961     0.939     0.950       132
+                              FLATWARE_SETS      0.967     0.935     0.951        31
+                                    PANTIES      0.902     0.939     0.920        49
+                         ELECTRICAL_OUTLETS      0.936     0.959     0.947       122
+                         BABY_CLOTHING_SETS      0.739     0.855     0.793        76
+                             STEAM_CLEANERS      1.000     0.737     0.848        19
+                           DECORATIVE_VASES      0.879     0.931     0.904       274
+                            FOOD_PROCESSORS      0.919     0.926     0.923       135
+                            TRAILER_HITCHES      0.995     1.000     0.997       184
+                      SOFA_AND_FUTON_COVERS      1.000     1.000     1.000        99
+                                     SHIRTS      0.924     0.924     0.924       118
+                      VEHICLE_CLUTCH_CABLES      1.000     0.900     0.947        10
+                                GATE_MOTORS      0.974     0.993     0.983       298
+                                 FOG_LIGHTS      0.966     0.969     0.968       292
+                                  SIM_CARDS      0.957     0.917     0.936        24
+                              BABY_MONITORS      0.986     0.995     0.991       220
+                           VEHICLE_CV_AXLES      1.000     0.986     0.993        69
+                                  LIPSTICKS      0.972     0.975     0.973       562
+                     SERVING_AND_HOME_TRAYS      0.963     0.958     0.960       354
+                                   COOKTOPS      0.778     0.636     0.700        11
+                             GRAPHICS_CARDS      0.941     1.000     0.970        32
+                         FIRE_EXTINGUISHERS      0.967     0.967     0.967        30
+                 KITCHEN_CABINET_ORGANIZERS      0.167     0.143     0.154         7
+                                      SOFAS      0.886     0.930     0.907       100
+                           GRAPHICS_TABLETS      0.974     0.989     0.982       190
+                                     SHORTS      0.920     0.967     0.943       274
+                           SWIMMING_GOGGLES      1.000     0.883     0.938        77
+                           POOL_INFLATABLES      0.837     0.973     0.900        37
+                                      DOORS      0.888     0.897     0.892        97
+                              SPORT_WATCHES      0.937     0.969     0.953       478
+           PORTABLE_EVAPORATIVE_AIR_COOLERS      0.932     0.899     0.915       138
+             DOG_CARRIERS_AND_CARRYING_BAGS      0.931     0.947     0.939        57
+                    ENGINE_INTAKE_MANIFOLDS      1.000     1.000     1.000        51
+                         MOTORCYCLE_HELMETS      0.988     0.999     0.993       715
+                       COMBUSTION_CHAINSAWS      0.988     0.964     0.976        84
+              ELECTRONIC_ENTRANCE_INTERCOMS      0.986     0.976     0.981       211
+                                    CRAYONS      0.980     0.970     0.975       101
+                               THERMOMETERS      0.955     1.000     0.977        63
+                             CAMERA_TRIPODS      0.959     0.977     0.968       427
+                          ARTIFICIAL_PLANTS      0.750     0.667     0.706        27
+                           PROJECTOR_MOUNTS      0.800     0.800     0.800         5
+                PORTABLE_ELECTRIC_MASSAGERS      0.963     0.928     0.945        83
+              NON_CORRECTIVE_CONTACT_LENSES      0.952     0.833     0.889        24
+                                    PUZZLES      0.924     0.986     0.954        74
+           WASHING_AND_DRYER_MACHINE_COVERS      0.980     0.980     0.980        50
+                       PUSH_AND_RIDING_TOYS      0.786     0.688     0.733        32
+                               SHOWER_HEADS      0.902     0.902     0.902       235
+                           ANTI_THEFT_STUDS      0.972     0.945     0.959       220
+                              HATS_AND_CAPS      0.871     0.938     0.904        65
+                                  MAGAZINES      0.777     0.657     0.712       143
+                 ENGINE_COOLING_FAN_SHROUDS      1.000     0.976     0.988        83
+                     AUTOMOTIVE_OIL_FILTERS      0.914     0.744     0.821        43
+                           MOTORCYCLE_TIRES      0.890     0.939     0.914       147
+              MOTORCYCLE_TURN_SIGNAL_LIGHTS      0.987     0.995     0.991       221
+                                    PILLOWS      0.933     0.903     0.918        31
+                                   TEQUILAS      0.943     1.000     0.971        33
+                                TOILET_RUGS      0.915     0.908     0.911       249
+                                     FLUTES      0.975     0.922     0.948       128
+                                   UKULELES      0.981     1.000     0.990        52
+                                TOOTHPASTES      0.950     0.919     0.934        62
+                      MOTORCYCLE_CRASH_BARS      0.941     0.762     0.842        21
+                            PIPES_AND_TUBES      0.600     0.462     0.522        13
+                               FOOD_SLICERS      0.905     0.864     0.884        22
+          DESKTOP_COMPUTER_COOLERS_AND_FANS      0.952     0.974     0.963       345
+                                  SWAY_BARS      0.979     0.949     0.964        98
+                           AQUARIUM_FILTERS      0.995     0.981     0.988       214
+              CELLPHONE_REPLACEMENT_CAMERAS      0.980     0.961     0.970        51
+                                    MIRRORS      0.909     0.930     0.920        86
+                            BLU_RAY_PLAYERS      0.960     0.966     0.963       175
+                         AUTOMOTIVE_FENDERS      0.959     0.952     0.955       124
+                            SPARKLING_WINES      0.667     0.500     0.571        12
+             ENGINE_VALVES_SPRING_RETAINERS      0.971     0.971     0.971        68
+                               BABY_WALKERS      1.000     0.846     0.917        13
+            ANTIVIRUS_AND_INTERNET_SECURITY      0.938     0.938     0.938        16
+                      COTTON_CANDY_MACHINES      1.000     1.000     1.000         7
+                            ORAL_IRRIGATORS      1.000     0.875     0.933         8
+                   MOTORCYCLE_CLUTCH_COVERS      0.917     0.967     0.941       239
+                              GAME_CONSOLES      0.905     0.905     0.905       347
+                              TABLE_RUNNERS      0.939     0.925     0.932        67
+                          PLAYGROUND_SLIDES      1.000     1.000     1.000        13
+                                3D_PRINTERS      1.000     0.979     0.989        47
+                                DIAPER_BAGS      0.961     0.951     0.956       103
+                              ELECTRIC_SAWS      0.978     0.994     0.986       363
+                          KITCHEN_FURNITURE      1.000     0.974     0.987        38
+                           BABY_HIGH_CHAIRS      0.759     0.750     0.754        88
+                                   MINI_PCS      0.786     0.786     0.786        14
+                                   MASCARAS      0.977     0.935     0.956        92
+                    AUTOMOTIVE_WHEEL_COVERS      0.912     0.961     0.936       129
+                          WINDSHIELD_WIPERS      0.974     0.984     0.979       190
+                                    LIQUORS      0.980     0.960     0.970       100
+                           CLOTHING_PATCHES      0.963     0.897     0.929        58
+                      WOOD_BURNING_MACHINES      1.000     1.000     1.000         7
+                                 BINOCULARS      1.000     0.962     0.981       186
+                     COMMERCIAL_LIGHT_SIGNS      1.000     1.000     1.000        32
+                           WATER_DISPENSERS      0.951     0.951     0.951       225
+                      GLOW_PLUG_CONTROLLERS      0.962     0.911     0.936        56
+                                 TELEPHONES      0.905     0.905     0.905        21
+                            AIR_COMPRESSORS      0.972     0.972     0.972       353
+                          OPERATING_SYSTEMS      0.918     0.907     0.912       270
+                       CAR_ENGINE_CAMSHAFTS      0.833     1.000     0.909        15
+                            CLOTHES_HANGERS      1.000     0.967     0.983        92
+                                   WETSUITS      1.000     0.789     0.882        19
+                               TOILET_SEATS      0.995     0.995     0.995       191
+                           AUTOMOTIVE_DOORS      0.961     0.976     0.969       332
+            SUSPENSION_CONTROL_ARM_BUSHINGS      0.875     0.812     0.842       138
+                         VEHICLE_BRAKE_PADS      0.972     0.991     0.982       350
+                REMOTE_CONTROL_TOY_VEHICLES      0.923     0.923     0.923       209
+                       AUTOMOTIVE_NERF_BARS      0.974     1.000     0.987        38
+                             ESSENTIAL_OILS      0.905     0.877     0.891        65
+                            SLATWALL_PANELS      1.000     1.000     1.000        80
+                                 TOOL_BOXES      0.946     0.972     0.959       109
+                               BABY_DIAPERS      0.995     0.987     0.991       375
+                         ALARMS_AND_SENSORS      0.966     0.959     0.963       295
+                           MOTORCYCLE_SUITS      1.000     0.946     0.972        37
+                              KITCHEN_BOWLS      0.880     1.000     0.936        22
+                             CAT_SCRATCHERS      1.000     1.000     1.000        15
+                             INK_CARTRIDGES      0.880     0.733     0.800        30
+                   MARKERS_AND_HIGHLIGHTERS      0.950     0.905     0.927       126
+                     JUMPSUITS_AND_OVERALLS      0.942     0.915     0.928       106
+                                NAIL_DRYERS      0.984     0.962     0.973       131
+                            CAMERA_MONOPODS      0.913     0.857     0.884        49
+                                   BICYCLES      0.984     0.973     0.978       184
+                                       SALT      1.000     1.000     1.000        10
+                   SCREEN_PRINTING_MACHINES      0.727     0.571     0.640        14
+                                       BEDS      0.933     0.977     0.955        43
+                    BODY_SKIN_CARE_PRODUCTS      0.832     0.847     0.840       380
+AUTOMOTIVE_MANUAL_TRANSMISSION_SHIFT_LEVERS      0.815     0.880     0.846        25
+                           TV_STORAGE_UNITS      0.960     0.923     0.941        52
+                      AUTOMOTIVE_HEADLIGHTS      0.895     0.977     0.934       131
+                                 PAINTBALLS      0.890     0.953     0.920        85
+                                     SCREWS      0.929     0.912     0.920        57
+                                 TOY_ROBOTS      0.909     0.667     0.769        15
+                                    POSTERS      0.966     0.961     0.964       206
+                           MOTORCYCLE_PANTS      0.947     0.907     0.926       118
+                        INTEGRATED_CIRCUITS      0.938     0.833     0.882        72
+                               GARDEN_HOSES      0.932     0.982     0.957        56
+                                ALTERNATORS      0.935     0.896     0.915        48
+                         MAGNIFYING_GLASSES      0.991     0.934     0.962       122
+                                   PERFUMES      0.980     0.942     0.961        52
+                                      FLOUR      0.882     1.000     0.938        15
+                               FISHING_RODS      0.941     0.842     0.889        19
+                 CELLPHONE_AND_TABLET_CASES      0.860     0.945     0.901        91
+                                    PAJAMAS      0.932     0.982     0.957        56
+                                 BUTT_PLUGS      0.730     0.794     0.761        34
+                LUMBAR_AND_ABDOMINAL_BRACES      0.973     0.966     0.969       147
+                             AIR_MATTRESSES      0.974     0.981     0.977       154
+                              WATER_HEATERS      0.992     0.964     0.977       247
+                                DISHWASHERS      0.973     0.959     0.966       148
+                       ELECTRIC_LAWN_MOWERS      1.000     0.750     0.857         4
+                              HOME_THEATERS      0.571     0.444     0.500         9
+                           LED_STAGE_LIGHTS      0.873     0.889     0.881       216
+          CHALKBOARD_AND_WHITEBOARD_ERASERS      1.000     0.870     0.930        23
+                              BABY_BOUNCERS      0.850     0.944     0.895        18
+                                      RINGS      0.933     0.977     0.955        43
+                     AUTOMOTIVE_AIR_FILTERS      0.925     0.891     0.907        55
+                               LUGGAGE_TAGS      0.938     0.957     0.947        47
+                               HEATER_CORES      1.000     0.714     0.833        21
+                            CLEANING_CLOTHS      0.935     0.925     0.930        93
+                             AIR_FRESHENERS      0.735     0.581     0.649        43
+                                    BLOUSES      0.650     0.684     0.667        38
+                            SAFETY_FOOTWEAR      0.985     0.985     0.985        66
+                               FREEZER_BAGS      0.875     0.875     0.875         8
+                     SHOCK_MOUNT_INSOLATORS      0.780     0.877     0.826        73
+                                 BAR_CLAMPS      0.933     0.875     0.903        16
+                            CHRISTMAS_TREES      1.000     0.973     0.986        37
+                         CAR_AIR_FRESHENERS      0.885     0.929     0.906        99
+                         BASKETBALL_JERSEYS      1.000     0.800     0.889        15
+                                 ACCORDIONS      0.975     0.984     0.979       311
+                                 FOOD_CARTS      0.931     0.871     0.900        31
+                                  HEAT_GUNS      0.979     0.989     0.984        94
+                  ENGINE_CRANKSHAFT_PULLEYS      0.952     0.935     0.943       107
+                                 PARTY_HATS      0.667     0.500     0.571         8
+                            RECEPTION_DESKS      1.000     1.000     1.000         4
+                             PICTURE_FRAMES      0.966     0.954     0.960       151
+                              OSCILLOSCOPES      0.900     0.900     0.900        10
+                  HABERDASHERY_LACE_EDGINGS      0.960     0.890     0.924       109
+                                      BEERS      0.965     0.971     0.968       170
+                               HOLE_PUNCHES      1.000     0.571     0.727         7
+                              DJ_TURNTABLES      0.818     0.675     0.740        80
+                                VR_HEADSETS      0.991     0.983     0.987       352
+                            KITCHEN_MORTARS      1.000     1.000     1.000         4
+                                      OVENS      0.960     0.988     0.974       171
+                               DISHES_RACKS      0.684     0.796     0.736        49
+                                   EARRINGS      0.935     0.977     0.956        44
+                                  WARDROBES      0.921     0.972     0.946        36
+                          RACKS_AND_PINIONS      0.956     0.965     0.960       113
+                                  BOOKCASES      0.842     0.914     0.877        35
+                                 TOY_TRAINS      0.917     0.819     0.865        94
+                     CARD_PAYMENT_TERMINALS      0.882     0.882     0.882        17
+                          SUBMERSIBLE_PUMPS      0.980     0.990     0.985       100
+            GARDENING_AND_AGRICULTURE_SEEDS      0.895     0.944     0.919        36
+                                     MODEMS      0.863     0.870     0.866       123
+                              OFFICE_CHAIRS      0.931     0.969     0.950        98
+                                  PENDRIVES      0.964     0.950     0.957       139
+                                  NECKLACES      0.905     0.945     0.925        91
+                         ENGINE_GASKET_SETS      0.636     0.412     0.500        17
+                 AUTOMOTIVE_SHOCK_ABSORBERS      0.737     0.848     0.789        66
+                                VINYL_ROLLS      0.658     0.686     0.671        70
+              TROLLEY_AND_FURNITURE_CASTERS      1.000     0.750     0.857         4
+                  TV_RECEIVERS_AND_DECODERS      0.833     0.833     0.833        18
+                               LIFE_JACKETS      1.000     0.636     0.778        22
+                       SELF_ADHESIVE_LABELS      0.840     0.857     0.848        49
+                  IGNITION_SWITCH_ACTUATORS      1.000     1.000     1.000        14
+                           BABY_STERILIZERS      0.900     0.818     0.857        22
+                      PARKING_BRAKE_HANDLES      0.984     0.984     0.984        61
+                     CLUTCH_SLAVE_CYLINDERS      0.786     0.733     0.759        30
+                                     FISHES      0.857     0.667     0.750         9
+                            COOKIES_CUTTERS      0.960     0.935     0.947        77
+                                 NEBULIZERS      0.980     0.980     0.980        49
+                                 COMFORTERS      0.696     0.800     0.744        20
+                        ELLIPTICAL_MACHINES      0.959     0.922     0.940       128
+                              ENGINE_VALVES      0.952     0.909     0.930        44
+                                 SANDPAPERS      0.895     0.810     0.850        21
+       AUTOMOTIVE_SHOCK_ABSORBER_BUMP_STOPS      1.000     0.865     0.928        37
+                                    GAZEBOS      0.978     0.967     0.972        91
+                                 XENON_KITS      0.947     0.900     0.923        20
+                     AUTOMOTIVE_DOOR_PANELS      0.961     0.993     0.977       150
+                 INDOOR_CURTAINS_AND_BLINDS      0.950     0.950     0.950       161
+                        CAR_WINDOW_SWITCHES      0.867     0.839     0.852        31
+                                  EPILATORS      0.857     0.894     0.875        94
+                          MALE_MASTURBATORS      0.875     0.933     0.903        15
+                        DRILLS_SCREWDRIVERS      0.632     0.500     0.558        24
+                                 CONCEALERS      0.964     0.920     0.942        88
+                    SCHOOL_AND_OFFICE_GLUES      0.667     0.600     0.632        10
+                     SANDALS_AND_FLIP_FLOPS      0.957     0.978     0.967        45
+                                  BAR_SOAPS      0.810     0.850     0.829        60
+                  ELECTRIC_BATHROOM_FAUCETS      0.947     0.720     0.818        25
+                          VOLTAGE_DETECTORS      0.906     1.000     0.951        29
+                    ORTHOPEDIC_ANKLE_BRACES      0.923     0.800     0.857        15
+                             HEDGE_TRIMMERS      1.000     1.000     1.000        14
+                        STABILIZERS_AND_UPS      1.000     1.000     1.000         2
+                              BABY_PLAYARDS      0.933     0.891     0.912       110
+                           RESISTANCE_BANDS      0.978     0.967     0.972       180
+                            LAPTOP_CHARGERS      0.952     0.882     0.916        68
+                      COMPUTER_MOTHERBOARDS      0.886     0.756     0.816        41
+                                COIN_PURSES      0.917     0.846     0.880        26
+                                      VESTS      0.941     0.979     0.960        97
+                          HAIRDRESSING_CAPS      1.000     1.000     1.000         8
+                               CAMERA_CASES      1.000     0.714     0.833         7
+                          MOTORCYCLE_GLOVES      0.909     0.993     0.949       151
+                COMPUTER_AND_TV_FLEX_CABLES      0.966     0.958     0.962       120
+                                      MANGA      0.906     0.744     0.817        39
+                               SELF_TANNERS      1.000     0.667     0.800         3
+                         HEARING_PROTECTORS      0.951     1.000     0.975        39
+                              DIFFERENTIALS      0.941     0.914     0.928        35
+                   FLEA_AND_TICK_TREATMENTS      1.000     0.984     0.992       129
+                      AUTOMOTIVE_TRUNK_LIDS      0.928     0.983     0.955       118
+                               GUITAR_PICKS      1.000     0.941     0.970        17
+                        CATS_AND_DOGS_FOODS      0.994     0.988     0.991       161
+                              BABY_BLANKETS      0.667     0.483     0.560        29
+                           CELLPHONE_COVERS      0.891     0.907     0.899        54
+                                 TELESCOPES      0.833     1.000     0.909         5
+                              WASTE_BASKETS      0.750     0.706     0.727        17
+         TELEVISION_MAIN_PLATE_REPLACEMENTS      0.861     0.872     0.866        78
+                       HABERDASHERY_RIBBONS      0.897     0.931     0.914       216
+                       POWERED_RIDE_ON_TOYS      0.953     0.953     0.953        86
+                                MONEY_BOXES      1.000     0.333     0.500         3
+                        LASER_PRINTER_DRUMS      0.903     0.966     0.933        29
+                RADIO_FREQUENCY_MICROPHONES      0.818     0.818     0.818        11
+                           FOOTBALL_JACKETS      0.722     0.448     0.553        29
+                        UNIVERSAL_HOME_GYMS      0.827     0.956     0.887        45
+                            SCALEXTRIC_CARS      0.929     0.867     0.897        15
+                        CONTINUOUS_LIGHTING      0.879     0.829     0.853        35
+                                 SHOE_RACKS      0.800     0.800     0.800         5
+                              DISHES_PLATES      0.930     0.898     0.914        59
+                           CIRCUIT_BREAKERS      0.942     0.980     0.961       149
+                                CAR_SCREENS      1.000     0.800     0.889        10
+                                 HAND_FILES      0.944     1.000     0.971        17
+                        FLATWARE_ORGANIZERS      0.500     0.333     0.400         6
+                               MIRROR_BALLS      0.781     0.893     0.833        28
+                                  KEYCHAINS      0.821     0.831     0.826        83
+                           TABLET_KEYBOARDS      0.000     0.000     0.000         4
+                            BABIES_FOOTWEAR      0.899     0.927     0.913        96
+                                      BOOTS      0.963     1.000     0.981       104
+                           LAPTOP_KEYBOARDS      0.947     0.667     0.783        27
+                              CURLING_IRONS      0.946     0.833     0.886        42
+                               EROTIC_BALLS      0.925     0.881     0.902        42
+                                 GYM_GLOVES      0.952     0.896     0.923        67
+                         LAPTOP_LCD_SCREENS      1.000     0.865     0.928        52
+                              KITCHEN_MOLDS      0.667     0.600     0.632        10
+                                    WINDOWS      0.958     1.000     0.979        23
+                                     LATHES      0.993     0.973     0.983       146
+                               BEER_FAUCETS      1.000     0.800     0.889         5
+                            WORKOUT_BENCHES      0.882     0.789     0.833        38
+                       MOTORCYCLE_BATTERIES      0.862     0.882     0.872        85
+                                FRAME_POOLS      0.804     0.953     0.872        43
+        AUDIO_AND_VIDEO_CABLES_AND_ADAPTERS      1.000     0.250     0.400         8
+                  ENGINE_COOLING_FAN_MOTORS      0.857     0.857     0.857        14
+                      EROTIC_MALE_UNDERWEAR      0.919     0.895     0.907        38
+                       HAND_AND_FOOT_CREAMS      0.937     0.892     0.914        83
+               PERSONAL_LUBRICANTS_AND_GELS      0.800     0.522     0.632        23
+                                 IDLER_ARMS      0.952     0.800     0.870        75
+                              PENIS_SLEEVES      0.800     0.889     0.842         9
+                        AUTOMOTIVE_ARMRESTS      0.891     0.891     0.891        55
+                               SEX_TOY_KITS      0.897     0.812     0.852        32
+                                 SAXOPHONES      0.971     1.000     0.986        34
+                           DECORATIVE_BOXES      0.750     0.871     0.806        31
+              ELECTRONIC_MUSCLE_STIMULATORS      0.767     0.868     0.815        38
+                             SEWING_THREADS      0.874     0.916     0.894        83
+                              JEWELRY_BOXES      0.500     0.167     0.250         6
+                                TRANSISTORS      0.958     0.852     0.902        54
+                        KIDS_WALKIE_TALKIES      0.900     0.750     0.818        12
+                                HAIR_DRYERS      0.938     1.000     0.968        15
+                                    ROUTERS      0.811     0.811     0.811        90
+                                    AIRBAGS      0.927     0.905     0.916        42
+                               SPORTS_CONES      0.906     1.000     0.951        29
+                                SPICE_RACKS      0.862     0.893     0.877        28
+                                    PENCILS      0.769     0.833     0.800        12
+                        CELLPHONE_BATTERIES      0.865     0.842     0.853        38
+                 CELLPHONE_REPAIR_TOOL_KITS      1.000     0.944     0.971        18
+                              PLAYING_CARDS      0.793     0.767     0.780        30
+                          VEHICLE_LED_BULBS      0.789     0.789     0.789        19
+                                     CHESTS      1.000     1.000     1.000         3
+                                 JUMP_ROPES      0.974     0.974     0.974        39
+                KIDS_TABLES_AND_CHAIRS_SETS      0.696     0.696     0.696        23
+                             CUTTING_BOARDS      1.000     1.000     1.000         6
+                          INTERCOOLER_HOSES      0.714     0.208     0.323        24
+                MOTORCYCLE_CHEST_PROTECTORS      1.000     0.571     0.727         7
+               BOX_SPRING_AND_MATTRESS_SETS      0.833     0.556     0.667         9
+                                  PLACEMATS      0.867     0.867     0.867        30
+                           NETWORK_SWITCHES      1.000     0.846     0.917        13
+                       HARD_DRIVES_AND_SSDS      0.951     0.929     0.940        42
+           INDUSTRIAL_AND_COMMERCIAL_SCALES      0.797     0.699     0.745        73
+                            ELECTRIC_GRILLS      0.783     0.857     0.818        21
+                       CAMERA_BATTERY_GRIPS      1.000     0.562     0.720        16
+                               TABLE_DRILLS      0.880     0.917     0.898        48
+                          CRIB_BEDDING_SETS      0.960     0.953     0.957       127
+                                  ORTHOTICS      1.000     0.812     0.897        16
+                            MEDICAL_WALKERS      0.818     0.900     0.857        10
+                              PILATES_BALLS      0.929     0.867     0.897        15
+                          BABY_SAFETY_LOCKS      0.889     0.976     0.930        41
+                          CAR_AC_CONDENSERS      1.000     0.979     0.989        96
+                                CAN_OPENERS      1.000     0.700     0.824        10
+                                  HEEL_CUPS      0.829     1.000     0.906        29
+                           EROTIC_MAGAZINES      1.000     0.812     0.897        16
+                        VEHICLE_BRAKE_DISCS      0.900     0.857     0.878        21
+                       FUEL_INJECTION_RAILS      0.887     0.734     0.803        64
+                                DOG_LEASHES      1.000     1.000     1.000        10
+                                  UMBRELLAS      1.000     0.971     0.985        68
+                 MICRODERMABRASION_MACHINES      0.833     0.833     0.833         6
+                             INSTANT_COFFEE      0.950     0.950     0.950        20
+                            ANIMAL_CLIPPERS      0.987     0.894     0.938        85
+                  AUTOMOTIVE_BUMPER_GRILLES      0.500     0.333     0.400         3
+                                   TRUMPETS      1.000     1.000     1.000         4
+                              DINING_CHAIRS      0.842     0.889     0.865        36
+                               CRASHED_CARS      0.972     0.972     0.972        71
+         ENGINE_CRANKSHAFT_POSITION_SENSORS      0.833     0.750     0.789        20
+                        INDUSTRIAL_BLENDERS      0.673     0.625     0.648        56
+                                 DOLLHOUSES      0.750     0.600     0.667         5
+                                ABS_SENSORS      0.964     0.950     0.957       140
+         AUTOMOTIVE_CLUTCH_MASTER_CYLINDERS      0.600     0.375     0.462         8
+                            MAKEUP_VANITIES      1.000     0.625     0.769         8
+                                 EGR_VALVES      0.905     0.905     0.905        21
+                  ENGINE_TAPPET_GUIDE_HOLDS      0.971     0.943     0.957        35
+                      MOTORCYCLE_RAIN_SUITS      0.962     0.981     0.971        52
+                                BEAUTY_WIGS      1.000     0.955     0.977        22
+                    EXTERNAL_LAPTOP_COOLERS      0.938     0.789     0.857        38
+                               SOLAR_PANELS      0.947     0.947     0.947        19
+                               CAR_SCANNERS      1.000     0.833     0.909         6
+                           ELECTRIC_BLOWERS      0.750     0.857     0.800         7
+                            PAPER_SHREDDERS      1.000     1.000     1.000         5
+                               STICKY_NOTES      1.000     0.953     0.976        43
+                     DESKTOP_COMPUTER_CASES      0.600     1.000     0.750         3
+                             SAFETY_GOGGLES      1.000     0.950     0.974        20
+                              RUBBER_FLOORS      1.000     0.923     0.960        13
+                                      KITES      1.000     0.600     0.750         5
+                                      VASES      0.769     0.541     0.635        37
+                               WORLD_GLOBES      1.000     0.957     0.978        23
+                               PUZZLE_CUBES      0.983     0.967     0.975        61
+                               BEDROOM_SETS      1.000     0.824     0.903        17
+                   AUTOMOTIVE_MIRROR_COVERS      0.857     0.500     0.632        12
+                                SNARE_DRUMS      1.000     0.667     0.800         6
+                ENGINE_COOLING_FAN_CLUTCHES      0.750     0.750     0.750         4
+  COLLECTIBLE_CANS_BOTTLES_AND_SODA_SIPHONS      0.793     0.767     0.780        30
+                            STRING_TRIMMERS      0.947     0.900     0.923        60
+                             SAFETY_HELMETS      1.000     0.714     0.833         7
+                              CERAMIC_TILES      1.000     0.692     0.818        13
+                                  BIRD_TOYS      0.977     0.935     0.956        46
+                                    TOILETS      1.000     0.852     0.920        27
+                             NOTEBOOK_CASES      0.938     0.882     0.909        17
+         COUNTERFEIT_MONEY_DETECTOR_MACHINE      1.000     0.500     0.667         2
+                            LAPTOP_HOUSINGS      1.000     0.667     0.800         6
+                    ORTHOPEDIC_WRIST_BRACES      0.959     0.909     0.933        77
+            POWER_STEERING_FLUID_RESERVOIRS      0.906     0.906     0.906        32
+                                      SAFES      0.978     0.917     0.946        48
+               TOY_GARAGES_AND_GAS_STATIONS      0.583     0.412     0.483        17
+                         MOTORCYCLE_JERSEYS      0.986     0.919     0.951        74
+                                 EQUALIZERS      0.750     0.800     0.774        15
+                    BLOOD_PRESSURE_MONITORS      0.935     0.967     0.951        30
+                        FITNESS_TRAMPOLINES      0.917     1.000     0.957        11
+                          IRRIGATION_VALVES      0.755     0.925     0.831        40
+                            BEER_DISPENSERS      0.955     0.875     0.913        24
+                        COMPRESSION_SLEEVES      1.000     0.667     0.800         3
+                                 TOY_PLANES      1.000     0.875     0.933         8
+                         BATHROOM_GRAB_BARS      1.000     0.962     0.980        26
+                              NETWORK_CARDS      0.857     0.774     0.814        31
+                                       RICE      1.000     1.000     1.000         3
+             STIMULATING_PILLS_AND_CAPSULES      0.784     0.763     0.773        38
+                               LABEL_MAKERS      0.958     1.000     0.979        23
+                                       CATS      1.000     0.895     0.944        19
+                                      WINES      0.953     0.995     0.973       182
+                             SECURITY_SEALS      0.957     0.957     0.957        23
+                              DEHUMIDIFIERS      1.000     0.778     0.875         9
+                                 COMPOSTERS      1.000     0.875     0.933         8
+                                       AXES      1.000     1.000     1.000         4
+                                   PADLOCKS      1.000     0.955     0.977        44
+                                   RACQUETS      0.857     1.000     0.923         6
+                            CAR_DOOR_HINGES      0.857     0.923     0.889        13
+                               BODY_SHAPERS      0.851     0.800     0.825        50
+                     MINI_COMPONENT_SYSTEMS      0.429     0.600     0.500        10
+                           INFLATABLE_SOFAS      1.000     1.000     1.000         7
+                        STATIONARY_BICYCLES      0.959     0.946     0.952        74
+             VEGETABLES_AND_FRUITS_CHOPPERS      0.778     0.778     0.778         9
+                                  VARNISHES      1.000     1.000     1.000        17
+                                   STYLUSES      0.950     0.905     0.927        42
+                                 LUNCHBOXES      0.917     1.000     0.957        22
+                 ENGINE_CYLINDER_HEAD_BOLTS      0.739     0.797     0.767        64
+                               BABY_BOTTLES      0.960     0.960     0.960       100
+              BICYCLE_AND_MOTORCYCLE_ALARMS      0.833     0.714     0.769         7
+                                 MDF_BOARDS      1.000     0.950     0.974        20
+                 BASEBALL_AND_SOFTBALL_BATS      1.000     1.000     1.000         5
+                                   DOG_BEDS      0.750     0.429     0.545         7
+                 LIQUID_HAND_AND_BODY_SOAPS      0.863     0.775     0.817        89
+                               VACUUM_TUBES      0.800     0.421     0.552        19
+                                  BABY_GYMS      1.000     0.667     0.800         6
+                                 CNC_LATHES      1.000     1.000     1.000         3
+                         MOTORCYCLE_FENDERS      0.833     0.714     0.769        21
+                                NIGHTSTANDS      0.926     0.862     0.893        29
+                                 LONGBOARDS      0.982     0.982     0.982        56
+                                PARTY_MASKS      0.871     0.871     0.871        70
+                           WASTE_CONTAINERS      1.000     0.750     0.857        12
+                             BABY_BODYSUITS      0.800     0.889     0.842        27
+                                      POUFS      0.778     0.700     0.737        10
+                             CUSHION_COVERS      0.946     0.921     0.933        76
+                               DRIVE_SHAFTS      1.000     0.958     0.979        24
+                     BRAKE_MASTER_CYLINDERS      0.706     1.000     0.828        12
+                          GAS_LIFT_SUPPORTS      0.921     0.897     0.909        39
+                           LAPTOP_BATTERIES      1.000     0.812     0.897        32
+                            POOL_WATERFALLS      1.000     1.000     1.000        13
+                                ECT_SENSORS      1.000     1.000     1.000         7
+                FOLDERS_AND_EXPANDING_FILES      0.857     0.857     0.857        28
+                            CAR_LIGHT_BULBS      0.778     0.500     0.609        14
+                              FISHING_VESTS      0.741     1.000     0.851        20
+                                SIDE_TABLES      0.875     0.946     0.909        37
+                         BARBECUE_TOOL_SETS      0.868     0.825     0.846        40
+                              DENTAL_CHAIRS      1.000     1.000     1.000         4
+                          SUNBATHING_CHAIRS      1.000     0.909     0.952        11
+                             BICYCLE_FRAMES      0.923     0.923     0.923        13
+                              IP_TELEPHONES      0.920     0.821     0.868        28
+                             DRINK_PITCHERS      0.857     0.857     0.857        21
+              AUTOMOTIVE_TRANSMISSION_GEARS      0.833     0.455     0.588        11
+                                MULTIMETERS      0.800     0.667     0.727         6
+                              MEAT_GRINDERS      1.000     0.333     0.500         3
+              INDUSTRIAL_ICE_CREAM_MACHINES      0.941     0.800     0.865        20
+                              FOOTBALL_CAPS      0.895     0.810     0.850        21
+                        LOAFERS_AND_OXFORDS      0.947     0.947     0.947        19
+                          PAINTBALL_O_RINGS      1.000     0.333     0.500         3
+                          ELECTRICAL_TIMERS      1.000     0.833     0.909         6
+                             TACTICAL_VESTS      1.000     0.846     0.917        13
+                            ACOUSTIC_PANELS      1.000     0.889     0.941         9
+                      ELECTRIC_HAND_PLANERS      1.000     1.000     1.000         7
+                              TOILETRY_BAGS      0.938     0.750     0.833        40
+                               WINE_CELLARS      0.733     1.000     0.846        11
+                ELECTRIC_DEMOLITION_HAMMERS      0.800     0.889     0.842        18
+                        TABLE_TENNIS_TABLES      1.000     0.833     0.909         6
+                                POOL_COVERS      0.955     0.955     0.955        22
+                                GARDEN_SOIL      1.000     0.556     0.714         9
+                  MARKING_AND_WARNING_TAPES      1.000     0.812     0.897        16
+                                    CYMBALS      1.000     0.750     0.857         8
+                      VIDEO_CAPTURE_DEVICES      1.000     0.750     0.857        32
+                           DRUM_BRAKE_SHOES      0.900     1.000     0.947         9
+                         DECORATIVE_BASKETS      0.625     0.568     0.595        44
+                                    CONDOMS      1.000     1.000     1.000        27
+                    TREADMILL_RUNNING_BELTS      1.000     0.923     0.960        13
+                          HAND_BRAKE_CABLES      1.000     1.000     1.000        28
+                                 SUNSCREENS      0.800     0.903     0.848        31
+                   MAGNETIC_WELDING_HOLDERS      0.833     0.833     0.833         6
+                       TOILET_PAPER_HOLDERS      0.957     0.880     0.917        25
+                      VIDEOCASSETTE_PLAYERS      1.000     0.750     0.857         4
+                CUT_OFF_AND_GRINDING_WHEELS      0.864     0.864     0.864        22
+                           JEWELRY_DISPLAYS      0.938     1.000     0.968        15
+                           CLEANING_SPONGES      1.000     0.625     0.769         8
+                            SKIN_REPELLENTS      1.000     0.818     0.900        11
+                                      SOCKS      0.954     0.933     0.943        89
+                 MERCHANDISER_REFRIGERATORS      0.000     0.000     0.000         8
+                               TENNIS_BALLS      1.000     0.667     0.800         3
+                           AIR_CONDITIONERS      0.905     0.826     0.864        23
+                              TOWEL_HOLDERS      1.000     0.889     0.941         9
+                                        RUM      1.000     1.000     1.000         4
+                                        GPS      0.833     0.556     0.667         9
+                                      HONEY      0.941     1.000     0.970        16
+                             MANUAL_HAMMERS      0.667     0.667     0.667         3
+                            BILLIARD_TABLES      1.000     0.833     0.909        18
+                             BICYCLE_WHEELS      1.000     0.667     0.800         6
+                               BRAKE_LIGHTS      0.941     0.941     0.941        17
+                             FETAL_DOPPLERS      1.000     1.000     1.000         7
+                                   LEGGINGS      0.545     0.200     0.293        30
+                               DIVING_MASKS      0.800     1.000     0.889         8
+                             LASER_POINTERS      1.000     0.750     0.857         8
+                          MOTORCYCLE_LEVERS      1.000     0.667     0.800         6
+                      PADDLE_TENNIS_RACKETS      1.000     0.778     0.875         9
+                            PORCELAIN_TILES      1.000     0.800     0.889         5
+                             BALL_PIT_BALLS      1.000     0.857     0.923         7
+                                 HARMONICAS      1.000     0.500     0.667         4
+                               PHOTO_ALBUMS      1.000     0.750     0.857         8
+                              LINGERIE_SETS      0.875     0.778     0.824         9
+                                 MEGAPHONES      1.000     0.889     0.941         9
+                         TV_REMOTE_CONTROLS      0.429     0.333     0.375         9
+                         TRADING_CARD_GAMES      0.947     0.800     0.867        45
+                            DRONE_BATTERIES      0.667     0.500     0.571         8
+                      UNIVERSAL_CAR_REMOTES      1.000     1.000     1.000         4
+                                DRUM_PEDALS      0.880     0.917     0.898        24
+                               TABLE_CLOCKS      0.500     0.250     0.333         8
+            EROTIC_ANAL_AND_VAGINAL_DOUCHES      0.000     0.000     0.000         3
+                         HAIR_STRAIGHTENERS      1.000     0.889     0.941        18
+                                 MICROWAVES      0.917     0.846     0.880        13
+                                    PUPPETS      1.000     0.500     0.667         4
+                           REFLECTIVE_VESTS      0.833     1.000     0.909         5
+                         EMBROIDERY_DESIGNS      0.933     0.875     0.903        16
+                                MICROMETERS      1.000     1.000     1.000        54
+                  MOTORCYCLE_IGNITION_COILS      0.879     1.000     0.935        29
+                                DINING_SETS      0.922     0.904     0.913        52
+                                 AIRBRUSHES      0.857     0.750     0.800         8
+                                 CARABINERS      0.900     1.000     0.947         9
+                               SOAP_HOLDERS      0.421     0.667     0.516        12
+                           INFLATABLE_POOLS      1.000     0.333     0.500         9
+                                 GIFT_CARDS      0.960     0.960     0.960        25
+                                POOL_LIGHTS      1.000     0.875     0.933        16
+                       PATIO_FURNITURE_SETS      0.625     0.625     0.625         8
+                                   SCOOTERS      0.917     0.917     0.917        12
+                            CYCLING_HELMETS      1.000     0.667     0.800         6
+                       CHOCOLATE_WATERFALLS      1.000     0.667     0.800         6
+                              HOSPITAL_BEDS      1.000     0.974     0.987        39
+                                MAP_SENSORS      1.000     0.824     0.903        17
+                               CLUTCH_FORKS      1.000     0.333     0.500         3
+                             ELBOW_SUPPORTS      0.818     1.000     0.900         9
+                          LAPTOP_BRIEFCASES      0.750     0.667     0.706         9
+                             OUTDOOR_TABLES      0.714     0.500     0.588        10
+                          DISTRIBUTION_KITS      0.917     0.786     0.846        14
+                                    JUICERS      0.556     1.000     0.714         5
+                           VEHICLE_TRACKERS      0.833     1.000     0.909         5
+                                BRAKE_DRUMS      1.000     1.000     1.000        10
+                           AB_ROLLER_WHEELS      1.000     1.000     1.000        10
+                                HOOD_HINGES      0.714     0.625     0.667         8
+                              DENTAL_PLIERS      0.912     0.912     0.912        34
+                            CLUTCH_BEARINGS      1.000     0.333     0.500         3
+                       POWER_STEERING_HOSES      0.714     0.833     0.769         6
+                                MOUTHWASHES      0.889     1.000     0.941         8
+                          WIRELESS_ANTENNAS      1.000     0.600     0.750         5
+                            LAUNDRY_BASKETS      1.000     0.667     0.800         6
+                           LIVING_ROOM_SETS      0.833     0.714     0.769        14
+                             BABY_PACIFIERS      1.000     0.933     0.966        15
+                             HAND_POLISHERS      0.733     0.786     0.759        14
+                               SHADE_CLOTHS      0.923     1.000     0.960        12
+                              HAMMER_DRILLS      0.714     0.625     0.667         8
+                             POWER_GRINDERS      0.857     0.923     0.889        13
+                              CAMERA_STRAPS      1.000     0.333     0.500         3
+                          LAWN_MOWER_BLADES      0.857     0.667     0.750         9
+                         PNEUMATIC_STAPLERS      1.000     1.000     1.000        13
+             THERMAL_REFRIGERATORS_AND_BAGS      0.864     0.679     0.760        28
+                               LIGHT_STANDS      1.000     0.714     0.833         7
+                                     STRAWS      1.000     0.750     0.857         8
+                                      SUITS      0.917     0.667     0.772        33
+                          BATHROOM_VANITIES      1.000     0.750     0.857         8
+                        VIBRATION_PLATFORMS      1.000     0.889     0.941        18
+                              DINING_TABLES      0.824     0.875     0.848        16
+                          TURNTABLE_NEEDLES      1.000     0.333     0.500         3
+                               HEARING_AIDS      1.000     0.900     0.947        10
+                    ORTHOPEDIC_WALKER_BOOTS      0.900     0.643     0.750        14
+                                        TEA      0.833     0.500     0.625        10
+                            TORQUE_WRENCHES      1.000     1.000     1.000         8
+                                CATS_LITTER      0.923     1.000     0.960        12
+                                MATE_GOURDS      0.833     0.909     0.870        11
+                                 MEAT_HOOKS      0.667     1.000     0.800         2
+                      AUTOMOTIVE_DEFLECTORS      1.000     1.000     1.000         5
+                  VARIABLE_FREQUENCY_DRIVES      1.000     0.857     0.923         7
+                                 SWEETENERS      1.000     1.000     1.000         8
+        AUTOMOTIVE_CELLPHONE_AND_GPS_MOUNTS      1.000     0.667     0.800         6
+                        RADIO_BASE_STATIONS      0.000     0.000     0.000         6
+                                   CRUTCHES      1.000     0.250     0.400         4
+                               POWER_STRIPS      0.800     0.800     0.800        10
+                              KATANA_SWORDS      1.000     0.846     0.917        13
+                       CATS_AND_DOGS_TREATS      0.900     0.643     0.750        14
+                        MEMORY_CARD_READERS      0.500     0.333     0.400         3
+                           TELEPHONE_CABLES      1.000     0.929     0.963        14
+                         SOLID_SWEET_PASTES      1.000     0.800     0.889        10
+                          DISPOSABLE_GLOVES      1.000     1.000     1.000         3
+                       MOTORCYCLE_GRAB_BARS      1.000     1.000     1.000         3
+                             PLUNGE_ROUTERS      1.000     0.875     0.933         8
+                        GROOVE_JOINT_PLIERS      0.800     1.000     0.889         4
+                         BICYCLE_HANDLEBARS      1.000     0.800     0.889         5
+                         SOLDERING_STATIONS      0.962     0.962     0.962        26
+                              TANDEM_CHAIRS      0.800     0.571     0.667         7
+                               GARAGE_DOORS      1.000     0.833     0.909        12
+                        SPARK_PLUG_WIRESETS      0.963     0.812     0.881        32
+                      ELECTRIC_SHOWER_HEADS      1.000     0.200     0.333         5
+                       PORTABLE_DVD_PLAYERS      0.875     0.778     0.824         9
+                                     DILDOS      0.364     0.500     0.421         8
+                  INDUSTRIAL_DOUGH_KNEADERS      0.846     0.846     0.846        13
+                  UNIVERSAL_REMOTE_CONTROLS      1.000     0.333     0.500         3
+                                WHEEL_STUDS      0.500     0.167     0.250         6
+                           FABRIC_SOFTENERS      0.900     0.947     0.923        19
+             MOTORCYCLE_DISTRIBUTION_CHAINS      0.944     0.895     0.919        19
+                      DOOR_AND_WINDOW_LOCKS      1.000     0.333     0.500         3
+                                       GINS      1.000     1.000     1.000         4
+                                HAND_TRUCKS      1.000     0.500     0.667         4
+                                   STAPLERS      1.000     0.833     0.909         6
+                                  APERITIFS      1.000     0.800     0.889         5
+                            SHOWER_CURTAINS      1.000     0.750     0.857         4
+                             ANTIQUE_CHAIRS      0.667     0.286     0.400         7
+                              YOGURT_MAKERS      1.000     0.600     0.750         5
+                                SHIN_GUARDS      1.000     0.500     0.667         2
+                            GOLF_CLUBS_SETS      1.000     1.000     1.000         9
+                 FOOTBALL_GOALKEEPER_GLOVES      1.000     0.875     0.933        16
+                               LASER_LEVELS      0.750     0.750     0.750         8
+                       KEYBOARD_CONTROLLERS      0.300     0.600     0.400         5
+                         ALTERNATOR_PULLEYS      0.944     1.000     0.971        17
+           CAMERA_AND_CELLPHONE_STABILIZERS      1.000     1.000     1.000         3
+                               BABY_JUMPERS      1.000     0.667     0.800         6
+                CAMERA_REPLACEMENT_DISPLAYS      1.000     0.714     0.833         7
+                                CRANKSHAFTS      0.900     0.857     0.878        21
+                               BREAD_MAKERS      0.750     1.000     0.857         3
+                   SCHOOL_AND_OFFICE_PAPERS      1.000     0.750     0.857         8
+                   STOVETOP_POPCORN_POPPERS      1.000     0.500     0.667         8
+                     BREAST_FEEDING_PILLOWS      1.000     0.636     0.778        11
+                              POOL_CLEANERS      1.000     0.800     0.889         5
+                             LINEMAN_PLIERS      0.600     1.000     0.750         3
+                                 COAT_RACKS      0.429     0.500     0.462         6
+                                 POOL_PUMPS      1.000     0.917     0.957        12
+                    WATER_PURIFIERS_FILTERS      0.786     0.550     0.647        20
+                              SAFETY_GLOVES      1.000     0.167     0.286         6
+                         ISOPROPYL_ALCOHOLS      1.000     1.000     1.000         9
+              VEHICLE_BRAKE_HYDRAULIC_HOSES      1.000     0.667     0.800         9
+                             MEDICINE_BALLS      1.000     0.750     0.857         4
+                            KITCHEN_GRATERS      1.000     1.000     1.000         5
+                             NAPKIN_HOLDERS      1.000     0.444     0.615         9
+                              PUNCHING_BAGS      1.000     0.333     0.500         3
+                                ESPADRILLES      1.000     0.750     0.857         8
+                        CAR_CENTER_CONSOLES      0.625     0.833     0.714         6
+                            VIDEO_CASSETTES      0.625     0.833     0.714         6
+                             POTENTIOMETERS      1.000     0.800     0.889         5
+                   READY_TO_DRINK_COCKTAILS      0.000     0.000     0.000         2
+                                FLOOR_LAMPS      0.778     0.636     0.700        11
+                           DRONE_PROPELLERS      0.800     0.667     0.727         6
+                                      TENTS      0.917     1.000     0.957        11
+                           SAFETY_HARNESSES      1.000     0.500     0.667         4
+                                   SYRINGES      0.800     1.000     0.889         4
+                                  BEDLINERS      0.875     0.875     0.875        16
+                    ELECTROLYTIC_CAPACITORS      1.000     0.857     0.923         7
+                               BASKET_BALLS      1.000     1.000     1.000         2
+                                  OTOSCOPES      1.000     1.000     1.000         4
+                              WAFFLE_MAKERS      1.000     0.875     0.933         8
+                                PENIS_RINGS      1.000     0.500     0.667         4
+                         ELECTRIC_AIR_PUMPS      0.857     0.750     0.800         8
+                            COFFEE_CAPSULES      0.750     0.600     0.667         5
+                        BABY_PACIFIER_CLIPS      0.625     1.000     0.769         5
+                                  KEY_RACKS      0.500     0.500     0.500         4
+                                 DEODORANTS      1.000     0.800     0.889         5
+                         INDUSTRIAL_PULLEYS      0.800     0.800     0.800         5
+                              BILL_COUNTERS      1.000     1.000     1.000         5
+                 AUDIO_AND_VIDEO_CONNECTORS      0.000     0.000     0.000         4
+                           WASHING_MACHINES      1.000     1.000     1.000        12
+                ENGINE_COOLING_FAN_SWITCHES      0.800     0.667     0.727         6
+                       AUTOMOTIVE_BATTERIES      1.000     0.800     0.889         5
+                       CHIP_AND_DIP_SERVERS      0.000     0.000     0.000         4
+                               ARCHERY_BOWS      1.000     1.000     1.000         6
+                            VINYL_FLOORINGS      0.667     0.857     0.750         7
+                             MENSTRUAL_CUPS      1.000     1.000     1.000         5
+                              SLEEPING_BAGS      0.667     0.500     0.571         4
+                              RUBBER_STAMPS      1.000     0.600     0.750         5
+                             DRYER_MACHINES      1.000     0.750     0.857         8
+                           ENERGETIC_STONES      0.800     0.571     0.667         7
+                             BICYCLE_PEDALS      1.000     1.000     1.000         9
+                     MOTORCYCLE_CARBURETORS      1.000     0.800     0.889         5
+                          SCREWDRIVERS_SETS      0.500     0.333     0.400         3
+                               EDIBLE_SEEDS      0.500     0.333     0.400         3
+                       STORE_SHOPPING_CARTS      1.000     0.750     0.857         4
+                        SWIMMING_NOSE_CLIPS      1.000     0.500     0.667         2
+                                AFTERSHAVES      1.000     0.333     0.500         3
+                             AIRBAG_MODULES      1.000     0.667     0.800         3
+                                  HAND_SAWS      0.857     1.000     0.923         6
+          NECK_GAITERS_MASKS_AND_BALACLAVAS      1.000     0.500     0.667         2
+                         MAGNETIC_COMPASSES      1.000     1.000     1.000         6
+                         MAKEUP_TRAIN_CASES      0.667     0.500     0.571         4
+                           POPCORN_MACHINES      1.000     1.000     1.000         9
+                               LAMP_HOLDERS      0.400     0.500     0.444         4
+                   IGNITION_CONTROL_MODULES      1.000     0.143     0.250         7
+                            CAR_FRONT_MASKS      1.000     1.000     1.000         2
+                              HAND_BLENDERS      0.000     0.000     0.000         3
+                             KIDS_TRICYCLES      1.000     0.500     0.667         4
+                             AIRGUN_PELLETS      1.000     0.250     0.400         4
+                           AUTOMOTIVE_SEATS      0.750     0.500     0.600         6
+             MOTORCYCLE_TRANSMISSION_CROWNS      1.000     0.750     0.857         4
+                                 LAMINATORS      1.000     0.714     0.833         7
+                                CEREAL_BARS      1.000     0.667     0.800         3
+                               MUSIC_ALBUMS      1.000     0.500     0.667         4
+                  AUTOMOTIVE_CV_JOINT_BOOTS      0.778     1.000     0.875         7
+                          MICROWAVE_KEYPADS      1.000     1.000     1.000         3
+                          WALL_ANCHOR_PLUGS      0.600     0.750     0.667         4
+                                DRUM_STANDS      0.800     0.571     0.667         7
+                                PET_COLLARS      0.786     0.786     0.786        14
+                            GATE_GEAR_RACKS      1.000     0.750     0.857         4
+                                  CAR_HOODS      1.000     1.000     1.000         3
+                       SCREEN_PRINTING_KITS      1.000     0.500     0.667         4
+                                 LED_STRIPS      0.750     0.750     0.750         4
+                            SANDWICH_MAKERS      1.000     1.000     1.000         2
+                             DENTAL_FLOSSES      0.500     0.500     0.500         2
+                             CAMERA_FLASHES      1.000     0.800     0.889         5
+                          DOG_NAIL_CLIPPERS      1.000     0.500     0.667         2
+                                   PINBALLS      0.750     0.500     0.600         6
+                                     GAUZES      1.000     0.833     0.909         6
+                                       SODS      0.667     0.667     0.667         3
+                         ELECTRICITY_METERS      0.000     0.000     0.000         4
+                            METAL_DETECTORS      1.000     1.000     1.000         3
+                         ELECTRIC_CHAINSAWS      1.000     0.333     0.500         3
+                           KNITTING_NEEDLES      0.429     0.500     0.462         6
+                          SWIMMING_EARPLUGS      1.000     0.500     0.667         2
+                                SOUND_CARDS      0.600     0.600     0.600         5
+                                   STEPPERS      0.750     0.750     0.750         4
+                                FANNY_PACKS      0.333     0.250     0.286         4
+                         TOOTHBRUSH_HOLDERS      1.000     0.500     0.667         2
+                         TABLE_TENNIS_BALLS      1.000     1.000     1.000         2
+                ENGINE_OIL_PRESSURE_SENSORS      0.000     0.000     0.000         3
+                                ICE_BUCKETS      1.000     0.714     0.833         7
+                              MASSAGE_SOFAS      1.000     0.750     0.857         4
+                             STYLING_CHAIRS      0.000     0.000     0.000         2
+                              BICYCLE_SEATS      1.000     0.667     0.800         3
+                           VOLLEYBALL_BALLS      1.000     0.667     0.800         3
+                          SPHYGMOMANOMETERS      0.333     0.250     0.286         4
+                             BINDING_SPINES      0.667     1.000     0.800         2
+                   DIGITAL_WEATHER_STATIONS      1.000     1.000     1.000         2
+                         HOME_BOTTLE_STANDS      1.000     0.667     0.800         3
+                                  DOORBELLS      1.000     0.500     0.667         2
+                               DRIED_FRUITS      0.667     1.000     0.800         2
+                           BOXING_HEADGEARS      1.000     0.500     0.667         2
+
+                                   accuracy                          0.946    138550
+                                  macro avg      0.905     0.845     0.865    138550
+                               weighted avg      0.946     0.946     0.945    138550
+
+wandb: Waiting for W&B process to finish, PID 3770
+wandb: Program ended successfully.
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.18MB of 0.18MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Find user logs for this run at: /data/scripts/wandb/run-20210103_141133-3msjt2el/logs/debug.log
+wandb: Find internal logs for this run at: /data/scripts/wandb/run-20210103_141133-3msjt2el/logs/debug-internal.log
+wandb: Run summary:
+wandb:                     epoch 19
+wandb:                      loss 0.00731
+wandb:                  val_loss 0.25995
+wandb:                   val_acc 94.63668
+wandb:                     _step 21
+wandb:                  _runtime 12907
+wandb:                _timestamp 1609696000
+wandb:                best_epoch 14
+wandb:                  accuracy 0.94607
+wandb:       macro avg precision 0.90465
+wandb:          macro avg recall 0.84544
+wandb:        macro avg f1-score 0.86477
+wandb:         macro avg support 138550
+wandb:    weighted avg precision 0.94617
+wandb:       weighted avg recall 0.94607
+wandb:     weighted avg f1-score 0.94536
+wandb:      weighted avg support 138550
+wandb: Synced 5 W&B file(s), 1 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: 
+wandb: Synced cool-eon-82: https://wandb.ai/pbsphaier/huggingface/runs/3msjt2el
+

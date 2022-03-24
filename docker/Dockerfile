@@ -1,0 +1,139 @@
+ARG cuda_version=9.0
+ARG cudnn_version=7
+FROM nvidia/cuda:${cuda_version}-cudnn${cudnn_version}-devel
+
+#################################################################################################################
+#           Global
+#################################################################################################################
+
+ENV LANG C.UTF-8
+
+#################################################################################################################
+#           TINI
+#################################################################################################################
+
+ENV TINI_VERSION v0.18.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+RUN chmod +x /tini
+
+#################################################################################################################
+#           SYSTEM
+#################################################################################################################
+# label that nvidia-docker will detect and then mount the driver files (https://github.com/NVIDIA/nvidia-docker/issues/410)
+LABEL com.nvidia.volumes.needed="nvidia_driver"
+
+# compute cuda repo for ubuntu1804
+RUN echo "deb https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64 /" > /etc/apt/sources.list.d/nvidia-ml.list
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+         build-essential \
+         cmake \
+         git \
+         wget \
+         vim \
+         ca-certificates \
+         python-qt4 \
+         libjpeg-dev \
+         zip \
+         unzip \
+         libpng-dev
+
+ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64
+
+#################################################################################################################
+#           CONDA
+#################################################################################################################
+
+# add conda to path
+ARG CONDA_DIR=/opt/conda
+ENV PATH $CONDA_DIR/bin:$PATH
+
+# Install miniconda
+ENV PYTHON_VERSION=3.7
+# miniconda jan-2019 defaults to python 3.7
+RUN wget --quiet https://repo.continuum.io/miniconda/Miniconda3-4.5.12-Linux-x86_64.sh -O ~/miniconda.sh  && \
+     chmod +x ~/miniconda.sh && \
+     ~/miniconda.sh -b -p /opt/conda && \
+     rm ~/miniconda.sh && \
+    /opt/conda/bin/conda install conda-build
+
+# Add the following channels to the bottom of the channel queue
+RUN conda config --append channels conda-forge
+
+
+#################################################################################################################
+#           FASTAI ENV
+#################################################################################################################
+
+# update fastai version as required
+ARG FASTAI_VERSION=1.0.50
+RUN git clone --single-branch --branch $FASTAI_VERSION https://github.com/fastai/fastai.git /usr/local/fastai
+
+# set pytorch cuda package to match image cuda version.
+RUN sed -i -e 's/cuda90/cuda92/' /usr/local/fastai/environment.yml
+# set cudatoolkit package to match image cuda version.
+RUN sed -i -e '/dependencies:/a - cudatoolkit==9.2' /usr/local/fastai/environment.yml
+
+# install fastai environment
+RUN cd /usr/local/fastai && conda env update -f environment.yml
+
+RUN conda install -n fastai -c fastai -c pytorch \
+            fastai==$FASTAI_VERSION \
+            fastprogress
+
+# pip installs
+RUN /opt/conda/envs/fastai/bin/pip install \
+            pandas-summary==0.0.6
+
+#################################################################################################################
+#           OTHER PACKAGES
+#################################################################################################################
+
+RUN conda install -n fastai \
+            scikit-learn
+
+# pip installs
+RUN /opt/conda/envs/fastai/bin/pip install \
+            isoweek
+
+#################################################################################################################
+#           JUPYTER
+# Notes
+# * multiple GPUs, you can point notebook servers to each device using CUDA_DEVICE_ORDER and CUDA_VISIBLE_DEVICES
+#   (see https://github.com/MattKleinsmith/dockerfiles/blob/master/fastai/Dockerfile)
+#################################################################################################################
+
+# Add a notebook profile.
+# 1. set default working directory
+RUN mkdir -p -m 700 /root/.jupyter/ && \
+    echo "c.NotebookApp.notebook_dir = '/'" >> /root/.jupyter/jupyter_notebook_config.py
+
+# Open port
+EXPOSE  9203
+
+#################################################################################################################
+#           System CleanUp
+#################################################################################################################
+# apt-get autoremove: used to remove packages that were automatically installed to satisfy dependencies for some
+# package and that are no more needed.
+# apt-get clean: removes the aptitude cache in /var/cache/apt/archives. The only drawback is that the packages
+# have to be downloaded again if you reinstall them.
+
+RUN apt-get autoremove -y && apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    conda clean -i -l -t -y
+
+#################################################################################################################
+#           START UP
+#################################################################################################################
+
+VOLUME /data
+WORKDIR /data
+
+ENTRYPOINT [ "/tini", "--" ]
+
+RUN /opt/conda/envs/fastai/bin/pip install -U jupyter
+
+# notebook password: fastai
+CMD /bin/bash -c "source activate fastai && jupyter notebook --ip='0.0.0.0' --port=9200 --allow-root --no-browser --NotebookApp.password='sha1:a60ff295d0b9:506732d050d4f50bfac9b6d6f37ea6b86348f4ed'"
+

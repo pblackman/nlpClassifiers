@@ -1,0 +1,6 @@
+/data/
+models/
+*.log
+env
+.vscode
+**/__pycache__
